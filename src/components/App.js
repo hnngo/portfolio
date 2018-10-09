@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
+
+import { HomePage } from './home-page';
+import { SummaryInfo } from './summary';
+import { AboutPage } from './about';
+import { ProjectsPage } from './projects';
+import { ContactPage } from './contact';
 
 class App extends Component {
     render() {
         return (
-            <div>
-                <h1><i className="icon ion-md-heart"></i>Nhan Ngo<i className="icon ion-md-heart"></i></h1>
-                <h4>Research Engineer/ Front-end developer</h4>
+            <BrowserRouter>
                 <div>
-                    <button>Home</button>
-                    <button>About</button>
-                    <button>My Resume</button>
-                    <button>Contact</button>
+                    <HomePage />
+                    <Switch>
+                        <Route exact path="/" component={ SummaryInfo } />
+                        <Route exact path="/about/" component={ AboutPage } />
+                        <Route exact path="/projects/" component={ ProjectsPage } />
+                        <Route exact path="/contact/" component={ ContactPage } />
+                    </Switch>
                 </div>
-                <h4>Hello,</h4>
-                <p>A skilled, knowledgeable and qualified student with solid academic background in
-                    electrical and electronics engineering who has strong knowledge in Telecommunication
-                    Engineering programing. Dedicated professional with expertise in Network Analysis,
-                    Image Processing, Antenna Design, and Digital Signal Processing. Possesses excellent
-                    time management and organization skills.</p>
-
-
-            </div>
+            </BrowserRouter>
         );
     }
 }
