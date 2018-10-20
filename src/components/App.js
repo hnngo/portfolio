@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
+import '../style/css/app.css';
+import '../style/css/grid.css';
+import '../style/css/normalize.css';
 
-import { HomePage } from './home-page';
+import { Header } from './header';
 import { SummaryInfo } from './summary';
 import { AboutPage } from './about';
 import { ProjectsPage } from './projects';
@@ -13,7 +15,7 @@ class App extends Component {
         return (
             <BrowserRouter>
                 <div>
-                    <HomePage />
+                    <Header />
                     <Switch>
                         <Route exact path="/" component={ SummaryInfo } />
                         <Route exact path="/about/" component={ AboutPage } />
