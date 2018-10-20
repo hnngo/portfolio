@@ -23,8 +23,4 @@ export const SummaryInfo = () => {
         </div>
     );
 };
-//
-// HELLO, I'M
-//
-// Remi Foster.
-//     International Business & Marketing Student.
+

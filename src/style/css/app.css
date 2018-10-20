@@ -103,9 +103,10 @@ h2 {
 /* SUMMARY INFO
 /*---------------------------------------------*/
 .summary-photo {
+    padding-top: 10px;
+    padding-right: 50px;
     letter-spacing: 1px;
     text-align: right;
-    padding-right: 50px;
     vertical-align: center;
     overflow: hidden;
 }
@@ -137,15 +138,25 @@ h2 {
 /* ABOUT
 /*---------------------------------------------*/
 
-.about {
+.education-background h2,
+.work-experience h2{
+    text-align: center;
+    padding-top: 1%
+}
+
+.education-background {
     max-width: 80%;
     margin: 0 auto;
 }
 
-
-/*---------------------------------------------*/
-/* PROJECTS
-/*---------------------------------------------*/
+.work-experience {
+    width: 100%;
+    margin: 0 auto;
+    /*background-color: rgba(185, 185, 185, 0.28);
+    color: rgb(255, 255, 255);*/
+    background-color: azure;
+    color: #1c1b1b;
+}
 
 .first-col {
     width: 200px;
@@ -153,6 +164,24 @@ h2 {
     padding-top: 1.3%;
     font-family: 'Montserrat';
     font-size: 90%;
+}
+
+/*---------------------------------------------*/
+/* PROJECTS
+/*---------------------------------------------*/
+
+.projects {
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.projects ul {
+    list-style: none;
+}
+
+.projects img {
+    width: 110%;
+    border-radius: 5%;
 }
 
 /*---------------------------------------------*/
