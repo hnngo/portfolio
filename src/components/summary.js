@@ -7,7 +7,7 @@ export const SummaryInfo = () => {
         <div className="summary">
             <div className="row">
                 <div className="col span-1-of-3 summary-photo">
-                    <img src={require("../style/img/profile-photo.jpg")} alt={"Profile Photo"}/>
+                    <img src={require("../style/img/profile-photo.jpg")} alt={"Profile"}/>
                     <h4>BS in Electrical and Electronics Engineering</h4>
                     <p>Research Engineer &amp; Front-end Developer</p>
                 </div>

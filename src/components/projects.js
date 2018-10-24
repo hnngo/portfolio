@@ -7,18 +7,18 @@ export const ProjectsPage = () => {
                 <div className="col span-1-of-3">
                     <div className="row">
                         <div className="col span-1-of-2">
-                            <img src={require("../style/img/project-1-a.jpg")}/>
+                            <img src={require("../style/img/project-1-a.jpg")} alt="project-1"/>
                         </div>
                         <div className="col span-1-of-2">
-                            <img src={require("../style/img/project-1-b.JPG")}/>
+                            <img src={require("../style/img/project-1-b.JPG")} alt="project-2"/>
                         </div>
                     </div>
                     <div className="row">
                         <div className="col span-1-of-2">
-                            <img src={require("../style/img/project-1-c.jpg")}/>
+                            <img src={require("../style/img/project-1-c.jpg")} alt="project-3"/>
                         </div>
                         <div className="col span-1-of-2">
-                            <img src={require("../style/img/project-1-d.JPG")}/>
+                            <img src={require("../style/img/project-1-d.JPG")} alt="project-4"/>
                         </div>
                     </div>
                 </div>

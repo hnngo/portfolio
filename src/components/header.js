@@ -16,4 +16,4 @@ export const Header = () => {
     );
 };
 
-{/*<li><Link to="/projects/">My resume</Link></li>*/}
+///*<li><Link to="/projects/">My resume</Link></li>*/
