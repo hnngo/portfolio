@@ -108,11 +108,9 @@ h2 {
     letter-spacing: 1px;
     text-align: right;
     vertical-align: center;
-    overflow: hidden;
 }
 
 .summary-photo img {
-    width: 300px;
     border-radius: 50%;
     /*transition: all .2s ease-in-out;*/
     transition: transform 2s;
@@ -132,6 +130,10 @@ h2 {
 
 .summary-brief {
     padding-top: 30px;
+}
+
+.summary-brief p {
+    max-width: 80%;
 }
 
 /*---------------------------------------------*/
