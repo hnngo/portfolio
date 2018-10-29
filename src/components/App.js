@@ -33,4 +33,4 @@ class App extends Component {
 
 export default App;
 
-// TODO - add a reward, skills page
+// TODO - add a reward, skills page / using progress bar in bootstrap
