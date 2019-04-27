@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { BrowserRouter, HashRouter, Route, Switch, Redirect } from 'react-router-dom';
 import '../style/css/app.css';
 import '../style/css/grid.css';
 import '../style/css/normalize.css';
@@ -12,23 +12,21 @@ import { ProjectsPage } from './projects';
 import { ContactPage } from './contact';
 
 class App extends Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <div>
-                    <Header />
-                    <Switch>
-                        <Route exact path="/" render={() => {return <Redirect to="/portfolio"/>;}}/>
-
-                        <Route exact path="/portfolio/" component={ SummaryInfo } />
-                        <Route exact path="/portfolio/about/" component={ AboutPage } />
-                        <Route exact path="/portfolio/projects/" component={ ProjectsPage } />
-                        <Route exact path="/portfolio/contact/" component={ ContactPage } />
-                    </Switch>
-                </div>
-            </BrowserRouter>
-        );
-    }
+	render() {
+		return (
+			<HashRouter>
+				<div>
+					<Header />
+					<Switch>
+						<Route exact path="/" component={SummaryInfo} />
+						<Route exact path="/about" component={AboutPage} />
+						<Route exact path="/projects" component={ProjectsPage} />
+						<Route exact path="/contact" component={ContactPage} />
+					</Switch>
+				</div>
+			</HashRouter>
+		);
+	}
 }
 
 export default App;
