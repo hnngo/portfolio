@@ -1,80 +1,35 @@
-/* Big screen 4k to 1200px */
-@media only screen and (min-width: 1200px) {
-    .summary-photo img {
-        width: 300px;
-    }
+/* Extra small devices (portrait phones, less than 576px)
+No media query for `xs` since this is the default in Bootstrap */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 575px) {
 }
 
-/* Big tablets to 1200px */
-@media only screen and (max-width: 1200px) {
-    body {
-        font-size: 18px;
-    }
-
-    .summary-photo img {
-        width: 300px;
-    }
+@media (min-width: 576px) {
 }
 
-
-/* Small tablets to big tablets: from 768px to 1023px */
-@media only screen and (max-width: 1023px) {
-    body {
-        font-size: 16px;
-    }
-
-    h2 {
-        font-size: 240%;
-        padding-bottom: 15px;
-    }
-
-    .header h1 {
-        margin-top: 8%;
-        letter-spacing: 1px;
-        padding-bottom: 1%;
-    }
-
-    .header ul {
-        margin-top: 0;
-    }
-
-    .header ul a {
-        padding-left: 10px;
-        padding-right: 10px;
-    }
-
-    .summary-photo img {
-        width: 306px;
-    }
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
 }
 
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /*---------------------------------------------*/
+  /* NAV BAR
+  /*---------------------------------------------*/
+  .bn-links ul li:hover .bn-underline {
+    width: 65px;
+    background: rgb(174, 131, 187);
+    height: 2px;
+    border-radius: 1px;
+  }
 
+  .bn-links ul li:hover h6 {
+    color: rgb(174, 131, 187);
+  }
 
-/* Small phones to small tablets: from 481px to 767px */
-@media only screen and (max-width: 767px) {
-    body {
-        font-size: 15px;
-    }
-
-    h2 {
-        font-size: 200%;
-        padding-bottom: 15px;
-    }
-
-    .header h1 {
-        padding-bottom: 0;
-    }
-
-    .summary-photo img {
-        width: 125%;
-    }
 }
 
-
-
-/* Small phones from 0 to 480px */
-@media only screen and (max-width: 480px) {
-    .summary-photo img {
-        width: 100%;
-    }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
 }

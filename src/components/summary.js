@@ -5,6 +5,7 @@ import React from 'react';
 export const SummaryInfo = () => {
 	return (
 		<div className="summary">
+			{/* <img src={require("../style/img/Photo.png")} alt={"Profile"} className="img-fluid" style={{ width: "400px"}}/> */}
 			<div className="row">
 				<div className="col span-1-of-3 summary-photo">
 					<img src={require("../style/img/profile-photo.jpg")} alt={"Profile"} />

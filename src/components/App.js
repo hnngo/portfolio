@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter, HashRouter, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 import '../style/css/app.css';
-import '../style/css/grid.css';
-import '../style/css/normalize.css';
 import '../style/css/queriess.css';
-
+import NavBar from './NavBar';
 import Header from './header';
 import { SummaryInfo } from './summary';
 import { AboutPage } from './about';
@@ -16,12 +14,13 @@ class App extends Component {
 		return (
 			<HashRouter>
 				<div>
+					<NavBar />
 					<Header />
 					<Switch>
-						<Route exact path="/" component={SummaryInfo} />
+						{/* <Route exact path="/" component={SummaryInfo} />
 						<Route exact path="/about" component={AboutPage} />
 						<Route exact path="/projects" component={ProjectsPage} />
-						<Route exact path="/contact" component={ContactPage} />
+						<Route exact path="/contact" component={ContactPage} /> */}
 					</Switch>
 				</div>
 			</HashRouter>
