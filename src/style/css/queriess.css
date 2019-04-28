@@ -1,11 +1,19 @@
-/* Extra small devices (portrait phones, less than 576px)
-No media query for `xs` since this is the default in Bootstrap */
+@media (max-width: 767px) {
+  .h-container {
+    height: calc(100vh - 82px);
+  }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (max-width: 575px) {
-}
-
-@media (min-width: 576px) {
+  .h-header {
+    top: 10%;
+    left: 20%;
+    width: 60vw;
+  }
+  
+  .h-about,
+  .h-portfolio {
+    display: block;
+    margin: 15px 0;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -40,6 +48,11 @@ No media query for `xs` since this is the default in Bootstrap */
 
   .h-portfolio:active {
     box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+  }
+
+  .h-about,
+  .h-portfolio {
+    display: inline-block;
   }
 }
 

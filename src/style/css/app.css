@@ -103,6 +103,7 @@ body {
 }
 
 .sn-menu-container {
+	z-index: 2;
 	position: absolute;
 	left: 0px;
 	width: 100%;
@@ -168,7 +169,7 @@ body {
 .h-header h6 {
 	font-size: 38px;
 	font-family: 'Montserrat', sans-serif;
-	color: #e2e2e2
+	color: #eeeeee
 }
 
 .h-hi {
@@ -206,7 +207,7 @@ body {
 }
 
 .h-btn {
-	display: flex;
+	/* display: flex; */
 	margin-top: 45px;
 }
 
@@ -217,7 +218,7 @@ body {
 	margin-right: 10px;
 	cursor: pointer;
 	font-family: 'Amita', cursive;
-	box-shadow: 0px 0px 8px 0px rgba(199, 199, 199, 0.555);
+	box-shadow: 0px 0px 8px 0px rgba(199, 199, 199, 0.308);
 }
 
 .h-about {
@@ -227,8 +228,8 @@ body {
 }
 
 .h-portfolio {
-	border: 2px solid #e2e2e2;
-	color: #e2e2e2;
+	border: 2px solid #eeeeee;
+	color: #eeeeee;
 }
 
 /*---------------------------------------------*/
@@ -282,6 +283,9 @@ body {
 	color: rgb(192, 120, 214)
 }
 
+/*---------------------------------------------*/
+/* ABOUT
+/*---------------------------------------------*/
 
 /*---------------------------------------------*/
 /* SUMMARY INFO

@@ -3,12 +3,26 @@ import { ComponentTitle } from './ComponentTitle';
 
 export const AboutPage = () => {
 	return (
-		<div className="a-container">
+		<div className="container">
 			<ComponentTitle
 				title="About"
 				icon="fas fa-info-circle"
-			/>
-
+			/>		
+			<div className="row">
+				<div className="col-sm-6">
+					<img src={require("../style/img/profile-photo.jpg")} alt={"Profile"} style={{ width: "100px"}}/>
+					<h4>BS in Electrical and Electronics Engineering</h4>
+					<p>Research Engineer &amp; Front-end Developer</p>
+				</div>
+				<div className="col-sm-6 summary-brief">
+					<h2>Hello,</h2>
+					<p>A skilled, knowledgeable and qualified student with solid academic background in
+							electrical and electronics engineering who has strong knowledge in Telecommunication
+												Engineering programing. <br />Dedicated professional with expertise in Network Analysis,
+						Image Processing, Antenna Design, and Digital Signal Processing. Possesses excellent
+												time management and organization skills.</p>
+				</div>
+			</div>
 		</div>
 	);
 };
