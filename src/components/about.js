@@ -3,16 +3,18 @@ import { ComponentTitle } from './ComponentTitle';
 
 export const AboutPage = () => {
 	return (
-		<div className="container">
+		<div className="a-container container">
 			<ComponentTitle
 				title="About"
 				icon="fas fa-info-circle"
 			/>		
 			<div className="row">
-				<div className="col-sm-6">
-					<img src={require("../style/img/profile-photo.jpg")} alt={"Profile"} style={{ width: "100px"}}/>
-					<h4>BS in Electrical and Electronics Engineering</h4>
-					<p>Research Engineer &amp; Front-end Developer</p>
+				<div className="col-sm-6 a-personal-i">
+					<img
+						src={require("../style/img/profile-photo.jpg")}
+						alt={"Profile"}
+						// style={{ width: "100px"}}
+					/>
 				</div>
 				<div className="col-sm-6 summary-brief">
 					<h2>Hello,</h2>

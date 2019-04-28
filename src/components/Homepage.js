@@ -73,10 +73,12 @@ export default class Homepage extends Component {
   render() {
     return (
       <div className="h-container">
-        <div className="h-header">
-          {/* {this.renderHeaderTyping()} */}
-          {this.renderTitle()}
-          {this.renderBtn()}
+        <div className="container">
+          <div className="h-header">
+            {/* {this.renderHeaderTyping()} */}
+            {this.renderTitle()}
+            {this.renderBtn()}
+          </div>
         </div>
       </div>
     );
