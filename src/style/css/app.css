@@ -148,7 +148,7 @@ body {
 /*---------------------------------------------*/
 .h-container {
 	/* height: calc(100vh - 82px); */
-	height: 70vh;
+	height: 650px;
 	overflow: hidden;
 	width: 100vw;
 	position: relative;
@@ -207,7 +207,7 @@ body {
 
 .h-btn {
 	display: flex;
-	margin-top: 35px;
+	margin-top: 45px;
 }
 
 .h-about,
@@ -217,7 +217,7 @@ body {
 	margin-right: 10px;
 	cursor: pointer;
 	font-family: 'Amita', cursive;
-	box-shadow: 0px 0px 13px 0px rgba(199, 199, 199, 0.555);
+	box-shadow: 0px 0px 8px 0px rgba(199, 199, 199, 0.555);
 }
 
 .h-about {
@@ -230,6 +230,58 @@ body {
 	border: 2px solid #e2e2e2;
 	color: #e2e2e2;
 }
+
+/*---------------------------------------------*/
+/* Component Title
+/*---------------------------------------------*/
+.ct-container {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	margin: 30px 0;
+	text-align: center;
+	display: inline-block;
+	border-bottom: 10px solid black;
+	border-bottom-style: double;
+}
+
+.ct-container h6 {
+	font-size: 50px;
+	font-family: 'Amita', cursive;
+	font-weight: bold;
+	/* text-decoration: underline black; */
+	/* letter-spacing: -4px; */
+}
+
+.ct-square {
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	bottom: -20px;
+	left: -30px;
+	-ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  				transform: rotate(45deg);
+	background-color: rgb(192, 120, 214);
+}
+
+.ct-container svg {
+	position: absolute;
+	bottom: -20px;
+	left: -20px;
+	transform: rotate(-90deg)
+}
+
+.ct-container i {
+	position: absolute;
+	right: -47px;
+	bottom: -29px;
+	border: 3px solid black;
+	border-radius: 50%;
+	padding: 2px;
+	color: rgb(192, 120, 214)
+}
+
 
 /*---------------------------------------------*/
 /* SUMMARY INFO

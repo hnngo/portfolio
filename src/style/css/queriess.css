@@ -24,12 +24,23 @@ No media query for `xs` since this is the default in Bootstrap */
     color: rgb(192, 120, 214);
   }
 
-  .h-about:hover,
-  .h-portfolio:hover {
+  .h-about:hover{
     background-color: #e2e2e2;
     color: black;
   }
 
+  .h-portfolio:hover {
+    background-color: #e2e2e2;
+    color: rgb(192, 120, 214);
+  }
+
+  .h-about:active{
+    box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+  }
+
+  .h-portfolio:active {
+    box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+  }
 }
 
 /* Large devices (desktops, 992px and up) */

@@ -5,7 +5,7 @@ import '../style/css/queriess.css';
 import NavBar from './NavBar';
 import Homepage from './Homepage';
 import { SummaryInfo } from './summary';
-import { AboutPage } from './about';
+import { AboutPage } from './About';
 import { ProjectsPage } from './projects';
 import { ContactPage } from './contact';
 
@@ -16,6 +16,7 @@ class App extends Component {
 				<div>
 					<NavBar />
 					<Homepage />
+					<AboutPage />
 					<Switch>
 						{/* <Route exact path="/" component={SummaryInfo} />
 						<Route exact path="/about" component={AboutPage} />

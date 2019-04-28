@@ -1,9 +1,20 @@
 import React from 'react';
+import { ComponentTitle } from './ComponentTitle';
 
 export const AboutPage = () => {
 	return (
-		<div className="about">
-			<div className="education-background">
+		<div className="a-container">
+			<ComponentTitle
+				title="About"
+				icon="fas fa-info-circle"
+			/>
+
+		</div>
+	);
+};
+
+/*
+<div className="education-background">
 				<h2>Education Background</h2>
 				<div className="row">
 					<div>
@@ -59,6 +70,4 @@ export const AboutPage = () => {
 					</div>
 				</div>
 			</div>
-		</div>
-	);
-};
+*/
