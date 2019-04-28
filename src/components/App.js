@@ -3,7 +3,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import '../style/css/app.css';
 import '../style/css/queriess.css';
 import NavBar from './NavBar';
-import Header from './header';
+import Homepage from './Homepage';
 import { SummaryInfo } from './summary';
 import { AboutPage } from './about';
 import { ProjectsPage } from './projects';
@@ -15,7 +15,7 @@ class App extends Component {
 			<HashRouter>
 				<div>
 					<NavBar />
-					<Header />
+					<Homepage />
 					<Switch>
 						{/* <Route exact path="/" component={SummaryInfo} />
 						<Route exact path="/about" component={AboutPage} />

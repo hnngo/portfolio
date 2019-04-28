@@ -10,23 +10,30 @@ No media query for `xs` since this is the default in Bootstrap */
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) {
-  /*---------------------------------------------*/
+    /*---------------------------------------------*/
   /* NAV BAR
   /*---------------------------------------------*/
   .bn-links ul li:hover .bn-underline {
     width: 65px;
-    background: rgb(174, 131, 187);
+    background: rgb(192, 120, 214);
     height: 2px;
     border-radius: 1px;
   }
 
   .bn-links ul li:hover h6 {
-    color: rgb(174, 131, 187);
+    color: rgb(192, 120, 214);
   }
+
+  .h-about:hover,
+  .h-portfolio:hover {
+    background-color: #e2e2e2;
+    color: black;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
 
 }
 

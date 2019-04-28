@@ -35,7 +35,7 @@ export default class NavBar extends Component {
           className="sn-menu-container"
           style={{
             top: qNavCon.clientHeight,
-            animation: "navSlideDown 1s"
+            animation: "navSlideDown 0.6s"
           }}
         >
           <div>
@@ -93,7 +93,8 @@ export default class NavBar extends Component {
         <div className="container">
           <div className="nav-content">
             <div className="nav-header">
-              <h6>Nhan Ngo</h6>
+              <h6>N</h6>
+              <h6 className="nav-h">h</h6>
             </div>
             {this.renderSmallNav()}
             {this.renderBigNav()}
