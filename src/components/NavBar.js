@@ -26,19 +26,37 @@ export default class NavBar extends Component {
     }
   }
 
+  handleClickNav(type) {
+    switch (type) {
+      case "about":
+        console.log("A")
+        let y = document.querySelector(".a-container").getBoundingClientRect().top + window.scrollY;
+
+        window.scroll({
+          top: y,
+          behavior: 'smooth'
+        });
+        break;
+      default:
+        break;
+    }
+  }
+
   renderSmallMenu() {
     if (this.state.showSmallMenu) {
       const qNavCon = document.querySelector(".nav-container");
 
       return (
-        <div 
+        <div
           className="sn-menu-container"
           style={{
             top: qNavCon.clientHeight,
             animation: "navSlideDown 0.6s"
           }}
         >
-          <div>
+          <div
+            onClick={() => this.handleClickNav("about")}
+          >
             <h6>About</h6>
           </div>
           <div>
@@ -70,7 +88,9 @@ export default class NavBar extends Component {
     return (
       <div className="bn-links d-none d-md-block">
         <ul>
-          <li>
+          <li
+            onClick={() => this.handleClickNav("about")}
+          >
             <h6>About</h6>
             <div className="bn-underline" />
           </li>
@@ -104,3 +124,5 @@ export default class NavBar extends Component {
     );
   }
 }
+
+// Click small nav then collapse

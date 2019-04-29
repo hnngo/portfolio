@@ -251,8 +251,6 @@ body {
 	font-size: 50px;
 	font-family: 'Amita', cursive;
 	font-weight: bold;
-	/* text-decoration: underline black; */
-	/* letter-spacing: -4px; */
 }
 
 .ct-square {
@@ -293,13 +291,16 @@ body {
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
-	height: 750px;
+	height: 100vh;
 	overflow: hidden;
 }
 
-.a-container .container,
-.a-container .container .row {
+.a-container .container {
 	padding-top: 30px;
+}
+
+.a-container .container .row {
+	padding-top: 60px;
 }
 
 .a-personal-i {
@@ -321,6 +322,7 @@ body {
 
 .a-personal-text p {
 	font-family: 'Montserrat', sans-serif;
+	text-shadow: 1px 1px 2px rgb(255, 255, 255);
 }
 
 .a-focus {
@@ -339,39 +341,14 @@ body {
 }
 
 /*---------------------------------------------*/
-/* SUMMARY INFO
+/* Experience
 /*---------------------------------------------*/
-/* .summary-photo {
-	padding-top: 10px;
-	padding-right: 50px;
-	letter-spacing: 1px;
-	text-align: right;
-	vertical-align: center;
-} */
-/* 
-.summary-photo img {
-	border-radius: 50%;
-	transition: transform 2s;
-} */
+.e-container {
+	height: 100vh;
+	background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-/* .summary-photo img:hover {
-	transform: rotate(360deg);
-} */
-
-/* .summary-photo h4 {
-	font-family: 'Charmonman', Recursive, Arial;
-	font-size: 110%;
-	margin-top: 20px;
-} */
-
-
-/* .summary-brief {
-	padding-top: 30px;
-} */
-
-/* .summary-brief p {
-	max-width: 80%;
-} */
+}
 
 /*---------------------------------------------*/
 /* ABOUT
