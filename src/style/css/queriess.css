@@ -15,8 +15,17 @@
     margin: 15px 0;
   }
 
+  .a-container .container .row {
+    padding-top: 0px;
+  }
+
   .a-personal-i {
     text-align: center;
+  }
+  
+  .a-personal-text {
+    text-align: center;
+    padding: 20px 40px;
   }
 }
 

@@ -3,26 +3,27 @@ import { ComponentTitle } from './ComponentTitle';
 
 export const AboutPage = () => {
 	return (
-		<div className="a-container container">
-			<ComponentTitle
-				title="About"
-				icon="fas fa-info-circle"
-			/>		
-			<div className="row">
-				<div className="col-sm-6 a-personal-i">
-					<img
-						src={require("../style/img/profile-photo.jpg")}
-						alt={"Profile"}
+		<div className="a-container">
+			<div className="container">
+				<ComponentTitle
+					title="About"
+					icon="fas fa-info-circle"
+				/>
+				<div className="row">
+					<div className="col-sm-6 a-personal-i">
+						<img
+							src={require("../style/img/profile-photo.jpg")}
+							alt={"Profile"}
 						// style={{ width: "100px"}}
-					/>
-				</div>
-				<div className="col-sm-6 summary-brief">
-					<h2>Hello,</h2>
-					<p>A skilled, knowledgeable and qualified student with solid academic background in
-							electrical and electronics engineering who has strong knowledge in Telecommunication
-												Engineering programing. <br />Dedicated professional with expertise in Network Analysis,
-						Image Processing, Antenna Design, and Digital Signal Processing. Possesses excellent
-												time management and organization skills.</p>
+						/>
+					</div>
+					<div className="col-sm-6 a-personal-text">
+						<h2>Hello,</h2>
+						<p>As a web developer, I am always curious and passionate about web development technologies. Eventhough I did not pursuit a degree in Computer Science, I've trained myself to be a so-called front-end developer.<br/><br/>
+						<span>Let's make something special.</span>
+						</p>
+						<p className="a-focus">Current Focus:<span>&nbsp;React / Redux</span></p>
+					</div>
 				</div>
 			</div>
 		</div>

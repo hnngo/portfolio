@@ -149,7 +149,7 @@ body {
 /*---------------------------------------------*/
 .h-container {
 	/* height: calc(100vh - 82px); */
-	height: 650px;
+	height: 700px;
 	overflow: hidden;
 	width: 100vw;
 	position: relative;
@@ -188,7 +188,6 @@ body {
 	padding-top: 23px;
 	padding-left: 2px;
 	font-size: 16px !important;
-	/* font-family: 'Roboto', sans-serif !important; */
 	line-height: 28px;
 	letter-spacing: 0.5px;
 	font-weight: 100;
@@ -288,53 +287,83 @@ body {
 /*---------------------------------------------*/
 /* ABOUT
 /*---------------------------------------------*/
+.a-container {
+	background-image:  url(../img/about_wall.png);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+	height: 100vh;
+}
+
+.a-container .container,
+.a-container .container .row {
+	padding-top: 30px;
+}
+
 .a-personal-i {
 	text-align: right;
 }
 
 .a-personal-i img {
 	width: 60%;
+	max-width: 270px;
 	border-radius: 50%;
 	text-align: right;
 	margin: 12px 0px;
 }
 
+.a-personal-text h2 {
+	margin-top: 20px;
+	font-family: 'Charmonman', cursive;
+}
+
+.a-personal-text p {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.a-focus {
+	font-weight: bold
+}
+
+.a-focus span {
+	font-weight: 100
+}
+
 /*---------------------------------------------*/
 /* SUMMARY INFO
 /*---------------------------------------------*/
-.summary-photo {
+/* .summary-photo {
 	padding-top: 10px;
 	padding-right: 50px;
 	letter-spacing: 1px;
 	text-align: right;
 	vertical-align: center;
-}
-
+} */
+/* 
 .summary-photo img {
 	border-radius: 50%;
-	/*transition: all .2s ease-in-out;*/
 	transition: transform 2s;
-}
+} */
 
-.summary-photo img:hover {
-	/*transform: scale(1.2);*/
+/* .summary-photo img:hover {
 	transform: rotate(360deg);
-}
+} */
 
-.summary-photo h4 {
+/* .summary-photo h4 {
 	font-family: 'Charmonman', Recursive, Arial;
 	font-size: 110%;
 	margin-top: 20px;
-}
+} */
 
 
-.summary-brief {
+/* .summary-brief {
 	padding-top: 30px;
-}
+} */
 
-.summary-brief p {
+/* .summary-brief p {
 	max-width: 80%;
-}
+} */
 
 /*---------------------------------------------*/
 /* ABOUT
