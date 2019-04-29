@@ -5,7 +5,7 @@ import '../style/css/queriess.css';
 import NavBar from './NavBar';
 import Homepage from './Homepage';
 import { SummaryInfo } from './summary';
-import { AboutPage } from './About';
+import AboutPage from './About';
 import { ProjectsPage } from './projects';
 import { ContactPage } from './contact';
 

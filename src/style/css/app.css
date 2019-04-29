@@ -288,12 +288,13 @@ body {
 /* ABOUT
 /*---------------------------------------------*/
 .a-container {
-	background-image:  url(../img/about_wall.png);
+	/* background-image:  url(../img/about_wall.png);
 	background-size: contain;
 	background-position: center;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat; */
 	position: relative;
 	height: 100vh;
+	overflow: hidden;
 }
 
 .a-container .container,
@@ -328,6 +329,19 @@ body {
 
 .a-focus span {
 	font-weight: 100
+}
+
+.a-leaf-border {
+	max-width: 120px;
+	transform: rotateX(40deg);
+	position: absolute;
+	-webkit-filter: opacity(20%);
+					filter: opacity(20%);
+	-o-object-fit: cover;
+		 object-fit: cover;
+
+
+	/* top: -60px; */
 }
 
 /*---------------------------------------------*/
