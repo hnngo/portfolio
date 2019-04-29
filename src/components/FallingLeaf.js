@@ -7,15 +7,14 @@ export default class FallingLeaf extends Component {
     this.state = {
       loaded: false,
       leafFallingInterval: undefined,
+      leafRotateInterval: undefined,
+      leafSwingInterval: undefined,
       leafPosition: -80,
       leafOffsetLeft: this.props.initOffset,
       leafRangeDir: 200,
       leafRotate: 20,
       leafRotateChange: -1,
     };
-  }
-
-  componentWillMount() {
   }
 
   componentDidMount() {
@@ -33,7 +32,6 @@ export default class FallingLeaf extends Component {
               // Reset new offset left
               let newLeftOffset = Math.random() * aContainer.clientWidth;
 
-              console.log(newLeftOffset)
               this.setState({
                 leafPosition: -60,
                 leafOffsetLeft: newLeftOffset
@@ -42,12 +40,12 @@ export default class FallingLeaf extends Component {
           }
 
           this.setState({
-            leafPosition: this.state.leafPosition + 2
+            leafPosition: this.state.leafPosition + 3
           });
-        }, 20);
+        }, this.props.optionSpeed ? this.props.optionSpeed : 20);
 
         // Set interval for rotate leaf
-        setInterval(() => {
+        let leafRotateInterval = setInterval(() => {
           // Set new rotate
           let newRotate = this.state.leafRotate + this.state.leafRotateChange;
           let newRotateChange = this.state.leafRotateChange;
@@ -64,10 +62,10 @@ export default class FallingLeaf extends Component {
             leafRotate: newRotate,
             leafRotateChange: newRotateChange
           });
-        }, 80)
+        }, 60)
 
         // Set interval for left offset
-        setInterval(() => {
+        let leafSwingInterval = setInterval(() => {
           let newLeafOffset = this.state.leafOffsetLeft;
           if (this.state.leafRotateChange > 0) {
             newLeafOffset += 2;
@@ -78,9 +76,13 @@ export default class FallingLeaf extends Component {
           this.setState({
             leafOffsetLeft: newLeafOffset,
           });
-        }, 20)
+        }, 15)
 
-        this.setState({ leafFallingInterval });
+        this.setState({
+          leafFallingInterval,
+          leafRotateInterval,
+          leafSwingInterval
+        });
 
       });
     }, this.props.delay);
@@ -88,6 +90,24 @@ export default class FallingLeaf extends Component {
 
   componentWillUnmount() {
     clearInterval(this.state.leafFallingInterval);
+    clearInterval(this.state.leafRotateInterval);
+    clearInterval(this.state.leafSwingInterval);
+  }
+
+  handleEnterLeaf() {
+    const qLeaf = document.querySelector("#" + this.props.leafId);
+
+    if (qLeaf) {
+      qLeaf.style.opacity = 1
+    }
+  }
+
+  handleOutLeaf() {
+    const qLeaf = document.querySelector("#" + this.props.leafId);
+
+    if (qLeaf) {
+      qLeaf.style.opacity = 0.2
+    }
   }
 
   render() {
@@ -104,6 +124,8 @@ export default class FallingLeaf extends Component {
               left: this.state.leafOffsetLeft + "px",
               transform: `rotate(${this.state.leafRotate}deg)`
             }}
+            onMouseEnter={() => this.handleEnterLeaf()}
+            onMouseLeave={() => this.handleOutLeaf()}
           />
         </div>
       );

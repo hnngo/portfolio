@@ -125,29 +125,38 @@ export default class AboutPage extends Component {
 					leafId="leaf1"
 					srcImg={require("../style/img/leaf-border.png")}
 					containerClass=".a-container"
-					initOffset={80}
+					initOffset={340}
 					delay={1000}
 				/>
 				<FallingLeaf
 					leafId="leaf2"
 					srcImg={require("../style/img/leaf-solid.png")}
 					containerClass=".a-container"
-					initOffset={340}
+					initOffset={80}
 					delay={3000}
+					optionSpeed={22}
 				/>
 				<FallingLeaf
-					leafId="leaf2"
+					leafId="leaf3"
 					srcImg={require("../style/img/leaf-border.png")}
 					containerClass=".a-container"
 					initOffset={150}
 					delay={6000}
 				/>
 				<FallingLeaf
-					leafId="leaf2"
+					leafId="leaf4"
 					srcImg={require("../style/img/leaf-solid.png")}
 					containerClass=".a-container"
 					initOffset={250}
 					delay={8000}
+					optionSpeed={18}
+				/>
+				<FallingLeaf
+					leafId="leaf5"
+					srcImg={require("../style/img/leaf-border.png")}
+					containerClass=".a-container"
+					initOffset={80}
+					delay={10000}
 				/>
 			</div>
 		);
