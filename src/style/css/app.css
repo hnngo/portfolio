@@ -375,6 +375,7 @@ body {
 /*---------------------------------------------*/
 .e-container {
 	height: 100vh;
+	min-height: 700px;
 	background: -webkit-linear-gradient(to right, #2F0743, #41295a);  /* Chrome 10-25, Safari 5.1-6 */
 	background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
@@ -382,7 +383,6 @@ body {
 .e-container .container {
 	padding-top: 30px;
 }
-
 
 /*---------------------------------------------*/
 /* Experience Board
@@ -396,6 +396,7 @@ body {
 	background-color: #ebebeb;
 	border-radius: 10px;
 	box-shadow: 2px 2px 13px 2px rgba(255, 255, 255, 0.623);
+	transition: 0.5s;
 }
 
 .eb-title {
@@ -449,6 +450,7 @@ body {
 .eb-jdHeader {
 	font-size: 14px;
 	padding: 5px 40px;
+	margin: 0;
 	font-weight: bold;
 	font-family: 'Amita', cursive;
 }
@@ -465,10 +467,22 @@ body {
 	color: #2F0743
 }
 
-.eb-time {
+.eb-footer {
 	position: absolute;
 	right: 12px;
 	bottom: 5px;
+	text-align: right;
+}
+
+.eb-location {
+	margin: 0;
+	font-style: italic
+}
+
+.eb-time {
+	/* position: absolute;
+	right: 12px;
+	bottom: 5px; */
 	font-size: 20px;
 	font-weight: bold;
 	font-family: 'Amita', cursive;

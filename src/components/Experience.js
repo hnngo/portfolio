@@ -24,6 +24,7 @@ export default class Experience extends Component {
                 "Majority Control of Directed Networks based on Network Flow problems",
                 "Preventing network crash in KQ-model by applying cherished links to a certain number of edges"
               ]}
+              location="Jurong West, Singapore"
               timeFrom="May 2018"
               timeTo="Present"
             />
