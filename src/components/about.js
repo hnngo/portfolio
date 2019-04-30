@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from './ComponentTitle';
-import FallingLeaf from './FallingLeaf';
+import { ComponentTitle } from '../utilities/ComponentTitle';
+import FallingLeaf from '../utilities/FallingLeaf';
 
 export default class AboutPage extends Component {
 	render() {
@@ -16,15 +16,31 @@ export default class AboutPage extends Component {
 							<img
 								src={require("../style/img/profile-photo.jpg")}
 								alt={"Profile"}
-							// style={{ width: "100px"}}
 							/>
 						</div>
 						<div className="col-sm-6 a-personal-text">
 							<h2>Hello,</h2>
 							<p>As a web developer, I am always curious and passionate about web development technologies. Eventhough I did not pursuit a degree in Computer Science, I've trained myself to be a so-called front-end developer.<br /><br />
-								<span>Let's make something special.</span>
+								<span>I am looking for an opportunity to be a member of your company and let's make something special.</span>
 							</p>
-							<p className="a-focus">Current Focus:<span>&nbsp;React / Redux</span></p>
+							<p className="a-focus">Current Focus:<span>&nbsp;React / Redux and other frameworks, libraries related to them and Javascript.</span></p>
+							<div className="a-follow">
+								<a
+									href="https://github.com/hnngo"
+									target="_blank"
+									rel="noopener noreferrer"
+								><i className="fab fa-github" /></a>
+								<a
+									href="https://www.linkedin.com/in/ngohuynhnhan/"
+									target="_blank"
+									rel="noopener noreferrer"
+								><i className="fab fa-linkedin" /></a>
+								<a
+									href="https://www.facebook.com/huynhnhan070994"
+									target="_blank"
+									rel="noopener noreferrer"
+								><i className="fab fa-facebook" /></a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -49,6 +65,7 @@ export default class AboutPage extends Component {
 					containerClass=".a-container"
 					initOffset={150}
 					delay={6000}
+					optionSpeed={17}
 				/>
 				<FallingLeaf
 					leafId="leaf4"
@@ -64,8 +81,12 @@ export default class AboutPage extends Component {
 					containerClass=".a-container"
 					initOffset={80}
 					delay={10000}
+					optionSpeed={15}
 				/>
 			</div>
 		);
 	}
 };
+
+// Animation show
+// Scroll effect
