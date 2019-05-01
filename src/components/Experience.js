@@ -38,30 +38,35 @@ export default class Experience extends Component {
                   fromTime: "08/2009",
                   toTime: "05/2012",
                   employer: "High School for the Gifted - Vietnam National Univeristy",
+                  logo: "ptnk_logo.jpg",
                   designation: "Student"
                 },
                 {
                   fromTime: "08/2012",
                   toTime: "04/2017",
                   employer: "Ho Chi Minh city Univeristy of Technology",
+                  logo: "hcmut_logo.png",
                   designation: "Student"
                 },
                 {
                   fromTime: "06/2016",
                   toTime: "09/2016",
                   employer: "MobiFone Testing and Maintenance Center",
+                  logo: "mobifone_logo.png",
                   designation: "Internship Research Engineer"
                 },
                 {
                   fromTime: "05/2017",
                   toTime: "10/2017",
                   employer: "Fiot Co. LTD",
+                  logo: "fiot_logo.jpg",
                   designation: "Embedded Firmware Development Engineer"
                 },
                 {
                   fromTime: "05/2018",
                   toTime: "present",
                   employer: "Nanyang Technological University",
+                  logo: "ntu_logo.png",
                   designation: "Research Engineer"
                 }
               ]}
