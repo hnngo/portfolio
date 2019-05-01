@@ -12,8 +12,9 @@ export default class FallingLeaf extends Component {
       leafSwingInterval: undefined,
       leafPosition: -80,
       leafOffsetLeft: this.props.initOffset,
-      leafRangeDir: 200,
-      leafRotate: 30,
+      leafOffsetRange: 2,
+      leafRotateMax: 40,
+      leafRotate: 40,
       leafRotateChange: -1,
     };
   }
@@ -53,9 +54,9 @@ export default class FallingLeaf extends Component {
       }
 
       this.setState({
-        leafPosition: this.state.leafPosition + 5
+        leafPosition: this.state.leafPosition + 1.5
       });
-    }, this.props.optionSpeed ? this.props.optionSpeed : 20);
+    }, this.props.optionSpeed ? this.props.optionSpeed : 8);
 
     // Set interval for rotate leaf
     let leafRotateInterval = setInterval(() => {
@@ -63,11 +64,11 @@ export default class FallingLeaf extends Component {
       let newRotate = this.state.leafRotate + this.state.leafRotateChange;
       let newRotateChange = this.state.leafRotateChange;
 
-      if (newRotate === 31) {
-        newRotate = 29;
+      if (newRotate === this.state.leafRotateMax + 1) {
+        newRotate = this.state.leafRotateMax - 1;
         newRotateChange = -1;
-      } else if (newRotate === -31) {
-        newRotate = -29;
+      } else if (newRotate === -this.state.leafRotateMax -1) {
+        newRotate = -this.state.leafRotateMax + 1;
         newRotateChange = 1;
       }
 
@@ -81,9 +82,9 @@ export default class FallingLeaf extends Component {
     let leafSwingInterval = setInterval(() => {
       let newLeafOffset = this.state.leafOffsetLeft;
       if (this.state.leafRotateChange > 0) {
-        newLeafOffset += 2;
+        newLeafOffset += this.state.leafOffsetRange;
       } else {
-        newLeafOffset -= 2;
+        newLeafOffset -= this.state.leafOffsetRange;
       }
 
       this.setState({

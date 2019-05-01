@@ -20,8 +20,6 @@ export default class ExpBoard extends Component {
           newScale = 1 - (800 - window.screen.height) * 0.002;
         }
 
-        console.log(window.screen.availHeight, newScale);
-
         if (newScale !== this.state.scale) {
           this.setState({ scale: newScale })
         }

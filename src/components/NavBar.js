@@ -26,19 +26,27 @@ export default class NavBar extends Component {
     }
   }
 
-  handleClickNav(type) {
-    switch (type) {
-      case "about":
-        console.log("A")
-        let y = document.querySelector(".a-container").getBoundingClientRect().top + window.scrollY;
+  handleClickNav(type, queryString=undefined) {
+    if (!type && !queryString) {
+      return;
+    }
 
-        window.scroll({
-          top: y,
-          behavior: 'smooth'
-        });
-        break;
-      default:
-        break;
+    // Get the right target
+    let qTarget;
+    if (queryString) {
+      qTarget = document.querySelector(queryString);
+    } else {
+      qTarget = document.querySelector(`.${type.charAt(0)}-container`);
+    }
+
+    // Get the target scroll position and scroll to it
+    if (qTarget) {
+      let y = qTarget.getBoundingClientRect().top + window.scrollY;
+
+      window.scroll({
+        top: y,
+        behavior: 'smooth'
+      });
     }
   }
 
@@ -92,6 +100,12 @@ export default class NavBar extends Component {
             onClick={() => this.handleClickNav("about")}
           >
             <h6>About</h6>
+            <div className="bn-underline" />
+          </li>
+          <li
+            onClick={() => this.handleClickNav("experience")}
+          >
+            <h6>Experience</h6>
             <div className="bn-underline" />
           </li>
           <li>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { ComponentTitle } from '../utilities/ComponentTitle';
 import ExpBoard from '../utilities/ExpBoard';
+import YearSlider from '../utilities/YearSlider';
 
 export default class Experience extends Component {
   render() {
@@ -27,6 +28,43 @@ export default class Experience extends Component {
               location="Jurong West, Singapore"
               timeFrom="May 2018"
               timeTo="Present"
+            />
+          </div>
+          <div className="e-yearSlider">
+            <YearSlider
+              range={[2009, 2019]}
+              milestones={[
+                {
+                  fromTime: "08/2009",
+                  toTime: "05/2012",
+                  employer: "High School for the Gifted - Vietnam National Univeristy",
+                  designation: "Student"
+                },
+                {
+                  fromTime: "08/2012",
+                  toTime: "04/2017",
+                  employer: "Ho Chi Minh city Univeristy of Technology",
+                  designation: "Student"
+                },
+                {
+                  fromTime: "06/2016",
+                  toTime: "09/2016",
+                  employer: "MobiFone Testing and Maintenance Center",
+                  designation: "Internship Research Engineer"
+                },
+                {
+                  fromTime: "05/2017",
+                  toTime: "10/2017",
+                  employer: "Fiot Co. LTD",
+                  designation: "Embedded Firmware Development Engineer"
+                },
+                {
+                  fromTime: "05/2018",
+                  toTime: "present",
+                  employer: "Nanyang Technological University",
+                  designation: "Research Engineer"
+                }
+              ]}
             />
           </div>
         </div>

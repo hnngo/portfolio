@@ -10,6 +10,7 @@
 
 body {
 	height: 100%;
+	overflow-x: hidden;
 }
 
 body {
@@ -84,13 +85,7 @@ body {
 	margin-top: 8px;
 	cursor: pointer;
 	transition: 0.5s;
-	width: 65px;
 	text-align: center
-}
-
-.bn-underline {
-	width: 0px;
-	transition: 0.5s;
 }
 
 .bn-links ul li h6 {
@@ -382,6 +377,17 @@ body {
 
 .e-container .container {
 	padding-top: 30px;
+	height: 100%;
+	position: relative;
+}
+
+.e-yearSlider {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	bottom: 0px;
+	margin-bottom: 60px;
+	color: #eeeeee
 }
 
 /*---------------------------------------------*/
@@ -480,14 +486,53 @@ body {
 }
 
 .eb-time {
-	/* position: absolute;
-	right: 12px;
-	bottom: 5px; */
 	font-size: 20px;
 	font-weight: bold;
 	font-family: 'Amita', cursive;
 	margin: 0;
 	color: rgb(95, 58, 114)
+}
+
+/*---------------------------------------------*/
+/* YEAR SLIDER
+/*---------------------------------------------*/
+.ys-slider {
+  -webkit-appearance: none;
+ 	width: 1000px;
+  height: 15px;
+  border-radius: 10px;   
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.8;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.ys-slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.ys-slider:hover::-webkit-slider-thumb {
+	box-shadow: 0px 0px 30px 5px rgba(207, 207, 207, 0.795);
+}
+
+.ys-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+	border-radius: 5px; 
+	transform: rotate(45deg);
+	background: rgb(192, 120, 214);
+  cursor: pointer;
+}
+
+.ys-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #4CAF50;
+  cursor: pointer;
 }
 
 /*---------------------------------------------*/

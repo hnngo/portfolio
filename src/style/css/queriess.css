@@ -43,11 +43,23 @@
     /*---------------------------------------------*/
   /* NAV BAR
   /*---------------------------------------------*/
-  .bn-links ul li:hover .bn-underline {
-    width: 65px;
+  .bn-links ul li .bn-underline {
+    width: 0px;
+    transition: 0.5s;
     background: rgb(192, 120, 214);
     height: 2px;
     border-radius: 1px;
+  }
+
+  .bn-links ul li:hover .bn-underline {
+    /* width: 65px; */
+    width: 100%;
+    background: rgb(192, 120, 214);
+  }
+
+  .bn-links ul li h6 {
+    color: white;
+    transition: 0.8s 
   }
 
   .bn-links ul li:hover h6 {
