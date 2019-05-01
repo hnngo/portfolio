@@ -5,28 +5,27 @@ export default class ExpBoard extends Component {
     super(props);
 
     this.state = {
-      reSizeEvent: undefined,
-      scale: 1,
+      reSizeEvent: undefined
     }
   }
 
   componentDidMount() {
-    const reSizeEvent = setInterval(() => {
-      if (window.screen.availWidth > 576 && window.screen.height >= 700) {
-        let newScale;
-        if (window.screen.height >= 800) {
-          newScale = 1
-        } else {
-          newScale = 1 - (800 - window.screen.height) * 0.002;
-        }
+    // const reSizeEvent = setInterval(() => {
+    //   if (window.screen.availWidth > 576 && window.screen.height >= 700) {
+    //     let newScale;
+    //     if (window.screen.height >= 800) {
+    //       newScale = 1
+    //     } else {
+    //       newScale = 1 - (800 - window.screen.height) * 0.002;
+    //     }
 
-        if (newScale !== this.state.scale) {
-          this.setState({ scale: newScale })
-        }
-      }
-    }, 500);
+    //     if (newScale !== this.state.scale) {
+    //       this.setState({ scale: newScale })
+    //     }
+    //   }
+    // }, 500);
 
-    this.setState({ reSizeEvent });
+    // this.setState({ reSizeEvent });
   }
 
   componentWillUnmount() {
@@ -50,7 +49,9 @@ export default class ExpBoard extends Component {
       <div
         className="eb-container"
         style={{
-          transform: `scale(${this.state.scale})`
+          transform: `scale(${this.props.scale}) translate(${this.props.transX}px)`,
+          opacity: this.props.opacity,
+          zIndex: this.props.zIndex,
         }}
       >
         <div className="eb-title">

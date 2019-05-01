@@ -24,6 +24,8 @@ export default class YearSlider extends Component {
     let msTransY = this.props.milestones.map(() => 0);
 
     this.state = {
+      reSizeEvent: undefined,
+      currentWidth: 0,
       slideInterval: undefined,
       slideValue: 100,
       sliderWidth: undefined,
@@ -37,19 +39,27 @@ export default class YearSlider extends Component {
   }
 
   componentDidMount() {
-    // Update opacity
-    this.updateSelectMilestones();
-
     // Update offset for marker
-    const qYS = document.querySelector('#yearSlider');
-    const qEContainer = document.querySelector('.e-container .container');
+    const reSizeEvent = setInterval(() => {
+      let currentWidth = window.screen.width;
 
-    if (qYS && qEContainer) {
-      this.setState({
-        markerOffsetLeft: qYS.getBoundingClientRect().left - qEContainer.getBoundingClientRect().left - 20,
-        sliderWidth: qYS.getBoundingClientRect().width
-      })
-    }
+      if (currentWidth !== this.state.currentWidth) {
+        const qYS = document.querySelector('#yearSlider');
+        const qEContainer = document.querySelector('.e-container .container');
+
+        if (qYS && qEContainer) {
+          this.setState({
+            markerOffsetLeft: qYS.getBoundingClientRect().left - qEContainer.getBoundingClientRect().left - 20,
+            sliderWidth: qYS.getBoundingClientRect().width
+          })
+        }
+      }
+    }, 300);
+
+    this.setState({ reSizeEvent }, () => {
+      // Update initial selection
+      this.updateSelectMilestones();
+    })
   }
 
   // Input a num and sorted array
@@ -75,8 +85,8 @@ export default class YearSlider extends Component {
     // Set new value for slider
     this.setState({
       slideValue: +e.target.value
-    }, () => 
-    this.updateSelectMilestones());
+    }, () =>
+        this.updateSelectMilestones());
   }
 
   handleReleaseClick() {
@@ -115,6 +125,7 @@ export default class YearSlider extends Component {
   }
 
   updateSelectMilestones() {
+    // Update style milestones
     let newOpacities = this.state.msOpacities;
     let newScales = this.state.msScale;
     let newTransY = this.state.msTransY;
@@ -137,6 +148,9 @@ export default class YearSlider extends Component {
       }
     });
 
+    // Update for Experience Component
+    this.props.onSelectMS(this.state.slideValue, this.state.valueMilestones);
+
     this.setState({ msOpacities: newOpacities })
   }
 
@@ -145,12 +159,12 @@ export default class YearSlider extends Component {
       return <div />;
     }
 
-    let offsetRange = Math.floor((this.state.sliderWidth - 28) / (this.props.milestones.length - 1));
+    let offsetRange = (this.state.sliderWidth - 28.5) / (this.props.milestones.length - 1);
 
     return this.props.milestones.map((item, i) => {
       let offsetLeft;
       if (i === this.props.milestones.length - 1) {
-        offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - 29;
+        offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - 30;
       } else {
         offsetLeft = this.state.markerOffsetLeft + i * offsetRange;
       }
@@ -175,6 +189,15 @@ export default class YearSlider extends Component {
             }}
             alt="logo"
           />
+          <p
+            className="ys-ms-fromYear"
+            style={{
+              left: offsetLeft - 18,
+              opacity: this.state.msOpacities[i],transform: `scale(${this.state.msScale[i] * 0.75})`,
+            }}
+          >
+            {item.fromTime}
+          </p>
         </div>
       );
     })
