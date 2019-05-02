@@ -404,9 +404,9 @@ body {
 /* Experience
 /*---------------------------------------------*/
 .e-container {
-	/* height: calc(100vh); */
+	height: 100vh;
 	overflow: hidden;
-	min-height: 700px;  /* Chrome 10-25, Safari 5.1-6 */
+	/* min-height: 700px;  Chrome 10-25, Safari 5.1-6 */
 	background: -webkit-gradient(linear, left top, right top, from(#2F0743), to(#41295a));
 	background: linear-gradient(to right, #2F0743, #41295a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }

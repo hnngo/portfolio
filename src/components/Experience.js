@@ -101,7 +101,7 @@ export default class Experience extends Component {
         boardZindex[i] = Math.round(5 - (delta * deltaZindex));
 
         deltaTransX = boardTransXOrigin[1];
-      } else if (signedDelta < 0) {       
+      } else if (signedDelta < 0) {
         boardOpacity[i] = 0.3;
         boardZindex[i] = 1;
 
@@ -112,7 +112,7 @@ export default class Experience extends Component {
 
         deltaTransX = boardTransXOrigin[i] - boardTransXOrigin[i - 1];
       }
-      
+
       // Update scale
       boardScale[i] = 1 - (delta * 0.1);
 
@@ -168,18 +168,10 @@ export default class Experience extends Component {
           <div>
             {this.renderExpBoard()}
           </div>
-          <div className="e-yearSlider">
+          <div className="e-yearSlider animated slideInUp slow">
             <YearSlider
               range={[2009, 2019]}
               milestones={[
-                // {
-                //   id: 0,
-                //   fromTime: "08/2009",
-                //   toTime: "05/2012",
-                //   employer: "High School for the Gifted - Vietnam National Univeristy",
-                //   logo: "ptnk_logo.jpg",
-                //   designation: "Student"
-                // },
                 {
                   id: 0,
                   fromTime: "08/2012",

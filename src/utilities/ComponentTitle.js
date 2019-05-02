@@ -3,7 +3,7 @@ import React from 'react';
 export const ComponentTitle = (props) => {
   return (
     <div
-      className="ct-container"
+      className="ct-container animated fadeIn slow"
       style={{
         color: props.optionalColor || "",
         borderColor: props.optionalColor || ""

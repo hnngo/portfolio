@@ -13,7 +13,6 @@ export default class ExpBoard extends Component {
     let qEbHeight = document.querySelector('#ebCon' + this.props.keyBoard);
 
     if (qEbHeight) {
-      console.log(qEbHeight.getBoundingClientRect().height)
       this.setState({ ebHeight: qEbHeight.getBoundingClientRect().height })
     }
   }
