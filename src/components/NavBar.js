@@ -67,6 +67,11 @@ export default class NavBar extends Component {
           >
             <h6>About</h6>
           </div>
+          <div
+            onClick={() => this.handleClickNav("experience")}
+          >
+            <h6>Experience</h6>
+          </div>
           <div>
             <h6>Projects</h6>
           </div>

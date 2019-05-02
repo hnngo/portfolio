@@ -5,27 +5,17 @@ export default class ExpBoard extends Component {
     super(props);
 
     this.state = {
-      reSizeEvent: undefined
+      ebHeight: undefined,
     }
   }
 
   componentDidMount() {
-    // const reSizeEvent = setInterval(() => {
-    //   if (window.screen.availWidth > 576 && window.screen.height >= 700) {
-    //     let newScale;
-    //     if (window.screen.height >= 800) {
-    //       newScale = 1
-    //     } else {
-    //       newScale = 1 - (800 - window.screen.height) * 0.002;
-    //     }
+    let qEbHeight = document.querySelector('#ebCon' + this.props.keyBoard);
 
-    //     if (newScale !== this.state.scale) {
-    //       this.setState({ scale: newScale })
-    //     }
-    //   }
-    // }, 500);
-
-    // this.setState({ reSizeEvent });
+    if (qEbHeight) {
+      console.log(qEbHeight.getBoundingClientRect().height)
+      this.setState({ ebHeight: qEbHeight.getBoundingClientRect().height })
+    }
   }
 
   componentWillUnmount() {
@@ -47,6 +37,7 @@ export default class ExpBoard extends Component {
   render() {
     return (
       <div
+        id={"ebCon" + this.props.keyBoard}
         className="eb-container"
         style={{
           transform: `scale(${this.props.scale}) translateX(${this.props.transX}px)`,
@@ -65,7 +56,12 @@ export default class ExpBoard extends Component {
           <p className="eb-company">{this.props.employer}</p>
           <p className="eb-designation">{this.props.designation}</p>
         </div>
-        <div className="eb-content">
+        <div
+          className="eb-content"
+          style={{
+            height: this.state.ebHeight ? this.state.ebHeight - 125 : ""
+          }}
+        >
           <p className="eb-head-sentence">
             {this.props.headSentence}
           </p>

@@ -14,12 +14,11 @@ export default class Experience extends Component {
       eConHeight: window.innerHeight,
       ebWidtth: 0,
       offset: -70,
+      transOffset: 60,
       boardScale: [],
       boardOpacity: [],
       boardZindex: [],
-      boardOffset: [],
-      boardTransX: [],
-      boardDirection: [],
+      boardTransX: []
     };
   }
 
@@ -32,18 +31,22 @@ export default class Experience extends Component {
     let boardOpacity = this.state.expData.map(() => 0.3);
     boardOpacity[0] = 1;
     let boardZindex = this.state.expData.map((item, i) => this.state.expData.length - i);
-    let boardOffset = this.state.expData.map((item, i) => i * (this.state.offset));
-    let boardDirection = this.state.expData.map(() => "left");
-    boardDirection[0] = "middle";
 
     // Update transX
     const qBoardWidth = document.querySelector(".eb-container").clientWidth;
 
     let boardTransX = boardScale.map((item, i) => {
-      let realSize = qBoardWidth * (+item);
-      let deltaSize = (qBoardWidth - realSize) / 2;
+      // let realSize = qBoardWidth * (+item);
+      let deltaSize = qBoardWidth * (1 - +item) / 2;
+      let currentWidth = window.innerWidth;
+      let newTransOffset;
+      if (currentWidth > 1200) {
+        newTransOffset = 60;
+      } else {
+        newTransOffset = currentWidth * (60 - 10) / (1200 - 375)
+      }
 
-      return -(deltaSize + i * 60);
+      return -(deltaSize + i * newTransOffset);
     });
 
     this.setState({
@@ -52,10 +55,8 @@ export default class Experience extends Component {
       boardScale,
       boardOpacity,
       boardZindex,
-      boardOffset,
       boardTransX,
-      boardTransXOrigin: boardTransX,
-      boardDirection
+      boardTransXOrigin: boardTransX
     })
   }
 
@@ -84,13 +85,14 @@ export default class Experience extends Component {
     let boardZindex = this.state.boardZindex;
     let boardTransX = [...this.state.boardTransX];
     let boardTransXOrigin = this.state.boardTransXOrigin;
+    // let boardTransXOrigin = this.state.boardDeltaSize.map((item, i) => -(item + i * this.state.transOffset))
 
     this.state.expData.forEach((item, i) => {
       let delta = Math.abs(i - convertedVal);
       let signedDelta = i - convertedVal;
 
       // Update opacity, zIndex
-      let deltaOpacity = (1 - 0.3);
+      let deltaOpacity = (1 - 0.1);
       let deltaZindex = (5 - 4);
       let deltaTransX;
 
@@ -132,6 +134,7 @@ export default class Experience extends Component {
       return (
         <ExpBoard
           key={i}
+          keyBoard={i}
           employer={item.employer}
           designation={item.designation}
           compLogo={require(`../style/img/${item.compLogo}`)}
@@ -145,8 +148,6 @@ export default class Experience extends Component {
           opacity={this.state.boardOpacity[i]}
           zIndex={this.state.boardZindex[i]}
           transX={this.state.boardTransX[i]}
-          offset={this.state.boardOffset[i]}
-          offsetDirection={this.state.boardDirection[i]}
         />
       );
     })

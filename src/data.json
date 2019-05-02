@@ -41,15 +41,14 @@
         "timeFrom": "June 2016",
         "timeTo": "Sep 2016"
       }, {
-        "employer": "Ho Chi Minh City University of Technology",
+        "employer": "HCMC University of Technology",
         "designation": "Student",
         "compLogo": "hcmut_logo.png",
         "headSentence": "Ho Chi Minh City University of Technology is one of the most prestigious univeristy under Vietnam National University Ho Chi Minh City. My major field is Electronics - Telecomunication Engineering. During the university time, beside the major specialized knowledges, I have earned a lot of experience in teamwork, comunication, research skill and problem solving",
         "jDHeader": "Projects & Thesis",
         "jobDescription": [
           "Smart Water Analysis and Monitoring System. Developed a smart device to collect some standard index of water such as pH, ORP, Temperature, Turbidity, EC, DO, water flow, etc",
-          "Used Raspberry Pi to transfer the voice which was recorded (in .wave) by a USB-Microphone into text by two methods: online and offline",
-          "Designed a smart and innovated FM circuit with passive components such as Resistor and Capacitor to transmit in nearby area"
+          "Used Raspberry Pi to transfer the voice which was recorded (in .wave) by a USB-Microphone into text by two methods: online and offline"
         ],
         "location": "Ho Chi Minh, Vietnam",
         "timeFrom": "Aug 2012",

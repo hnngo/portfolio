@@ -40,6 +40,70 @@
     text-align: center;
     padding: 20px 40px;
   }
+  
+  .eb-container {
+    top: 150px;
+  }
+
+  .eb-title {
+    z-index: 5;
+  }
+
+  .eb-title img {
+    position: absolute;
+    max-width: 75px;
+    left: 10px;
+    top: -20px;
+  }
+
+  .eb-company {
+    padding: 10px 0px;
+    padding-left: 80px;
+    margin: 0;
+    font-size: 18px;
+  }
+
+  .eb-designation {
+    font-size: 14px;
+    padding-left: 0px;
+    letter-spacing: 0px;
+  }
+
+  .eb-location {
+    font-size: 12px;
+  }
+
+  .eb-content {
+    overflow-y: auto;
+  }
+
+  .eb-content ul {
+    padding: 5px 0px;
+    padding-left: 25px;
+  }
+
+  .eb-head-sentence {
+    padding: 15px 20px; 
+    margin: 0;
+  }
+  
+  .eb-time {
+    font-size: 16px;
+  }
+
+  .e-yearSlider {
+    margin-bottom: 35px;
+  }
+
+  .ys-container img {
+    width: 25px;
+    height: 25px;
+    top: -35px;
+  }
+
+  .ys-ms-fromYear {
+    font-size: 14px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -107,13 +171,60 @@
     margin: 0;
     padding-bottom: 5px;
   }
+
+  .eb-head-sentence {
+    padding: 10px 40px;
+    margin: 0;
+  }
+
+  .eb-content ul li {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  .eb-container {
+    height: 340px;
+  }
 
+  .eb-head-sentence {
+    padding: 10px 40px;
+    margin: 0;
+  }
+
+  .eb-content ul li {
+    font-size: 14px;
+    line-height: 20px;
+  }
 }
 
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .eb-container {
+    height: 400px;
+  }
+
+  .eb-head-sentence {
+    padding: 20px 40px;
+    margin: 0;
+  }
+
+  .eb-content ul li {
+    font-size: 14px;
+    line-height: 25px;
+  }
+}
+
+
+@media (min-height: 880px) {
+  .e-yearSlider {
+    bottom: 60px;
+    margin-bottom: 60px;
+  }
+
+  .eb-container {
+    height: 400px;
+  }
 }

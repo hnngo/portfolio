@@ -165,12 +165,12 @@ export default class YearSlider extends Component {
       return <div />;
     }
 
-    let offsetRange = (this.state.sliderWidth - 33) / (this.props.milestones.length - 1);
+    let offsetRange = (this.state.sliderWidth - this.state.milestonesRange) / (this.props.milestones.length - 1);
 
     return this.props.milestones.map((item, i) => {
       let offsetLeft;
       if (i === this.props.milestones.length - 1) {
-        offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - this.state.milestonesRange - 5;
+        offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - 28;
       } else {
         offsetLeft = this.state.markerOffsetLeft + i * offsetRange;
       }
