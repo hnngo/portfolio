@@ -49,7 +49,7 @@ export default class ExpBoard extends Component {
       <div
         className="eb-container"
         style={{
-          transform: `scale(${this.props.scale}) translate(${this.props.transX}px)`,
+          transform: `scale(${this.props.scale}) translateX(${this.props.transX}px)`,
           opacity: this.props.opacity,
           zIndex: this.props.zIndex,
         }}

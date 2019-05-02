@@ -11,6 +11,7 @@ export default class Experience extends Component {
     this.state = {
       expData: data.experience.expBoard,
       eConHeight: window.innerHeight,
+      ebWidtth: 0,
       offset: -70,
       selectedPost: 0,
       boardScale: [],
@@ -31,14 +32,26 @@ export default class Experience extends Component {
     let boardOffset = this.state.expData.map((item, i) => i * (this.state.offset));
     let boardDirection = this.state.expData.map(() => "left");
     boardDirection[0] = "middle";
-    let boardTransX = [0, -90, -200, -340, -530];
 
+    // Update transX
+    const qBoardWidth = document.querySelector(".eb-container").clientWidth;
+
+    let boardTransX = boardScale.map((item, i) => {
+      let realSize = qBoardWidth * (+item);
+      let deltaSize = (qBoardWidth - realSize) / 2;
+
+      // return deltaSize;
+      return -(deltaSize + i * 68);
+    });
+    console.log(boardTransX)
     this.setState({
+      ebWidtth: qBoardWidth,
       boardScale,
       boardOpacity,
       boardZindex,
       boardOffset,
       boardTransX,
+      boardTransXOrigin: boardTransX,
       boardDirection
     })
   }
@@ -48,57 +61,49 @@ export default class Experience extends Component {
     let numberOfData = data.experience.expBoard.length - 1;
 
     // Convert the data follow the direction 0 > max
-    let convertedVal = (selectedVal / 100) *  -numberOfData + numberOfData;
+    let convertedVal = (selectedVal / 100) * -numberOfData + numberOfData;
     console.log(convertedVal)
-    
+
+    let boardScale = this.state.boardScale;
     let boardOpacity = this.state.boardOpacity;
     let boardZindex = this.state.boardZindex;
+    let boardTransX = [...this.state.boardTransX];
+    let boardTransXOrigin = this.state.boardTransXOrigin;
 
+    console.log(boardTransXOrigin)
     this.state.expData.forEach((item, i) => {
       let delta = Math.abs(i - convertedVal);
+      let signedDelta = i - convertedVal;
 
-      let deltaOffset = (1 - 0.3);
-      let deltaOpacity = (1 - 0.3);
+      // Update opacity, zIndex
+      let deltaOpacity = (1 - 0.1);
       let deltaZindex = (5 - 4);
+      let deltaTransX;
 
       if (delta < 1) {
         boardOpacity[i] = 1 - (delta * deltaOpacity);
         boardZindex[i] = Math.round(5 - (delta * deltaZindex));
+        deltaTransX = boardTransXOrigin[1];
+      } else if (signedDelta < 0) {
+        deltaTransX = boardTransXOrigin[Math.floor(convertedVal) - i] - boardTransXOrigin[Math.floor(convertedVal) - i - 1];
+      } else {
+        deltaTransX = boardTransXOrigin[i] - boardTransXOrigin[i - 1];
       }
+
+      // Update scale
+      boardScale[i] = 1 - (delta * 0.1);
+
+      // Update transX
+      boardTransX[i] = deltaTransX * signedDelta;
     });
 
-
+    console.log(boardTransX)
     this.setState({
+      boardScale,
       boardOpacity,
-      boardZindex
+      boardZindex,
+      boardTransX
     })
-    // if (selectedIndex >= 0) {
-    //   let index = arrVals.length - 1 - selectedIndex;
-    //   let newTransX = this.state.boardTransX;
-    //   let newTransY = this.state.boardTransY;
-    //   let newScale = this.state.boardScale;
-    //   let newOpacity = this.state.boardOpacity;
-    //   let newZindex = this.state.boardZindex;
-    //   let newOffsetLeft = this.state.boardOffset;
-
-    //   // Check the range
-    //   this.state.valueMilestones.forEach((item, i) => {
-    //     let delta = Math.abs(item - this.state.slideValue);
-    //     if (delta > this.state.milestonesRange) {
-    //       newOpacities[i] = 0.3;
-    //       newScales[i] = 1;
-    //       newTransY[i] = 0;
-    //     } else {
-    //       let deltaOpacity = (1 - 0.3) / this.state.milestonesRange;
-    //       let deltaScale = (2 - 1) / this.state.milestonesRange;
-    //       let deltaTransY = (-10 - 0) / this.state.milestonesRange;
-
-    //       newOpacities[i] = 1 - (delta * deltaOpacity);
-    //       newScales[i] = 2 - (delta * deltaScale);
-    //       newTransY[i] = -10 - (delta * deltaTransY);
-    //     }
-    //   });
-    // }
   }
 
   renderExpBoard() {
