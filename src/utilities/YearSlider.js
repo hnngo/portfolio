@@ -82,7 +82,6 @@ export default class YearSlider extends Component {
   }
 
   handleChangeSlide(e) {
-    // Set new value for slider
     this.setState({
       slideValue: +e.target.value
     }, () =>
@@ -149,9 +148,16 @@ export default class YearSlider extends Component {
     });
 
     // Update for Experience Component
-    this.props.onSelectMS(this.state.slideValue, this.state.valueMilestones);
+    this.props.onSelectMS(this.state.slideValue);
 
     this.setState({ msOpacities: newOpacities })
+  }
+
+  handleClickLogo(i) {
+    this.setState({
+      slideValue: this.state.valueMilestones[i]
+    }, () =>
+        this.updateSelectMilestones());
   }
 
   renderMilestonesMarker() {
@@ -159,25 +165,18 @@ export default class YearSlider extends Component {
       return <div />;
     }
 
-    let offsetRange = (this.state.sliderWidth - 28.5) / (this.props.milestones.length - 1);
+    let offsetRange = (this.state.sliderWidth - 33) / (this.props.milestones.length - 1);
 
     return this.props.milestones.map((item, i) => {
       let offsetLeft;
       if (i === this.props.milestones.length - 1) {
-        offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - 30;
+        offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - this.state.milestonesRange - 5;
       } else {
         offsetLeft = this.state.markerOffsetLeft + i * offsetRange;
       }
 
       return (
         <div key={i}>
-          <div
-            id={"ms-marker-" + i}
-            className="ys-ms-marker"
-            style={{
-              left: offsetLeft
-            }}
-          />
           <img
             src={require(`../style/img/${item.logo}`)}
             className="ys-ms-logo"
@@ -188,12 +187,13 @@ export default class YearSlider extends Component {
               boxShadow: this.state.msOpacities[i] > 0.6 ? "0px 0px 20px 1px rgba(207, 207, 207, 0.795)" : ""
             }}
             alt="logo"
+            onClick={() => this.handleClickLogo(i)}
           />
           <p
             className="ys-ms-fromYear"
             style={{
               left: offsetLeft - 18,
-              opacity: this.state.msOpacities[i],transform: `scale(${this.state.msScale[i] * 0.75})`,
+              opacity: this.state.msOpacities[i], transform: `scale(${this.state.msScale[i] * 0.75})`,
             }}
           >
             {item.fromTime}
@@ -209,6 +209,7 @@ export default class YearSlider extends Component {
         <input
           onChange={(e) => this.handleChangeSlide(e)}
           onMouseUp={() => this.handleReleaseClick()}
+          onTouchEnd={() => this.handleReleaseClick()}
           type="range"
           min={0}
           max={100}

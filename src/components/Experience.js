@@ -9,11 +9,11 @@ export default class Experience extends Component {
     super(props);
 
     this.state = {
+      resizeEvent: undefined,
       expData: data.experience.expBoard,
       eConHeight: window.innerHeight,
       ebWidtth: 0,
       offset: -70,
-      selectedPost: 0,
       boardScale: [],
       boardOpacity: [],
       boardZindex: [],
@@ -24,6 +24,9 @@ export default class Experience extends Component {
   }
 
   componentDidMount() {
+    // Setup resize event checking
+    this.resizeEvent();
+
     // Initial setup style
     let boardScale = this.state.expData.map((item, i) => 1 - i * 0.1);
     let boardOpacity = this.state.expData.map(() => 0.3);
@@ -40,12 +43,12 @@ export default class Experience extends Component {
       let realSize = qBoardWidth * (+item);
       let deltaSize = (qBoardWidth - realSize) / 2;
 
-      // return deltaSize;
-      return -(deltaSize + i * 68);
+      return -(deltaSize + i * 60);
     });
-    console.log(boardTransX)
+
     this.setState({
       ebWidtth: qBoardWidth,
+      prevCovertedSelect: 0,
       boardScale,
       boardOpacity,
       boardZindex,
@@ -56,13 +59,25 @@ export default class Experience extends Component {
     })
   }
 
-  // Handle slide animation
-  handleSelectMS(selectedVal, arrVals) {
-    let numberOfData = data.experience.expBoard.length - 1;
+  resizeEvent() {
+    const resizeEvent = setInterval(() => {
+      let currentHeight = window.innerHeight;
 
+      if (currentHeight !== this.state.eConHeight) {
+        this.setState({
+          eConHeight: currentHeight
+        });
+      }
+    }, 300);
+
+    this.setState({ resizeEvent });
+  }
+
+  // Handle slide animation
+  handleSelectMS(selectedVal) {
     // Convert the data follow the direction 0 > max
+    let numberOfData = data.experience.expBoard.length - 1;
     let convertedVal = (selectedVal / 100) * -numberOfData + numberOfData;
-    console.log(convertedVal)
 
     let boardScale = this.state.boardScale;
     let boardOpacity = this.state.boardOpacity;
@@ -70,26 +85,32 @@ export default class Experience extends Component {
     let boardTransX = [...this.state.boardTransX];
     let boardTransXOrigin = this.state.boardTransXOrigin;
 
-    console.log(boardTransXOrigin)
     this.state.expData.forEach((item, i) => {
       let delta = Math.abs(i - convertedVal);
       let signedDelta = i - convertedVal;
 
       // Update opacity, zIndex
-      let deltaOpacity = (1 - 0.1);
+      let deltaOpacity = (1 - 0.3);
       let deltaZindex = (5 - 4);
       let deltaTransX;
 
       if (delta < 1) {
         boardOpacity[i] = 1 - (delta * deltaOpacity);
         boardZindex[i] = Math.round(5 - (delta * deltaZindex));
+
         deltaTransX = boardTransXOrigin[1];
-      } else if (signedDelta < 0) {
+      } else if (signedDelta < 0) {       
+        boardOpacity[i] = 0.3;
+        boardZindex[i] = 1;
+
         deltaTransX = boardTransXOrigin[Math.floor(convertedVal) - i] - boardTransXOrigin[Math.floor(convertedVal) - i - 1];
       } else {
+        boardOpacity[i] = 0.3;
+        boardZindex[i] = 1;
+
         deltaTransX = boardTransXOrigin[i] - boardTransXOrigin[i - 1];
       }
-
+      
       // Update scale
       boardScale[i] = 1 - (delta * 0.1);
 
@@ -97,13 +118,13 @@ export default class Experience extends Component {
       boardTransX[i] = deltaTransX * signedDelta;
     });
 
-    console.log(boardTransX)
     this.setState({
       boardScale,
       boardOpacity,
       boardZindex,
-      boardTransX
-    })
+      boardTransX,
+      prevCovertedSelect: convertedVal
+    });
   }
 
   renderExpBoard() {
@@ -150,16 +171,16 @@ export default class Experience extends Component {
             <YearSlider
               range={[2009, 2019]}
               milestones={[
+                // {
+                //   id: 0,
+                //   fromTime: "08/2009",
+                //   toTime: "05/2012",
+                //   employer: "High School for the Gifted - Vietnam National Univeristy",
+                //   logo: "ptnk_logo.jpg",
+                //   designation: "Student"
+                // },
                 {
                   id: 0,
-                  fromTime: "08/2009",
-                  toTime: "05/2012",
-                  employer: "High School for the Gifted - Vietnam National Univeristy",
-                  logo: "ptnk_logo.jpg",
-                  designation: "Student"
-                },
-                {
-                  id: 1,
                   fromTime: "08/2012",
                   toTime: "04/2017",
                   employer: "Ho Chi Minh city Univeristy of Technology",
@@ -167,7 +188,7 @@ export default class Experience extends Component {
                   designation: "Student"
                 },
                 {
-                  id: 2,
+                  id: 1,
                   fromTime: "06/2016",
                   toTime: "09/2016",
                   employer: "MobiFone Testing and Maintenance Center",
@@ -175,7 +196,7 @@ export default class Experience extends Component {
                   designation: "Internship Research Engineer"
                 },
                 {
-                  id: 3,
+                  id: 2,
                   fromTime: "05/2017",
                   toTime: "10/2017",
                   employer: "Fiot Co. LTD",
@@ -183,7 +204,7 @@ export default class Experience extends Component {
                   designation: "Embedded Firmware Development Engineer"
                 },
                 {
-                  id: 4,
+                  id: 3,
                   fromTime: "05/2018",
                   toTime: "present",
                   employer: "Nanyang Technological University",
@@ -191,7 +212,7 @@ export default class Experience extends Component {
                   designation: "Research Engineer"
                 }
               ]}
-              onSelectMS={(selectedVal, arrVals) => this.handleSelectMS(selectedVal, arrVals)}
+              onSelectMS={(selectedVal) => this.handleSelectMS(selectedVal)}
             />
           </div>
         </div>

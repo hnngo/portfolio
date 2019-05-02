@@ -1,6 +1,6 @@
 @media (max-width: 767px) {
   .h-container {
-    height: calc(100vh - 82px);
+    min-height: 100vh;
   }
 
   .h-header {
@@ -13,6 +13,10 @@
   .h-portfolio {
     display: block;
     margin: 15px 0;
+  }
+
+  .ct-container {
+    margin: 12px 0px;
   }
 
   .ct-container h6 {
@@ -87,6 +91,21 @@
   .h-about,
   .h-portfolio {
     display: inline-block;
+  }
+
+  .eb-company {
+    padding: 10px 0px;
+    padding-left: 80px;
+    margin: 0;
+    font-size: 22px;
+  }
+
+  .eb-designation {
+    font-size: 16px;
+    padding-left: 115px;
+    letter-spacing: 1px;
+    margin: 0;
+    padding-bottom: 5px;
   }
 }
 

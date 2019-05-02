@@ -28,30 +28,36 @@
         "timeFrom": "May 2017",
         "timeTo": "Oct 2017"
       }, {
-        "employer": "Fiot Co. LTD., Vietnam",
-        "designation": "Embedded Firmware Development Engineer",
-        "compLogo": "fiot_logo.jpg",
-        "headSentence": "After graduation, I got my first job at a start-up outsourcing company which provides innovative solutions for embedded system and IoT application development.",
-        "jDHeader": "Technologies/Applications",
+        "employer": "MobiFone Testing and Maintenance Center",
+        "designation": "Internship Research Engineer",
+        "compLogo": "mobifone_logo.png",
+        "headSentence": "MobiFone Testing and Maintenance Center, Ho Chi Minh City, Vietnam is one of the best place for me to take my very first internship when I lived in Vietnam. MobiFone is the first and currently third largest telecommunications provider in Vietnam. Therefore, to be an internship member in Mobifone is a big achievement to me and it did help me a lot in graduating from university in Electronics and Telecommunication Engineering field.",
+        "jDHeader": "Internship works",
         "jobDescription": [
-          "Working with IoT Product Development using some wireless solutions such as Bluetooth, WiFi, Zigbee and custom RF"
+          "Understanding about implementing LTE Accessibility Optimization and measured LTE Accessibility performance",
+          "Performing a real-life operation in measuring 4G signal in a 1 km area location"
         ],
         "location": "Ho Chi Minh, Vietnam",
-        "timeFrom": "May 2017",
-        "timeTo": "Oct 2017"
+        "timeFrom": "June 2016",
+        "timeTo": "Sep 2016"
       }, {
-        "employer": "Fiot Co. LTD., Vietnam",
-        "designation": "Embedded Firmware Development Engineer",
-        "compLogo": "fiot_logo.jpg",
-        "headSentence": "After graduation, I got my first job at a start-up outsourcing company which provides innovative solutions for embedded system and IoT application development.",
-        "jDHeader": "Technologies/Applications",
+        "employer": "Ho Chi Minh City University of Technology",
+        "designation": "Student",
+        "compLogo": "hcmut_logo.png",
+        "headSentence": "Ho Chi Minh City University of Technology is one of the most prestigious univeristy under Vietnam National University Ho Chi Minh City. My major field is Electronics - Telecomunication Engineering. During the university time, beside the major specialized knowledges, I have earned a lot of experience in teamwork, comunication, research skill and problem solving",
+        "jDHeader": "Projects & Thesis",
         "jobDescription": [
-          "Working with IoT Product Development using some wireless solutions such as Bluetooth, WiFi, Zigbee and custom RF"
+          "Smart Water Analysis and Monitoring System. Developed a smart device to collect some standard index of water such as pH, ORP, Temperature, Turbidity, EC, DO, water flow, etc",
+          "Used Raspberry Pi to transfer the voice which was recorded (in .wave) by a USB-Microphone into text by two methods: online and offline",
+          "Designed a smart and innovated FM circuit with passive components such as Resistor and Capacitor to transmit in nearby area"
         ],
         "location": "Ho Chi Minh, Vietnam",
-        "timeFrom": "May 2017",
-        "timeTo": "Oct 2017"
-      }, {
+        "timeFrom": "Aug 2012",
+        "timeTo": "Apr 2017"
+      }
+    ],
+    "expBoardAdditional": [
+      {
         "employer": "Fiot Co. LTD., Vietnam",
         "designation": "Embedded Firmware Development Engineer",
         "compLogo": "fiot_logo.jpg",
