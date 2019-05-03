@@ -70,5 +70,36 @@
         "timeTo": "Oct 2017"
       }
     ]
+  },
+  "projects": {
+    "projectInfo": [
+      {
+        "id": 0,
+        "name": "Shoeniverse",
+        "description" : "Shoeniverse is a website which allows user purchase shoes, boots and other accessories for both men and women.",
+        "technologies": [
+          "react",
+          "redux",
+          "firebase",
+          "react-router-dom"
+        ],
+        "bannerImg" : "https://lh3.googleusercontent.com/CxyiVY7ffaYKOywkFcNw-nFjZqbCqh-4K1faQ2emxGSDI69eqszHge-s7ygQIvZ1sXIy5Acyq07Q4yuR55Op-7O-ux5tMJJIIYLvJqru4LBkxi3QtAAUGKRjMwC2vbmzyslo3wxtulkJ4bmhYrf6f7ouyvD2c2_Ya6gcE7Zw8ocWXSHFNytSkFRwAue0wRuVhCgu0LAsUeQFb0LwT2zBmOrv2CvDJgd-Bydv5Dfke_JH9hRyX6JiP4JbDNp8zLeFxmV6npmetfOLZx_Rr_ObeZtLdGr0Sv2T5q09IJ5TZw569qkMpv85b17v0Y06ESDuSulyZoR4Kn4C9YFOl8WeFGoYx009o8Ls6UMOhOK3bD0CGqUWTV5KiBSiYoKs3CR_SIlXChkytdHRwuz-Vdiw9St9b6xPrOo3wKXt4-r0M0_bPnMyGuaJnUTU8LRqC1-j2hBmRA4DEww3B7I86Leco2ZS1vPvnNq8tOveW5VokynKyrBs5UfhI8vz3Ao7LqIY8bk4H1jE_8BqDSo4dDGcximml7rJ5wGkiw8PRx2Ciw6vJWzpWtC_bCKXS7p1zNMSVq7AwumNg0cqGzOqVlOqtFjx9K1IPQE84KMVR6eqJU-hkC-Si3k_c2gHNiR000Waxd-U81VQPm6X2hHzSBhUZ1iWtp2chYc=w821-h584-no",
+        "website": "https://shoes-shopping-website.firebaseapp.com/",
+        "githubLink": "https://github.com/hnngo/shoe-shopping-website"
+      },{
+        "id": 1,
+        "name": "Dashboard Kamela",
+        "description" : "Kamela is a stock website allows user to get the Stock Market Overview, look up for real-life Stock Symbol, access to some Technical Indicators such as CCI, CMO, APO, etc... Besides",
+        "technologies": [
+          "react",
+          "firebase",
+          "d3",
+          "alphavantage"
+        ],
+        "bannerImg" : "https://lh3.googleusercontent.com/2IpEVh_YdG6bnUlXG6s1yNh2B3hJtl-1Ygno8XdWyK6C_5gw0QQJs_i3nudVVZpEz00RpnvjwCsX6ZOs1X6PNZ2iqBPX1m4oORW3XVQ5OhfJrzq8EWN6xwiiUWXkdCZ1f1GBJsdfgN5zjuukGsbq_dWxoVteecskNARhFQmflgoGVCWjnSdDC6CdwxCYJ8qHt3BZSczLI7d_tWsynvFLLRM5BSjFJ3hE8Vf0qWT38kFXNsT-Iicem0GOUFJW31BWupQrkpyDq-FWAS-UXXtV6XLJoX_5Uyu37gbOlMSlgLsM0Xa3UUoWy1M89wUl6T1_6tRXsxSDsiHC9wyRbpOnhiWX9rBUdkX7W4gPKb81pegwFE8VdBNaTW5ASUhxthhOL9HDBfZ7o9r8Nm2h8JkuakPQ84EjsAD2wpQVovrl3neTSHYPtcAr9Go-ogUdph1v4oh5hoYPSmy7Hsho0VQPTTzQ9TmFnoDnMduHsi70TCJdl6v_28oCHnpFgnsfZ9tVC2vmeTAQd3kFXmYjOVfl7zd9xH6WzXkUWSQP_yw9076TwqSaIiYBECecRnYFbnOA2I9FVpXWI2aesxCxDoVgMBv_TY9i_IBJiLmxezn8uIdaKlpmLRCzzSOOT9HWdZdgZOaOBrF8QJmO1k7dVWaLJKGcIDum0yw=w1056-h752-no",
+        "website": "https://dbkamela.firebaseapp.com/",
+        "githubLink": "https://github.com/hnngo/dashboard-kamela"
+      }
+    ]  
   }
 }

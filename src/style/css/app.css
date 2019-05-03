@@ -649,8 +649,92 @@ body {
 /*---------------------------------------------*/
 .p-container {
 	min-height: 100vh;
-	
+	background: linear-gradient(to right, rgb(255, 255, 255), #e0c9fa);
+	/* z-index: -3; */
 }
+
+.p-container .container .row {
+	margin-top: 30px;
+	z-index: 2;
+}
+
+.p-pc-container {
+	position: relative;
+	top: 0px;
+	/* border: 1px solid black; */
+	height: 450px;
+	background-color: #2b0528;
+	border-radius: 10px;
+	overflow: hidden;
+	color: #dfdfdf;
+	/* z-index: 2; */
+	box-shadow: 0px 0px 13px 0px #63035e;
+	transition: 0.4s;
+	cursor: pointer;
+}
+
+.p-pc-container::after {
+	content: "";
+	position: absolute;
+	top: 0px;
+	width: 50%;
+	bottom: 0px;
+	background-color: rgba(255, 255, 255, 0.10);
+}
+
+.p-pc-container::before {
+	content: "";
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	right: 0px;
+	bottom: 0px;
+	background-color: rgba(2, 2, 2, 0.15);
+}
+
+.p-pc-container:hover {
+	top: -10px;
+	box-shadow: 10px 15px 20px 3px #460442;
+}
+
+.p-pc-container img {
+	width: 100%;
+	resize: both;
+}
+
+.p-pc-name {
+	padding: 10px 10px;
+	font-family: 'Montserrat';
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.p-pc-des {
+	padding: 0px 10px;
+	font-family: 'Montserrat';
+	font-size: 13px;
+}
+
+.p-pc-icon {
+	position: absolute;
+	bottom: 10px;
+	left: 20px;
+	z-index: 5;
+}
+
+.p-pc-icon a,
+.p-pc-icon a:link,
+.p-pc-icon a:visited,
+.p-pc-icon a:active {
+	text-decoration: none;
+	color: #dfdfdf;
+}
+
+.p-pc-icon i {
+	font-size: 25px;
+	padding-right: 15px;
+}
+
 
 /*---------------------------------------------*/
 /* CONTACT

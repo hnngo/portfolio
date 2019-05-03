@@ -1,7 +1,58 @@
 import React, { Component } from 'react';
 import { ComponentTitle } from '../utilities/ComponentTitle';
+import data from '../data.json'
 
 export default class Projects extends Component {
+	constructor(props) {
+		super(props);
+
+		this.state = {
+			imgToggle: false,
+			data: data.projects.projectInfo
+		};
+	}
+
+	handleloadImg() {
+		this.setState({
+			imgToggle: !this.state.imgToggle
+		});
+	}
+
+	renderProjectCards() {
+		return this.state.data.map((item, i) => {
+			return (
+				<div key={i} className="col-md-4 col-sm-6 animated slideInUp">
+					<div className="p-pc-container">
+						<img
+							src={item.bannerImg}
+							onLoad={() => this.handleloadImg()}
+							alt="projects-banner"
+						/>
+						<p className="p-pc-name">{item.name}</p>
+						<p className="p-pc-des">{item.description}</p>
+						<div className="p-pc-icon">
+							<a
+								href={item.website}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i className="fas fa-external-link-alt"/>
+							</a>
+							<a
+								href={item.githubLink}
+								target="_blank"
+								rel="noopener noreferrer"
+							>
+								<i className="fab fa-github"/>
+							</a>
+						</div>
+
+					</div>
+				</div>
+			)
+		})
+	}
+
 	renderContent() {
 		if (this.props.show) {
 			return (
@@ -10,6 +61,9 @@ export default class Projects extends Component {
 						title="Projects"
 						icon="fab fa-stumbleupon-circle"
 					/>
+					<div className="row">
+						{this.renderProjectCards()}
+					</div>
 				</div>
 			);
 		} else {
