@@ -108,6 +108,10 @@
   .ys-ms-fromYear {
     font-size: 14px;
   }
+
+  .pd-devices img {
+    width: 100%;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */

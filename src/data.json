@@ -77,29 +77,57 @@
         "id": 0,
         "name": "Shoeniverse",
         "description" : "Shoeniverse is a website which allows user purchase shoes, boots and other accessories for both men and women.",
+        "details": [
+          "The project is initiated by create-react-app and I used Redux as a state management for my project",
+          "Google Firebase is used in the part of authentication. Both creating account or signing in account are processed by using Google Firebase API.",
+          "The responsive, mobile-first feature and other css prototype I used for this project is Bootstrap",
+          "All the pictures of shoes, sneakers, boots and other accessories used non-commercialized in the project are from these sources: Nike, Adidas, Vans, Dr Martens, Farfetch, Warby Parker, Coach."
+        ],
         "technologies": [
           "react",
           "redux",
           "firebase",
-          "react-router-dom"
+          "bootstrap"
         ],
         "bannerImg" : "https://lh3.googleusercontent.com/CxyiVY7ffaYKOywkFcNw-nFjZqbCqh-4K1faQ2emxGSDI69eqszHge-s7ygQIvZ1sXIy5Acyq07Q4yuR55Op-7O-ux5tMJJIIYLvJqru4LBkxi3QtAAUGKRjMwC2vbmzyslo3wxtulkJ4bmhYrf6f7ouyvD2c2_Ya6gcE7Zw8ocWXSHFNytSkFRwAue0wRuVhCgu0LAsUeQFb0LwT2zBmOrv2CvDJgd-Bydv5Dfke_JH9hRyX6JiP4JbDNp8zLeFxmV6npmetfOLZx_Rr_ObeZtLdGr0Sv2T5q09IJ5TZw569qkMpv85b17v0Y06ESDuSulyZoR4Kn4C9YFOl8WeFGoYx009o8Ls6UMOhOK3bD0CGqUWTV5KiBSiYoKs3CR_SIlXChkytdHRwuz-Vdiw9St9b6xPrOo3wKXt4-r0M0_bPnMyGuaJnUTU8LRqC1-j2hBmRA4DEww3B7I86Leco2ZS1vPvnNq8tOveW5VokynKyrBs5UfhI8vz3Ao7LqIY8bk4H1jE_8BqDSo4dDGcximml7rJ5wGkiw8PRx2Ciw6vJWzpWtC_bCKXS7p1zNMSVq7AwumNg0cqGzOqVlOqtFjx9K1IPQE84KMVR6eqJU-hkC-Si3k_c2gHNiR000Waxd-U81VQPm6X2hHzSBhUZ1iWtp2chYc=w821-h584-no",
         "website": "https://shoes-shopping-website.firebaseapp.com/",
-        "githubLink": "https://github.com/hnngo/shoe-shopping-website"
+        "githubLink": "https://github.com/hnngo/shoe-shopping-website",
+        "devices": "https://lh3.googleusercontent.com/-LOqy_sJBIS-lhd02xFyh23GjE1coT7LHQcaMYi1HwOesZ21cc5-y0tbFCDYG3s8R1LLL21KqquWbZaU_DTg7_5ozgjx80suQz9czpDcTC9L2uL_jdpPlsNTPsbcXELCy91g8vo96GoGwnuX-b1nw90OFv9GtE1KaV9Aepu0tv7Zycz_wxSPx6IwOAE9_dlfTEQMc3jyLMpp0OKsG29e1yUf6NeslpLne8hf-V8w_1kKVe3ywkzSrOh8b_ZDVNgzUI4tYYVMTN8jjNrpOygH81emUQHutOT9ZFkVRko3HVsfnMyloJxZXg6QQJmvpVvbwrYl58sgx6fSd1BDwlex2fM44i50DQpVrtVl-bEtMe7YpPfkoAMl7z5bETbhp-bn1kElUXqGjxf183qG1Uhw1EntewxKjLjQghl-stuYsJo5RmJ8HA0xfYYHio6aKh745uv5DQDlU3FNNwE7fgBAGsWyHGHyeff7QriIOvviJ85IzBRU_v3HwGy_K-pv04O-WDqOJvQHI_ZFC4SBAGvMwPvudvruvmguk_8nuSYvAmVwCYUQ2SEftpGv39Pev_iYApP-UE2WwRfMFg4CJj82ZHJ-xM3djIXnfcM56Y8TRdr2s1WbeiYJeVMgJ22sw29V4tkF9ArGRi7yfv5a5dMOnR0bVMHKbsc=w1294-h673-no"
       },{
         "id": 1,
         "name": "Dashboard Kamela",
         "description" : "Kamela is a stock website allows user to get the Stock Market Overview, look up for real-life Stock Symbol, access to some Technical Indicators such as CCI, CMO, APO, etc... Besides",
+        "details": [
+          "The project is initiated by create-react-app.",
+          "Firebase Hosting is used as a hosting service for this project.",
+          "The responsive, mobile-first feature and other css prototype I used for this project is Bootstrap.",
+          "I used d3.js as a tool for visualizing almost stock data. The types of chart are varied such as as line graph, circle point, bar chart, area and pie chart.",
+          "For the limitation of information about real company, I generated fake company data by using Mockaroo.",
+          "The side bar is created for only making the dashboard be like the real stock website dashbord. Therefore it has no functionality."
+        ],
         "technologies": [
           "react",
           "firebase",
           "d3",
-          "alphavantage"
+          "bootstrap"
         ],
         "bannerImg" : "https://lh3.googleusercontent.com/2IpEVh_YdG6bnUlXG6s1yNh2B3hJtl-1Ygno8XdWyK6C_5gw0QQJs_i3nudVVZpEz00RpnvjwCsX6ZOs1X6PNZ2iqBPX1m4oORW3XVQ5OhfJrzq8EWN6xwiiUWXkdCZ1f1GBJsdfgN5zjuukGsbq_dWxoVteecskNARhFQmflgoGVCWjnSdDC6CdwxCYJ8qHt3BZSczLI7d_tWsynvFLLRM5BSjFJ3hE8Vf0qWT38kFXNsT-Iicem0GOUFJW31BWupQrkpyDq-FWAS-UXXtV6XLJoX_5Uyu37gbOlMSlgLsM0Xa3UUoWy1M89wUl6T1_6tRXsxSDsiHC9wyRbpOnhiWX9rBUdkX7W4gPKb81pegwFE8VdBNaTW5ASUhxthhOL9HDBfZ7o9r8Nm2h8JkuakPQ84EjsAD2wpQVovrl3neTSHYPtcAr9Go-ogUdph1v4oh5hoYPSmy7Hsho0VQPTTzQ9TmFnoDnMduHsi70TCJdl6v_28oCHnpFgnsfZ9tVC2vmeTAQd3kFXmYjOVfl7zd9xH6WzXkUWSQP_yw9076TwqSaIiYBECecRnYFbnOA2I9FVpXWI2aesxCxDoVgMBv_TY9i_IBJiLmxezn8uIdaKlpmLRCzzSOOT9HWdZdgZOaOBrF8QJmO1k7dVWaLJKGcIDum0yw=w1056-h752-no",
         "website": "https://dbkamela.firebaseapp.com/",
-        "githubLink": "https://github.com/hnngo/dashboard-kamela"
+        "githubLink": "https://github.com/hnngo/dashboard-kamela",
+        "devices": "https://lh3.googleusercontent.com/IzFGieErBj_OMMhEP7fRwkeTJ1-utPJdyJ5FPsg5japAbFjclM77_qSgoVNKxEp5XIajqMZzM2h35UzzQBL8nMUPFgMFWZB2BoI2NTpw-Tr9UkakAtbgUHc6z8C1tS9QpiFKHWYZsXJysIDH35B7WvnZurfiGP_M6jB3ahEuyUhxomTg7ICIvCX7IDcvb7aeA_oUuKG8hQCiy-qN-Z44atS9lGtpS0rGNTTfEVmZJH5UXk1ZOGATnKBdLkwzMjG2UX4ERW4S2Uv6I1QdHF3xibUcy1HNpDUKS7Avxy6ka2yrNfc-W8b8H4ChGNM5iwydc8UgGd4SdACZ50ll0lECe3vd_28FP5bVq_XgR8hRVBLNm7a4VjTpn2l_r6B8cE7ECVNMFc2fYqqbpoteHEt8n_k_k51F0vA6YGOWV2kwxdgW_81ovVHdcTBRTOrj3NekSS2tXZnXJ6InPyC94j6JOhAtCt79HRpIvyoIB97BmjyMd5ZKmOAkipf36DB73fNow_7V5OgigKKVSNF5EusNs-5GWTgjjzxtvubxBsl0vxhUDJAbni6UJlUUqZXKNjxL0TFzjZr8Aa1XdC7xZedNauhm_8WgHSx6Q_hKgJep9CHV3FafX4HXPc0KYZ96N1YT5lRqyMfBQYYd5WIlUc4h8OunhWawW1U=w1294-h673-no"
       }
-    ]  
+    ],
+    "devices": {
+      "webImac" : "https://lh3.googleusercontent.com/jdZ5-IpoAt63beDseX0TmBXjG0f-wUgVSJKO2Oqp6B7SLOAG6UuCOGWvPM-kEK-cV1LaAiMcbemJC_TgO8q2R3h_GDA_BtCTMj1uLMoOufDbFNLCUuQdFGwqP9dFjPLX7nw3mlw3cS6yXMGJDNLUJd1gtTxivyuiEHThkSQ8-Im_F6dlUcZLJRJHTW3Qq3FWwgsP4QB5Ctbo0xXe7lsVF8aXVkRbn6E57tYPNvdR7eNAa5xy5r_pNZ9VkMvyEJkr40MgBCLEnY2Wwyq-rDXQ07m-cPhhM1lBhBbdBIbImwEM4s8nL8axMyysQ33Q4ArQv3ZfofgMhh27McbcmyEKlcEhVpxlCyzWTqiKMzq9esAiejlZ71p7HIGLIEmoI3lsNDeSynoHGaWogvb6xm4mlhF0aQbUnrY4ZRUhpjN0RKJmwFHnMrE48DKqYwnN_BPWRdnxp8E-_2rLhRVO63LEO3HAGjXDGImYZXskCe02_BDq6S75C-IhRIWSklvb4SrRsDe7WsvM947Th178gbewjeo2xhI_istmg8lxSB1OIw1N7jVsAs5mAymUXmhB2hIa5Izj00erfT8Z6r_OXcvpYFkigd-VQn7xYI-lRzoz0mjATktxYUIoFJ8YhMu_U0pcM0aA39s8YKUJa3_Ys-U3sSVEnPu7wFM=w1024-h817-no",
+      "webLaptop": "https://lh3.googleusercontent.com/D3VIm3omvQHUCC_uuSPbtHoeyzuWzGklcGNwodGMAzXEz-g3vUCRaCbdyF6QiI2kPh0DC4wO8AI547L9HIMQMO2kTEDZTmj6lVi6FY8KrJZdIq67q8vbub2NLzowFGerL9cqrwpzEp8WPT4xfQ19UbEwyEdaSw--LawBHmRHe9z1Hf-eIZz_6nODFdcwmWNoGHDHxUvcdjFXXKarO5qXm4XD4n6T-iioGsWrA0t0evfZPo622hxUm9_VmPqL8oUgV5tDoxkh4LZefw6zwYpHANrr5lsNVRklu9VfllHPVl5df7b82v1pA1Z4Ram79GgAjFSzpflt_Ski-KNrElpeVopVoJgSoOXJ3qFkzyYkeyBoJe7wLSy0gm1D4w2Mv40JT8jukvcdAH1yO0HVTSwKU-jzAzcqdRlJiZU0_9sGDoj9RHC5UQSaAXjyd2RrFa3puN7dEKlnypv7NCeSivyXKiicjA__yPpxV_PHaWEMwzFUbWKm3FlWJ3l0rPUcjKg8eqjbiGrxwehk__-GCZxHFMsX3oMsKrKQl2bCrTc9UvasFbgawanwQR2MpbMrcJWhAZDH72mhK8gwp0koMpVYBt4JLfHjBZrdKdIVCVlqd9xl3OzahnM47YfAO-fR6rxXDj1PLpkOBrl8x8l1MReyUqvqZXYX7-M=w1294-h748-no",
+      "phone": "https://lh3.googleusercontent.com/tcZzAImY-GCYloRnn2G5JFoh0T_GDOJlJGLsWnlW-cA3CknHbdNDSw69ebRtgjs0YYKVodItilDoNERhMw2rf_iCP-BjA6nlfMkyXqUgaVLp1YCKrFQsSIChGDwCLhtv7xY_q4vWy4xu_FQq6-l04JZYo4TwP1xXnYR7RpzZXrShAHgK5_q2NNYjHG-N9lxmnnRd1BOJ0dMEmYaHF7rSggcPsM7QjRumXIKNhwMYBDIApqXezztiUf8cBSTPF5qHd0hys81c5J0ogrTF4Su2CBDRtz7uTxtoC1exmP5f84UGiEQp4HHDZRo95klODfAtlrHYnDRMbMrfbdehg5jRebyz69VS0CwaEcDotk-Qv-g4YHQfsSksOScghY3ufedy3eftD-ikGt6ZUbxRS_l1ilBhFfHbqSZibXwCcTaVIbs6_3JaXm9rgcRp6amQbkJa6r6kt6y3dIwhVO42yKcz2ySRBSX_MWF-rfolpujphWk8yAdklQzvb8zuRjBQE9ZzbZ7j9V_-9eO0BR3SMf3i5faMSuGj845r-6cPaGri6hzd624RahAHA9OExTHYioSsOPVOZWvBSD4LmR7U7VJnj5dmZbLgz5ZQk61fuLWJTVlCKbVVCfTPsi9cCxBpqf8JQQa3udgrUq2G1jrpYVDbim5JsBhNli0=w826-h971-no"
+    },
+    "techlogo": {
+      "react": "https://lh3.googleusercontent.com/WO30jtuiihxcfYzRQsabon0Bkpf5wh7jsI1ZXOGkiBASfU-h2frBxnpw3hHQ6mwBfpjXd688m02AjxRHmtCIkfWT0IvtwUWV1HqjVzBcv-RzuUzg0Pn-r1pMt0_CfkEWOZ4A4Fes2n00O5M3XKZt1l7jGOeufkNEydUZN0yP6PFrmCXXpLT1nDHkPflImius5US9saOJpoZSNwmPkYkSQr9s0h5euVx9K8MczSXbhR0RmCFbzsnIZ7i8FcpRPdQ7jeeCJD0GuyffdvUT0ST-Sua36WQy5TsmZcfzm3l9ab3de_VSA9gEyoTA4DBbR_EvRhpwdpdsP0_xWcEwfVWiVbDuvoFxhRRZCrgkseNWUl9BjNsK4_A8T2AjUiHx42b4OvvLkM-24VWWCDBDnRx96OTXDcCDj1r8fs_EZKWCR25WsaIfLdlgwFCMVKWNIxMsoFJRK8IdZS0Hd9Qj1P2KDu07VYhO9lZIVXLDPaVMa-VnnG-a3RQdg51Ah9xmEKlUDLIxESbLJQoQDzH7-89nPuhfecSsnhIuecdI_ftOnM39_iEiNrZcpufx9cgwAo2hT9B4pvF4-sn9ktuMyLzHgLR-j1SN3fZV9zcCDEOvXKOccOp_K9gmF2sXSLxhMsnnliJg3HzgcCng9IfcBz4bUR0DTwqmWhA=w310-h299-no",
+      "redux": "https://lh3.googleusercontent.com/uxwQVllqqUXgeKegTmE5bGWqLWKmEQv0Cnhi0GAqITimJCGrCTaYQ5s6cO_ZyPgYIB-HHs8DDgvgMey74bo5EmHsBpZeunO1faXEOvDa0kT85lYoGzY_xEhdnbcl2PzGUN0yeL5vkE3jUmc7cExwQ-oXmxOKhFcnv3G0EiRh1cegRSpRMt_JZVlRSgGNmLVV87mQZDSxtdlanx18OvO14sDp3suXeypk06hIq-49KX7hZTgYqX-rWrNOAxThRc06P4uYJb2SpnOVx2L0m7B_E_76Zll198eee2Jy-yW3sth3bwPPjlviMM62woutqjAlWPvthKCHolQA7RJKONE9OqXHAHB548tb2vw-UCfGkfOnHEgQZW0zWqm7YdaSDcCGAXtLUN_85lGw2gGQoVhrNkgKOSTZRpAjPXM0kONPiQAKgf2p6Hg_jvzfQDqXq1TmOLdyXmx23iSHLrBNQOL1lALuA9fEGDRDkpgun2R9MDlupiTzlB8x1w3qxWpN_J4galHuBM03zMw-BLkP02fWmCXXzpVJ61MV4Xeqxf3lbf6cdU3obtMz-9kPbMzFI8Q9zLYYHxEHYiUcRSZ4j2gai7jZs-pGUAUadAJMaIwDu7rtEnEepYP0WHek1c4SPhCfxuallpE7mX9BmM8xzWQC-NNazpU_IUc=w537-h512-no",
+      "firebase": "https://lh3.googleusercontent.com/br7eHikXlr6daE8b04nf1M_sEdVC6Ecskl0SlR18lCEPNquKd0F7JXvZ6QT_iCUrupiwWzxomXTUY7IVcQjrM0froOBlO_GC-gfaUD6bWmsjyjOy8PB8PMVxti98N9fbBTy7H-qaOLthwxyzo8a2JTSN1sW2gFIeeyO3VC9mUIDDuWXWw6kgtOrGMoXJVjW_VP2qMagGVXMCNKvNZxHC2m3ZnJ03rEa13KOBxQAH2GMFakvkV22yeGvS_DRdKrSJUQh4Gi1qXNWA3VWxLaUjb5GDkXwGtsMSD9oZZNRWJFN2vCM9Kx_ZQk6zYdufIwfQ4QPFLancJDF0sUDK3osj6EWiZF52YKwaU-b4GcKebZsmWBMybyv1l89txmCuIU6LvYwadHBBkSKp-ZcW8Y8EqBg2NsmE9BcFCXRMFD2He95bZHGkO6drk_-TYm6cPLqOcJvQtf1dG-ObwaqwChBGsnCQvUKpkLOq_QT7CE0OdjbmbERLZ8o_uYTsyDwIwwG3xWcPuy6KAsiusCKqXgbR-_9m9VnMUEDAUSOnIDxVCYXMPLTw27D1dwy3N6Rcg-RkqhAXWREQEOhO1q0Q6AZD97XmtXw_iCRqCvPVSUBm6LGnAC6Xw_1f9vn85TqRu8eJncSPMTw51i_qPAULx7yIpp8H6NSGIpM=w222-h302-no",
+      "d3": "https://lh3.googleusercontent.com/Rkk9L1pF-WKFl_Mf_nBsjrRrarpx8do-Po963ufxhVc48ajbjXe74qPk_HmfRTdJkPDxBI_p2ox0SG1DvPl2boYpAKM6uBoBGY3w_ZNWbRVh5bhxPYg-o0D7bA0qd3_RPRNywLeJ3XXDCvNtfS6Sicjtn-4k2_E2HafQD3NfJZ6-m6sexo8Z0J9JP-iaNmWhd8hxPiOk_JTBCSWaVCJJIGUtUhPXjWR1zCKIl8ACLhRuwoc2mrl8GrR801-EhMRsArjb05YsG3fLjlvyugWY7Q_MPxELo2h7Zd3idX0obCfFVcKmPQkAyBjD8xmDkh8B3vG8aSyhUZ76wz3v-0doKKOi-NTWX9GPOlb_a5aPwhAZ7KTzgVzquzy-uVzyeGCEA_F-4Vxan-ZZ_pWSpBlhzpkFgtxzbZ3w4L7mpscHOcCQUOe4-AgVc5P9H1Y_Y9uNINRa7f_tsskVwNPE7Bb1W8H61nrj_nL8awz3XEBwK2bOTfdEwxj2u55r_uEHtxb7hv7tU2jEkDu6Ncvfb9qiej5QHUZJrnORBgkg7q0r6iwE4pfKOA6GwhfTM4LAO0M8q9oIzzQ6rflJrWhaukK7icoNimWhFDduApU22KxiFW3FvTlIF9tS4eI5JZ6dPOU9Tt1mm5CuXKrAIt2c_Q297tB14oalvKw=w1024-h971-no",
+      "bootstrap": "https://lh3.googleusercontent.com/ZhSj5k6HDo9ScPIv_90OhpFeDLeASNR8Lo5rlonH-4rY9Ieuf2ToD3tuG7Zvuhvd9xPtARuNUbbcaxO-SLC_YmhkUg1uxyv8qWRcrbGwI09FlnUfsH4hjMsaQIWtj3JuR1vuTa1_bKOFKEQ8HAwls_9eAaPkeULMrBoqexKkNyynBXMc7Q-Zf5hVgFK0pbtI9t5AoR_u7Gmn3JPfKZ1LaqDNzO0kPGgZJr57-2HTXaTg_RuyCrcy4cHFRYr4gAMtvhTl4dejITNxDbTfibWe0T2tloO6YSeh9QXMRJV1ZL4oTtFYye0X-Vb_QP7qJ6tHkz32STYEFfDHbdV8LZo63broWC7XHP7G04MrOqXa2CMubfnuW6KBV-u9rZ2gAPIheubKfovzpRwaQzuTbSrDnUtuP6bSNqQo8rzvU4qjqedQJzo76sFUnH1EvA-Jb-kRExPu7Jla69IhzUvhktbp12Y4pCaFHUv7oxlGkhIuPEzkhm5TAzMyrCBtu9H8N2DbubEnNwnV-Qztz_-Yxifbrfh-ZKF_0GwslJGe3vbqpUlEImP4CQk_aWrRrCWSPBEYjcW3xbVYWor0RQruSP_bBuuN0Lfn7k1CTig1T61z5wqVF3PkCAdBe7htSYhWR4ux7smUwCfko8fZMs6VRsT52Jlx2aaSkjs=s512-no"
+    }
   }
 }

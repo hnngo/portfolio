@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { ComponentTitle } from '../utilities/ComponentTitle';
-import data from '../data.json'
+import data from '../data.json';
 
 export default class Projects extends Component {
 	constructor(props) {
@@ -8,11 +8,12 @@ export default class Projects extends Component {
 
 		this.state = {
 			data: data.projects.projectInfo,
+			devices: data.projects.devices,
+			techLogos: data.projects.techlogo,
 			imgToggle: false,
 			boardView: true,
 			boardSelect: undefined,
 			boardAnimation: "slideInUp"
-			
 		}
 	}
 
@@ -74,7 +75,10 @@ export default class Projects extends Component {
 			}
 
 			return (
-				<div className="p-pt-ic animated fadeInLeft">
+				<div
+					className="p-pt-ic animated fadeInLeft"
+					key={i}
+				>
 					<img
 						src={item.bannerImg}
 						onLoad={() => this.handleloadImg()}
@@ -88,11 +92,39 @@ export default class Projects extends Component {
 	}
 
 	renderProjectDetail() {
-		return (
-			<div>
+		if (this.state.boardSelect !== undefined) {
+			let board = this.state.data[this.state.boardSelect];
 
-			</div>
-		);
+			return (
+				<div className="pd-container">
+					<div className="row">
+						<div className="col-md-6">
+							<p className="pd-name">{board.name}</p>
+							<p className="pd-des">{board.description}</p>
+							<ul className="pd-detail">
+							{
+								board.details.map((item, i) => <li key={i}>{item}</li>)
+							}
+							</ul>
+							<p className="pd-tech">Technologies/Libraries</p>
+							{
+								board.technologies.map((item, i) => <img key={i} className="pd-techLogo" src={this.state.techLogos[item]} alt="techLogo" />)
+							}
+						</div>
+						<div className="col-md-6">
+							<div className="pd-devices">
+								<img
+									src={board.devices}
+									alt={"imac-content"}
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			);
+		} else {
+			return <div />;
+		}
 	}
 
 	renderProjectCards() {
@@ -100,7 +132,7 @@ export default class Projects extends Component {
 			return (
 				<div
 					key={i}
-					className={`col-md-4 col-sm-6 animated ${this.state.boardAnimation}`}
+					className={`col-md-4 col-sm-6 animated ${this.state.boardAnimation} fast`}
 				>
 					<div
 						className="p-pc-container"
@@ -140,11 +172,13 @@ export default class Projects extends Component {
 		<div className="row">
 			{this.renderProjectCards()}
 		</div> :
-		<div className="p-pt-container">
-			{this.renderProjectThumbnails()}
+		<div>
+			<div className="p-pt-container">
+				{this.renderProjectThumbnails()}
+				{this.renderChangeViewBtn()}
+			</div>
 			{this.renderProjectDetail()}
-			{this.renderChangeViewBtn()}
-		</div>;
+		</div>
 
 		return (
 			<div className="container">
