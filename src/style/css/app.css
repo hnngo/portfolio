@@ -659,16 +659,15 @@ body {
 }
 
 .p-pc-container {
-	position: relative;
+	position: absolute;
 	top: 0px;
-	/* border: 1px solid black; */
 	height: 450px;
 	background-color: #2b0528;
 	border-radius: 10px;
 	overflow: hidden;
 	color: #dfdfdf;
 	/* z-index: 2; */
-	box-shadow: 0px 0px 13px 0px #63035e;
+	box-shadow: 0px 0px 8px 0px #63035e;
 	transition: 0.4s;
 	cursor: pointer;
 }
@@ -680,6 +679,7 @@ body {
 	width: 50%;
 	bottom: 0px;
 	background-color: rgba(255, 255, 255, 0.10);
+	transition: 0.4s;
 }
 
 .p-pc-container::before {
@@ -690,12 +690,22 @@ body {
 	right: 0px;
 	bottom: 0px;
 	background-color: rgba(2, 2, 2, 0.15);
+	transition: 0.4s;
 }
 
 .p-pc-container:hover {
 	top: -10px;
 	box-shadow: 10px 15px 20px 3px #460442;
 }
+
+.p-pc-container:hover::after {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.p-pc-container:hover::before {
+	background-color: rgba(2, 2, 2, 0.25);
+}
+
 
 .p-pc-container img {
 	width: 100%;
@@ -735,6 +745,97 @@ body {
 	padding-right: 15px;
 }
 
+.p-pc-i-tooltip {
+	position: absolute;
+	top: 0px;
+	/* visibility: hidden; */
+}
+
+.p-pt-container {
+	position: relative;
+	display: flex;
+	justify-content: center;
+}
+
+.p-pt-ic {
+	padding: 5px 10px;
+	position: relative;
+}
+
+.p-pt-ic img {
+	border-radius: 6px;
+	width: 120px;
+	box-shadow: 0px 0px 4px 0px #63035e;
+	cursor: pointer;
+	transition: 0.4s;
+	/* filter: brightness(50%); */
+	/* opacity: 0.7; */
+}
+
+.p-pt-ic img:hover {
+	transform: translateY(-4px);
+	box-shadow: 6px 6px 10px 1px #460442;
+	filter: brightness(100%) !important;
+	opacity: 1 !important;
+}
+
+.p-pt-vc {
+	cursor: pointer;
+	position: absolute;
+	top: -50px;
+	left: 0px;
+	display: flex;
+	width: 130px;
+	background-color: rgb(255, 226, 251);
+	border-radius: 15px;
+	box-shadow: 0px 0px 4px 0px #978996;
+	overflow: hidden;
+}
+
+
+.p-pt-vc:active {
+	box-shadow: inset 0px 0px 4px 0px #3b3a3b;
+}
+
+.p-pt-vc::before {
+	content: '';
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 0px;
+	width: 0px;
+	background-color: rgb(192, 120, 214) ;
+	border-radius: 15px;
+	transition: 0.8s;
+}
+
+.p-pt-vc:hover::before {
+	width: 130px;
+}
+
+.p-pt-vc i {
+	color: #eee;
+	font-size: 20px;
+	padding: 10px 10px;
+	background-color: rgb(142, 78, 161) ;
+	border-radius: 15px;
+	z-index: 2;
+}
+
+.p-pt-vc p {
+	font-size: 20px;
+	font-weight: bold;
+	margin: 0;
+	font-family: 'Montserrat';
+	padding: 4px 10px;
+	transition: 1.2s;
+	color: rgb(142, 78, 161) ;
+	z-index: 2;
+}
+
+.p-pt-vc:hover p {
+	color: #eee;
+}
 
 /*---------------------------------------------*/
 /* CONTACT

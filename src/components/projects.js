@@ -7,22 +7,105 @@ export default class Projects extends Component {
 		super(props);
 
 		this.state = {
+			data: data.projects.projectInfo,
 			imgToggle: false,
-			data: data.projects.projectInfo
-		};
+			boardView: true,
+			boardSelect: undefined,
+			boardAnimation: "slideInUp"
+			
+		}
 	}
 
 	handleloadImg() {
+		// Handle if latency in loading img
 		this.setState({
 			imgToggle: !this.state.imgToggle
 		});
 	}
 
+	handleClickBoard(index) {
+		// Set selected project and change view mode
+		this.setState({
+			boardSelect: index,
+			boardAnimation: "fadeOut"
+		}, () => setTimeout(() => {
+			this.setState({
+				boardView: false
+			})
+		}, 800));
+	}
+
+	handleClickThumbnail(index) {
+		this.setState({
+			boardSelect: index
+		});
+	}
+
+	renderChangeViewBtn() {
+		return (
+			<div
+				className="p-pt-vc"
+				onClick={() => {
+					this.setState({ 
+						boardSelect: undefined,
+						boardAnimation: "slideInUp",
+						boardView: true
+					})
+				}}
+			>
+				<i className="fas fa-arrow-left"/>
+				<p>Back</p>
+			</div>
+		);
+	}
+
+	renderProjectThumbnails() {
+		return this.state.data.map((item, i) => {
+			let style = {
+				filter: "brightness(50%)",
+				opacity: 0.5
+			};
+			
+			if (i === this.state.boardSelect) {
+				style = {
+					filter: "brightness(100%)",
+					opacity: 1
+				}
+			}
+
+			return (
+				<div className="p-pt-ic animated fadeInLeft">
+					<img
+						src={item.bannerImg}
+						onLoad={() => this.handleloadImg()}
+						alt="projects-banner"
+						style={style}
+						onClick={() => this.handleClickThumbnail(i)}
+					/>
+				</div>
+			);
+		});
+	}
+
+	renderProjectDetail() {
+		return (
+			<div>
+
+			</div>
+		);
+	}
+
 	renderProjectCards() {
 		return this.state.data.map((item, i) => {
 			return (
-				<div key={i} className="col-md-4 col-sm-6 animated slideInUp">
-					<div className="p-pc-container">
+				<div
+					key={i}
+					className={`col-md-4 col-sm-6 animated ${this.state.boardAnimation}`}
+				>
+					<div
+						className="p-pc-container"
+						onClick={() => this.handleClickBoard(i)}
+					>
 						<img
 							src={item.bannerImg}
 							onLoad={() => this.handleloadImg()}
@@ -36,82 +119,52 @@ export default class Projects extends Component {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<i className="fas fa-external-link-alt"/>
+								<i className="fas fa-external-link-alt" />
 							</a>
 							<a
 								href={item.githubLink}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<i className="fab fa-github"/>
+								<i className="fab fa-github" />
 							</a>
 						</div>
-
 					</div>
 				</div>
 			)
-		})
+		});
 	}
 
 	renderContent() {
-		if (this.props.show) {
-			return (
-				<div className="container">
-					<ComponentTitle
-						title="Projects"
-						icon="fab fa-stumbleupon-circle"
-					/>
-					<div className="row">
-						{this.renderProjectCards()}
-					</div>
-				</div>
-			);
-		} else {
-			return <div />
-		}
+		let viewContent = this.state.boardView ?
+		<div className="row">
+			{this.renderProjectCards()}
+		</div> :
+		<div className="p-pt-container">
+			{this.renderProjectThumbnails()}
+			{this.renderProjectDetail()}
+			{this.renderChangeViewBtn()}
+		</div>;
+
+		return (
+			<div className="container">
+				<ComponentTitle
+					title="Projects"
+					icon="fab fa-stumbleupon-circle"
+				/>
+				{viewContent}
+			</div>
+		);
 	}
+
+	
 	render() {
 		return (
 			<div className="p-container">
-				{this.renderContent()}
+				{
+					this.props.show ? this.renderContent() : <div />
+				}
 			</div>
 		);
 	}
 };
-
-/*
-<div className="projects">
-					<div className="row">
-						<div className="col span-1-of-3">
-							<div className="row">
-								<div className="col span-1-of-2">
-									<img src={require("../style/img/project-1-a.jpg")} alt="project-1" />
-								</div>
-								<div className="col span-1-of-2">
-									<img src={require("../style/img/project-1-b.JPG")} alt="project-2" />
-								</div>
-							</div>
-							<div className="row">
-								<div className="col span-1-of-2">
-									<img src={require("../style/img/project-1-c.jpg")} alt="project-3" />
-								</div>
-								<div className="col span-1-of-2">
-									<img src={require("../style/img/project-1-d.JPG")} alt="project-4" />
-								</div>
-							</div>
-						</div>
-						<div className="col span-2-of-3">
-							<h2>Smart Water Analysis and Monitoring System</h2>
-							<h4>Final Year Thesis Project</h4>
-
-							<p>Developed a smart device to collect some standard index of water such as pH,
-														ORP, Temperature, Turbidity, EC, DO, water flow, etc.</p>
-							<p>Used TelosB module to establish a network of 5 nodes in a virtual map of
-									random 5 locations within 50m, and collecting water quality tests of each node
-														every 2 weeks to analyze.</p>
-							<p>Made it possible for extending the project by mapping with a GPS system for
-														remotely testing.</p>
-						</div>
-					</div>
-				</div>
-*/
