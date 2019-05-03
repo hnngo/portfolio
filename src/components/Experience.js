@@ -157,7 +157,9 @@ export default class Experience extends Component {
     return (
       <div
         className="e-container"
-        style={{ height: this.state.eConHeight }}
+        style={{
+          height: this.state.eConHeight
+        }}
       >
         <div className="container">
           <ComponentTitle

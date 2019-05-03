@@ -95,6 +95,10 @@
     margin-bottom: 35px;
   }
 
+  .ys-container input {
+    transform: translateX(-10px)
+  }
+
   .ys-container img {
     width: 25px;
     height: 25px;
@@ -217,6 +221,11 @@
   }
 }
 
+@media (max-height: 799px) {
+  .e-container {
+    height: 750px !important;
+  }
+}
 
 @media (min-height: 880px) {
   .e-yearSlider {

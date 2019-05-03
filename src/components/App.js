@@ -5,7 +5,7 @@ import '../style/css/queriess.css';
 import NavBar from './NavBar';
 import Homepage from './Homepage';
 import AboutPage from './About';
-import { ProjectsPage } from './projects';
+import Projects from './Projects';
 import { ContactPage } from './contact';
 import Experience from './Experience';
 
@@ -16,16 +16,16 @@ class App extends Component {
 		this.state = {
 			showAbout: false,
 			showExperience: false,
+			showProjects: true,
 		}
 	}
 
 	componentDidMount() {
 		// Scroll to top
-		window.scroll({
-			top: 0,
-			behavior: 'smooth'
-		});
-
+		// window.scroll({
+		// 	top: 0,
+		// 	behavior: 'smooth'
+		// });
 
 		// Interval checking for showing page
 		setInterval(() => {
@@ -40,7 +40,8 @@ class App extends Component {
 			let yExperience = document.querySelector(".e-container").getBoundingClientRect().top + window.scrollY * 4 / 5;
 
 			if (window.scrollY >= yExperience && !this.state.showExperience) {
-				this.setState({ showExperience: true })
+				setTimeout(() => this.setState({ showExperience: true }), 400);
+				
 			}
 
 		}, 100)
@@ -59,6 +60,7 @@ class App extends Component {
 								<Experience /> : <div />
 						}
 					</div>
+					<Projects show={this.state.showProjects} />
 					<Switch>
 						{/*<Route exact path="/about" component={AboutPage} />
 						<Route exact path="/projects" component={ProjectsPage} />
