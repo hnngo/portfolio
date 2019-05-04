@@ -92,7 +92,7 @@
   }
 
   .e-yearSlider {
-    margin-bottom: 35px;
+    margin-bottom: 45px;
   }
 
   .ys-container input {
@@ -109,8 +109,65 @@
     font-size: 14px;
   }
 
+  .p-container {
+    overflow: hidden;
+  }
+
   .pd-devices img {
     width: 100%;
+  }
+
+  .pd-name {
+    margin: 0;
+  }
+
+  .pd-detail {
+    margin: 0 20px;
+  }
+
+  .pd-techLogo,
+  .pd-tech,
+  .pd-view {
+    margin-left: 10px;
+  }
+
+  .pd-devices {
+    padding: 10px 0;
+  }
+  
+  .p-pc-container {
+    margin: 10px 30px;
+    height: auto;
+  }
+
+  .p-pc-container p,
+  .p-pc-container div {
+    display: none;
+  }
+
+  .p-pt-ic {
+    display: none;
+  }
+
+  .p-container .container .row  {
+    margin-top: 10px;
+  }
+
+  .p-pt-container {
+    justify-content: start;
+  }
+
+  .p-pt-vc {
+    margin-top: 10px;
+    position: relative;
+    top: 10px;
+    left: 0px;
+    /* display: flex; */
+    /* width: 180px; */
+    /* background-color: #e0c9fa;
+    border-radius: 15px;
+    box-shadow: 0px 0px 4px 0px #978996;
+    overflow: hidden; */
   }
 }
 

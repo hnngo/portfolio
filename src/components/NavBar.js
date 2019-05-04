@@ -10,26 +10,36 @@ export default class NavBar extends Component {
     }
   }
 
+  collapseNavMenu() {
+    // Collapse menu when state is opening
+    const qSmMenu = document.querySelector(".sn-menu-container");
+
+    if (qSmMenu) {
+      qSmMenu.style.animation = "navSlideUp 1s";
+    }
+
+    setTimeout(() => {
+      this.setState({ showSmallMenu: false })
+    }, 1000);
+  }
+
   handleClickSmMenuIcon() {
+    // If open, then collapse and open vice versa
     if (this.state.showSmallMenu) {
-      const qSmMenu = document.querySelector(".sn-menu-container");
-
-      if (qSmMenu) {
-        qSmMenu.style.animation = "navSlideUp 1s";
-      }
-
-      setTimeout(() => {
-        this.setState({ showSmallMenu: false })
-      }, 1000)
+      this.collapseNavMenu();
     } else {
       this.setState({ showSmallMenu: true })
     }
   }
 
+
   handleClickNav(type, queryString = undefined) {
     if (!type && !queryString) {
       return;
     }
+
+    // Collapse the menu first
+    this.collapseNavMenu();
 
     // Get the right target
     let qTarget;

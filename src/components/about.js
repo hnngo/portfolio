@@ -58,7 +58,7 @@ export default class AboutPage extends Component {
 						containerClass=".a-container"
 						initOffset={80}
 						delay={3000}
-						optionSpeed={12}
+						optionSpeed={8}
 					/>
 					<FallingLeaf
 						leafId="leaf3"
@@ -66,7 +66,7 @@ export default class AboutPage extends Component {
 						containerClass=".a-container"
 						initOffset={150}
 						delay={6000}
-						optionSpeed={11}
+						optionSpeed={10}
 					/>
 					<FallingLeaf
 						leafId="leaf4"

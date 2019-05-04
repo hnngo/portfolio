@@ -54,9 +54,9 @@ export default class FallingLeaf extends Component {
       }
 
       this.setState({
-        leafPosition: this.state.leafPosition + 1.5
+        leafPosition: this.state.leafPosition + 1
       });
-    }, this.props.optionSpeed ? this.props.optionSpeed : 8);
+    }, this.props.optionSpeed ? this.props.optionSpeed : 5);
 
     // Set interval for rotate leaf
     let leafRotateInterval = setInterval(() => {

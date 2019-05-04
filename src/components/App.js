@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
-import '../style/css/app.css';
-import '../style/css/queriess.css';
 import NavBar from './NavBar';
 import Homepage from './Homepage';
 import AboutPage from './About';
 import Projects from './Projects';
 import { ContactPage } from './contact';
 import Experience from './Experience';
+import '../style/css/app.css';
+import '../style/css/queriess.css';
 
 class App extends Component {
 	constructor(props) {
 		super(props);
 
 		this.state = {
+			scrollInterval: undefined,
 			showAbout: false,
 			showExperience: false,
-			showProjects: true,
+			showProjects: false,
 		}
 	}
 
@@ -28,7 +29,7 @@ class App extends Component {
 		// });
 
 		// Interval checking for showing page
-		setInterval(() => {
+		let scrollInterval = setInterval(() => {
 			// Homepage
 			let yAbout = document.querySelector(".a-container").getBoundingClientRect().top + window.scrollY * 1 / 2;
 
@@ -41,10 +42,22 @@ class App extends Component {
 
 			if (window.scrollY >= yExperience && !this.state.showExperience) {
 				setTimeout(() => this.setState({ showExperience: true }), 400);
-				
 			}
 
-		}, 100)
+			// Projects
+			let yProjects = document.querySelector(".p-container").getBoundingClientRect().top + window.scrollY * 4 / 5;
+
+			if (window.scrollY >= yProjects && !this.state.showProjects) {
+				setTimeout(() => this.setState({ showProjects: true }), 400);
+			}
+
+		}, 100);
+
+		this.setState({ scrollInterval });
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.state.scrollInterval);
 	}
 
 	render() {

@@ -135,7 +135,7 @@ body {
 	}
 
 	to {
-		height: 240px;
+		height: 320px;
 	}
 }
 
@@ -145,13 +145,13 @@ body {
 	}
 
 	to {
-		height: 240px;
+		height: 320px;
 	}
 }
 
 @-webkit-keyframes navSlideUp {
 	from {
-		height: 240px;
+		height: 320px;
 	}
 
 	to {
@@ -161,7 +161,7 @@ body {
 
 @keyframes navSlideUp {
 	from {
-		height: 240px;
+		height: 320px;
 	}
 
 	to {
@@ -662,7 +662,8 @@ body {
 	position: relative;
 	top: 0px;
 	height: 450px;
-	background-color: #2b0528;
+	/* background-color: #2b0528; */
+	background: linear-gradient(to right, #42275a, #734b6d);
 	border-radius: 10px;
 	overflow: hidden;
 	color: #dfdfdf;
@@ -791,6 +792,7 @@ body {
 	border-radius: 15px;
 	box-shadow: 0px 0px 4px 0px #978996;
 	overflow: hidden;
+	transition: 0.5s;
 }
 
 .p-pt-vc:active {
@@ -867,12 +869,16 @@ body {
 .pd-des {
 	font-family: 'Montserrat';
 	font-size: 13px;
-	background-color: #e0c9fa;
+	/* background-color: #e0c9fa; */
+	background: linear-gradient(to right, #e4e3ff, #eac3fa);
 	padding: 10px;
 	border-radius: 10px;
 	box-shadow: inset 0px 0px 4px 0px #3b3a3b;
 }
 
+.pd-detail {
+	margin-left: 30px;
+}
 
 .pd-detail li {
 	font-family: 'Montserrat';
@@ -888,7 +894,7 @@ body {
 	padding: 5px 0px;
 	font-family: 'Montserrat';
 	font-weight: bold;
-	font-size: 18x;
+	font-size: 18px;
 	margin: 0;
 }
 

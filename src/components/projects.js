@@ -43,7 +43,13 @@ export default class Projects extends Component {
 	}
 
 	handleClickThumbnail(index) {
-		this.setState({ 
+		// Check if click a already selected board
+		if (this.state.boardSelect === index) {
+			return;
+		}
+
+		// Animation fadeOut then fadeIn for new selected board
+		this.setState({
 			slideLeftAnimation: "fadeOutLeft",
 			slideRightAnimation: "fadeOutRight",
 		}, () => setTimeout(() => {
@@ -56,12 +62,13 @@ export default class Projects extends Component {
 	}
 
 	handleClickBackToBoards() {
-		this.setState({ 
+		// Animation fadeOut then fadeIn back to board view
+		this.setState({
 			slideLeftAnimation: "fadeOutLeft",
 			thumbnailsAnimation: "fadeOutLeft",
 			slideRightAnimation: "fadeOutRight",
 		}, () => setTimeout(() => {
-			this.setState({ 
+			this.setState({
 				boardSelect: undefined,
 				boardAnimation: "slideInUp",
 				boardView: true
@@ -75,7 +82,7 @@ export default class Projects extends Component {
 				className={`p-pt-vc animated ${this.state.thumbnailsAnimation} fast`}
 				onClick={() => this.handleClickBackToBoards()}
 			>
-				<i className="fas fa-arrow-left"/>
+				<i className="fas fa-arrow-left" />
 				<p>Back to boards</p>
 			</div>
 		);
@@ -84,13 +91,14 @@ export default class Projects extends Component {
 	renderProjectThumbnails() {
 		return this.state.data.map((item, i) => {
 			let style = {
-				filter: "brightness(50%)",
+				filter: "brightness(50%) blur(0.7px)",
 				opacity: 0.5
 			};
-			
+
+			// If project is selected then highlight it
 			if (i === this.state.boardSelect) {
 				style = {
-					filter: "brightness(100%)",
+					filter: "brightness(100%) blur(0px)",
 					opacity: 1
 				}
 			}
@@ -123,36 +131,36 @@ export default class Projects extends Component {
 							<p className="pd-name">{board.name}</p>
 							<p className="pd-des">{board.description}</p>
 							<ul className="pd-detail">
-							{
-								board.details.map((item, i) => <li key={i}>{item}</li>)
-							}
+								{
+									board.details.map((item, i) => <li key={i}>{item}</li>)
+								}
 							</ul>
 							<p className="pd-tech">Technologies/Libraries</p>
 							{
 								board.technologies.map((item, i) => <img key={i} className="pd-techLogo" src={this.state.techLogos[item]} alt="techLogo" />)
 							}
-							<div className="pd-view">	
+							<div className="pd-view">
 								{
 									board.website.length > 0 ?
-									<a
-										href={board.website}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<i className="fas fa-external-link-alt" />
-										<p>View Online</p>
-									</a> : <div/>	
+										<a
+											href={board.website}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<i className="fas fa-external-link-alt" />
+											<p>View Online</p>
+										</a> : <div />
 								}
 								{
 									board.githubLink.length > 0 ?
-									<a
-										href={board.githubLink}
-										target="_blank"
-										rel="noopener noreferrer"
-									>
-										<i className="fab fa-github" />
-										<p>View Code</p>
-									</a> : <div />
+										<a
+											href={board.githubLink}
+											target="_blank"
+											rel="noopener noreferrer"
+										>
+											<i className="fab fa-github" />
+											<p>View Code</p>
+										</a> : <div />
 								}
 							</div>
 						</div>
@@ -193,23 +201,23 @@ export default class Projects extends Component {
 						<div className="p-pc-icon">
 							{
 								item.website.length > 0 ?
-								<a
-									href={item.website}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<i className="fas fa-external-link-alt" />
-								</a> : <div/>	
+									<a
+										href={item.website}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<i className="fas fa-external-link-alt" />
+									</a> : <div />
 							}
 							{
 								item.githubLink.length > 0 ?
-								<a
-									href={item.githubLink}
-									target="_blank"
-									rel="noopener noreferrer"
-								>
-									<i className="fab fa-github" />
-								</a> : <div />
+									<a
+										href={item.githubLink}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<i className="fab fa-github" />
+									</a> : <div />
 							}
 						</div>
 					</div>
@@ -219,17 +227,18 @@ export default class Projects extends Component {
 	}
 
 	renderContent() {
+		// Render a proper view
 		let viewContent = this.state.boardView ?
-		<div className="row">
-			{this.renderProjectCards()}
-		</div> :
-		<div>
-			<div className="p-pt-container">
-				{this.renderProjectThumbnails()}
-				{this.renderChangeViewBtn()}
+			<div className="row">
+				{this.renderProjectCards()}
+			</div> :
+			<div>
+				<div className="p-pt-container">
+					{this.renderProjectThumbnails()}
+					{this.renderChangeViewBtn()}
+				</div>
+				{this.renderProjectDetail()}
 			</div>
-			{this.renderProjectDetail()}
-		</div>
 
 		return (
 			<div className="container">
@@ -242,7 +251,7 @@ export default class Projects extends Component {
 		);
 	}
 
-	
+
 	render() {
 		return (
 			<div className="p-container">
