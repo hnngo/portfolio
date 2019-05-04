@@ -74,7 +74,7 @@
   "projects": {
     "projectInfo": [
       {
-        "id": 0,
+        "id": 2,
         "name": "Shoeniverse",
         "description" : "Shoeniverse is a website which allows user purchase shoes, boots and other accessories for both men and women.",
         "details": [
@@ -96,7 +96,7 @@
       },{
         "id": 1,
         "name": "Dashboard Kamela",
-        "description" : "Kamela is a stock website allows user to get the Stock Market Overview, look up for real-life Stock Symbol, access to some Technical Indicators such as CCI, CMO, APO, etc... Besides",
+        "description" : "Kamela is a stock website allows user to get the Stock Market Overview, look up for real-life Stock Symbol, access to some Technical Indicators such as CCI, CMO, APO, etc...",
         "details": [
           "The project is initiated by create-react-app.",
           "Firebase Hosting is used as a hosting service for this project.",
@@ -115,6 +115,25 @@
         "website": "https://dbkamela.firebaseapp.com/",
         "githubLink": "https://github.com/hnngo/dashboard-kamela",
         "devices": "https://lh3.googleusercontent.com/IzFGieErBj_OMMhEP7fRwkeTJ1-utPJdyJ5FPsg5japAbFjclM77_qSgoVNKxEp5XIajqMZzM2h35UzzQBL8nMUPFgMFWZB2BoI2NTpw-Tr9UkakAtbgUHc6z8C1tS9QpiFKHWYZsXJysIDH35B7WvnZurfiGP_M6jB3ahEuyUhxomTg7ICIvCX7IDcvb7aeA_oUuKG8hQCiy-qN-Z44atS9lGtpS0rGNTTfEVmZJH5UXk1ZOGATnKBdLkwzMjG2UX4ERW4S2Uv6I1QdHF3xibUcy1HNpDUKS7Avxy6ka2yrNfc-W8b8H4ChGNM5iwydc8UgGd4SdACZ50ll0lECe3vd_28FP5bVq_XgR8hRVBLNm7a4VjTpn2l_r6B8cE7ECVNMFc2fYqqbpoteHEt8n_k_k51F0vA6YGOWV2kwxdgW_81ovVHdcTBRTOrj3NekSS2tXZnXJ6InPyC94j6JOhAtCt79HRpIvyoIB97BmjyMd5ZKmOAkipf36DB73fNow_7V5OgigKKVSNF5EusNs-5GWTgjjzxtvubxBsl0vxhUDJAbni6UJlUUqZXKNjxL0TFzjZr8Aa1XdC7xZedNauhm_8WgHSx6Q_hKgJep9CHV3FafX4HXPc0KYZ96N1YT5lRqyMfBQYYd5WIlUc4h8OunhWawW1U=w1294-h673-no"
+      },{
+        "id": 0,
+        "name": "JobOL",
+        "description" : "JobOL is an IOS application that allows users search for his/her dream jobs quickly based on search keyword and location.",
+        "details": [
+          "The project is initiated by Expo-cli and I used Redux as a state management for my project",
+          "The application provides the job information based on search keyword and location. The job information is derived from GIT HUB Api.",
+          "Google Firebase is used in the part of authentication and storing data in real-time databse. Both creating account or signing in account are processed by using Google Firebase API.",
+          "For the Cross Platform React Native UI Toolkit, I used React Native Elements."
+        ],
+        "technologies": [
+          "react",
+          "redux",
+          "firebase"
+        ],
+        "bannerImg" : "https://lh3.googleusercontent.com/Qmi7I51g_bL0lAV6YML43BfKQbmOYk42PDxP0xPJpPW5Vewq7YwSDtCjvz0M7xkMz15-rmEl6HqYLozORnP4Rtn_yiWAHaXb1a1-N9A7TeMLGHpBDYVm2KJEz2-cOBctyfWshWFbN-MPsa1SfCyxESoPRfq6Bybs66WwNOMC6rtLFGWIzt96E2ZvBmvS3BD6TjzQ7Xqcto6Ghx5AWyihzh_QWhbFZNjJOMf6KPM1vJJ7DgfQqxKRNrbHxRLQOhr6_l4SIaKPoUbN1IyatzS1XvVfykayhSiJ8xXW36W0NRnkXxllTtmIn-_VpdThYMECgDtM0t9EjBwRfkTx7t6ICja4WxRUEXiWFgXLNP0N7hScCkecmnwp6TtbC0Az3-sfen-7RVIWbFtShoLfX5Lo1R1JCEnNDQhZV8K3kcj5UMN3myHQp6N2PZg__Tl3_pToUcSY96rdXZ86uKbWVO4cupGoEnZhR4AOOobx_zibPboX3_w9ngNyF7YAGdzyGOSN0HNDMJU2b3qxKA0Xqqb5wrmSITeijjGgObPIEL3SCHi9dy0jS_d_K_gqCE0hZv1BLlOIfEKm6qch4dGk-_FLzLPnXtfSXXcUTMnqD6NcykAWfvGtl_8dONfUo9ZFulhSLcyjoVD2VyWpA-f0tZBjM6P5uRr--ao=w521-h371-no",
+        "website": "",
+        "githubLink": "https://github.com/hnngo/jobOL-react-native",
+        "devices": "https://lh3.googleusercontent.com/di8WLQoG_G7OZlyR49CDqTf7GYMDcJPVX1ReKn_8jS7lnhoOdeEHDeXEHmXzdF9z_q-kweyDRm-lIUW5te-kdJjX8zBavCLHIpdYG0vH9u2ED3G9_6MUEWu_fxmhkX3f5vzkvP-SaOV-ndMNZDoxYxUZA59Lr2QpQiCrLpmjiXLCS5LRu1ojXcFTmMJINjE2I39KWXvxnnEzYlijsPH7SlJJpCIS5iSgzI304oEbz3QQ_8B3BaNqIAbLwsgp8DFHyEjjOSGSgPDSevjzvBvdgIvRvVlUZ4uCN7qBMUugsuqFm9A3GE4Vb2WjTGnN8PG8zOQ_gCA8y0zqT18NsnANJAmi1R7xxzXOgRe7tY0cvC2REKb8UBrtj5pyiXXr430tap5K-hg2sbrcy0_Cv2qk03LvMk5FTXEuCB8Vd9R6RAVxgZoygd3mZkR3L_mWuyz_-Y87O6Kdem_UJVjXD69fU7m0xwM1na71DSiGvT_2OwXsFXukPA2gbl8GbIf3Wbnb3wGODxfOu2UtWKOqflMS-aDFqi_cMBItcLuLjw3YEjktHuYnNL_xsGK596AqyRTsGZiU8isgbNW0vtSWf_eVV6xA0vpMx0ptIiVmq8uwPs2L4_YCCsj24k2T4Le4kRP1tSl0Vrs71WMGBiwWN-KjGPIsPAt0-_I=w1317-h865-no"
       }
     ],
     "devices": {

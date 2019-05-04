@@ -26,7 +26,7 @@ export default class NavBar extends Component {
     }
   }
 
-  handleClickNav(type, queryString=undefined) {
+  handleClickNav(type, queryString = undefined) {
     if (!type && !queryString) {
       return;
     }
@@ -72,7 +72,9 @@ export default class NavBar extends Component {
           >
             <h6>Experience</h6>
           </div>
-          <div>
+          <div
+            onClick={() => this.handleClickNav("project")}
+          >
             <h6>Projects</h6>
           </div>
           <div>
@@ -113,7 +115,9 @@ export default class NavBar extends Component {
             <h6>Experience</h6>
             <div className="bn-underline" />
           </li>
-          <li>
+          <li
+            onClick={() => this.handleClickNav("project")}
+          >
             <h6>Projects</h6>
             <div className="bn-underline" />
           </li>

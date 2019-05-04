@@ -13,7 +13,10 @@ export default class Projects extends Component {
 			imgToggle: false,
 			boardView: true,
 			boardSelect: undefined,
-			boardAnimation: "slideInUp"
+			boardAnimation: "slideInUp",
+			thumbnailsAnimation: "slideInLeft",
+			slideLeftAnimation: "slideInLeft",
+			slideRightAnimation: "slideInRight"
 		}
 	}
 
@@ -31,31 +34,49 @@ export default class Projects extends Component {
 			boardAnimation: "fadeOut"
 		}, () => setTimeout(() => {
 			this.setState({
-				boardView: false
+				boardView: false,
+				slideLeftAnimation: "slideInLeft",
+				thumbnailsAnimation: "slideInLeft",
+				slideRightAnimation: "slideInRight"
 			})
 		}, 800));
 	}
 
 	handleClickThumbnail(index) {
-		this.setState({
-			boardSelect: index
-		});
+		this.setState({ 
+			slideLeftAnimation: "fadeOutLeft",
+			slideRightAnimation: "fadeOutRight",
+		}, () => setTimeout(() => {
+			this.setState({
+				boardSelect: index,
+				slideLeftAnimation: "slideInLeft",
+				slideRightAnimation: "slideInRight"
+			})
+		}, 800));
+	}
+
+	handleClickBackToBoards() {
+		this.setState({ 
+			slideLeftAnimation: "fadeOutLeft",
+			thumbnailsAnimation: "fadeOutLeft",
+			slideRightAnimation: "fadeOutRight",
+		}, () => setTimeout(() => {
+			this.setState({ 
+				boardSelect: undefined,
+				boardAnimation: "slideInUp",
+				boardView: true
+			})
+		}, 1000));
 	}
 
 	renderChangeViewBtn() {
 		return (
 			<div
-				className="p-pt-vc"
-				onClick={() => {
-					this.setState({ 
-						boardSelect: undefined,
-						boardAnimation: "slideInUp",
-						boardView: true
-					})
-				}}
+				className={`p-pt-vc animated ${this.state.thumbnailsAnimation} fast`}
+				onClick={() => this.handleClickBackToBoards()}
 			>
 				<i className="fas fa-arrow-left"/>
-				<p>Back</p>
+				<p>Back to boards</p>
 			</div>
 		);
 	}
@@ -76,7 +97,7 @@ export default class Projects extends Component {
 
 			return (
 				<div
-					className="p-pt-ic animated fadeInLeft"
+					className={`p-pt-ic animated ${this.state.thumbnailsAnimation} fast`}
 					key={i}
 				>
 					<img
@@ -98,7 +119,7 @@ export default class Projects extends Component {
 			return (
 				<div className="pd-container">
 					<div className="row">
-						<div className="col-md-6">
+						<div className={`col-md-6 animated ${this.state.slideLeftAnimation} fast`}>
 							<p className="pd-name">{board.name}</p>
 							<p className="pd-des">{board.description}</p>
 							<ul className="pd-detail">
@@ -110,8 +131,32 @@ export default class Projects extends Component {
 							{
 								board.technologies.map((item, i) => <img key={i} className="pd-techLogo" src={this.state.techLogos[item]} alt="techLogo" />)
 							}
+							<div className="pd-view">	
+								{
+									board.website.length > 0 ?
+									<a
+										href={board.website}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<i className="fas fa-external-link-alt" />
+										<p>View Online</p>
+									</a> : <div/>	
+								}
+								{
+									board.githubLink.length > 0 ?
+									<a
+										href={board.githubLink}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										<i className="fab fa-github" />
+										<p>View Code</p>
+									</a> : <div />
+								}
+							</div>
 						</div>
-						<div className="col-md-6">
+						<div className={`col-md-6 animated ${this.state.slideRightAnimation} fast`}>
 							<div className="pd-devices">
 								<img
 									src={board.devices}
@@ -146,20 +191,26 @@ export default class Projects extends Component {
 						<p className="p-pc-name">{item.name}</p>
 						<p className="p-pc-des">{item.description}</p>
 						<div className="p-pc-icon">
-							<a
-								href={item.website}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fas fa-external-link-alt" />
-							</a>
-							<a
-								href={item.githubLink}
-								target="_blank"
-								rel="noopener noreferrer"
-							>
-								<i className="fab fa-github" />
-							</a>
+							{
+								item.website.length > 0 ?
+								<a
+									href={item.website}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<i className="fas fa-external-link-alt" />
+								</a> : <div/>	
+							}
+							{
+								item.githubLink.length > 0 ?
+								<a
+									href={item.githubLink}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									<i className="fab fa-github" />
+								</a> : <div />
+							}
 						</div>
 					</div>
 				</div>
