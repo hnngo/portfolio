@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
 import NavBar from './NavBar';
 import Homepage from './Homepage';
 import AboutPage from './About';
 import Projects from './Projects';
-import { ContactPage } from './contact';
 import Experience from './Experience';
+import Contact from './Contact';
 import '../style/css/app.css';
 import '../style/css/queriess.css';
 
@@ -18,6 +17,7 @@ class App extends Component {
 			showAbout: false,
 			showExperience: false,
 			showProjects: false,
+			showContact: false,
 		}
 	}
 
@@ -30,27 +30,46 @@ class App extends Component {
 
 		// Interval checking for showing page
 		let scrollInterval = setInterval(() => {
+			const {
+				showAbout,
+				showExperience,
+				showProjects,
+				showContact
+			} = this.state;
+
+			// If all true, then stop the interval
+			if (showAbout && showExperience && showProjects) {
+				clearInterval(this.state.scrollInterval);
+				return;
+			}
+
 			// Homepage
 			let yAbout = document.querySelector(".a-container").getBoundingClientRect().top + window.scrollY * 1 / 2;
 
-			if (window.scrollY >= yAbout && !this.state.showAbout) {
+			if (window.scrollY >= yAbout && !showAbout) {
 				this.setState({ showAbout: true })
 			}
 
 			// Experience
 			let yExperience = document.querySelector(".e-container").getBoundingClientRect().top + window.scrollY * 4 / 5;
 
-			if (window.scrollY >= yExperience && !this.state.showExperience) {
+			if (window.scrollY >= yExperience && !showExperience) {
 				setTimeout(() => this.setState({ showExperience: true }), 400);
 			}
 
 			// Projects
 			let yProjects = document.querySelector(".p-container").getBoundingClientRect().top + window.scrollY * 4 / 5;
 
-			if (window.scrollY >= yProjects && !this.state.showProjects) {
+			if (window.scrollY >= yProjects && !showProjects) {
 				setTimeout(() => this.setState({ showProjects: true }), 400);
 			}
 
+			// Projects
+			let yContact = document.querySelector(".c-container").getBoundingClientRect().top;
+
+			if (window.scrollY >= yContact && !showContact) {
+				setTimeout(() => this.setState({ showContact: true }), 400);
+			}
 		}, 100);
 
 		this.setState({ scrollInterval });
@@ -62,29 +81,23 @@ class App extends Component {
 
 	render() {
 		return (
-			<HashRouter>
-				<div className="pb-5">
-					<NavBar />
-					<Homepage />
-					<AboutPage show={this.state.showAbout} />
-					<div className="e-container">
-						{
-							this.state.showExperience ?
-								<Experience /> : <div />
-						}
-					</div>
-					<Projects show={this.state.showProjects} />
-					<Switch>
-						{/*<Route exact path="/about" component={AboutPage} />
-						<Route exact path="/projects" component={ProjectsPage} />
-						<Route exact path="/contact" component={ContactPage} /> */}
-					</Switch>
+			<div>
+				<NavBar />
+				<Homepage />
+				<AboutPage show={this.state.showAbout} />
+				<div className="e-container">
+					{
+						this.state.showExperience ?
+							<Experience /> : <div />
+					}
 				</div>
-			</HashRouter>
+				<Projects show={this.state.showProjects} />
+				<Contact show={this.state.showContact} />
+			</div>
 		);
 	}
 }
 
 export default App;
 
-// TODO - add a reward, skills page / using progress bar in bootstrap
+// Add resume

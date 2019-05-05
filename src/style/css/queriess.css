@@ -258,6 +258,10 @@
   .p-pc-container:hover::before {
     background-color: rgba(2, 2, 2, 0.25);
   }
+
+  .p-pt-vc:hover::before {
+    width: 180px;
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -294,11 +298,6 @@
   }
 }
 
-/* @media (max-height: 799px) {
-  .e-container {
-    height: 750px !important;
-  }
-} */
 
 @media (min-height: 880px) {
   .e-yearSlider {

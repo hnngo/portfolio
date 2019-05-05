@@ -14,14 +14,6 @@ body {
 	overflow-x: hidden;
 }
 
-body {
-	overflow-x: hidden;
-
-	/* background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../img/wall.jpeg);
-	background-size: cover;
-	background-attachment: fixed; */
-}
-
 .f-Amita {
 	font-family: 'Amita', cursive;
 }
@@ -649,7 +641,7 @@ body {
 /*---------------------------------------------*/
 .p-container {
 	min-height: 100vh;
-	background: linear-gradient(to right, rgb(255, 255, 255), #e0c9fa);
+	background: linear-gradient(to bottom, rgb(255, 255, 255), #e0c9fa);
 	/* z-index: -3; */
 }
 
@@ -662,6 +654,7 @@ body {
 	position: relative;
 	top: 0px;
 	height: 450px;
+	margin-bottom: 30px;
 	/* background-color: #2b0528; */
 	background: linear-gradient(to right, #42275a, #734b6d);
 	border-radius: 10px;
@@ -771,7 +764,7 @@ body {
 .p-pt-vc {
 	cursor: pointer;
 	position: absolute;
-	top: 90px;
+	top: 95px;
 	left: 0px;
 	display: flex;
 	width: 180px;
@@ -796,10 +789,6 @@ body {
 	background-color: #6d4799 ;
 	border-radius: 15px;
 	transition: 0.5s;
-}
-
-.p-pt-vc:hover::before {
-	width: 180px;
 }
 
 .p-pt-vc i {
@@ -856,7 +845,6 @@ body {
 .pd-des {
 	font-family: 'Montserrat';
 	font-size: 13px;
-	/* background-color: #e0c9fa; */
 	background: linear-gradient(to right, #e4e3ff, #eac3fa);
 	padding: 10px;
 	border-radius: 10px;
@@ -894,7 +882,7 @@ body {
 .pd-view a {
 	position: relative;
 	display: flex;
-	margin-top: 10px;
+	margin: 10px 0px;
 	overflow: hidden;
 }
 
@@ -947,17 +935,41 @@ body {
 /*---------------------------------------------*/
 /* CONTACT
 /*---------------------------------------------*/
-
-.contact {
-	max-width: 70%;
-	margin: 0 auto;
+.c-container {
+	min-height: 400px;
+	background: linear-gradient(to bottom, #e0c9fa, #43374e);
+	overflow: hidden;
 }
 
-.contact ul {
-	list-style: none;
-	font-size: 100%;
+.c-btn-back {
+	width: 80px;
+	height: 80px;
+	/* position: absolute; */
+	text-align: center;
+	font-size: 20px;
+	background: #42275a;
 }
 
-.contact ul i {
-	padding-right: 10px;
+.c-btn-back i {
+	position: relative;
+	top: 50%;
+	/* left: 50%; */
+	transform: translateY(-50%);
 }
+
+/* 
+.c-t-contact {
+	font-family: 'Montserrat';
+	color: white;
+	text-align: center;
+	font-size: 90px;
+	transform: rotateX(30deg) skewX(-5deg);
+	text-shadow: 1px 0px 8px  rgb(227, 184, 247);
+	transition: 0.5s;
+}
+
+.c-t-contact:hover {
+	transform: translateY(-10px) rotateX(30deg) skewX(-5deg);
+	text-shadow: 7px 15px 12px  rgb(180, 180, 180);
+} */
+

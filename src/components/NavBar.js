@@ -87,7 +87,9 @@ export default class NavBar extends Component {
           >
             <h6>Projects</h6>
           </div>
-          <div>
+          <div
+            onClick={() => this.handleClickNav("contact")}
+          >
             <h6>Contact</h6>
           </div>
         </div>
@@ -131,7 +133,9 @@ export default class NavBar extends Component {
             <h6>Projects</h6>
             <div className="bn-underline" />
           </li>
-          <li>
+          <li
+            onClick={() => this.handleClickNav("contact")}
+          >
             <h6>Contact</h6>
             <div className="bn-underline" />
           </li>
