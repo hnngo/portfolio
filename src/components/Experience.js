@@ -85,7 +85,6 @@ export default class Experience extends Component {
     let boardZindex = this.state.boardZindex;
     let boardTransX = [...this.state.boardTransX];
     let boardTransXOrigin = this.state.boardTransXOrigin;
-    // let boardTransXOrigin = this.state.boardDeltaSize.map((item, i) => -(item + i * this.state.transOffset))
 
     this.state.expData.forEach((item, i) => {
       let delta = Math.abs(i - convertedVal);

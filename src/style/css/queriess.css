@@ -91,6 +91,10 @@
     font-size: 16px;
   }
 
+  .e-container {
+    height: 820px !important;
+  }
+
   .e-yearSlider {
     margin-bottom: 45px;
   }
@@ -162,12 +166,7 @@
     position: relative;
     top: 10px;
     left: 0px;
-    /* display: flex; */
-    /* width: 180px; */
-    /* background-color: #e0c9fa;
-    border-radius: 15px;
-    box-shadow: 0px 0px 4px 0px #978996;
-    overflow: hidden; */
+    width: 200px;
   }
 }
 
@@ -246,6 +245,19 @@
     font-size: 14px;
     line-height: 20px;
   }
+
+  .p-pc-container:hover {
+    top: -10px;
+    box-shadow: 10px 15px 20px 3px #460442;
+  }
+  
+  .p-pc-container:hover::after {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  .p-pc-container:hover::before {
+    background-color: rgba(2, 2, 2, 0.25);
+  }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -282,11 +294,11 @@
   }
 }
 
-@media (max-height: 799px) {
+/* @media (max-height: 799px) {
   .e-container {
     height: 750px !important;
   }
-}
+} */
 
 @media (min-height: 880px) {
   .e-yearSlider {

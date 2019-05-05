@@ -694,19 +694,6 @@ body {
 	transition: 0.4s;
 }
 
-.p-pc-container:hover {
-	top: -10px;
-	box-shadow: 10px 15px 20px 3px #460442;
-}
-
-.p-pc-container:hover::after {
-	background-color: rgba(255, 255, 255, 0.15);
-}
-
-.p-pc-container:hover::before {
-	background-color: rgba(2, 2, 2, 0.25);
-}
-
 .p-pc-container img {
 	width: 100%;
 	resize: both;
