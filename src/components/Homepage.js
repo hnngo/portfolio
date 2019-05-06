@@ -92,7 +92,7 @@ export default class Homepage extends Component {
   renderLight() {
     if (this.state.showLight) {
       return (
-        <div className="h-light-contaienr">
+        <div className="h-light-container animated fadeIn">
           <i className="far fa-lightbulb" />
         </div>
       );
@@ -110,7 +110,9 @@ export default class Homepage extends Component {
             {this.renderBtn()}
           </div>
         </div>
-        {this.renderLight()}
+        <div className="d-none d-md-block">
+          {this.renderLight()}
+        </div>
       </div>
     );
   }

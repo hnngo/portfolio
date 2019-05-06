@@ -15,6 +15,13 @@
     margin: 15px 0;
   }
 
+  .h-light-contaienr {
+    position: absolute;
+    top: -25px;
+    right: 30px;
+    font-size: 120px;
+  }
+
   .ct-container {
     margin: 12px 0px;
   }
@@ -100,7 +107,8 @@
   }
 
   .ys-container input {
-    transform: translateX(-10px)
+    -webkit-transform: translateX(-10px);
+            transform: translateX(-10px)
   }
 
   .ys-container img {
@@ -158,7 +166,9 @@
   }
 
   .p-pt-container {
-    justify-content: start;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
   }
 
   .p-pt-vc {
@@ -190,6 +200,7 @@
   /*---------------------------------------------*/
   .bn-links ul li .bn-underline {
     width: 0px;
+    -webkit-transition: 0.5s;
     transition: 0.5s;
     background: rgb(192, 120, 214);
     height: 2px;
@@ -204,6 +215,7 @@
 
   .bn-links ul li h6 {
     color: white;
+    -webkit-transition: 0.8s;
     transition: 0.8s 
   }
 
@@ -222,16 +234,34 @@
   }
 
   .h-about:active{
-    box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+    -webkit-box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+            box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
   }
 
   .h-portfolio:active {
-    box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+    -webkit-box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+            box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
   }
 
   .h-about,
   .h-portfolio {
     display: inline-block;
+  }
+
+  .h-light-container:hover {
+    filter: blur(0px) brightness(200%);
+  }
+
+  .h-light-container:hover i {
+    opacity: 1;
+    text-shadow: 
+    .1vw 0vw .25vw #fac0ff, .2vw 0vw .25vw #fac0ff, .4vw 0vw .25vw #fac0ff, 
+    .1vw 0vw   0vw #f588ff, .2vw 0vw   0vw #f588ff, .4vw 0vw   0vw #f588ff,
+    .1vw 0vw  .1vw #f588ff, .2vw 0vw  .1vw #f588ff, .4vw 0vw  .1vw #f588ff,
+    .1vw 0vw   2vw #f588ff, .2vw 0vw   2vw #f588ff, .4vw 0vw   2vw #f588ff, 
+    .1vw 0vw   1vw #ea00ff, .2vw 0vw   1vw #ea00ff, .4vw 0vw   5vw #ea00ff, 
+    .1vw 0vw   10vw #ea00ff, .2vw 0vw  35vw #ea00ff, .4vw 0vw  10vw #ea00ff,
+    .1vw 0vw  20vw #ea00ff, .2vw 0vw  45vw #ea00ff, .4vw 0vw  30vw #ea00ff;
   }
 
   .eb-company {
@@ -261,7 +291,8 @@
 
   .p-pc-container:hover {
     top: -10px;
-    box-shadow: 10px 15px 20px 3px #460442;
+    -webkit-box-shadow: 10px 15px 20px 3px #460442;
+            box-shadow: 10px 15px 20px 3px #460442;
   }
   
   .p-pc-container:hover::after {
@@ -278,7 +309,17 @@
 
   
   .c-btn-back:hover::before {
-    animation: borderRun 2s infinite alternate;
+    -webkit-animation: borderRun 2s infinite alternate;
+            animation: borderRun 2s infinite alternate;
+  }
+
+  @-webkit-keyframes borderRun {
+    from {
+      border: 4px solid #b99cf3;
+    }
+    to {
+      border: 4px solid #a324ec;
+    }
   }
 
   @keyframes borderRun {
@@ -295,7 +336,8 @@
   }
 
   .c-c-i i:active {
-    box-shadow: inset 0px 0px 1px 3px rgb(41, 18, 53);
+    -webkit-box-shadow: inset 0px 0px 1px 3px rgb(41, 18, 53);
+            box-shadow: inset 0px 0px 1px 3px rgb(41, 18, 53);
   }
 
   .c-c-i i:hover::after {

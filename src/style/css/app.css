@@ -222,7 +222,6 @@ body {
 }
 
 .h-btn {
-	/* display: flex; */
 	margin-top: 45px;
 }
 
@@ -248,35 +247,19 @@ body {
 	color: #eeeeee;
 }
 
-.h-light-contaienr {
+.h-light-container {
 	position: absolute;
 	top: -20px;
 	right: 60px;
 	transform: rotate(-135deg);
 	font-size: 180px;
-	opacity: 0.2;
 	filter: blur(2px) brightness(100%);
-	color: #eac3fa
+	color: #dadada;
 }
 
-.h-light-contaienr:hover {
-	opacity: 0.8;
-	filter: blur(0px) brightness(200%);
+.h-light-container i {
+	opacity: 0.1;
 }
-
-.h-light-contaienr:hover i {
-	/* text-shadow: 0px 0px 13px rgb(212, 0, 255); */
-	text-shadow: 
-  .1vw 0vw .25vw #fac0ff, .2vw 0vw .25vw #fac0ff, .4vw 0vw .25vw #fac0ff, 
-  .1vw 0vw   0vw #f588ff, .2vw 0vw   0vw #f588ff, .4vw 0vw   0vw #f588ff,
-  .1vw 0vw  .1vw #f588ff, .2vw 0vw  .1vw #f588ff, .4vw 0vw  .1vw #f588ff,
-  .1vw 0vw   2vw #f588ff, .2vw 0vw   2vw #f588ff, .4vw 0vw   2vw #f588ff, 
-  .1vw 0vw   1vw #ea00ff, .2vw 0vw   1vw #ea00ff, .4vw 0vw   5vw #ea00ff, 
-  .1vw 0vw   10vw #ea00ff, .2vw 0vw  40vw #ea00ff, .4vw 0vw  10vw #ea00ff,
-	.1vw 0vw  20vw #ea00ff, .2vw 0vw  50vw #ea00ff, .4vw 0vw  30vw #ea00ff,
-	.4vw 0vw  80vw #ff00ff, .4vw 0vw  90vw #ff00ff, .4vw 0vw  100vw #ff00ff;
-}
-
 /*---------------------------------------------*/
 /* Component Title
 /*---------------------------------------------*/

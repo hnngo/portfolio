@@ -64,7 +64,7 @@ class App extends Component {
 				setTimeout(() => this.setState({ showProjects: true }), 400);
 			}
 
-			// Projects
+			// Contact
 			let yContact = document.querySelector(".c-container").getBoundingClientRect().top;
 
 			if (window.scrollY >= yContact && !showContact) {

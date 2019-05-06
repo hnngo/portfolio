@@ -43,9 +43,7 @@ export default class Contact extends Component {
 	render() {
 		return (
 			<div className="c-container">
-				{
-					this.props.show ? this.renderContent() : <div />
-				}
+				{this.renderContent()}
 			</div>
 		);
 	}

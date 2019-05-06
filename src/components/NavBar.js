@@ -33,7 +33,7 @@ export default class NavBar extends Component {
   }
 
 
-  handleClickNav(type, queryString = undefined) {
+  handleClickNav(type, queryString=undefined) {
     if (!type && !queryString) {
       return;
     }

@@ -83,10 +83,10 @@
         "name": "Shoeniverse",
         "description" : "Shoeniverse is a website which allows user purchase shoes, boots and other accessories for both men and women.",
         "details": [
-          "The project is initiated by create-react-app and I used Redux as a state management for my project",
-          "Google Firebase is used in the part of authentication. Both creating account or signing in account are processed by using Google Firebase API.",
-          "The responsive, mobile-first feature and other css prototype I used for this project is Bootstrap",
-          "All the pictures of shoes, sneakers, boots and other accessories used non-commercialized in the project are from these sources: Nike, Adidas, Vans, Dr Martens, Farfetch, Warby Parker, Coach."
+          "The project is initiated by create-react-app and I used Redux as a state management",
+          "Google Firebase plays the role of authentication. Both creating new account and signing in account are processed by using Google Firebase API",
+          "The responsive, mobile-first feature css I used for this project is from Bootstrap 4",
+          "All the pictures of shoes, sneakers, boots and other accessories used non commercially in the project are from these real-life brands: Nike, Adidas, Vans, Dr Martens, Farfetch, Warby Parker, Coach."
         ],
         "technologies": [
           "react",
@@ -103,10 +103,10 @@
         "name": "Dashboard Kamela",
         "description" : "Kamela is a stock website allows user to get the Stock Market Overview, look up for real-life Stock Symbol, access to some Technical Indicators such as CCI, CMO, APO, etc...",
         "details": [
-          "The project is initiated by create-react-app.",
+          "The project is initiated by create-react-app",
           "Firebase Hosting is used as a hosting service for this project.",
-          "The responsive, mobile-first feature and other css prototype I used for this project is Bootstrap.",
-          "I used d3.js as a tool for visualizing almost stock data. The types of chart are varied such as as line graph, circle point, bar chart, area and pie chart.",
+          "The responsive, mobile-first feature css I used for this project is from Bootstrap 4",
+          "I used d3.js as a tool for visualizing almost stock data. The types of chart are varied such as line graph, circle point chart, bar chart, area and pie chart.",
           "For the limitation of information about real company, I generated fake company data by using Mockaroo.",
           "The side bar is created for only making the dashboard be like the real stock website dashbord. Therefore it has no functionality."
         ],
@@ -120,12 +120,12 @@
         "website": "https://dbkamela.firebaseapp.com/",
         "githubLink": "https://github.com/hnngo/dashboard-kamela",
         "devices": "https://lh3.googleusercontent.com/IzFGieErBj_OMMhEP7fRwkeTJ1-utPJdyJ5FPsg5japAbFjclM77_qSgoVNKxEp5XIajqMZzM2h35UzzQBL8nMUPFgMFWZB2BoI2NTpw-Tr9UkakAtbgUHc6z8C1tS9QpiFKHWYZsXJysIDH35B7WvnZurfiGP_M6jB3ahEuyUhxomTg7ICIvCX7IDcvb7aeA_oUuKG8hQCiy-qN-Z44atS9lGtpS0rGNTTfEVmZJH5UXk1ZOGATnKBdLkwzMjG2UX4ERW4S2Uv6I1QdHF3xibUcy1HNpDUKS7Avxy6ka2yrNfc-W8b8H4ChGNM5iwydc8UgGd4SdACZ50ll0lECe3vd_28FP5bVq_XgR8hRVBLNm7a4VjTpn2l_r6B8cE7ECVNMFc2fYqqbpoteHEt8n_k_k51F0vA6YGOWV2kwxdgW_81ovVHdcTBRTOrj3NekSS2tXZnXJ6InPyC94j6JOhAtCt79HRpIvyoIB97BmjyMd5ZKmOAkipf36DB73fNow_7V5OgigKKVSNF5EusNs-5GWTgjjzxtvubxBsl0vxhUDJAbni6UJlUUqZXKNjxL0TFzjZr8Aa1XdC7xZedNauhm_8WgHSx6Q_hKgJep9CHV3FafX4HXPc0KYZ96N1YT5lRqyMfBQYYd5WIlUc4h8OunhWawW1U=w1294-h673-no"
-      },{
+      }, {
         "id": 0,
         "name": "JobOL",
         "description" : "JobOL is an IOS application that allows users search for his/her dream jobs quickly based on search keyword and location.",
         "details": [
-          "The project is initiated by Expo-cli and I used Redux as a state management for my project",
+          "The project is initiated by Expo-cli, written in React Native and I used Redux as a state management for my project",
           "The application provides the job information based on search keyword and location. The job information is derived from GIT HUB Api.",
           "Google Firebase is used in the part of authentication and storing data in real-time databse. Both creating account or signing in account are processed by using Google Firebase API.",
           "For the Cross Platform React Native UI Toolkit, I used React Native Elements."
