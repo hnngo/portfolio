@@ -36,11 +36,6 @@ export default class AboutPage extends Component {
 										target="_blank"
 										rel="noopener noreferrer"
 									><i className="fab fa-linkedin" /></a>
-									<a
-										href="https://www.facebook.com/huynhnhan070994"
-										target="_blank"
-										rel="noopener noreferrer"
-									><i className="fab fa-facebook" /></a>
 								</div>
 							</div>
 						</div>

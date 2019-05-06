@@ -23,10 +23,10 @@ class App extends Component {
 
 	componentDidMount() {
 		// Scroll to top
-		// window.scroll({
-		// 	top: 0,
-		// 	behavior: 'smooth'
-		// });
+		window.scroll({
+			top: 0,
+			behavior: 'smooth'
+		});
 
 		// Interval checking for showing page
 		let scrollInterval = setInterval(() => {

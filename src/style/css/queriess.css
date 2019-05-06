@@ -168,6 +168,19 @@
     left: 0px;
     width: 200px;
   }
+
+  .c-c-i {
+    top: 120px;
+  }
+
+  .c-logo {
+    bottom: 90px;
+  }
+
+  .c-c-i i {
+    margin: 0 20px;
+    padding: 20px 20px;
+  }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -261,6 +274,32 @@
 
   .p-pt-vc:hover::before {
     width: 180px;
+  }
+
+  
+  .c-btn-back:hover::before {
+    animation: borderRun 2s infinite alternate;
+  }
+
+  @keyframes borderRun {
+    from {
+      border: 4px solid #b99cf3;
+    }
+    to {
+      border: 4px solid #a324ec;
+    }
+  }
+  
+  .c-c-i i:hover {
+    color: white;
+  }
+
+  .c-c-i i:active {
+    box-shadow: inset 0px 0px 1px 3px rgb(41, 18, 53);
+  }
+
+  .c-c-i i:hover::after {
+    left: 80px;
   }
 }
 

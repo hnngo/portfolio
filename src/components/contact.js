@@ -13,11 +13,21 @@ export default class Contact extends Component {
 				>
 					<i className="fas fa-chevron-up" />
 				</div>
-
 				<div className="c-c-i">
-					<i className="fab fa-github" />
-					<i className="fab fa-linkedin-in" />
-					<i className="fas fa-envelope-open-text" />
+					<a
+						href="https://github.com/hnngo"
+						target="_blank"
+						rel="noopener noreferrer"
+					><i className="fab fa-github" /></a>
+					<a
+						href="https://www.linkedin.com/in/ngohuynhnhan/"
+						target="_blank"
+						rel="noopener noreferrer"
+					><i className="fab fa-linkedin-in" /></a>
+					<a
+						href="mailto:ngohuynhnhan@gmail.com"
+					><i className="fas fa-envelope-open-text" /></a>
+				
 				</div>
 				<div className="c-logo">
 					<div className="nav-header">
@@ -25,6 +35,7 @@ export default class Contact extends Component {
 						<h6 className="nav-h">h</h6>
 					</div>
 				</div>
+				<p className="c-update">Last update 06 May 2019</p>
 			</div>
 		);
 	}

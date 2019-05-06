@@ -936,7 +936,7 @@ body {
 /* CONTACT
 /*---------------------------------------------*/
 .c-container {
-	min-height: 340px;
+	min-height: 350px;
 	background: linear-gradient(to bottom, #e0c9fa, #655c6e);
 	overflow: hidden;
 	position: relative;
@@ -976,10 +976,6 @@ body {
 	transition: 0.5s;
 }
 
-.c-btn-back:hover::before {
-	animation: borderRun 2s infinite alternate;
-}
-
 .c-btn-back i {
 	position: relative;
 	top: 42%;
@@ -987,20 +983,12 @@ body {
 	color: white;
 }
 
-@keyframes borderRun {
-	from {
-		border: 4px solid #b99cf3;
-	}
-	to {
-		border: 4px solid #a324ec;
-	}
-}
-
 .c-c-i {
 	position: absolute;
 	top: 140px;
 	left: 50%;
 	transform: translateX(-50%);
+	display: flex;
 }
 
 .c-c-i i {
@@ -1013,14 +1001,7 @@ body {
 	color: rgb(206, 206, 206);
 	box-shadow: 0px 0px 1px 3px #2F0743;
 	overflow: hidden;
-}
-
-.c-c-i i:hover {
-	color: white;
-}
-
-.c-c-i i:active {
-	box-shadow: inset 0px 0px 1px 3px rgb(41, 18, 53);
+	transition: 1s;
 }
 
 .c-c-i i::after {
@@ -1035,13 +1016,17 @@ body {
 	transition: 0.5s;
 }
 
-.c-c-i i:hover::after {
-	left: 80px;
-}
-
-.c-logo {
+.c-logo,
+.c-update {
 	position: absolute;
-	bottom: 40px;
+	bottom: 65px;
 	left: 50%;
 	transform: translateX(-50%);
+}
+
+.c-update {
+	text-align: center;
+	bottom: 5px;
+	font-family: 'Montserrat';
+	color: white;
 }
