@@ -136,7 +136,7 @@ export default class Experience extends Component {
           keyBoard={i}
           employer={item.employer}
           designation={item.designation}
-          compLogo={require(`../style/img/${item.compLogo}`)}
+          compLogo={item.compLogo}
           headSentence={item.headSentence}
           jDHeader={item.jDHeader}
           jobDescription={item.jobDescription}
@@ -178,7 +178,7 @@ export default class Experience extends Component {
                   fromTime: "08/2012",
                   toTime: "04/2017",
                   employer: "Ho Chi Minh city Univeristy of Technology",
-                  logo: "hcmut_logo.png",
+                  logo: this.state.expData[3].compLogo,
                   designation: "Student"
                 },
                 {
@@ -186,7 +186,7 @@ export default class Experience extends Component {
                   fromTime: "06/2016",
                   toTime: "09/2016",
                   employer: "MobiFone Testing and Maintenance Center",
-                  logo: "mobifone_logo.png",
+                  logo: this.state.expData[2].compLogo,
                   designation: "Internship Research Engineer"
                 },
                 {
@@ -194,7 +194,7 @@ export default class Experience extends Component {
                   fromTime: "05/2017",
                   toTime: "10/2017",
                   employer: "Fiot Co. LTD",
-                  logo: "fiot_logo.jpg",
+                  logo: this.state.expData[1].compLogo,
                   designation: "Embedded Firmware Development Engineer"
                 },
                 {
@@ -202,7 +202,7 @@ export default class Experience extends Component {
                   fromTime: "05/2018",
                   toTime: "present",
                   employer: "Nanyang Technological University",
-                  logo: "ntu_logo.png",
+                  logo: this.state.expData[0].compLogo,
                   designation: "Research Engineer"
                 }
               ]}

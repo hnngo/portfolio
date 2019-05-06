@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 export default class Contact extends Component {
 	renderContent() {
 		return (
-			<div className="container">
+			<div className="container animated fadeIn slow">
 				<div
-					className="c-btn-back animated fadeIn slow"
+					className="c-btn-back"
 					onClick={() => window.scroll({
 						top: 0,
 						behavior: 'smooth'

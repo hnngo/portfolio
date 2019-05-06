@@ -6,6 +6,7 @@ export default class FallingLeaf extends Component {
 
     this.state = {
       loaded: false,
+      imgToggle: false,
       running: true,
       leafFallingInterval: undefined,
       leafRotateInterval: undefined,
@@ -158,6 +159,7 @@ export default class FallingLeaf extends Component {
             onMouseEnter={() => this.handleEnterLeaf()}
             onMouseLeave={() => this.handleOutLeaf()}
             onClick={() => this.handleOnClick()}
+            onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
           />
         </div>
       );

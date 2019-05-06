@@ -9,6 +9,7 @@ export default class Homepage extends Component {
       showName: false,
       showDescript: false,
       showBtn: false,
+      showLight: false
     };
   }
 
@@ -25,6 +26,10 @@ export default class Homepage extends Component {
         }, () => {
           setTimeout(() => this.setState({
             showBtn: true,
+          }, () => {
+            setTimeout(() => this.setState({
+              showLight: true,
+            }), 1000);
           }), 1000);
         }), 800);
       }), 1000);
@@ -84,16 +89,28 @@ export default class Homepage extends Component {
     }
   }
 
+  renderLight() {
+    if (this.state.showLight) {
+      return (
+        <div className="h-light-contaienr">
+          <i className="far fa-lightbulb" />
+        </div>
+      );
+    } else {
+      return <div />;
+    }
+  }
+
   render() {
     return (
       <div className="h-container">
         <div className="container">
           <div className="h-header">
-            {/* {this.renderHeaderTyping()} */}
             {this.renderTitle()}
             {this.renderBtn()}
           </div>
         </div>
+        {this.renderLight()}
       </div>
     );
   }

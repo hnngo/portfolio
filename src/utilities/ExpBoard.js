@@ -6,6 +6,7 @@ export default class ExpBoard extends Component {
 
     this.state = {
       ebHeight: undefined,
+      imgToggle: false
     }
   }
 
@@ -50,6 +51,7 @@ export default class ExpBoard extends Component {
               <img
                 src={this.props.compLogo}
                 alt="company-logo"
+                onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
               /> : <div />
           }
           <p className="eb-company">{this.props.employer}</p>

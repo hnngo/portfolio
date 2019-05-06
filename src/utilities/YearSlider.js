@@ -25,6 +25,7 @@ export default class YearSlider extends Component {
 
     this.state = {
       reSizeEvent: undefined,
+      imgToggle: false,
       currentWidth: 0,
       slideInterval: undefined,
       slideValue: 100,
@@ -178,8 +179,7 @@ export default class YearSlider extends Component {
       return (
         <div key={i}>
           <img
-            src={require(`../style/img/${item.logo}`)}
-            className="ys-ms-logo"
+            src={item.logo}            className="ys-ms-logo"
             style={{
               left: offsetLeft,
               opacity: this.state.msOpacities[i],
@@ -188,6 +188,7 @@ export default class YearSlider extends Component {
             }}
             alt="logo"
             onClick={() => this.handleClickLogo(i)}
+            onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
           />
           <p
             className="ys-ms-fromYear"

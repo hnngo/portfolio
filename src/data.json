@@ -1,10 +1,15 @@
 {
+  "about": {
+    "leafBorder" : "https://lh3.googleusercontent.com/bvJJK9HHFNl9V-QxpbU76qNXrzsDhgzChFzFvehiiugveRVpAr7D3983TdYvCB2lWUZa1-W3jlVk1LHh1VEl8dNKntaV59vhIbaBh4Fcls40S1jX2Ybq8TwXh_xMlfedLDDB4fiAsSiuuKsi549P8HAxlf8FbopEc_3IwBe5zN5hSrp4o-WerPiRz07isTkBMYlpsnIKOfEpqK-pOgQAgydSoosIT1OW9r1LtAFjWZBJnXlYPKkHti_VENCkMkGd-XeuQYRuzi7WD0iCJyzfF7rqhxt6JZZYHSdt8JhqDqSwbBgRsYsm8B13r8c8GJN1DkLcB_Cu30ppz-lliaF2DBiQ83St_RPEbDuudlYjv2x_WPrLua1A9h_gmrz91wKGN38J4DUOLfRYCtdOJHAPpmBTE8w7oYBzNTlGw4fkFS4M2TLVZ1O1bcY78JvHnKzripse8-T9sbkvSzGoyZ92Dh5cRT0Ngo8aNfOcRphrxHMad2vy1gXNghCHAv9aUwmIzscKmdC_nS7066SmFEfhEOtINvYjr-PaGBt3a40tD54huxvVRioRkNJkqG6AcrZHF-m7fNzaLATshtbeYU_eHNivI63jawvs3h3q8cLuR5FBjXL0dp2ud7-TljzkP9sAxGUMYNZZMDjRAFCevQsYC3upbSC4tN8=s261-no",
+    "leafSolid": "https://lh3.googleusercontent.com/MNJAGp1oMcxOS5aJiQWEyYoyi7erLWQkOnBkU8YDUDUFfHGHjwlXOdo_WMFt7x34rbjYD3il5n-ekThIp5tuItPz9TaVDCE7EN3-1SO4NDhozUhH33tZpxZ7QhK0vbjEz01h5vt53q9z7GSmZzfdIYdfYIfgslY7VDbPRd2e4iTxWthTNajdluhMp1TVyTTT0qy6FGVFkxf6JQ-cwjlFIhOhO1LwjNkERHXXLQrDy6WaOK0XbOU1xXsa7-TQq1YJ98fBsDCeHV8JADL4S49Fy373BuhGZ7tTJ9raxcFEmLbiQmW-xDdo074NT0ehxC9S8SuUCUJZYP1LUyJKj4vl2ISzDIzrVnAEJzz9ybBJ0z7pWdy2bJyZkkPRDAYUyOol6253gcG5AnCxgXVkdN23KpV-3fcrAN7UQMER_KyxwuqUWHjuwq_3I2YoqzGi-XdJ66W-L81Khg_LG_-_XIyYboouR6ekCWtor7eYJW1Y1Ah9xUBU9we93-6CvYex7EJW6_sYLBzevUp_kG_d0281gAwWEQsdNVuUMQatNUmXma6Ktc-5RY9u5px4pre0JaoWvA1ZEVveSMvO7dPttkrf4l5eQGTFUUtk_qUml9AL2qvpaL5_GKOmBP589HB28MecqcUWAqvMJlGpd-qSUBMxH-WCX_Wl5WI=s247-no",
+    "profilePhoto": "https://lh3.googleusercontent.com/v9IZ1mtXBdb_DQs7emI8XNQXBYABJYhbyJxCHT8Azm2Q33oWsYAaMuPdM7CHvL7HKOoejiQ35oBc-xEGE31MAQkYNiqG-EtALpa005_kQNy-JaQZkAgzIVj_hR7z0aO1EoJKxyC3ef1HoMqe0Uqnyl7EHGbOJgdHS0Sm3e0DR_33lOFrZjdpIaK-vcLkvS3GMVoQOjxZItA8YFpmSX_IBfvSSUZoPR9I5oUItnsdCY7CIRBktsg1OF0uOJq2tB5W5LyPbI9PGEUa52f8hafJFWkzAAF9ESamibItV2TkMHGoCdMuk7P9i8qXY78INhhBev10mUcBjfB6NhBdQlWl1twl9gkFA_I4ElI770AhQwfC58B-cbgGg8jubsjER93iIU0Z8YXlAHt3EJHlS7nk-W6nXtpWFeVhIT3Lpo4bO9PvfJQgPvaNUAgto8ugAe6QRqCrmo_A8EBb3wpcd-f87o5qzxv44ZbyfVEgSpnm792Ibx6SAzkNqwZ2p71ha9x1pipv0qRT-cVWOZJcISYP1pXzJY2ycMJD8LDXEIoVa3Rxa-ZcxlGfrosORhmmH0QXQh9j_2J-1psLy3ILb3ihjQSOSHydZWdzIE_98ogvW55EWxcWNW_F5ZLX4vVZOAccnmSSfuKV52-EcM84Lwp4LmOeCcYMPI8=s971-no"
+  },
   "experience": {
     "expBoard": [
       {
         "employer": "Nanyang Technological University",
         "designation": "Research Engineer",
-        "compLogo": "ntu_logo.png",
+        "compLogo": "https://lh3.googleusercontent.com/YsEuAQ1uFWXnsZX3aLu9N-o-tHgNNr485Z6zJe4imCviK9Tu_8vHL9lulo1CJYWrw5vLGv6t4d8i8mjguYQ3qzImY7aFxozB_zdDqeeTQ41f3pbpSC_5TTNH1UNJWpzTftysthvlh3XMPdqhqYLkRjTa7pYqcGVhNYvXcY-3T1ej7g0eJNljKQFpqBSOBIxm4S2D_WrPDYdEjrSBHI8guEx44AgYnqP2_Ku2RBmoMXYZmaRM-J_TnYw9sOnVGithrujaI35vOpAmRERaqrlHNZwPrpkr00BrGXdFEoDp_UPY9t8gd7pDd5miKk0lLumsJtoh9mn_iOhjko5c5cDL4VNwehx03MhWBUm4ZDy59u6nQj6ED5SaQj_8rpRBYV6rsB8j6YCfEcSLqsDj2noftu1IFxH0-kkeiUas-wcppqKbQTt-9WQQYi3wl0DbKEh47ZyW4oUZ5_TbJQi-9A8UCCcK-rWF-HC2kRJQJNXbQrpv33nPst-CUR-VI5OHMHxVrLWnxz4X-5KEH2gMxCVdVbFmswMJIooTu_txRSlWm-W1tzuzUwKOzKT3QHrwfXA8a1KkupFEfwPstFgj-gbTRzEZwQCAXHtLbmMqFKyFNO8IH5shhkJOHVUJvzuiS3KxCEnvgQPJRnrawF3rS1l5yUsTWgBGl-o=w203-h261-no",
         "headSentence": "Currently, I am working as a Research Engineer in School of Electrical and Electronics Engineering at Nangyang Technological University, Singapore. My research topic is about Control and Controllability of Dynamic Complex Networks: Theories and Strategies.",
         "jDHeader": "Ongoing Research Topics",
         "jobDescription": [
@@ -18,7 +23,7 @@
       },{
         "employer": "Fiot Co. LTD., Vietnam",
         "designation": "Embedded Firmware Development Engineer",
-        "compLogo": "fiot_logo.jpg",
+        "compLogo": "https://lh3.googleusercontent.com/_AqatgLGxaHLcuFee_hbY-3XIc4nPqOSFuc5Ow5RJ1oamDNcLrr-AxaJB2Chalq136UyUhsXdz1Q_ewrRDQLDOerBf2r7Vi6pM1sFFd9sHQhwQWY7R0CkzoMMzcLb7lwD9P8hPt_98aerMIyLafWjUpiocMvjrLw6BVwiLbixq8RydJWkiT_fz4I5pmnxdiyJOqEl1nWLnLOWXkUodpdM9GvS_Fr_1Uwnq2_Kx3PlVkZb5kJlG1cFcxzKOfMF9ekn-hADrW9Q52Ebu8s09Kc3QN9MQM9HcyTv16dUEVIJ9twBV1O3b6u3MZ4pZjY3ByMhN2Un4NK3AFW2X3IEXsZRKajos8Od7cd0ne-sPfvNcqnvJMbgTy1ORi1ElpHWhk5kNyWT_71s-uqMImQNqlFs7EfDmqWgGJLM5GXTFw6KVYTiSYlUCpDjpVKesg7_yU9wntcR57ZyrAe25qE3ALuFBa1hiYZ_mOkPXXpAK9qG19wKAkXwnEn4VTNHCn8amorU3yeV9tf8uxHP5zvi2vqW-K05NinKmv9MQlUf9XiBKlb1Of2nNpsTxaQuBaB9DXs6bm-a2B0eFxc8nmJYlL5we4gfiow6PO-8g5OGNhEC6WDXxCAu12LsgPsLOZXg-lgt6zn-5E7QAAiXFoAd4vj237_P2L6wUw=s300-no",
         "headSentence": "After graduation, I got my first job at a start-up outsourcing company which provides innovative solutions for embedded system and IoT application development.",
         "jDHeader": "Technologies/Applications",
         "jobDescription": [
@@ -30,7 +35,7 @@
       }, {
         "employer": "MobiFone Testing and Maintenance Center",
         "designation": "Internship Research Engineer",
-        "compLogo": "mobifone_logo.png",
+        "compLogo": "https://lh3.googleusercontent.com/0oIS91vIPu-KOnRhAvDGmNId1TTwzDyap9lIDn5TiSUmBAd_8qSz5kwsql6JvpRxBALvMPpntC59JaWC8Dq-tWZPiGRK6NGjiLB6l-bCmd1kgqnKFKH7WeKnPNA99u7K7FSfhg9eLk7bKGStJ0IEG1X71KPSpNzNCeYA94tRPC6MLMZZjcv2sPgkqC1hCJEmhjWp9u4bm4LERPJUSAQYAFDih6amBBzLnoi7FlDSKT0s0B8u6BN0FkgsI-yf7z3AGaD9B_gUIrMrHEv8jCgWBdCfgvRmiGG1EF91zvA-gyL1Am0AqGEIGKtpUg8ZLyh0Ev-J0jt8pUUT4J_8x9XXChpf18om7knsQbfl2OAHs4kMcALdhb0N_cwV01LepjOJKBUIDBkt7l6y61zgK44miSBV088oJUIA9e8IGAjqg2U4StOS7NnuVTHb-YhjJaCJTdQFCTw5BWKldKGS08um4LlHYFaPWXsmdNzgC14k9tFsNfziCtIFiYv50RFwSjNrgWbjlvSkUc71lvYwvvlW0HBExyzAOVHfC6O2sxAmV8_y74D1cwmR0VrrdDyi_-vnOPnFtUuuowYuqE1DBE8lb7cjtb_VRRw3oNv0jz39YbIOxS_SAs4ng_9iCmTZ2dpSQ59q8YxemnGrdwpkeJqqot5qgLe5GW4=s400-no",
         "headSentence": "MobiFone Testing and Maintenance Center, Ho Chi Minh City, Vietnam is one of the best place for me to take my very first internship when I lived in Vietnam. MobiFone is the first and currently third largest telecommunications provider in Vietnam. Therefore, to be an internship member in Mobifone is a big achievement to me and it did help me a lot in graduating from university in Electronics and Telecommunication Engineering field.",
         "jDHeader": "Internship works",
         "jobDescription": [
@@ -43,7 +48,7 @@
       }, {
         "employer": "HCMC University of Technology",
         "designation": "Student",
-        "compLogo": "hcmut_logo.png",
+        "compLogo": "https://lh3.googleusercontent.com/1vBFTavmZ00Vtr46Io1eVHuBp0lFPBBxTao2kKSFOaHRkL0XE93sGMChwblJ-8MDah950r7rw-j6XRfGpvbUhJlFFzDpv26DMRQd36d2-dVixqvrTkOxmFevMs9QzydEDZSXE6ISvXYIfGKgVQ-vg-KexQa9GvOY17RNxUiV8kN-CM_ojH-ygzvvFQS3DmBcDvz9KstImdMMcSQnCzFSe9wdu9y9zbB2km2JM4rHvvX4v11A4qIt2x_VSWbjoawufpgfQjzqy_om3_Os4k04jQ5z-M_xvpJlGx4D9rQlWnu_UATPt_P9Xs09CC-VNbXvq9nzjtKBb0Qxdou-5fxKIMTOZHVxxCLMuG9ehX1IvHeGcpiaJ0iJ-Jbu4CqSJsgqBq-GO_4XokuwrUP5SSK9enp6aegN17m_g-3PuDHB4xHVdk-MhKyJsJujbmDvViL84uFjOnzmDlvHPC-zM9scLHzVjOEbYRZi6fnbfn20s1pMsC21Csh30wBKhvme8GHAgOcrshKyjn3Nwkn6cAAuIHhJgilumue2O-3bONCnQslUDjoHKZvFB0VmCluqmc2rF_6C1sZ1e65gPdHLZRIMu-oHx0sc4HDNclCOA_vt21p80FsKYfLuobhxNYUCI7RxMS4HFbqbm_CBx24zB1AdKJQGoOf7jO4=w953-h971-no",
         "headSentence": "Ho Chi Minh City University of Technology is one of the most prestigious univeristy under Vietnam National University Ho Chi Minh City. My major field is Electronics - Telecomunication Engineering. During the university time, beside the major specialized knowledges, I have earned a lot of experience in teamwork, comunication, research skill and problem solving",
         "jDHeader": "Projects & Thesis",
         "jobDescription": [

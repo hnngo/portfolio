@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 import { ComponentTitle } from '../utilities/ComponentTitle';
 import FallingLeaf from '../utilities/FallingLeaf';
+import data from '../data.json';
 
 export default class AboutPage extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      imgToggle: false
+    };
+	}
+	
 	renderContent() {
 		if (this.props.show) {
 			return (
@@ -15,8 +24,9 @@ export default class AboutPage extends Component {
 						<div className="row">
 							<div className="col-sm-6 a-personal-i animated fadeInLeft">
 								<img
-									src={require("../style/img/profile-photo.jpg")}
+									src={data.about.profilePhoto}
 									alt={"Profile"}
+									onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
 								/>
 							</div>
 							<div className="col-sm-6 a-personal-text animated fadeInRight">
@@ -42,14 +52,14 @@ export default class AboutPage extends Component {
 					</div>
 					<FallingLeaf
 						leafId="leaf1"
-						srcImg={require("../style/img/leaf-border.png")}
+						srcImg={data.about.leafBorder}
 						containerClass=".a-container"
 						initOffset={340}
 						delay={1000}
 					/>
 					<FallingLeaf
 						leafId="leaf2"
-						srcImg={require("../style/img/leaf-solid.png")}
+						srcImg={data.about.leafSolid}
 						containerClass=".a-container"
 						initOffset={80}
 						delay={3000}
@@ -57,7 +67,7 @@ export default class AboutPage extends Component {
 					/>
 					<FallingLeaf
 						leafId="leaf3"
-						srcImg={require("../style/img/leaf-border.png")}
+						srcImg={data.about.leafBorder}
 						containerClass=".a-container"
 						initOffset={150}
 						delay={6000}
@@ -65,7 +75,7 @@ export default class AboutPage extends Component {
 					/>
 					<FallingLeaf
 						leafId="leaf4"
-						srcImg={require("../style/img/leaf-solid.png")}
+						srcImg={data.about.leafSolid}
 						containerClass=".a-container"
 						initOffset={250}
 						delay={8000}
@@ -73,7 +83,7 @@ export default class AboutPage extends Component {
 					/>
 					<FallingLeaf
 						leafId="leaf5"
-						srcImg={require("../style/img/leaf-border.png")}
+						srcImg={data.about.leafBorder}
 						containerClass=".a-container"
 						initOffset={80}
 						delay={10000}
