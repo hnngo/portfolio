@@ -31,8 +31,8 @@ export default class Homepage extends Component {
     }), 1000);
   }
 
-  handleClickAboutMe() {
-    const y = document.querySelector(".a-container").getBoundingClientRect().top + window.scrollY;
+  handleClickBtn(type) {
+    const y = document.querySelector(`.${type}-container`).getBoundingClientRect().top + window.scrollY;
 
     window.scroll({
       top: y,
@@ -71,9 +71,12 @@ export default class Homepage extends Component {
         <div className="h-btn">
           <div
             className="h-about animated tada"
-            onClick={() => this.handleClickAboutMe()}
+            onClick={() => this.handleClickBtn("a")}
           >About me</div>
-          <div className="h-portfolio animated tada">Portfolio</div>
+          <div
+            className="h-portfolio animated tada"
+            onClick={() => this.handleClickBtn("p")}
+          >Portfolio</div>
         </div>
       );
     } else {

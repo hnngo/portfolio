@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from '../utilities/ComponentTitle';
 
 export default class Contact extends Component {
 	renderContent() {
 		return (
 			<div className="container">
-				{/* <ComponentTitle
-					title="Contact"
-					icon="fas fa-at"
-					optionalColor="rgb(236, 236, 236)"
-				/> */}
-				<div className="c-btn-back">
+				<div
+					className="c-btn-back animated fadeIn slow"
+					onClick={() => window.scroll({
+						top: 0,
+						behavior: 'smooth'
+					})}
+				>
 					<i className="fas fa-chevron-up" />
 				</div>
-				<div className="c-t-contact">
-					<p></p>
+
+				<div className="c-c-i">
+					<i className="fab fa-github" />
+					<i className="fab fa-linkedin-in" />
+					<i className="fas fa-envelope-open-text" />
 				</div>
-				{/* <h2>Contact Detail</h2>
-				<ul>
-					<li><i className="fas fa-mobile-alt"></i>0123456789</li>
-					<li><i className="fas fa-envelope"></i>ngohuynhnhan@gmail.com</li>
-					<li><i className="fab fa-facebook"></i>/huynhnhan</li>
-				</ul> */}
+				<div className="c-logo">
+					<div className="nav-header">
+						<h6>N</h6>
+						<h6 className="nav-h">h</h6>
+					</div>
+				</div>
 			</div>
 		);
 	}
