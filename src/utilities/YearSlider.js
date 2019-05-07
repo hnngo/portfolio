@@ -196,6 +196,7 @@ export default class YearSlider extends Component {
               left: offsetLeft - 18,
               opacity: this.state.msOpacities[i], transform: `scale(${this.state.msScale[i] * 0.75})`,
             }}
+            onClick={() => this.handleClickLogo(i)}
           >
             {item.fromTime}
           </p>

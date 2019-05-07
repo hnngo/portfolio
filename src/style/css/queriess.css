@@ -129,10 +129,6 @@
     width: 100%;
   }
 
-  .pd-name {
-    margin: 0;
-  }
-
   .pd-detail {
     margin: 0 20px;
   }
@@ -287,6 +283,11 @@
   .eb-content ul li {
     font-size: 14px;
     line-height: 20px;
+  }
+
+  .ys-ms-logo:hover,
+  .ys-ms-fromYear:hover {
+    opacity: 1 !important;
   }
 
   .p-pc-container:hover {

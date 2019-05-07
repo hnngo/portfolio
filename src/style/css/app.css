@@ -471,7 +471,9 @@ body {
 	padding: 0px 30px;
 	padding-top: 10px;
 	font-size: 26px;
-	font-family: 'Charmonman', cursive;
+	font-family: 'Montserrat', sans-serif;
+	font-style: italic;
+	/* font-family: 'Charmonman', cursive; */
 }
 
 .eb-designation {
@@ -489,7 +491,7 @@ body {
 }
 
 .eb-head-sentence {
-	font-size: 13px;
+	font-size: 14px;
 	padding: 20px 40px;
 	font-family: 'Montserrat', sans-serif;
 }
@@ -500,6 +502,7 @@ body {
 	margin: 0;
 	font-weight: bold;
 	font-family: 'Amita', cursive;
+	text-decoration: underline;
 }
 
 .eb-content ul {
@@ -511,7 +514,7 @@ body {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	line-height: 25px;
-	color: #2F0743
+	/* color: #2F0743 */
 }
 
 .eb-footer {
@@ -529,7 +532,7 @@ body {
 .eb-time {
 	font-size: 20px;
 	font-weight: bold;
-	font-family: 'Amita', cursive;
+	/* font-family: 'Amita', cursive; */
 	margin: 0;
 	color: rgb(95, 58, 114)
 }
@@ -546,16 +549,12 @@ body {
   border-radius: 10px;   
   background: #d3d3d3;
   outline: none;
-  opacity: 0.6;
+  opacity: 1;
   -webkit-transition: .2s;
 	-webkit-transition: opacity .2s;
 	transition: opacity .2s;
 	z-index: 8;
 	cursor: pointer;
-}
-
-.ys-slider:hover {
-  opacity: 1; /* Fully shown on mouse-over */
 }
 
 .ys-slider:hover::-webkit-slider-thumb {
@@ -570,7 +569,7 @@ body {
   height: 30px;
 	border-radius: 50%;
 	border: none; 
-	background: rgb(202, 136, 223);
+	background: rgb(193, 85, 226);
 	cursor: pointer;
 	z-index: 8;
 }
@@ -589,7 +588,6 @@ body {
   height: 40px;
 	border-radius: 50%; 
 	top: -9.5px;
-	/* left: 65px; */
 	background: rgb(117, 117, 117);
 	border: none;
 	opacity: 0.2;
@@ -610,6 +608,7 @@ body {
 	top: 32px;
 	position: absolute;
 	opacity: 0.3;
+  cursor: pointer;
 }
 
 /*---------------------------------------------*/
@@ -844,10 +843,11 @@ body {
 }
 
 .pd-name {
-	padding: 10px 10px;
+	padding: 15px 10px;
 	font-family: 'Montserrat';
 	font-weight: bold;
 	font-size: 30px;
+	margin: 0;
 }
 
 .pd-des {
