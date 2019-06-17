@@ -59,7 +59,7 @@ export default class Homepage extends Component {
           <div>
             {
               this.state.showDescript ?
-                <h6 className="h-des animated fadeInUp slow">A self-taught front-end developer based in Singapore who is ambitious about web development and UI/UX design.</h6> : <div />
+                <h6 className="h-des animated fadeInUp slow">I am a front-end developer based in Singapore who is ambitious about web development and UI/UX design.</h6> : <div />
             }
           </div>
         </div>
@@ -110,9 +110,9 @@ export default class Homepage extends Component {
             {this.renderBtn()}
           </div>
         </div>
-        <div className="d-none d-md-block">
+        {/* <div className="d-none d-md-block">
           {this.renderLight()}
-        </div>
+        </div> */}
       </div>
     );
   }

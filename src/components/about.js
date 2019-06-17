@@ -4,14 +4,14 @@ import FallingLeaf from '../utilities/FallingLeaf';
 import data from '../data.json';
 
 export default class AboutPage extends Component {
-  constructor(props) {
-    super(props);
+	constructor(props) {
+		super(props);
 
-    this.state = {
-      imgToggle: false
-    };
+		this.state = {
+			imgToggle: false
+		};
 	}
-	
+
 	renderContent() {
 		if (this.props.show) {
 			return (
@@ -31,10 +31,11 @@ export default class AboutPage extends Component {
 							</div>
 							<div className="col-sm-6 a-personal-text animated fadeInRight">
 								<h2>Hello,</h2>
-								<p>As a web developer, I am always curious and passionate about web development technologies. Eventhough I did not pursuit a degree in Computer Science, I've trained myself to be a so-called front-end developer.<br /><br />
-									<span>I am looking for an opportunity to be a member of your company and let's make something special.</span>
+								<p>As a developer, I am always curious about web development technologies. Building functional, modern and user-friendly web applications is definitely a passion of mine. To be more valuable in this highly competitive software development world, I actively equip myself advanced and up-to-date technologies.
+									<br /><br />
+								I am looking for an opportunity to become a Front-end/Full-stack Developer and I am very open to relocate to Canada.
 								</p>
-								<p className="a-focus">Current Focus:<span>&nbsp;React / Redux and other frameworks, libraries related to them and Javascript.</span></p>
+								<p className="a-focus">Current Focus:<span>&nbsp;Node.js / React / Redux and other frameworks, libraries related to them.</span></p>
 								<div className="a-follow">
 									<a
 										href="https://github.com/hnngo"

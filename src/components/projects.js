@@ -128,7 +128,22 @@ export default class Projects extends Component {
 				<div className="pd-container">
 					<div className="row">
 						<div className={`col-md-6 animated ${this.state.slideLeftAnimation} fast`}>
-							<p className="pd-name">{board.name}</p>
+							<div className="d-flex justify-content-between">
+								<p className="pd-name">{board.name}</p>
+								<div className="pd-view">
+									{
+										board.website.length > 0 ?
+											<a
+												href={board.website}
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												<i className="fas fa-external-link-alt" />
+												<p>View Online</p>
+											</a> : <div />
+									}
+								</div>
+							</div>
 							<p className="pd-des">{board.description}</p>
 							<ul className="pd-detail">
 								{
