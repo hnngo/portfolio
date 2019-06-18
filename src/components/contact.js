@@ -27,7 +27,7 @@ export default class Contact extends Component {
 					<a
 						href="mailto:ngohuynhnhan@gmail.com"
 					><i className="fas fa-envelope-open-text" /></a>
-				
+
 				</div>
 				<div className="c-logo">
 					<div className="nav-header">

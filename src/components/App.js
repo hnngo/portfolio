@@ -6,7 +6,6 @@ import Projects from './Projects';
 import Experience from './Experience';
 import Contact from './Contact';
 import '../style/css/style.css';
-import '../style/css/queriess.css';
 
 class App extends Component {
 	constructor(props) {
