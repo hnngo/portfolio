@@ -81,7 +81,7 @@
       {
         "id": 3,
         "name": "Social X",
-        "description" : "Social X is online social media which allow users to share their daily thoughts and interact with other users.",
+        "description" : "Social X is online social media which allows users to share their daily thoughts and interact with other users.",
         "details": [
           "Social X is developed as a basic social media platform. Users can create accounts or log in with their Gmail accounts (OAuth). Users can upload a status, post a comment, hit like, edit old posts or update their personal information such as birthday, career or living place.",
           "Besides, each user can change their personal avatar to their favourite image. User can interact with others by commenting on their posts, send friend requests to other users or delete any comment of their own posts or their own comments.",

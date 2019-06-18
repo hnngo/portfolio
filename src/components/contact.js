@@ -35,7 +35,7 @@ export default class Contact extends Component {
 						<h6 className="nav-h">h</h6>
 					</div>
 				</div>
-				<p className="c-update">Last update 06 May 2019</p>
+				<p className="c-update">Last update 18 June 2019</p>
 			</div>
 		);
 	}

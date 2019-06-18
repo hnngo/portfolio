@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactTooltip from 'react-tooltip';
 import { ComponentTitle } from './utilities/ComponentTitle';
 import data from '../data.json';
 
@@ -27,7 +28,12 @@ export default class Projects extends Component {
 		});
 	}
 
-	handleClickBoard(index) {
+	handleClickBoard(index, event) {
+		// Check if user click i tag
+		if (event.target.tagName === "I") {
+			return;
+		}
+
 		// Set selected project and change view mode
 		this.setState({
 			boardSelect: index,
@@ -152,7 +158,20 @@ export default class Projects extends Component {
 							</ul>
 							<p className="pd-tech">Technologies/Libraries</p>
 							{
-								board.technologies.map((item, i) => <img key={i} className="pd-techLogo" src={this.state.techLogos[item]} alt="techLogo" />)
+								board.technologies.map((item, i) => {
+									return (
+										<img
+											ref={ref => this["imgRef" + i] = ref}
+											key={i}
+											className="pd-techLogo"
+											src={this.state.techLogos[item]}
+											alt="techLogo"
+											data-tip={item}
+											onMouseEnter={() => ReactTooltip.show(this["imgRef" + i])}
+											onMouseLeave={() => ReactTooltip.hide(this["imgRef" + i])}
+										/>
+									);
+								})
 							}
 							<div className="pd-view">
 								{
@@ -204,7 +223,7 @@ export default class Projects extends Component {
 				>
 					<div
 						className="p-pc-container"
-						onClick={() => this.handleClickBoard(i)}
+						onClick={(e) => this.handleClickBoard(i, e)}
 					>
 						<img
 							src={item.bannerImg}
@@ -262,6 +281,7 @@ export default class Projects extends Component {
 					icon="fab fa-stumbleupon-circle"
 				/>
 				{viewContent}
+				<ReactTooltip />
 			</div>
 		);
 	}
