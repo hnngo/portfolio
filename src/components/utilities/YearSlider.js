@@ -179,7 +179,8 @@ export default class YearSlider extends Component {
       return (
         <div key={i}>
           <img
-            src={item.logo}            className="ys-ms-logo"
+            src={item.logo}
+            className="ys-ms-logo"
             style={{
               left: offsetLeft,
               opacity: this.state.msOpacities[i],

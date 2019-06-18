@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from '../utilities/ComponentTitle';
+import { ComponentTitle } from './utilities/ComponentTitle';
 import data from '../data.json';
 
 export default class Projects extends Component {
