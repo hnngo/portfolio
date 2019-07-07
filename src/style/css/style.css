@@ -649,7 +649,7 @@ body {
   top: -20px;
   right: unset;
   bottom: unset;
-  left: -20px;
+  left: 10px;
   max-width: 110px;
 }
 

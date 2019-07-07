@@ -14,7 +14,7 @@ export default class Projects extends Component {
 			imgToggle: false,
 			boardView: true,
 			boardSelect: undefined,
-			boardAnimation: "slideInUp",
+			boardAnimation: "fadeIn",
 			thumbnailsAnimation: "slideInLeft",
 			slideLeftAnimation: "slideInLeft",
 			slideRightAnimation: "slideInRight"
@@ -76,7 +76,7 @@ export default class Projects extends Component {
 		}, () => setTimeout(() => {
 			this.setState({
 				boardSelect: undefined,
-				boardAnimation: "slideInUp",
+				boardAnimation: "fadeIn",
 				boardView: true
 			})
 		}, 1000));

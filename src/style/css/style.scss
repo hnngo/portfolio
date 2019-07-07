@@ -574,7 +574,7 @@ $breakpoints: (
 		}
 
 		img {
-			@include pos(absolute, -20px, $left: -20px);
+			@include pos(absolute, -20px, $left: 10px);
 			max-width: 110px;
 
 			@include mq(tablet, max) {
