@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { ComponentTitle } from '../../utils/ComponentTitle';
-import ExpBoard from '../../utils/ExpBoard';
-import YearSlider from '../../utils/YearSlider';
-import data from '../../data.json';
+import React, { Component } from "react";
+import SectionTitle from "../Shared/SectionTitle";
+import ExpBoard from "../../utils/ExpBoard";
+import YearSlider from "../../utils/YearSlider";
+import data from "../../data.json";
 
 export default class ExperienceSection extends Component {
   constructor(props) {
@@ -30,20 +30,22 @@ export default class ExperienceSection extends Component {
     let boardScale = this.state.expData.map((item, i) => 1 - i * 0.1);
     let boardOpacity = this.state.expData.map(() => 0.3);
     boardOpacity[0] = 1;
-    let boardZindex = this.state.expData.map((item, i) => this.state.expData.length - i);
+    let boardZindex = this.state.expData.map(
+      (item, i) => this.state.expData.length - i
+    );
 
     // Update transX
     const qBoardWidth = document.querySelector(".eb-container").clientWidth;
 
     let boardTransX = boardScale.map((item, i) => {
       // let realSize = qBoardWidth * (+item);
-      let deltaSize = qBoardWidth * (1 - +item) / 2;
+      let deltaSize = (qBoardWidth * (1 - +item)) / 2;
       let currentWidth = window.innerWidth;
       let newTransOffset;
       if (currentWidth > 1200) {
         newTransOffset = 60;
       } else {
-        newTransOffset = currentWidth * (60 - 10) / (1200 - 375)
+        newTransOffset = (currentWidth * (60 - 10)) / (1200 - 375);
       }
 
       return -(deltaSize + i * newTransOffset);
@@ -57,7 +59,7 @@ export default class ExperienceSection extends Component {
       boardZindex,
       boardTransX,
       boardTransXOrigin: boardTransX
-    })
+    });
   }
 
   resizeEvent() {
@@ -91,20 +93,22 @@ export default class ExperienceSection extends Component {
       let signedDelta = i - convertedVal;
 
       // Update opacity, zIndex
-      let deltaOpacity = (1 - 0.1);
-      let deltaZindex = (5 - 4);
+      let deltaOpacity = 1 - 0.1;
+      let deltaZindex = 5 - 4;
       let deltaTransX;
 
       if (delta < 1) {
-        boardOpacity[i] = 1 - (delta * deltaOpacity);
-        boardZindex[i] = Math.round(5 - (delta * deltaZindex));
+        boardOpacity[i] = 1 - delta * deltaOpacity;
+        boardZindex[i] = Math.round(5 - delta * deltaZindex);
 
         deltaTransX = boardTransXOrigin[1];
       } else if (signedDelta < 0) {
         boardOpacity[i] = 0.3;
         boardZindex[i] = 1;
 
-        deltaTransX = boardTransXOrigin[Math.floor(convertedVal) - i] - boardTransXOrigin[Math.floor(convertedVal) - i - 1];
+        deltaTransX =
+          boardTransXOrigin[Math.floor(convertedVal) - i] -
+          boardTransXOrigin[Math.floor(convertedVal) - i - 1];
       } else {
         boardOpacity[i] = 0.3;
         boardZindex[i] = 1;
@@ -113,7 +117,7 @@ export default class ExperienceSection extends Component {
       }
 
       // Update scale
-      boardScale[i] = 1 - (delta * 0.1);
+      boardScale[i] = 1 - delta * 0.1;
 
       // Update transX
       boardTransX[i] = deltaTransX * signedDelta;
@@ -149,7 +153,7 @@ export default class ExperienceSection extends Component {
           transX={this.state.boardTransX[i]}
         />
       );
-    })
+    });
   }
 
   render() {
@@ -161,14 +165,12 @@ export default class ExperienceSection extends Component {
         }}
       >
         <div className="container">
-          <ComponentTitle
+          <SectionTitle
             title="Experience"
             icon="fas fa-history"
-            optionalColor="rgb(236, 236, 236)"
+            isDarkTheme={true}
           />
-          <div>
-            {this.renderExpBoard()}
-          </div>
+          <div>{this.renderExpBoard()}</div>
           <div className="e-yearSlider animated slideInUp slow">
             <YearSlider
               range={[2009, 2019]}
@@ -206,7 +208,7 @@ export default class ExperienceSection extends Component {
                   designation: "Research Engineer"
                 }
               ]}
-              onSelectMS={(selectedVal) => this.handleSelectMS(selectedVal)}
+              onSelectMS={selectedVal => this.handleSelectMS(selectedVal)}
             />
           </div>
         </div>

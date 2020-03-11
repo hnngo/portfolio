@@ -6,7 +6,7 @@ import Introduction from './IntroductionSection';
 import AboutPage from './AboutSection';
 import Projects from './ProjectSection';
 import Experience from './ExperienceSection';
-import Contact from './ContactPage';
+import Contact from './ContactSection';
 
 
 import '../style/css/style.css';

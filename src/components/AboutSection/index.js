@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from '../../utils/ComponentTitle';
+import SectionTitle from '../Shared/SectionTitle';
 import FallingLeaf from '../../utils/FallingLeaf';
 import data from '../../data.json';
 
@@ -17,7 +17,7 @@ export default class AboutSection extends Component {
 			return (
 				<div>
 					<div className="container">
-						<ComponentTitle
+						<SectionTitle
 							title="About"
 							icon="fas fa-info-circle"
 						/>

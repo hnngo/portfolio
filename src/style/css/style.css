@@ -361,74 +361,13 @@ body {
   }
   .h-light-container:hover i {
     opacity: 1;
-    text-shadow: .1vw 0vw .25vw #fac0ff, .2vw 0vw .25vw #fac0ff, .4vw 0vw .25vw #fac0ff,  .1vw 0vw   0vw #f588ff, .2vw 0vw   0vw #f588ff, .4vw 0vw   0vw #f588ff, .1vw 0vw  .1vw #f588ff, .2vw 0vw  .1vw #f588ff, .4vw 0vw  .1vw #f588ff, .1vw 0vw   2vw #f588ff, .2vw 0vw   2vw #f588ff, .4vw 0vw   2vw #f588ff,  .1vw 0vw   1vw #ea00ff, .2vw 0vw   1vw #ea00ff, .4vw 0vw   5vw #ea00ff,  .1vw 0vw   10vw #ea00ff, .2vw 0vw  35vw #ea00ff, .4vw 0vw  10vw #ea00ff, .1vw 0vw  20vw #ea00ff, .2vw 0vw  45vw #ea00ff, .4vw 0vw  30vw #ea00ff;
+    text-shadow: .1vw 0vw .25vw #fac0ff, .2vw 0vw .25vw #fac0ff, .4vw 0vw .25vw #fac0ff,  .1vw 0vw   0vw #f588ff, .2vw 0vw   0vw #f588ff, .4vw 0vw   0vw #f588ff, .1vw 0vw  .1vw #f588ff, .2vw 0vw  .1vw #f588ff, .4vw 0vw  .1vw #f588ff, .1vw 0vw   2vw #f588ff, .2vw 0vw   2vw #f588ff, .4vw 0vw   2vw #f588ff,  .1vw 0vw   1vw #ea00ff, .2vw 0vw   1vw #ea00ff, .4vw 0vw   5vw #ea00ff,  .1vw 0vw   10vw #ea00ff, .2vw 0vw  35vw #ea00ff, .4vw 0vw  10vw #ea00ff, .1vw 0vw  20vw #ea00ff, .2vw 0vw  45vw #ea00ff, .4vw 0vw  30vw #ea00ff;
   }
 }
 
 /*---------------------------------------------*/
 /* Component Title
 /*---------------------------------------------*/
-.ct-container {
-  position: relative;
-  top: unset;
-  right: unset;
-  bottom: unset;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  margin: 30px 0px 50px 0px;
-  text-align: center;
-  display: inline-block;
-  border-bottom: 10px solid black;
-  border-bottom-style: double;
-}
-
-@media only screen and (max-width: 767px) {
-  .ct-container {
-    margin: 12px 0px;
-  }
-}
-
-.ct-container h6 {
-  font-family: 'Amita', cursive;
-  font-size: 50px;
-  font-weight: bold;
-  color: unset;
-  line-height: unset;
-  letter-spacing: unset;
-}
-
-@media only screen and (max-width: 767px) {
-  .ct-container h6 {
-    font-size: 40px;
-  }
-}
-
-.ct-container .ct-square {
-  position: absolute;
-  top: unset;
-  right: unset;
-  bottom: -20px;
-  left: -30px;
-  width: 30px;
-  height: 30px;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  background-color: #c078d6;
-}
-
-.ct-container i {
-  position: absolute;
-  top: unset;
-  right: -47px;
-  bottom: -29px;
-  left: unset;
-  border: 3px solid black;
-  border-radius: 50%;
-  padding: 2px;
-  color: #c078d6;
-}
-
 /*---------------------------------------------*/
 /* ABOUT
 /*---------------------------------------------*/

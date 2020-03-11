@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactTooltip from 'react-tooltip';
-import { ComponentTitle } from '../../utils/ComponentTitle';
+import SectionTitle from '../Shared/SectionTitle';
 import data from '../../data.json';
 
 export default class Projects extends Component {
@@ -276,7 +276,7 @@ export default class Projects extends Component {
 
 		return (
 			<div className="container">
-				<ComponentTitle
+				<SectionTitle
 					title="Projects"
 					icon="fab fa-stumbleupon-circle"
 				/>
