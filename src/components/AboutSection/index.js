@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from '../utils/ComponentTitle';
-import FallingLeaf from '../utils/FallingLeaf';
-import data from '../data.json';
+import { ComponentTitle } from '../../utils/ComponentTitle';
+import FallingLeaf from '../../utils/FallingLeaf';
+import data from '../../data.json';
 
-export default class AboutPage extends Component {
+export default class AboutSection extends Component {
 	constructor(props) {
 		super(props);
 

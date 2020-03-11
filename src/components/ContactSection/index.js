@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export default class Contact extends Component {
+export default class ContactSection extends Component {
 	renderContent() {
 		return (
 			<div className="container animated fadeIn slow">

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from '../utils/ComponentTitle';
-import ExpBoard from '../utils/ExpBoard';
-import YearSlider from '../utils/YearSlider';
-import data from '../data.json';
+import { ComponentTitle } from '../../utils/ComponentTitle';
+import ExpBoard from '../../utils/ExpBoard';
+import YearSlider from '../../utils/YearSlider';
+import data from '../../data.json';
 
-export default class Experience extends Component {
+export default class ExperienceSection extends Component {
   constructor(props) {
     super(props);
 

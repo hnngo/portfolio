@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
-import NavBar from './NavBar';
-import Homepage from './Homepage';
-import AboutPage from './About';
-import Projects from './Projects';
-import Experience from './Experience';
-import Contact from './Contact';
+
+// Components
+import NavBar from './Navbar';
+import Introduction from './IntroductionSection';
+import AboutPage from './AboutSection';
+import Projects from './ProjectSection';
+import Experience from './ExperienceSection';
+import Contact from './ContactPage';
+
+
 import '../style/css/style.css';
 
 class App extends Component {
@@ -42,7 +46,7 @@ class App extends Component {
 				return;
 			}
 
-			// Homepage
+			// Introduction
 			let yAbout = document.querySelector(".a-container").getBoundingClientRect().top + window.scrollY * 1 / 2;
 
 			if (window.scrollY >= yAbout && !showAbout) {
@@ -82,7 +86,7 @@ class App extends Component {
 		return (
 			<div>
 				<NavBar />
-				<Homepage />
+				<Introduction />
 				<AboutPage show={this.state.showAbout} />
 				<div className="e-container">
 					{
