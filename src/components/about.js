@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from './utilities/ComponentTitle';
-import FallingLeaf from './utilities/FallingLeaf';
+import { ComponentTitle } from '../utils/ComponentTitle';
+import FallingLeaf from '../utils/FallingLeaf';
 import data from '../data.json';
 
 export default class AboutPage extends Component {

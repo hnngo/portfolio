@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ReactTooltip from 'react-tooltip';
-import { ComponentTitle } from './utilities/ComponentTitle';
+import { ComponentTitle } from '../utils/ComponentTitle';
 import data from '../data.json';
 
 export default class Projects extends Component {

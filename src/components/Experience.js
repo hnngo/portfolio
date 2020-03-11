@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { ComponentTitle } from './utilities/ComponentTitle';
-import ExpBoard from './utilities/ExpBoard';
-import YearSlider from './utilities/YearSlider';
+import { ComponentTitle } from '../utils/ComponentTitle';
+import ExpBoard from '../utils/ExpBoard';
+import YearSlider from '../utils/YearSlider';
 import data from '../data.json';
 
 export default class Experience extends Component {
