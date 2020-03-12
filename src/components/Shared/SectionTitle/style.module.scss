@@ -18,6 +18,7 @@
 
   .title {
     @include fontFam(amita, 50px, bold, unset);
+
     @include mq(tablet, max) {
       font-size: 40px;
     }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import SectionTitle from "../Shared/SectionTitle";
-import ExpBoard from "../../utils/ExpBoard";
-import YearSlider from "../../utils/YearSlider";
+import ExpBoard from "./ExpBoard";
+import YearSlider from "./YearSlider";
 import data from "../../data.json";
 
 export default class ExperienceSection extends Component {
