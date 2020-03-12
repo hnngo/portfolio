@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import cx from "classnames";
+
+import styles from "./style.module.scss";
 
 export default class NavBar extends Component {
   constructor(props) {
@@ -7,19 +10,19 @@ export default class NavBar extends Component {
     this.state = {
       navHeight: +window.screen.availHeight,
       showSmallMenu: false
-    }
+    };
   }
 
   collapseNavMenu() {
     // Collapse menu when state is opening
-    const qSmMenu = document.querySelector(".sn-menu-container");
+    const qSmMenu = document.querySelector("#smallNavMenu");
 
     if (qSmMenu) {
       qSmMenu.style.animation = "navSlideUp 1s";
     }
 
     setTimeout(() => {
-      this.setState({ showSmallMenu: false })
+      this.setState({ showSmallMenu: false });
     }, 1000);
   }
 
@@ -28,12 +31,11 @@ export default class NavBar extends Component {
     if (this.state.showSmallMenu) {
       this.collapseNavMenu();
     } else {
-      this.setState({ showSmallMenu: true })
+      this.setState({ showSmallMenu: true });
     }
   }
 
-
-  handleClickNav(type, queryString=undefined) {
+  handleClickNav(type, queryString = undefined) {
     if (!type && !queryString) {
       return;
     }
@@ -55,42 +57,47 @@ export default class NavBar extends Component {
 
       window.scroll({
         top: y,
-        behavior: 'smooth'
+        behavior: "smooth"
       });
     }
   }
 
   renderSmallMenu() {
     if (this.state.showSmallMenu) {
-      const qNavCon = document.querySelector(".nav-container");
+      const qNavCon = document.querySelector("#navbar");
 
       return (
         <div
-          className="sn-menu-container"
+          id="smallNavMenu"
+          className={styles.smallNavMenu}
           style={{
             top: qNavCon.clientHeight,
             animation: "navSlideDown 0.6s"
           }}
         >
           <div
+            className={styles.smallNavList}
             onClick={() => this.handleClickNav("about")}
           >
-            <h6>About</h6>
+            <h6 className={styles.smallNavText}>About</h6>
           </div>
           <div
+            className={styles.smallNavList}
             onClick={() => this.handleClickNav("experience")}
           >
-            <h6>Experience</h6>
+            <h6 className={styles.smallNavText}>Experience</h6>
           </div>
           <div
+            className={styles.smallNavList}
             onClick={() => this.handleClickNav("project")}
           >
-            <h6>Projects</h6>
+            <h6 className={styles.smallNavText}>Projects</h6>
           </div>
           <div
+            className={styles.smallNavList}
             onClick={() => this.handleClickNav("contact")}
           >
-            <h6>Contact</h6>
+            <h6 className={styles.smallNavText}>Contact</h6>
           </div>
         </div>
       );
@@ -101,9 +108,12 @@ export default class NavBar extends Component {
 
   renderSmallNav() {
     return (
-      <div className="sn-container">
+      <div>
         <i
-          className="fas fa-bars d-sm-block d-md-none"
+          className={cx(
+            styles.smallNavIcon,
+            "fas fa-bars d-sm-block d-md-none"
+          )}
           onClick={() => this.handleClickSmMenuIcon()}
         />
         {this.renderSmallMenu()}
@@ -113,31 +123,35 @@ export default class NavBar extends Component {
 
   renderBigNav() {
     return (
-      <div className="bn-links d-none d-md-block">
-        <ul>
+      <div className="d-none d-md-block">
+        <ul className={styles.bigNavUL}>
           <li
+            className={styles.bigNavList}
             onClick={() => this.handleClickNav("about")}
           >
-            <h6>About</h6>
-            <div className="bn-underline" />
+            <h6 className={styles.bigNavListText}>About</h6>
+            <div className={styles.bigNavUnderline} />
           </li>
           <li
+            className={styles.bigNavList}
             onClick={() => this.handleClickNav("experience")}
           >
-            <h6>Experience</h6>
-            <div className="bn-underline" />
+            <h6 className={styles.bigNavListText}>Experience</h6>
+            <div className={styles.bigNavUnderline} />
           </li>
           <li
+            className={styles.bigNavList}
             onClick={() => this.handleClickNav("project")}
           >
-            <h6>Projects</h6>
-            <div className="bn-underline" />
+            <h6 className={styles.bigNavListText}>Projects</h6>
+            <div className={styles.bigNavUnderline} />
           </li>
           <li
+            className={styles.bigNavList}
             onClick={() => this.handleClickNav("contact")}
           >
-            <h6>Contact</h6>
-            <div className="bn-underline" />
+            <h6 className={styles.bigNavListText}>Contact</h6>
+            <div className={styles.bigNavUnderline} />
           </li>
         </ul>
       </div>
@@ -146,16 +160,14 @@ export default class NavBar extends Component {
 
   render() {
     return (
-      <div className="nav-container">
-        <div className="container">
-          <div className="nav-content">
-            <div className="nav-header">
-              <h6>N</h6>
-              <h6 className="nav-h">h</h6>
-            </div>
-            {this.renderSmallNav()}
-            {this.renderBigNav()}
+      <div id="navbar" className={styles.container}>
+        <div className={cx("container", styles.navFlex)}>
+          <div className={styles.titleLogo}>
+            <h6 className={styles.nText}>N</h6>
+            <h6 className={styles.hText}>h</h6>
           </div>
+          {this.renderSmallNav()}
+          {this.renderBigNav()}
         </div>
       </div>
     );

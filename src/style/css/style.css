@@ -5,7 +5,7 @@
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
@@ -16,7 +16,7 @@ body {
 /*---------------------------------------------*/
 /* NAV BAR
 /*---------------------------------------------*/
-.nav-container {
+/* .nav-container {
   background-color: #1c1b1b;
   -webkit-box-shadow: 0px 0px 13px 0px rgba(38, 37, 39, 0.555);
           box-shadow: 0px 0px 13px 0px rgba(38, 37, 39, 0.555);
@@ -187,7 +187,7 @@ body {
   to {
     height: 0px;
   }
-}
+} */
 
 /*---------------------------------------------*/
 /* HEADER
@@ -197,8 +197,16 @@ body {
   overflow: hidden;
   width: 100vw;
   position: relative;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../img/wall.jpeg);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/wall.jpeg);
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(rgba(0, 0, 0, 0.7)),
+      to(rgba(0, 0, 0, 0.7))
+    ),
+    url(../img/wall.jpeg);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../img/wall.jpeg);
   background-size: cover;
   background-position: center;
 }
@@ -230,7 +238,7 @@ body {
 }
 
 .h-container .h-header h6 {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 38px;
   font-weight: unset;
   color: off-white;
@@ -240,7 +248,7 @@ body {
 }
 
 .h-container .h-header h6.h-hi {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 66px;
   font-weight: bold;
   color: main-purple;
@@ -255,7 +263,7 @@ body {
 }
 
 .h-container .h-header h6.h-des {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 100;
   color: off-white;
@@ -271,7 +279,7 @@ body {
 
 .h-container .h-header .h-btn .h-about,
 .h-container .h-header .h-btn .h-portfolio {
-  font-family: 'Amita', cursive;
+  font-family: "Amita", cursive;
   font-size: 16px;
   font-weight: unset;
   color: off-white;
@@ -283,7 +291,7 @@ body {
   margin-right: 10px;
   border-radius: 5px;
   -webkit-box-shadow: 0px 0px 8px 0px rgba(199, 199, 199, 0.308);
-          box-shadow: 0px 0px 8px 0px rgba(199, 199, 199, 0.308);
+  box-shadow: 0px 0px 8px 0px rgba(199, 199, 199, 0.308);
   cursor: pointer;
 }
 
@@ -299,7 +307,7 @@ body {
   .h-container .h-header .h-btn .h-about:active,
   .h-container .h-header .h-btn .h-portfolio:active {
     -webkit-box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
-            box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
+    box-shadow: inset 0px 0px 8px 0px rgba(73, 73, 73, 0.74);
   }
 }
 
@@ -332,10 +340,10 @@ body {
   bottom: unset;
   left: unset;
   -webkit-transform: rotate(-135deg);
-          transform: rotate(-135deg);
+  transform: rotate(-135deg);
   font-size: 180px;
   -webkit-filter: blur(2px) brightness(100%);
-          filter: blur(2px) brightness(100%);
+  filter: blur(2px) brightness(100%);
   color: #f0f0f0;
 }
 
@@ -357,11 +365,18 @@ body {
 @media only screen and (min-width: 768px) {
   .h-light-container:hover {
     -webkit-filter: blur(0px) brightness(200%);
-            filter: blur(0px) brightness(200%);
+    filter: blur(0px) brightness(200%);
   }
   .h-light-container:hover i {
     opacity: 1;
-    text-shadow: .1vw 0vw .25vw #fac0ff, .2vw 0vw .25vw #fac0ff, .4vw 0vw .25vw #fac0ff,  .1vw 0vw   0vw #f588ff, .2vw 0vw   0vw #f588ff, .4vw 0vw   0vw #f588ff, .1vw 0vw  .1vw #f588ff, .2vw 0vw  .1vw #f588ff, .4vw 0vw  .1vw #f588ff, .1vw 0vw   2vw #f588ff, .2vw 0vw   2vw #f588ff, .4vw 0vw   2vw #f588ff,  .1vw 0vw   1vw #ea00ff, .2vw 0vw   1vw #ea00ff, .4vw 0vw   5vw #ea00ff,  .1vw 0vw   10vw #ea00ff, .2vw 0vw  35vw #ea00ff, .4vw 0vw  10vw #ea00ff, .1vw 0vw  20vw #ea00ff, .2vw 0vw  45vw #ea00ff, .4vw 0vw  30vw #ea00ff;
+    text-shadow: 0.1vw 0vw 0.25vw #fac0ff, 0.2vw 0vw 0.25vw #fac0ff,
+      0.4vw 0vw 0.25vw #fac0ff, 0.1vw 0vw 0vw #f588ff, 0.2vw 0vw 0vw #f588ff,
+      0.4vw 0vw 0vw #f588ff, 0.1vw 0vw 0.1vw #f588ff, 0.2vw 0vw 0.1vw #f588ff,
+      0.4vw 0vw 0.1vw #f588ff, 0.1vw 0vw 2vw #f588ff, 0.2vw 0vw 2vw #f588ff,
+      0.4vw 0vw 2vw #f588ff, 0.1vw 0vw 1vw #ea00ff, 0.2vw 0vw 1vw #ea00ff,
+      0.4vw 0vw 5vw #ea00ff, 0.1vw 0vw 10vw #ea00ff, 0.2vw 0vw 35vw #ea00ff,
+      0.4vw 0vw 10vw #ea00ff, 0.1vw 0vw 20vw #ea00ff, 0.2vw 0vw 45vw #ea00ff,
+      0.4vw 0vw 30vw #ea00ff;
   }
 }
 
@@ -428,7 +443,7 @@ body {
 }
 
 .a-container .container .row .a-personal-text h2 {
-  font-family: 'Charmonman', cursive;
+  font-family: "Charmonman", cursive;
   font-size: 30px;
   font-weight: unset;
   color: black;
@@ -437,7 +452,7 @@ body {
 }
 
 .a-container .container .row .a-personal-text p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
   font-weight: unset;
   color: black;
@@ -454,7 +469,10 @@ body {
   font-weight: 100;
 }
 
-.a-container .container .row .a-personal-text .a-follow a, .a-container .container .row .a-personal-text .a-follow a:active, .a-container .container .row .a-personal-text .a-follow a:link, .a-container .container .row .a-personal-text .a-follow a:visited {
+.a-container .container .row .a-personal-text .a-follow a,
+.a-container .container .row .a-personal-text .a-follow a:active,
+.a-container .container .row .a-personal-text .a-follow a:link,
+.a-container .container .row .a-personal-text .a-follow a:visited {
   text-decoration: none;
   color: black;
 }
@@ -487,7 +505,7 @@ body {
 .a-leaf-border {
   max-width: 120px;
   -webkit-transform: rotateX(40deg);
-          transform: rotateX(40deg);
+  transform: rotateX(40deg);
   position: absolute;
   opacity: 0.2;
 }
@@ -498,8 +516,14 @@ body {
 .e-container {
   min-height: 880px;
   overflow: hidden;
-  background: -webkit-gradient(linear, left top, right top, from(#2F0743), to(#41295a));
-  background: linear-gradient(to right, #2F0743, #41295a);
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#2f0743),
+    to(#41295a)
+  );
+  background: linear-gradient(to right, #2f0743, #41295a);
 }
 
 @media only screen and (max-width: 767px) {
@@ -549,7 +573,7 @@ body {
   background-color: #f0f0f0;
   border-radius: 10px;
   -webkit-box-shadow: 2px 2px 13px 2px rgba(255, 255, 255, 0.623);
-          box-shadow: 2px 2px 13px 2px rgba(255, 255, 255, 0.623);
+  box-shadow: 2px 2px 13px 2px rgba(255, 255, 255, 0.623);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -568,13 +592,13 @@ body {
   left: 50%;
   width: 80%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   text-align: center;
   border-radius: 10px;
   border: 1px solid #e9b7f8;
   background-color: #f5def2;
   -webkit-box-shadow: 0px 0px 13px 0px rgba(199, 199, 199, 0.623);
-          box-shadow: 0px 0px 13px 0px rgba(199, 199, 199, 0.623);
+  box-shadow: 0px 0px 13px 0px rgba(199, 199, 199, 0.623);
 }
 
 @media only screen and (max-width: 767px) {
@@ -604,7 +628,7 @@ body {
 }
 
 .eb-container .eb-title .eb-company {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 22px;
   font-weight: 100;
   color: black;
@@ -623,7 +647,7 @@ body {
 }
 
 .eb-container .eb-title .eb-designation {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: bold;
   color: black;
@@ -635,7 +659,7 @@ body {
 
 @media only screen and (max-width: 767px) {
   .eb-container .eb-title .eb-designation {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: bold;
     color: black;
@@ -654,19 +678,19 @@ body {
   .eb-container .eb-content {
     overflow-y: auto;
     -webkit-transform: translateY(-20px);
-            transform: translateY(-20px);
+    transform: translateY(-20px);
   }
 }
 
 @media only screen and (max-width: 767px) and (min-width: 576px) {
   .eb-container .eb-content {
     -webkit-transform: translateY(-30px);
-            transform: translateY(-30px);
+    transform: translateY(-30px);
   }
 }
 
 .eb-container .eb-content .eb-head-sentence {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 14px;
   font-weight: 100;
   color: black;
@@ -684,7 +708,7 @@ body {
 }
 
 .eb-container .eb-content .eb-jdHeader {
-  font-family: 'Amita', cursive;
+  font-family: "Amita", cursive;
   font-size: 14px;
   font-weight: bold;
   color: black;
@@ -707,7 +731,7 @@ body {
 
 .eb-container .eb-content ul li {
   list-style: unset;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: 100;
   color: black;
@@ -717,7 +741,7 @@ body {
 
 @media only screen and (min-width: 768px) {
   .eb-container .eb-content ul li {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     font-weight: 100;
     color: black;
@@ -747,7 +771,7 @@ body {
 }
 
 .eb-container .eb-footer .eb-time {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
   font-weight: bold;
   color: dark-purple;
@@ -769,8 +793,8 @@ body {
 .ys-container .ys-slider {
   position: relative;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   width: 80%;
   max-width: 1000px;
   height: 15px;
@@ -778,8 +802,8 @@ body {
   background: #d3d3d3;
   outline: none;
   opacity: 1;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
   z-index: 8;
   cursor: pointer;
 }
@@ -787,13 +811,13 @@ body {
 @media only screen and (max-width: 767px) {
   .ys-container .ys-slider {
     -webkit-transform: translateX(-10px);
-            transform: translateX(-10px);
+    transform: translateX(-10px);
   }
 }
 
 .ys-container .ys-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -814,7 +838,7 @@ body {
 @media only screen and (max-width: 767px) {
   .ys-container .ys-slider:hover::-webkit-slider-thumb {
     -webkit-box-shadow: 0px 0px 30px 5px rgba(207, 207, 207, 0.795);
-            box-shadow: 0px 0px 30px 5px rgba(207, 207, 207, 0.795);
+    box-shadow: 0px 0px 30px 5px rgba(207, 207, 207, 0.795);
   }
 }
 
@@ -877,7 +901,13 @@ body {
 /*---------------------------------------------*/
 .p-container {
   min-height: 100vh;
-  background: -webkit-gradient(linear, left top, left bottom, from(white), to(#e0c9fa));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(white),
+    to(#e0c9fa)
+  );
   background: linear-gradient(to bottom, white, #e0c9fa);
 }
 
@@ -906,12 +936,18 @@ body {
   left: unset;
   height: 450px;
   margin-bottom: 30px;
-  background: -webkit-gradient(linear, left top, right top, from(#42275a), to(#734b6d));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#42275a),
+    to(#734b6d)
+  );
   background: linear-gradient(to right, #42275a, #734b6d);
   border-radius: 10px;
   overflow: hidden;
   -webkit-box-shadow: 0px 0px 8px 0px #63035e;
-          box-shadow: 0px 0px 8px 0px #63035e;
+  box-shadow: 0px 0px 8px 0px #63035e;
   -webkit-transition: 0.4s;
   transition: 0.4s;
   cursor: pointer;
@@ -922,7 +958,8 @@ body {
     margin: 10px 30px;
     height: auto;
   }
-  .p-container .container .row .p-pc-container p, .p-container .container .row .p-pc-container div {
+  .p-container .container .row .p-pc-container p,
+  .p-container .container .row .p-pc-container div {
     display: none;
   }
 }
@@ -965,7 +1002,7 @@ body {
   .p-container .container .row .p-pc-container:hover {
     top: -10px;
     -webkit-box-shadow: 10px 15px 20px 3px #460442;
-            box-shadow: 10px 15px 20px 3px #460442;
+    box-shadow: 10px 15px 20px 3px #460442;
   }
 }
 
@@ -976,7 +1013,7 @@ body {
 
 .p-container .container .row .p-pc-container .p-pc-name {
   padding: 10px 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: bold;
   color: off-white-v2;
@@ -987,7 +1024,7 @@ body {
 
 .p-container .container .row .p-pc-container .p-pc-des {
   padding: 0px 10px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: unset;
   color: off-white-v2;
@@ -1005,7 +1042,10 @@ body {
   z-index: 5;
 }
 
-.p-container .container .row .p-pc-container .p-pc-icon a, .p-container .container .row .p-pc-container .p-pc-icon a:link, .p-container .container .row .p-pc-container .p-pc-icon a:visited, .p-container .container .row .p-pc-container .p-pc-icon a:active {
+.p-container .container .row .p-pc-container .p-pc-icon a,
+.p-container .container .row .p-pc-container .p-pc-icon a:link,
+.p-container .container .row .p-pc-container .p-pc-icon a:visited,
+.p-container .container .row .p-pc-container .p-pc-icon a:active {
   text-decoration: none;
   color: #dfdfdf;
 }
@@ -1025,18 +1065,18 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: unset;
-      -ms-flex-align: unset;
-          align-items: unset;
+  -ms-flex-align: unset;
+  align-items: unset;
 }
 
 @media only screen and (max-width: 767px) {
   .p-container .container .p-pt-container {
     -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: start;
+    -ms-flex-pack: start;
+    justify-content: start;
   }
 }
 
@@ -1055,7 +1095,7 @@ body {
   border-radius: 6px;
   width: 120px;
   -webkit-box-shadow: 0px 0px 4px 0px #63035e;
-          box-shadow: 0px 0px 4px 0px #63035e;
+  box-shadow: 0px 0px 4px 0px #63035e;
   cursor: pointer;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -1064,11 +1104,11 @@ body {
 @media only screen and (min-width: 768px) {
   .p-container .container .p-pt-container .p-pt-ic img:hover {
     -webkit-transform: translateY(-4px);
-            transform: translateY(-4px);
+    transform: translateY(-4px);
     -webkit-box-shadow: 6px 6px 10px 1px #460442;
-            box-shadow: 6px 6px 10px 1px #460442;
+    box-shadow: 6px 6px 10px 1px #460442;
     -webkit-filter: brightness(100%) !important;
-            filter: brightness(100%) !important;
+    filter: brightness(100%) !important;
     opacity: 1 !important;
   }
 }
@@ -1087,7 +1127,7 @@ body {
   background-color: #e0c9fa;
   border-radius: 15px;
   -webkit-box-shadow: 0px 0px 4px 0px rgba(199, 199, 199, 0.623);
-          box-shadow: 0px 0px 4px 0px rgba(199, 199, 199, 0.623);
+  box-shadow: 0px 0px 4px 0px rgba(199, 199, 199, 0.623);
   overflow: hidden;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -1116,11 +1156,11 @@ body {
 
 .p-container .container .p-pt-container .p-pt-vc:active {
   -webkit-box-shadow: inset 0px 0px 4px 0px #3b3a3b;
-          box-shadow: inset 0px 0px 4px 0px #3b3a3b;
+  box-shadow: inset 0px 0px 4px 0px #3b3a3b;
 }
 
 .p-container .container .p-pt-container .p-pt-vc::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0px;
   right: unset;
@@ -1143,7 +1183,7 @@ body {
 }
 
 .p-container .container .p-pt-container .p-pt-vc p {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: bold;
   color: dark-purple;
@@ -1169,7 +1209,7 @@ body {
 }
 
 .p-container .container .pd-container .pd-name {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 30px;
   font-weight: bold;
   color: black;
@@ -1180,18 +1220,24 @@ body {
 }
 
 .p-container .container .pd-container .pd-des {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: unset;
   color: black;
   line-height: unset;
   letter-spacing: unset;
-  background: -webkit-gradient(linear, left top, right top, from(#e4e3ff), to(#eac3fa));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#e4e3ff),
+    to(#eac3fa)
+  );
   background: linear-gradient(to right, #e4e3ff, #eac3fa);
   padding: 10px;
   border-radius: 10px;
   -webkit-box-shadow: inset 0px 0px 4px 0px #333333;
-          box-shadow: inset 0px 0px 4px 0px #333333;
+  box-shadow: inset 0px 0px 4px 0px #333333;
 }
 
 .p-container .container .pd-container .pd-detail {
@@ -1205,7 +1251,7 @@ body {
 }
 
 .p-container .container .pd-container .pd-detail li {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: unset;
   color: black;
@@ -1216,7 +1262,7 @@ body {
 }
 
 .p-container .container .pd-container .pd-tech {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: bold;
   color: black;
@@ -1250,7 +1296,7 @@ body {
   bottom: unset;
   left: unset;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 47vw;
   max-width: 1000px;
   -webkit-transition: 1s;
@@ -1285,7 +1331,9 @@ body {
   color: #6d4799;
 }
 
-.pd-view a:link, .pd-view a:visited, .pd-view a:active {
+.pd-view a:link,
+.pd-view a:visited,
+.pd-view a:active {
   text-decoration: none;
 }
 
@@ -1333,7 +1381,13 @@ body {
 /*---------------------------------------------*/
 .c-container {
   min-height: 350px;
-  background: -webkit-gradient(linear, left top, left bottom, from(#e0c9fa), to(#655c6e));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#e0c9fa),
+    to(#655c6e)
+  );
   background: linear-gradient(to bottom, #e0c9fa, #655c6e);
   overflow: hidden;
   position: relative;
@@ -1353,7 +1407,7 @@ body {
   background-color: #42275a;
   border-radius: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   cursor: pointer;
   -webkit-transition: 1s;
   transition: 1s;
@@ -1381,13 +1435,13 @@ body {
 @media only screen and (min-width: 768px) {
   .c-container .c-btn-back:hover {
     -webkit-transform: translateX(-50%) translateY(-5px);
-            transform: translateX(-50%) translateY(-5px);
-    -webkit-box-shadow: 5px 4px 13px 1px #2F0743;
-            box-shadow: 5px 4px 13px 1px #2F0743;
+    transform: translateX(-50%) translateY(-5px);
+    -webkit-box-shadow: 5px 4px 13px 1px #2f0743;
+    box-shadow: 5px 4px 13px 1px #2f0743;
   }
   .c-container .c-btn-back:hover::before {
     -webkit-animation: borderRun 2s infinite alternate;
-            animation: borderRun 2s infinite alternate;
+    animation: borderRun 2s infinite alternate;
   }
 }
 
@@ -1412,7 +1466,7 @@ body {
   bottom: unset;
   left: unset;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   color: white;
 }
 
@@ -1423,7 +1477,7 @@ body {
   bottom: unset;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1443,8 +1497,8 @@ body {
   padding: 20px 20px;
   background-color: #42275a;
   color: #dfdfdf;
-  -webkit-box-shadow: 0px 0px 1px 3px #2F0743;
-          box-shadow: 0px 0px 1px 3px #2F0743;
+  -webkit-box-shadow: 0px 0px 1px 3px #2f0743;
+  box-shadow: 0px 0px 1px 3px #2f0743;
   overflow: hidden;
   -webkit-transition: 1s;
   transition: 1s;
@@ -1468,7 +1522,7 @@ body {
   height: 190px;
   background-color: rgba(255, 255, 255, 0.404);
   -webkit-transform: rotate(30deg);
-          transform: rotate(30deg);
+  transform: rotate(30deg);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -1476,7 +1530,7 @@ body {
 @media only screen and (min-width: 768px) {
   .c-container .c-c-i i:active {
     -webkit-box-shadow: inset 0px 0px 1px 3px #291235;
-            box-shadow: inset 0px 0px 1px 3px #291235;
+    box-shadow: inset 0px 0px 1px 3px #291235;
   }
   .c-container .c-c-i i:hover::after {
     left: 80px;
@@ -1494,7 +1548,7 @@ body {
   bottom: 65px;
   left: 50%;
   -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 
 .c-container .c-logo .nav-header,
@@ -1510,7 +1564,7 @@ body {
 .c-container .c-logo .nav-header h6,
 .c-container .c-update .nav-header h6 {
   color: #f0f0f0;
-  font-family: 'Charmonman', cursive;
+  font-family: "Charmonman", cursive;
   font-size: 35px;
   font-weight: bold;
   color: off-white;
@@ -1537,7 +1591,7 @@ body {
 }
 
 .c-container .c-update {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 16px;
   font-weight: 100;
   color: white;

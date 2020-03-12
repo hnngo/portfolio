@@ -1,9 +1,5 @@
 $theme-colors: (
-  "nav-bg": #1c1b1b,
-  "sn-bg": #333333,
   "slide-bg": #d3d3d3,
-  "sn-border": #888787,
-  "off-white": #f0f0f0,
   "off-white-v2": #dfdfdf,
   "light-purple": #e0c9fa,
   "hover-purple": rgb(174, 113, 192),
@@ -23,6 +19,12 @@ $theme-colors: (
 );
 
 $main-purple: rgb(192, 120, 214);
+
+// Navbar
+$nav-bg: #1c1b1b;
+$off-white: #f0f0f0;
+$sn-bg: #333333;
+$sn-border: #888787;
 
 // Section Title
 $st-bright-color: rgb(236, 236, 236);

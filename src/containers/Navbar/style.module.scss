@@ -1,0 +1,192 @@
+@import "../../style/colors.module";
+@import "../../style/mixins.module";
+
+:local {
+  .container {
+    padding: 20px 0;
+    background-color: $nav-bg;
+    box-shadow: 0px 0px 13px 0px rgba(38, 37, 39, 0.555);
+  }
+
+  .navFlex {
+    @include display(flex, space-between, center);
+  }
+
+  .titleLogo {
+    @include pos(relative);
+    cursor: pointer;
+  }
+
+  .nText {
+    @include fontFam(charmon, 35px, bold, $off-white);
+    margin: 0;
+  }
+
+  .hText {
+    @include fontFam(charmon, 35px, bold, $main-purple);
+    @include pos(absolute, 18px, unset, unset, 4px);
+    margin: 0;
+  }
+
+  .bigNavUL {
+    list-style: none;
+    display: flex;
+    margin: 0;
+  }
+
+  .bigNavList {
+    margin: 8px 15px 0px 15px;
+    cursor: pointer;
+    transition: 0.5s;
+    text-align: center;
+
+    @include mq(tablet, min) {
+      &:hover .bigNavUnderline {
+        width: 100%;
+        background-color: $main-purple;
+      }
+
+      &:hover h6 {
+        color: $main-purple;
+      }
+    }
+  }
+
+  .bigNavListText {
+    @include fontFam(monte, unset, unset, $off-white);
+    margin-bottom: 4px;
+    transition: 0.8s;
+  }
+
+  .bigNavUnderline {
+    width: 0px;
+    transition: 0.5s;
+    background-color: $main-purple;
+    height: 3px;
+    border-radius: 1px;
+  }
+
+  .smallNavIcon {
+    color: $off-white;
+    font-size: 20px;
+  }
+
+  .smallNavMenu {
+    @include pos(absolute, unset, unset, unset, 0px);
+    z-index: 2;
+    width: 100%;
+    background-color: $sn-bg;
+    overflow: hidden;
+  }
+
+  .smallNavList {
+    height: 80px;
+    text-align: center;
+    padding: 25px 0;
+    border-bottom: 1px solid $sn-border;
+  }
+
+  .smallNavText {
+    @include fontFam(monte, 24px, unset, $off-white);
+    margin: 0;
+  }
+
+  // .nav-container {
+  //   background-color: map-get($map: $theme-colors, $key: nav-bg);
+  //   box-shadow: 0px 0px 13px 0px rgba(38, 37, 39, 0.555);
+
+  //   .nav-content {
+  //     @include display(flex, space-between);
+  //     padding: 20px 0;
+
+  //     .nav-header {
+  //       @include pos(relative);
+  //       cursor: pointer;
+
+  //       h6 {
+  //         color: map-get($map: $theme-colors, $key: off-white);
+  //         @include fontFam(charmon, 35px, bold, off-white);
+  //         margin: 0;
+
+  //         &.nav-h {
+  //           @include pos(absolute, 18px, unset, unset, 4px);
+  //           color: map-get($map: $theme-colors, $key: main-purple);
+  //         }
+  //       }
+  //     }
+
+  //     .bn-links {
+  //       ul {
+  //         list-style: none;
+  //         display: flex;
+  //         margin: 0;
+
+  //         li {
+  //           margin: 8px 15px 0px 15px;
+  //           cursor: pointer;
+  //           transition: 0.5s;
+  //           text-align: center;
+
+  //           h6 {
+  //             @include fontFam(monte, unset, unset, off-white);
+  //             margin-bottom: 4px;
+  //             transition: 0.8s;
+  //           }
+
+  //           .bn-underline {
+  //             width: 0px;
+  //             transition: 0.5s;
+  //             background-color: map-get($map: $theme-colors, $key: main-purple);
+  //             height: 3px;
+  //             border-radius: 1px;
+  //           }
+
+  //           @include mq(tablet, min) {
+  //             &:hover .bn-underline {
+  //               width: 100%;
+  //               background-color: map-get(
+  //                 $map: $theme-colors,
+  //                 $key: main-purple
+  //               );
+  //             }
+
+  //             &:hover h6 {
+  //               color: map-get($map: $theme-colors, $key: main-purple);
+  //             }
+  //           }
+  //         }
+  //       }
+  //     }
+
+  //     .sn-container {
+  //       color: map-get($map: $theme-colors, $key: off-white);
+
+  //       i {
+  //         font-size: 20px;
+  //         transform: translateY(50%);
+  //       }
+
+  //       .sn-menu-container {
+  //         z-index: 2;
+  //         @include pos(absolute, unset, unset, unset, 0px);
+  //         width: 100%;
+  //         background-color: map-get($map: $theme-colors, $key: sn-bg);
+  //         overflow: hidden;
+
+  //         div {
+  //           height: 80px;
+  //           text-align: center;
+  //           padding: 25px 0;
+  //           border-bottom: 1px solid
+  //             map-get($map: $theme-colors, $key: sn-border);
+
+  //           h6 {
+  //             @include fontFam(monte, 24px, unset, off-white);
+  //             margin: 0;
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}
