@@ -10,6 +10,7 @@ import Contact from "./ContactSection";
 
 import "../style/css/style.css";
 import "./style.module.scss";
+import "../style/animation.css";
 
 class App extends Component {
   constructor(props) {
