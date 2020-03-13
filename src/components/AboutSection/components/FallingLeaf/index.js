@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class FallingLeaf extends Component {
   constructor(props) {
@@ -16,7 +16,7 @@ export default class FallingLeaf extends Component {
       leafOffsetRange: 2,
       leafRotateMax: 40,
       leafRotate: 40,
-      leafRotateChange: -1,
+      leafRotateChange: -1
     };
   }
 
@@ -37,27 +37,33 @@ export default class FallingLeaf extends Component {
   }
 
   handleMotion() {
-    let leafFallingInterval = setInterval(() => {
-      const qLeaf = document.querySelector("#" + this.props.leafId);
-      const aContainer = document.querySelector(this.props.containerClass);
+    let leafFallingInterval = setInterval(
+      () => {
+        const qLeaf = document.querySelector("#" + this.props.leafId);
+        const aContainer = document.querySelector(this.props.containerClass);
 
-      if (qLeaf) {
-        // Check if leaf touch the bottom
-        if (qLeaf.getBoundingClientRect().top >= aContainer.clientHeight - 120) {
-          // Reset new offset left
-          let newLeftOffset = Math.random() * aContainer.clientWidth;
+        if (qLeaf) {
+          // Check if leaf touch the bottom
+          if (
+            qLeaf.getBoundingClientRect().top >=
+            aContainer.clientHeight - 120
+          ) {
+            // Reset new offset left
+            let newLeftOffset = Math.random() * aContainer.clientWidth;
 
-          this.setState({
-            leafPosition: -60,
-            leafOffsetLeft: newLeftOffset
-          })
+            this.setState({
+              leafPosition: -60,
+              leafOffsetLeft: newLeftOffset
+            });
+          }
         }
-      }
 
-      this.setState({
-        leafPosition: this.state.leafPosition + 1
-      });
-    }, this.props.optionSpeed ? this.props.optionSpeed : 5);
+        this.setState({
+          leafPosition: this.state.leafPosition + 1
+        });
+      },
+      this.props.optionSpeed ? this.props.optionSpeed : 5
+    );
 
     // Set interval for rotate leaf
     let leafRotateInterval = setInterval(() => {
@@ -68,7 +74,7 @@ export default class FallingLeaf extends Component {
       if (newRotate === this.state.leafRotateMax + 1) {
         newRotate = this.state.leafRotateMax - 1;
         newRotateChange = -1;
-      } else if (newRotate === -this.state.leafRotateMax -1) {
+      } else if (newRotate === -this.state.leafRotateMax - 1) {
         newRotate = -this.state.leafRotateMax + 1;
         newRotateChange = 1;
       }
@@ -77,7 +83,7 @@ export default class FallingLeaf extends Component {
         leafRotate: newRotate,
         leafRotateChange: newRotateChange
       });
-    }, 40)
+    }, 40);
 
     // Set interval for left offset
     let leafSwingInterval = setInterval(() => {
@@ -89,9 +95,9 @@ export default class FallingLeaf extends Component {
       }
 
       this.setState({
-        leafOffsetLeft: newLeafOffset,
+        leafOffsetLeft: newLeafOffset
       });
-    }, 15)
+    }, 15);
 
     this.setState({
       leafFallingInterval,
@@ -108,7 +114,7 @@ export default class FallingLeaf extends Component {
     const qLeaf = document.querySelector("#" + this.props.leafId);
 
     if (qLeaf) {
-      qLeaf.style.opacity = 1
+      qLeaf.style.opacity = 1;
     }
   }
 
@@ -120,7 +126,7 @@ export default class FallingLeaf extends Component {
     const qLeaf = document.querySelector("#" + this.props.leafId);
 
     if (qLeaf) {
-      qLeaf.style.opacity = 0.2
+      qLeaf.style.opacity = 0.2;
     }
   }
 
@@ -133,11 +139,11 @@ export default class FallingLeaf extends Component {
       clearInterval(this.state.leafFallingInterval);
       clearInterval(this.state.leafRotateInterval);
       clearInterval(this.state.leafSwingInterval);
-      this.setState({ running: false })
+      this.setState({ running: false });
     } else {
       this.setState({ running: true }, () => {
         this.handleMotion();
-      })
+      });
     }
   }
 
@@ -167,6 +173,6 @@ export default class FallingLeaf extends Component {
       return <div />;
     }
   }
-};
+}
 
 // Mini game pick leaf

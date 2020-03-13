@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ReactTooltip from "react-tooltip";
-import SectionTitle from "../../components/SectionTitle";
+import SectionTitle from "../../shared/SectionTitle";
 import data from "../../data.json";
 
 export default class Projects extends Component {

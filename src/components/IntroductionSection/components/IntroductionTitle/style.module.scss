@@ -1,0 +1,19 @@
+@import "../../../../style/colors.module";
+@import "../../../../style/mixins.module";
+
+:local {
+  .hiText {
+    @include fontFam(monte, 66px, bold, $main-purple);
+    text-shadow: 1px 2px 2px white;
+  }
+
+  .name {
+    @include fontFam(monte, 38px, unset, $off-white);
+    padding-top: 30px;
+  }
+
+  .description {
+    @include fontFam(monte, 16px, 100, $off-white, 28px, 1px);
+    padding: 23px 0px 0px 2px;
+  }
+}

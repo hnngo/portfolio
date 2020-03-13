@@ -90,24 +90,4 @@
     @include fontFam(monte, 24px, unset, $off-white);
     margin: 0;
   }
-
-  @keyframes navSlideDown {
-    from {
-      height: 0px;
-    }
-
-    to {
-      height: 320px;
-    }
-  }
-
-  @keyframes navSlideUp {
-    from {
-      height: 320px;
-    }
-
-    to {
-      height: 0px;
-    }
-  }
 }

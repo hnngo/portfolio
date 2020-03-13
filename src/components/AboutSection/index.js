@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import SectionTitle from "../../components/SectionTitle";
-import FallingLeaf from "../../components/FallingLeaf";
+import SectionTitle from "../../shared/SectionTitle";
+import FallingLeaf from "./components/FallingLeaf";
 import data from "../../data.json";
 
 export default class AboutSection extends Component {

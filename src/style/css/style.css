@@ -237,6 +237,7 @@ body {
   }
 }
 
+/* 
 .h-container .h-header h6 {
   font-family: "Montserrat", sans-serif;
   font-size: 38px;
@@ -245,9 +246,9 @@ body {
   line-height: unset;
   letter-spacing: unset;
   color: #f0f0f0;
-}
+} */
 
-.h-container .h-header h6.h-hi {
+/* .h-container .h-header h6.h-hi {
   font-family: "Montserrat", sans-serif;
   font-size: 66px;
   font-weight: bold;
@@ -271,7 +272,7 @@ body {
   letter-spacing: 1px;
   color: #f0f0f0;
   padding: 23px 0px 0px 2px;
-}
+} */
 
 .h-container .h-header .h-btn {
   margin-top: 45px;
