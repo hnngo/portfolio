@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import IntroductionTitle from "./components/IntroductionTitle";
 
+import styles from "./style.module.scss";
+import IntroductionButton from "./components/IntroductionButton";
+
 export default class IntroductionSection extends Component {
   constructor(props) {
     super(props);
@@ -80,29 +83,6 @@ export default class IntroductionSection extends Component {
     });
   }
 
-  renderBtn() {
-    if (this.state.showBtn) {
-      return (
-        <div className="h-btn">
-          <div
-            className="h-about animated tada"
-            onClick={() => this.handleClickBtn("a")}
-          >
-            About me
-          </div>
-          <div
-            className="h-portfolio animated tada"
-            onClick={() => this.handleClickBtn("p")}
-          >
-            Portfolio
-          </div>
-        </div>
-      );
-    } else {
-      return <div />;
-    }
-  }
-
   renderLight() {
     if (this.state.showLight) {
       return (
@@ -117,15 +97,19 @@ export default class IntroductionSection extends Component {
 
   render() {
     return (
-      <div className="h-container">
+      <div className={styles.container}>
         <div className="container">
-          <div className="h-header">
+          <div className={styles.header}>
             <IntroductionTitle
               showDescript={this.state.showDescript}
               showHeaderTitle={this.state.showHeaderTitle}
               showName={this.state.showName}
             />
-            {this.renderBtn()}
+            <IntroductionButton
+              show={this.state.showBtn}
+              onClickAbout={() => this.handleClickBtn("a")}
+              onClickPortfolio={() => this.handleClickBtn("p")}
+            />
           </div>
         </div>
         {/* <div className="d-none d-md-block">

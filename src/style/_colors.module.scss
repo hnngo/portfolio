@@ -2,9 +2,7 @@ $theme-colors: (
   "slide-bg": #d3d3d3,
   "off-white-v2": #dfdfdf,
   "light-purple": #e0c9fa,
-  "hover-purple": rgb(174, 113, 192),
   "dark-purple": #6d4799,
-  "btn-active-shadow": rgba(73, 73, 73, 0.74),
   "light-shadow": rgba(255, 255, 255, 0.623),
   "eb-shadow": rgba(199, 199, 199, 0.623),
   "p-card-shadow": #63035e,
@@ -25,6 +23,10 @@ $nav-bg: #1c1b1b;
 $off-white: #f0f0f0;
 $sn-bg: #333333;
 $sn-border: #888787;
+
+// Introduction
+$hover-purple: rgb(174, 113, 192);
+$btn-active-shadow: rgba(73, 73, 73, 0.74);
 
 // Section Title
 $st-bright-color: rgb(236, 236, 236);
