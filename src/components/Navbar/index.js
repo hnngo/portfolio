@@ -1,5 +1,8 @@
 import React, { Component } from "react";
+
+// Constants and utils
 import cx from "classnames";
+import { SECTIONS } from "../../shared/constants";
 
 import styles from "./style.module.scss";
 
@@ -7,34 +10,16 @@ const BigNav = ({ onClickSection }) => {
   return (
     <div className="d-none d-md-block">
       <ul className={styles.bigNavUL}>
-        <li
-          className={styles.bigNavList}
-          onClick={() => onClickSection("about")}
-        >
-          <h6 className={styles.bigNavListText}>About</h6>
-          <div className={styles.bigNavUnderline} />
-        </li>
-        <li
-          className={styles.bigNavList}
-          onClick={() => onClickSection("experience")}
-        >
-          <h6 className={styles.bigNavListText}>Experience</h6>
-          <div className={styles.bigNavUnderline} />
-        </li>
-        <li
-          className={styles.bigNavList}
-          onClick={() => onClickSection("project")}
-        >
-          <h6 className={styles.bigNavListText}>Projects</h6>
-          <div className={styles.bigNavUnderline} />
-        </li>
-        <li
-          className={styles.bigNavList}
-          onClick={() => onClickSection("contact")}
-        >
-          <h6 className={styles.bigNavListText}>Contact</h6>
-          <div className={styles.bigNavUnderline} />
-        </li>
+        {Object.values(SECTIONS).map(section => (
+          <li
+            key={section}
+            className={styles.bigNavList}
+            onClick={() => onClickSection(section)}
+          >
+            <h6 className={styles.bigNavListText}>{section}</h6>
+            <div className={styles.bigNavUnderline} />
+          </li>
+        ))}
       </ul>
     </div>
   );
@@ -60,30 +45,15 @@ const SmallNav = ({ show, onClickSection, onClickExpand, onClickCollapse }) => {
             animation: "navSlideDown 0.6s"
           }}
         >
-          <div
-            className={styles.smallNavList}
-            onClick={() => onClickSection("about")}
-          >
-            <h6 className={styles.smallNavText}>About</h6>
-          </div>
-          <div
-            className={styles.smallNavList}
-            onClick={() => onClickSection("experience")}
-          >
-            <h6 className={styles.smallNavText}>Experience</h6>
-          </div>
-          <div
-            className={styles.smallNavList}
-            onClick={() => onClickSection("project")}
-          >
-            <h6 className={styles.smallNavText}>Projects</h6>
-          </div>
-          <div
-            className={styles.smallNavList}
-            onClick={() => onClickSection("contact")}
-          >
-            <h6 className={styles.smallNavText}>Contact</h6>
-          </div>
+          {Object.values(SECTIONS).map(section => (
+            <div
+              key={section}
+              className={styles.smallNavList}
+              onClick={() => onClickSection(section)}
+            >
+              <h6 className={styles.smallNavText}>{section}</h6>
+            </div>
+          ))}
         </div>
       )}
     </div>
@@ -113,26 +83,20 @@ export default class NavBar extends Component {
     }
   }
 
-  handleClickNav(type, queryString = undefined) {
-    console.log(type);
-    if (!type && !queryString) {
+  handleClickNav(type) {
+    if (!type) {
       return;
     }
 
-    // Collapse the menu first
-    this.collapseSmallNav();
+    // Collapse the menu first if small menu is being rendered
+    this.state.showSmallMenu && this.collapseSmallNav();
 
     // Get the right target
-    let qTarget;
-    if (queryString) {
-      qTarget = document.querySelector(queryString);
-    } else {
-      qTarget = document.querySelector(`.${type.charAt(0)}-container`);
-    }
+    const qTarget = document.querySelector(`#${type}`);
 
     // Get the target scroll position and scroll to it
     if (qTarget) {
-      let y = qTarget.getBoundingClientRect().top + window.scrollY;
+      const y = qTarget.getBoundingClientRect().top + window.scrollY;
 
       window.scroll({
         top: y,
@@ -161,3 +125,5 @@ export default class NavBar extends Component {
     );
   }
 }
+
+// TODO: Fix bug smallnav => open => switch to big nav => the menu still existing

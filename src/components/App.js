@@ -11,6 +11,7 @@ import Contact from "./ContactSection";
 import "../style/css/style.css";
 import "./style.module.scss";
 import "../style/animation.css";
+import { SECTIONS_ID } from "../shared/constants";
 
 class App extends Component {
   constructor(props) {
@@ -49,7 +50,8 @@ class App extends Component {
 
       // Introduction
       let yAbout =
-        document.querySelector(".a-container").getBoundingClientRect().top +
+        document.querySelector(`#${SECTIONS_ID.ABOUT}`).getBoundingClientRect()
+          .top +
         (window.scrollY * 1) / 2;
 
       if (window.scrollY >= yAbout && !showAbout) {
@@ -58,7 +60,9 @@ class App extends Component {
 
       // Experience
       let yExperience =
-        document.querySelector(".e-container").getBoundingClientRect().top +
+        document
+          .querySelector(`#${SECTIONS_ID.EXPERIENCE}`)
+          .getBoundingClientRect().top +
         (window.scrollY * 4) / 5;
 
       if (window.scrollY >= yExperience && !showExperience) {
@@ -67,7 +71,9 @@ class App extends Component {
 
       // Projects
       let yProjects =
-        document.querySelector(".p-container").getBoundingClientRect().top +
+        document
+          .querySelector(`#${SECTIONS_ID.PROJECTS}`)
+          .getBoundingClientRect().top +
         (window.scrollY * 4) / 5;
 
       if (window.scrollY >= yProjects && !showProjects) {
@@ -76,7 +82,7 @@ class App extends Component {
 
       // Contact
       let yContact = document
-        .querySelector(".c-container")
+        .querySelector(`#${SECTIONS_ID.CONTACT}`)
         .getBoundingClientRect().top;
 
       if (window.scrollY >= yContact && !showContact) {
@@ -97,9 +103,7 @@ class App extends Component {
         <NavBar />
         <Introduction />
         <AboutPage show={this.state.showAbout} />
-        <div className="e-container">
-          {this.state.showExperience ? <Experience /> : <div />}
-        </div>
+        <Experience show={this.state.showExperience} />
         <Projects show={this.state.showProjects} />
         <Contact show={this.state.showContact} />
       </div>
@@ -109,4 +113,4 @@ class App extends Component {
 
 export default App;
 
-// Add resume
+// TODO: Add Resume view

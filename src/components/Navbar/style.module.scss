@@ -59,7 +59,7 @@
   .bigNavListText {
     @include fontFam(monte, unset, unset, $off-white);
     margin-bottom: 4px;
-    transition: 0.8s;
+    text-transform: capitalize;
   }
 
   .bigNavUnderline {
@@ -92,5 +92,6 @@
   .smallNavText {
     @include fontFam(monte, 24px, unset, $off-white);
     margin: 0;
+    text-transform: capitalize;
   }
 }

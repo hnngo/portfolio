@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactTooltip from "react-tooltip";
 import SectionTitle from "../../shared/SectionTitle";
 import data from "../../data.json";
+import { SECTIONS_ID } from "../../shared/constants";
 
 export default class Projects extends Component {
   constructor(props) {
@@ -301,7 +302,7 @@ export default class Projects extends Component {
 
   render() {
     return (
-      <div className="p-container">
+      <div id={SECTIONS_ID.PROJECTS} className="p-container">
         {this.props.show ? this.renderContent() : <div />}
       </div>
     );

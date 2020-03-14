@@ -3,12 +3,14 @@ import SectionTitle from "../../shared/SectionTitle";
 import ExpBoard from "./components/ExperienceBoard";
 import YearSlider from "./components/YearSlider";
 import data from "../../data.json";
+import { SECTIONS_ID } from "../../shared/constants";
 
 export default class ExperienceSection extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isInited: false,
       resizeEvent: undefined,
       expData: data.experience.expBoard,
       eConHeight: window.innerHeight,
@@ -18,48 +20,52 @@ export default class ExperienceSection extends Component {
       boardScale: [],
       boardOpacity: [],
       boardZindex: [],
-      boardTransX: []
+      boardTransX: [],
+      boardTransXOrigin: []
     };
   }
 
-  componentDidMount() {
-    // Setup resize event checking
-    this.resizeEvent();
+  componentDidUpdate() {
+    if (this.state.show && !this.state.isInited) {
+      // Setup resize event checking
+      this.resizeEvent();
 
-    // Initial setup style
-    let boardScale = this.state.expData.map((item, i) => 1 - i * 0.1);
-    let boardOpacity = this.state.expData.map(() => 0.3);
-    boardOpacity[0] = 1;
-    let boardZindex = this.state.expData.map(
-      (item, i) => this.state.expData.length - i
-    );
+      // Initial setup style
+      let boardScale = this.state.expData.map((item, i) => 1 - i * 0.1);
+      let boardOpacity = this.state.expData.map(() => 0.3);
+      boardOpacity[0] = 1;
+      let boardZindex = this.state.expData.map(
+        (item, i) => this.state.expData.length - i
+      );
 
-    // Update transX
-    const qBoardWidth = document.querySelector(".eb-container").clientWidth;
+      // Update transX
+      const qBoardWidth = document.querySelector(".eb-container").clientWidth;
 
-    let boardTransX = boardScale.map((item, i) => {
-      // let realSize = qBoardWidth * (+item);
-      let deltaSize = (qBoardWidth * (1 - +item)) / 2;
-      let currentWidth = window.innerWidth;
-      let newTransOffset;
-      if (currentWidth > 1200) {
-        newTransOffset = 60;
-      } else {
-        newTransOffset = (currentWidth * (60 - 10)) / (1200 - 375);
-      }
+      let boardTransX = boardScale.map((item, i) => {
+        // let realSize = qBoardWidth * (+item);
+        let deltaSize = (qBoardWidth * (1 - +item)) / 2;
+        let currentWidth = window.innerWidth;
+        let newTransOffset;
+        if (currentWidth > 1200) {
+          newTransOffset = 60;
+        } else {
+          newTransOffset = (currentWidth * (60 - 10)) / (1200 - 375);
+        }
 
-      return -(deltaSize + i * newTransOffset);
-    });
+        return -(deltaSize + i * newTransOffset);
+      });
 
-    this.setState({
-      ebWidtth: qBoardWidth,
-      prevCovertedSelect: 0,
-      boardScale,
-      boardOpacity,
-      boardZindex,
-      boardTransX,
-      boardTransXOrigin: boardTransX
-    });
+      this.setState({
+        isInited: true,
+        ebWidtth: qBoardWidth,
+        prevCovertedSelect: 0,
+        boardScale,
+        boardOpacity,
+        boardZindex,
+        boardTransX,
+        boardTransXOrigin: boardTransX
+      });
+    }
   }
 
   resizeEvent() {
@@ -159,59 +165,62 @@ export default class ExperienceSection extends Component {
   render() {
     return (
       <div
+        id={SECTIONS_ID.EXPERIENCE}
         className="e-container"
         style={{
           height: this.state.eConHeight
         }}
       >
-        <div className="container">
-          <SectionTitle
-            title="Experience"
-            icon="fas fa-history"
-            isDarkTheme={true}
-          />
-          <div>{this.renderExpBoard()}</div>
-          <div className="e-yearSlider animated slideInUp slow">
-            <YearSlider
-              range={[2009, 2019]}
-              milestones={[
-                {
-                  id: 0,
-                  fromTime: "08/2012",
-                  toTime: "04/2017",
-                  employer: "Ho Chi Minh city Univeristy of Technology",
-                  logo: this.state.expData[3].compLogo,
-                  designation: "Student"
-                },
-                {
-                  id: 1,
-                  fromTime: "06/2016",
-                  toTime: "09/2016",
-                  employer: "MobiFone Testing and Maintenance Center",
-                  logo: this.state.expData[2].compLogo,
-                  designation: "Internship Research Engineer"
-                },
-                {
-                  id: 2,
-                  fromTime: "05/2017",
-                  toTime: "10/2017",
-                  employer: "Fiot Co. LTD",
-                  logo: this.state.expData[1].compLogo,
-                  designation: "Embedded Firmware Development Engineer"
-                },
-                {
-                  id: 3,
-                  fromTime: "05/2018",
-                  toTime: "present",
-                  employer: "Nanyang Technological University",
-                  logo: this.state.expData[0].compLogo,
-                  designation: "Research Engineer"
-                }
-              ]}
-              onSelectMS={selectedVal => this.handleSelectMS(selectedVal)}
+        {!this.props.show ? null : (
+          <div className="container">
+            <SectionTitle
+              title="Experience"
+              icon="fas fa-history"
+              isDarkTheme={true}
             />
+            <div>{this.renderExpBoard()}</div>
+            <div className="e-yearSlider animated slideInUp slow">
+              <YearSlider
+                range={[2009, 2019]}
+                milestones={[
+                  {
+                    id: 0,
+                    fromTime: "08/2012",
+                    toTime: "04/2017",
+                    employer: "Ho Chi Minh city Univeristy of Technology",
+                    logo: this.state.expData[3].compLogo,
+                    designation: "Student"
+                  },
+                  {
+                    id: 1,
+                    fromTime: "06/2016",
+                    toTime: "09/2016",
+                    employer: "MobiFone Testing and Maintenance Center",
+                    logo: this.state.expData[2].compLogo,
+                    designation: "Internship Research Engineer"
+                  },
+                  {
+                    id: 2,
+                    fromTime: "05/2017",
+                    toTime: "10/2017",
+                    employer: "Fiot Co. LTD",
+                    logo: this.state.expData[1].compLogo,
+                    designation: "Embedded Firmware Development Engineer"
+                  },
+                  {
+                    id: 3,
+                    fromTime: "05/2018",
+                    toTime: "present",
+                    employer: "Nanyang Technological University",
+                    logo: this.state.expData[0].compLogo,
+                    designation: "Research Engineer"
+                  }
+                ]}
+                onSelectMS={selectedVal => this.handleSelectMS(selectedVal)}
+              />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     );
   }

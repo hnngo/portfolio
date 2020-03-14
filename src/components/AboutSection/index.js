@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import SectionTitle from "../../shared/SectionTitle";
 import FallingLeaf from "./components/FallingLeaf";
 import data from "../../data.json";
+import { SECTIONS_ID } from "../../shared/constants";
 
 export default class AboutSection extends Component {
   constructor(props) {
@@ -113,10 +114,12 @@ export default class AboutSection extends Component {
       return <div />;
     }
   }
+
   render() {
-    return <div className="a-container">{this.renderContent()}</div>;
+    return (
+      <div id={SECTIONS_ID.ABOUT} className="a-container">
+        {this.renderContent()}
+      </div>
+    );
   }
 }
-
-// Animation show
-// Scroll effect
