@@ -1,8 +1,14 @@
 import React, { Component } from "react";
 import IntroductionTitle from "./components/IntroductionTitle";
+import IntroductionButton from "./components/IntroductionButton";
 
 import styles from "./style.module.scss";
-import IntroductionButton from "./components/IntroductionButton";
+
+const TIME_OUT_FOR_TITLE = 1000;
+const TIME_OUT_FOR_NAME = 2000;
+const TIME_OUT_FOR_DESCRIPTION = 3000;
+const TIME_OUT_FOR_BUTTON = 4000;
+const TIME_OUT_FOR_LIGHT = 5000;
 
 export default class IntroductionSection extends Component {
   constructor(props) {
@@ -11,65 +17,25 @@ export default class IntroductionSection extends Component {
     this.state = {
       showHeaderTitle: false,
       showName: false,
-      showDescript: false,
-      showBtn: false,
+      showDescription: false,
+      showButton: false,
       showLight: false
     };
   }
 
   componentDidMount() {
-    // Set interval for typing action here
+    // Interval action for each component
     setTimeout(
-      () =>
-        this.setState(
-          {
-            showHeaderTitle: true
-          },
-          () => {
-            setTimeout(
-              () =>
-                this.setState(
-                  {
-                    showName: true
-                  },
-                  () => {
-                    setTimeout(
-                      () =>
-                        this.setState(
-                          {
-                            showDescript: true
-                          },
-                          () => {
-                            setTimeout(
-                              () =>
-                                this.setState(
-                                  {
-                                    showBtn: true
-                                  },
-                                  () => {
-                                    setTimeout(
-                                      () =>
-                                        this.setState({
-                                          showLight: true
-                                        }),
-                                      1000
-                                    );
-                                  }
-                                ),
-                              1000
-                            );
-                          }
-                        ),
-                      800
-                    );
-                  }
-                ),
-              1000
-            );
-          }
-        ),
-      1000
+      () => this.setState({ showHeaderTitle: true }),
+      TIME_OUT_FOR_TITLE
     );
+    setTimeout(() => this.setState({ showName: true }), TIME_OUT_FOR_NAME);
+    setTimeout(
+      () => this.setState({ showDescription: true }),
+      TIME_OUT_FOR_DESCRIPTION
+    );
+    setTimeout(() => this.setState({ showButton: true }), TIME_OUT_FOR_BUTTON);
+    setTimeout(() => this.setState({ showLight: true }), TIME_OUT_FOR_LIGHT);
   }
 
   handleClickBtn(type) {
@@ -101,20 +67,18 @@ export default class IntroductionSection extends Component {
         <div className="container">
           <div className={styles.header}>
             <IntroductionTitle
-              showDescript={this.state.showDescript}
+              showDescription={this.state.showDescription}
               showHeaderTitle={this.state.showHeaderTitle}
               showName={this.state.showName}
             />
             <IntroductionButton
-              show={this.state.showBtn}
+              show={this.state.showButton}
               onClickAbout={() => this.handleClickBtn("a")}
               onClickPortfolio={() => this.handleClickBtn("p")}
             />
           </div>
         </div>
-        {/* <div className="d-none d-md-block">
-          {this.renderLight()}
-        </div> */}
+        {/* <div className="d-none d-md-block">{this.renderLight()}</div> */}
       </div>
     );
   }

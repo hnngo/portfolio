@@ -333,40 +333,40 @@ $breakpoints: (
   }
 }
 
-.h-light-container {
-  @include pos(absolute, -20px, 60px);
-  transform: rotate(-135deg);
-  font-size: 180px;
-  filter: blur(2px) brightness(100%);
-  color: map-get($map: $theme-colors, $key: off-white);
+// .h-light-container {
+//   @include pos(absolute, -20px, 60px);
+//   transform: rotate(-135deg);
+//   font-size: 180px;
+//   filter: blur(2px) brightness(100%);
+//   color: map-get($map: $theme-colors, $key: off-white);
 
-  i {
-    opacity: 0.1;
-  }
+//   i {
+//     opacity: 0.1;
+//   }
 
-  @include mq(tablet, max) {
-    @include pos(absolute, -25px, 30px);
-    font-size: 120px;
-  }
+//   @include mq(tablet, max) {
+//     @include pos(absolute, -25px, 30px);
+//     font-size: 120px;
+//   }
 
-  @include mq(tablet, min) {
-    &:hover {
-      filter: blur(0px) brightness(200%);
+//   @include mq(tablet, min) {
+//     &:hover {
+//       filter: blur(0px) brightness(200%);
 
-      i {
-        opacity: 1;
-        text-shadow: 0.1vw 0vw 0.25vw #fac0ff, 0.2vw 0vw 0.25vw #fac0ff,
-          0.4vw 0vw 0.25vw #fac0ff, 0.1vw 0vw 0vw #f588ff, 0.2vw 0vw 0vw #f588ff,
-          0.4vw 0vw 0vw #f588ff, 0.1vw 0vw 0.1vw #f588ff,
-          0.2vw 0vw 0.1vw #f588ff, 0.4vw 0vw 0.1vw #f588ff,
-          0.1vw 0vw 2vw #f588ff, 0.2vw 0vw 2vw #f588ff, 0.4vw 0vw 2vw #f588ff,
-          0.1vw 0vw 1vw #ea00ff, 0.2vw 0vw 1vw #ea00ff, 0.4vw 0vw 5vw #ea00ff,
-          0.1vw 0vw 10vw #ea00ff, 0.2vw 0vw 35vw #ea00ff, 0.4vw 0vw 10vw #ea00ff,
-          0.1vw 0vw 20vw #ea00ff, 0.2vw 0vw 45vw #ea00ff, 0.4vw 0vw 30vw #ea00ff;
-      }
-    }
-  }
-}
+//       i {
+//         opacity: 1;
+//         text-shadow: 0.1vw 0vw 0.25vw #fac0ff, 0.2vw 0vw 0.25vw #fac0ff,
+//           0.4vw 0vw 0.25vw #fac0ff, 0.1vw 0vw 0vw #f588ff, 0.2vw 0vw 0vw #f588ff,
+//           0.4vw 0vw 0vw #f588ff, 0.1vw 0vw 0.1vw #f588ff,
+//           0.2vw 0vw 0.1vw #f588ff, 0.4vw 0vw 0.1vw #f588ff,
+//           0.1vw 0vw 2vw #f588ff, 0.2vw 0vw 2vw #f588ff, 0.4vw 0vw 2vw #f588ff,
+//           0.1vw 0vw 1vw #ea00ff, 0.2vw 0vw 1vw #ea00ff, 0.4vw 0vw 5vw #ea00ff,
+//           0.1vw 0vw 10vw #ea00ff, 0.2vw 0vw 35vw #ea00ff, 0.4vw 0vw 10vw #ea00ff,
+//           0.1vw 0vw 20vw #ea00ff, 0.2vw 0vw 45vw #ea00ff, 0.4vw 0vw 30vw #ea00ff;
+//       }
+//     }
+//   }
+// }
 
 /*---------------------------------------------*/
 /* Component Title

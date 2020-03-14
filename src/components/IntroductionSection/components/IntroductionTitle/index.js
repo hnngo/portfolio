@@ -3,7 +3,7 @@ import cx from "classnames";
 
 import styles from "./style.module.scss";
 
-const IntroductionTitle = ({ showHeaderTitle, showDescript, showName }) => {
+const IntroductionTitle = ({ showHeaderTitle, showDescription, showName }) => {
   if (showHeaderTitle) {
     return (
       <div>
@@ -18,7 +18,7 @@ const IntroductionTitle = ({ showHeaderTitle, showDescript, showName }) => {
           )}
         </div>
         <div>
-          {showDescript ? (
+          {showDescription ? (
             <h6 className={cx(styles.description, "animated fadeInUp slow")}>
               I am a front-end developer based in Singapore who is ambitious
               about web development and UI/UX design.
