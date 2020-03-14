@@ -334,7 +334,7 @@ body {
   }
 } */
 
-.h-light-container {
+/* .h-light-container {
   position: absolute;
   top: -20px;
   right: 60px;
@@ -379,7 +379,7 @@ body {
       0.4vw 0vw 10vw #ea00ff, 0.1vw 0vw 20vw #ea00ff, 0.2vw 0vw 45vw #ea00ff,
       0.4vw 0vw 30vw #ea00ff;
   }
-}
+} */
 
 /*---------------------------------------------*/
 /* Component Title
@@ -387,7 +387,7 @@ body {
 /*---------------------------------------------*/
 /* ABOUT
 /*---------------------------------------------*/
-.a-container {
+/* .a-container {
   background-image: url(../img/about_wall.png);
   background-size: contain;
   background-position: center;
@@ -402,7 +402,7 @@ body {
     height: auto;
     background-position-y: 30%;
   }
-}
+} */
 
 .a-container .container {
   padding-top: 30px;

@@ -25,7 +25,7 @@
     }
   }
 
-  .h-light-container {
+  .lightContainer {
     @include pos(absolute, -20px, 60px);
     transform: rotate(-135deg);
     font-size: 180px;

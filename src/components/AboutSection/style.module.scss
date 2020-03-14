@@ -1,0 +1,19 @@
+@import "../../style/colors.module";
+@import "../../style/mixins.module";
+
+:local {
+  .container {
+    background-image: url("../../style/img/about_wall.png");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    @include mq(tablet, max) {
+      height: auto;
+      background-position-y: 30%;
+    }
+  }
+}

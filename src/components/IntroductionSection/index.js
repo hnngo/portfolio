@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import IntroductionTitle from "./components/IntroductionTitle";
 import IntroductionButton from "./components/IntroductionButton";
+import { SECTIONS_ID } from "../../shared/constants";
 
 import styles from "./style.module.scss";
 
@@ -38,27 +39,15 @@ export default class IntroductionSection extends Component {
     setTimeout(() => this.setState({ showLight: true }), TIME_OUT_FOR_LIGHT);
   }
 
-  handleClickBtn(type) {
+  handleClickButton(type) {
     const y =
-      document.querySelector(`.${type}-container`).getBoundingClientRect().top +
+      document.querySelector(`#${type}`).getBoundingClientRect().top +
       window.scrollY;
 
     window.scroll({
       top: y,
       behavior: "smooth"
     });
-  }
-
-  renderLight() {
-    if (this.state.showLight) {
-      return (
-        <div className="h-light-container animated fadeIn">
-          <i className="far fa-lightbulb" />
-        </div>
-      );
-    } else {
-      return <div />;
-    }
   }
 
   render() {
@@ -73,12 +62,20 @@ export default class IntroductionSection extends Component {
             />
             <IntroductionButton
               show={this.state.showButton}
-              onClickAbout={() => this.handleClickBtn("a")}
-              onClickPortfolio={() => this.handleClickBtn("p")}
+              onClickAbout={() => this.handleClickButton(SECTIONS_ID.ABOUT)}
+              onClickPortfolio={() =>
+                this.handleClickButton(SECTIONS_ID.PROJECTS)
+              }
             />
           </div>
         </div>
-        {/* <div className="d-none d-md-block">{this.renderLight()}</div> */}
+        {/* <div className="d-none d-md-block">
+          {!this.state.showLight ? null : (
+            <div className={`${styles.lightContainer} animated fadeIn`}>
+              <i className="far fa-lightbulb" />
+            </div>
+          )}
+        </div> */}
       </div>
     );
   }

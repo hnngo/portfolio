@@ -4,6 +4,8 @@ import FallingLeaf from "./components/FallingLeaf";
 import data from "../../data.json";
 import { SECTIONS_ID } from "../../shared/constants";
 
+import styles from "./style.module.scss";
+
 export default class AboutSection extends Component {
   constructor(props) {
     super(props);
@@ -69,7 +71,7 @@ export default class AboutSection extends Component {
               </div>
             </div>
           </div>
-          <FallingLeaf
+          {/* <FallingLeaf
             leafId="leaf1"
             srcImg={data.about.leafBorder}
             containerClass=".a-container"
@@ -107,7 +109,7 @@ export default class AboutSection extends Component {
             initOffset={80}
             delay={10000}
             optionSpeed={9}
-          />
+          /> */}
         </div>
       );
     } else {
@@ -117,7 +119,7 @@ export default class AboutSection extends Component {
 
   render() {
     return (
-      <div id={SECTIONS_ID.ABOUT} className="a-container">
+      <div id={SECTIONS_ID.ABOUT} className={styles.container}>
         {this.renderContent()}
       </div>
     );
