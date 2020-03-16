@@ -83,48 +83,45 @@ export default class AboutSection extends Component {
                 </div>
               </div>
             </div>
-            {/* <FallingLeaf
-            leafId="leaf1"
-            srcImg={data.about.leafBorder}
-            containerClass=".a-container"
-            initOffset={340}
-            delay={1000}
-          />
-          <FallingLeaf
-            leafId="leaf2"
-            srcImg={data.about.leafSolid}
-            containerClass=".a-container"
-            initOffset={80}
-            delay={3000}
-            optionSpeed={8}
-          />
-          <FallingLeaf
-            leafId="leaf3"
-            srcImg={data.about.leafBorder}
-            containerClass=".a-container"
-            initOffset={150}
-            delay={6000}
-            optionSpeed={10}
-          />
-          <FallingLeaf
-            leafId="leaf4"
-            srcImg={data.about.leafSolid}
-            containerClass=".a-container"
-            initOffset={250}
-            delay={8000}
-            optionSpeed={7}
-          />
-          <FallingLeaf
-            leafId="leaf5"
-            srcImg={data.about.leafBorder}
-            containerClass=".a-container"
-            initOffset={80}
-            delay={10000}
-            optionSpeed={9}
-          /> */}
+            <FallingLeaf
+              srcImg={data.about.leafBorder}
+              containerId={SECTIONS_ID.ABOUT}
+              initOffset={340}
+              delay={1000}
+            />
+            <FallingLeaf
+              srcImg={data.about.leafSolid}
+              containerId={SECTIONS_ID.ABOUT}
+              initOffset={80}
+              delay={3000}
+              optionSpeed={8}
+            />
+            <FallingLeaf
+              srcImg={data.about.leafBorder}
+              containerId={SECTIONS_ID.ABOUT}
+              initOffset={150}
+              delay={6000}
+              optionSpeed={10}
+            />
+            <FallingLeaf
+              srcImg={data.about.leafSolid}
+              containerId={SECTIONS_ID.ABOUT}
+              initOffset={250}
+              delay={8000}
+              optionSpeed={7}
+            />
+            <FallingLeaf
+              srcImg={data.about.leafBorder}
+              containerId={SECTIONS_ID.ABOUT}
+              initOffset={80}
+              delay={10000}
+              optionSpeed={9}
+            />
           </div>
         )}
       </div>
     );
   }
 }
+
+// TODO: Fix bug when screen height for leaf to small

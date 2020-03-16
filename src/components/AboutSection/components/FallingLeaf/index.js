@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 
+import styles from "./style.module.scss";
+
 export default class FallingLeaf extends Component {
   constructor(props) {
     super(props);
 
+    const { initOffset, containerId, delay } = this.props;
+
     this.state = {
+      leafId: `${containerId}-${initOffset}-${delay}-${Math.floor(
+        Math.random() * 100
+      )}`,
       loaded: false,
       imgToggle: false,
       running: true,
@@ -39,17 +46,17 @@ export default class FallingLeaf extends Component {
   handleMotion() {
     let leafFallingInterval = setInterval(
       () => {
-        const qLeaf = document.querySelector("#" + this.props.leafId);
-        const aContainer = document.querySelector(this.props.containerClass);
+        const qLeaf = document.querySelector("#" + this.state.leafId);
+        const qContainer = document.querySelector("#" + this.props.containerId);
 
-        if (qLeaf) {
+        if (qLeaf && qContainer) {
           // Check if leaf touch the bottom
           if (
             qLeaf.getBoundingClientRect().top >=
-            aContainer.clientHeight - 120
+            qContainer.clientHeight - 120
           ) {
             // Reset new offset left
-            let newLeftOffset = Math.random() * aContainer.clientWidth;
+            let newLeftOffset = Math.random() * qContainer.clientWidth;
 
             this.setState({
               leafPosition: -60,
@@ -107,11 +114,11 @@ export default class FallingLeaf extends Component {
   }
 
   handleEnterLeaf() {
-    if (window.screen.width <= 576) {
-      return;
-    }
+    // if (window.screen.width <= 576) {
+    //   return;
+    // }
 
-    const qLeaf = document.querySelector("#" + this.props.leafId);
+    const qLeaf = document.querySelector("#" + this.state.leafId);
 
     if (qLeaf) {
       qLeaf.style.opacity = 1;
@@ -119,11 +126,11 @@ export default class FallingLeaf extends Component {
   }
 
   handleOutLeaf() {
-    if (window.screen.width <= 576) {
-      return;
-    }
+    // if (window.screen.width <= 576) {
+    //   return;
+    // }
 
-    const qLeaf = document.querySelector("#" + this.props.leafId);
+    const qLeaf = document.querySelector("#" + this.state.leafId);
 
     if (qLeaf) {
       qLeaf.style.opacity = 0.2;
@@ -131,9 +138,9 @@ export default class FallingLeaf extends Component {
   }
 
   handleOnClick() {
-    if (window.screen.width <= 576) {
-      return;
-    }
+    // if (window.screen.width <= 576) {
+    //   return;
+    // }
 
     if (this.state.running) {
       clearInterval(this.state.leafFallingInterval);
@@ -150,13 +157,17 @@ export default class FallingLeaf extends Component {
   render() {
     // Only load after delay time
     if (this.state.loaded) {
+      if (window.screen.width <= 576) {
+        return null;
+      }
+
       return (
         <div>
           <img
-            id={this.props.leafId}
+            id={this.state.leafId}
             src={this.props.srcImg}
             alt={"leaf-falling"}
-            className="a-leaf-border"
+            className={styles.leaf}
             style={{
               top: this.state.leafPosition + "px",
               left: this.state.leafOffsetLeft + "px",
@@ -174,5 +185,3 @@ export default class FallingLeaf extends Component {
     }
   }
 }
-
-// Mini game pick leaf
