@@ -430,81 +430,81 @@ $breakpoints: (
     padding-top: 30px;
 
     .row {
-      padding-top: 60px;
+      // padding-top: 60px;
 
-      @include mq(tablet, max) {
-        padding-top: 0px;
-      }
+      // @include mq(tablet, max) {
+      //   padding-top: 0px;
+      // }
 
-      .a-personal-i {
-        text-align: right;
+      // .a-personal-i {
+      //   text-align: right;
 
-        @include mq(tablet, max) {
-          text-align: center;
-        }
+      //   @include mq(tablet, max) {
+      //     text-align: center;
+      //   }
 
-        img {
-          width: 60%;
-          max-width: 270px;
-          border-radius: 50%;
-          text-align: right;
-          margin: 12px 0px;
-        }
-      }
+      //   img {
+      //     width: 60%;
+      //     max-width: 270px;
+      //     border-radius: 50%;
+      //     text-align: right;
+      //     margin: 12px 0px;
+      //   }
+      // }
 
       .a-personal-text {
-        @include mq(tablet, max) {
-          text-align: center;
-          padding: 20px 40px;
-        }
+        // @include mq(tablet, max) {
+        //   text-align: center;
+        //   padding: 20px 40px;
+        // }
 
-        h2 {
-          @include fontFam(charmon, 30px, unset, black);
-        }
+        // h2 {
+        //   @include fontFam(charmon, 30px, unset, black);
+        // }
 
-        p {
-          @include fontFam(monte, 15px, unset, black);
-          text-shadow: 1px 1px 2px rgb(255, 255, 255);
-        }
+        // p {
+        //   @include fontFam(monte, 15px, unset, black);
+        //   text-shadow: 1px 1px 2px rgb(255, 255, 255);
+        // }
 
-        .a-focus {
-          font-weight: bold;
+        // .a-focus {
+        //   font-weight: bold;
 
-          span {
-            font-weight: 100;
-          }
-        }
+        //   span {
+        //     font-weight: 100;
+        //   }
+        // }
 
         .a-follow {
-          a,
-          a:active,
-          a:link,
-          a:visited {
-            text-decoration: none;
-            color: black;
-          }
+          // a,
+          // a:active,
+          // a:link,
+          // a:visited {
+          //   text-decoration: none;
+          //   color: black;
+          // }
 
-          i {
-            font-size: 30px;
-            padding-right: 10px;
-            opacity: 0.6;
-            cursor: pointer;
+          // i {
+          //   font-size: 30px;
+          //   padding-right: 10px;
+          //   opacity: 0.6;
+          //   cursor: pointer;
 
-            &.fa-github:hover {
-              opacity: 1;
-              color: map-get($map: $theme-colors, $key: github);
-            }
+          //   &.fa-github:hover {
+          //     opacity: 1;
+          //     color: map-get($map: $theme-colors, $key: github);
+          //   }
 
-            &.fa-linkedin:hover {
-              opacity: 1;
-              color: map-get($map: $theme-colors, $key: linkedin);
-            }
+          //   &.fa-linkedin:hover {
+          //     opacity: 1;
+          //     color: map-get($map: $theme-colors, $key: linkedin);
+          //   }
 
-            &.fa-facebook:hover {
-              opacity: 1;
-              color: map-get($map: $theme-colors, $key: facebook);
-            }
-          }
+          //   &.fa-facebook:hover {
+          //     opacity: 1;
+          //     color: map-get($map: $theme-colors, $key: facebook);
+          //   }
+          // }
         }
       }
     }

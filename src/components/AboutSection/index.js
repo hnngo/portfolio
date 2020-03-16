@@ -1,6 +1,11 @@
 import React, { Component } from "react";
+
+// Components
 import SectionTitle from "../../shared/SectionTitle";
 import FallingLeaf from "./components/FallingLeaf";
+
+// Constants and utils
+import cx from "classnames";
 import data from "../../data.json";
 import { SECTIONS_ID } from "../../shared/constants";
 
@@ -15,63 +20,70 @@ export default class AboutSection extends Component {
     };
   }
 
-  renderContent() {
-    if (this.props.show) {
-      return (
-        <div>
-          <div className="container">
-            <SectionTitle title="About" icon="fas fa-info-circle" />
-            <div className="row">
-              <div className="col-sm-6 a-personal-i animated fadeInLeft">
-                <img
-                  src={data.about.profilePhoto}
-                  alt={"Profile"}
-                  onLoad={() =>
-                    this.setState({ imgToggle: !this.state.imgToggle })
-                  }
-                />
-              </div>
-              <div className="col-sm-6 a-personal-text animated fadeInRight">
-                <h2>Hello,</h2>
-                <p>
-                  As a developer, I am always curious about web development
-                  technologies. Building functional, modern and user-friendly
-                  web applications is definitely a passion of mine. To be more
-                  valuable in this highly competitive software development
-                  world, I actively equip myself advanced and up-to-date
-                  technologies.
-                  <br />
-                  <br />I am looking for an opportunity to become a
-                  Front-end/Full-stack Developer and I am very open to relocate
-                  to Canada.
-                </p>
-                <p className="a-focus">
-                  Current Focus:
-                  <span>
-                    &nbsp;Node.js / React / Redux and other frameworks,
-                    libraries related to them.
-                  </span>
-                </p>
-                <div className="a-follow">
-                  <a
-                    href="https://github.com/hnngo"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-github" />
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/ngohuynhnhan/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <i className="fab fa-linkedin" />
-                  </a>
+  render() {
+    return (
+      <div id={SECTIONS_ID.ABOUT} className={styles.container}>
+        {!this.props.show ? null : (
+          <div>
+            <div className="container">
+              <SectionTitle title="About" icon="fas fa-info-circle" />
+              <div className={cx(styles.row, "row")}>
+                <div
+                  className={cx(styles.avatar, "col-sm-6 animated fadeInLeft")}
+                >
+                  <img
+                    src={data.about.profilePhoto}
+                    alt={"Profile"}
+                    onLoad={() =>
+                      this.setState({ imgToggle: !this.state.imgToggle })
+                    }
+                  />
+                </div>
+                <div
+                  className={cx(styles.text, "col-sm-6 animated fadeInRight")}
+                >
+                  <h2 className={styles.helloText}>Hello,</h2>
+                  <p className={styles.briefIntroText}>
+                    As a developer, I am always curious about web development
+                    technologies. Building functional, modern and user-friendly
+                    web applications is definitely a passion of mine. To be more
+                    valuable in this highly competitive software development
+                    world, I actively equip myself advanced and up-to-date
+                    technologies.
+                    <br />
+                    <br />I am looking for an opportunity to become a
+                    Front-end/Full-stack Developer and I am very open to
+                    relocate to Canada.
+                  </p>
+                  <p className={styles.currentFocusText}>
+                    Current Focus:
+                    <span>
+                      &nbsp;Node.js / React / Redux and other frameworks,
+                      libraries related to them.
+                    </span>
+                  </p>
+                  <div className={styles.socialLink}>
+                    <a
+                      href="https://github.com/hnngo"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i className={cx(styles.githubIcon, "fab fa-github")} />
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/ngohuynhnhan/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <i
+                        className={cx(styles.linkedinIcon, "fab fa-linkedin")}
+                      />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          {/* <FallingLeaf
+            {/* <FallingLeaf
             leafId="leaf1"
             srcImg={data.about.leafBorder}
             containerClass=".a-container"
@@ -110,17 +122,8 @@ export default class AboutSection extends Component {
             delay={10000}
             optionSpeed={9}
           /> */}
-        </div>
-      );
-    } else {
-      return <div />;
-    }
-  }
-
-  render() {
-    return (
-      <div id={SECTIONS_ID.ABOUT} className={styles.container}>
-        {this.renderContent()}
+          </div>
+        )}
       </div>
     );
   }

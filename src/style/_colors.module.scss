@@ -10,9 +10,6 @@ $theme-colors: (
   "eb-title-border": rgb(233, 183, 248),
   "slider-thumb": rgb(193, 85, 226),
   "eb-bg": rgb(245, 222, 242),
-  "github": #24292e,
-  "linkedin": #0077b5,
-  "facebook": #3b5998,
   "st-bright-color": rgb(236, 236, 236)
 );
 
@@ -27,6 +24,11 @@ $sn-border: #888787;
 // Introduction
 $hover-purple: rgb(174, 113, 192);
 $btn-active-shadow: rgba(73, 73, 73, 0.74);
+
+// About
+$github: #24292e;
+$linkedin: #0077b5;
+$facebook: #3b5998;
 
 // Section Title
 $st-bright-color: rgb(236, 236, 236);
