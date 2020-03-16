@@ -123,5 +123,3 @@ export default class AboutSection extends Component {
     );
   }
 }
-
-// TODO: Fix bug when screen height for leaf to small

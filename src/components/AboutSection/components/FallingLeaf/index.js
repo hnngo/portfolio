@@ -28,6 +28,8 @@ export default class FallingLeaf extends Component {
   }
 
   componentDidMount() {
+    this.clearAllIntervals();
+
     // Set Timeout for delaying
     setTimeout(() => {
       this.setState({ loaded: true }, () => {
@@ -38,6 +40,10 @@ export default class FallingLeaf extends Component {
   }
 
   componentWillUnmount() {
+    this.clearAllIntervals();
+  }
+
+  clearAllIntervals() {
     clearInterval(this.state.leafFallingInterval);
     clearInterval(this.state.leafRotateInterval);
     clearInterval(this.state.leafSwingInterval);
@@ -53,7 +59,7 @@ export default class FallingLeaf extends Component {
           // Check if leaf touch the bottom
           if (
             qLeaf.getBoundingClientRect().top >=
-            qContainer.clientHeight - 120
+            qContainer.getBoundingClientRect().bottom - 100
           ) {
             // Reset new offset left
             let newLeftOffset = Math.random() * qContainer.clientWidth;
@@ -114,10 +120,6 @@ export default class FallingLeaf extends Component {
   }
 
   handleEnterLeaf() {
-    // if (window.screen.width <= 576) {
-    //   return;
-    // }
-
     const qLeaf = document.querySelector("#" + this.state.leafId);
 
     if (qLeaf) {
@@ -126,10 +128,6 @@ export default class FallingLeaf extends Component {
   }
 
   handleOutLeaf() {
-    // if (window.screen.width <= 576) {
-    //   return;
-    // }
-
     const qLeaf = document.querySelector("#" + this.state.leafId);
 
     if (qLeaf) {
@@ -138,10 +136,6 @@ export default class FallingLeaf extends Component {
   }
 
   handleOnClick() {
-    // if (window.screen.width <= 576) {
-    //   return;
-    // }
-
     if (this.state.running) {
       clearInterval(this.state.leafFallingInterval);
       clearInterval(this.state.leafRotateInterval);
@@ -155,33 +149,29 @@ export default class FallingLeaf extends Component {
   }
 
   render() {
-    // Only load after delay time
-    if (this.state.loaded) {
-      if (window.screen.width <= 576) {
-        return null;
-      }
-
-      return (
-        <div>
-          <img
-            id={this.state.leafId}
-            src={this.props.srcImg}
-            alt={"leaf-falling"}
-            className={styles.leaf}
-            style={{
-              top: this.state.leafPosition + "px",
-              left: this.state.leafOffsetLeft + "px",
-              transform: `rotate(${this.state.leafRotate}deg)`
-            }}
-            onMouseEnter={() => this.handleEnterLeaf()}
-            onMouseLeave={() => this.handleOutLeaf()}
-            onClick={() => this.handleOnClick()}
-            onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
-          />
-        </div>
-      );
-    } else {
-      return <div />;
+    if (window.screen.width <= 576) {
+      return null;
     }
+
+    // Only load after delay time
+    return !this.state.loaded ? null : (
+      <div>
+        <img
+          id={this.state.leafId}
+          src={this.props.srcImg}
+          alt={"leaf-falling"}
+          className={styles.leaf}
+          style={{
+            top: this.state.leafPosition + "px",
+            left: this.state.leafOffsetLeft + "px",
+            transform: `rotate(${this.state.leafRotate}deg)`
+          }}
+          onMouseEnter={() => this.handleEnterLeaf()}
+          onMouseLeave={() => this.handleOutLeaf()}
+          onClick={() => this.handleOnClick()}
+          onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
+        />
+      </div>
+    );
   }
 }
