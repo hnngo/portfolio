@@ -6,7 +6,8 @@ export const SECTIONS = {
 };
 
 export const SECTIONS_ID = {
+  ...SECTIONS,
   NAVBAR: "navbar",
   INTRODUCTION: "introduction",
-  ...SECTIONS
+  EXP_BOARD: "exp-board"
 };

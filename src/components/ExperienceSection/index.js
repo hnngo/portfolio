@@ -1,9 +1,18 @@
 import React, { Component } from "react";
+
+// Components
 import SectionTitle from "../../shared/SectionTitle";
 import ExpBoard from "./components/ExperienceBoard";
 import YearSlider from "./components/YearSlider";
+
+// Utils and Constants
 import data from "../../data.json";
 import { SECTIONS_ID } from "../../shared/constants";
+import cx from "classnames";
+
+import styles from "./style.module.scss";
+
+const EXP_DATA = data.experience.expBoard;
 
 export default class ExperienceSection extends Component {
   constructor(props) {
@@ -12,7 +21,6 @@ export default class ExperienceSection extends Component {
     this.state = {
       isInited: false,
       resizeEvent: undefined,
-      expData: data.experience.expBoard,
       eConHeight: window.innerHeight,
       ebWidtth: 0,
       offset: -70,
@@ -26,21 +34,19 @@ export default class ExperienceSection extends Component {
   }
 
   componentDidUpdate() {
-    if (this.state.show && !this.state.isInited) {
+    if (this.props.show && !this.state.isInited) {
       // Setup resize event checking
       this.resizeEvent();
 
       // Initial setup style
-      let boardScale = this.state.expData.map((item, i) => 1 - i * 0.1);
-      let boardOpacity = this.state.expData.map(() => 0.3);
-      boardOpacity[0] = 1;
-      let boardZindex = this.state.expData.map(
-        (item, i) => this.state.expData.length - i
-      );
+      let boardScale = EXP_DATA.map((_, i) => 1 - i * 0.1);
+      let boardOpacity = EXP_DATA.map((_, i) => (i === 0 ? 1 : 0.3));
+      let boardZindex = EXP_DATA.map((item, i) => EXP_DATA.length - i);
 
       // Update transX
-      const qBoardWidth = document.querySelector(".eb-container").clientWidth;
-
+      const qBoardWidth = document.querySelector(
+        "#" + SECTIONS_ID.EXP_BOARD + "0"
+      ).clientWidth;
       let boardTransX = boardScale.map((item, i) => {
         // let realSize = qBoardWidth * (+item);
         let deltaSize = (qBoardWidth * (1 - +item)) / 2;
@@ -83,7 +89,7 @@ export default class ExperienceSection extends Component {
   }
 
   // Handle slide animation
-  handleSelectMS(selectedVal) {
+  handleSelectMileStone(selectedVal) {
     // Convert the data follow the direction 0 > max
     let numberOfData = data.experience.expBoard.length - 1;
     let convertedVal = (selectedVal / 100) * -numberOfData + numberOfData;
@@ -94,7 +100,7 @@ export default class ExperienceSection extends Component {
     let boardTransX = [...this.state.boardTransX];
     let boardTransXOrigin = this.state.boardTransXOrigin;
 
-    this.state.expData.forEach((item, i) => {
+    EXP_DATA.forEach((item, i) => {
       let delta = Math.abs(i - convertedVal);
       let signedDelta = i - convertedVal;
 
@@ -139,7 +145,7 @@ export default class ExperienceSection extends Component {
   }
 
   renderExpBoard() {
-    return this.state.expData.map((item, i) => {
+    return EXP_DATA.map((item, i) => {
       return (
         <ExpBoard
           key={i}
@@ -166,20 +172,28 @@ export default class ExperienceSection extends Component {
     return (
       <div
         id={SECTIONS_ID.EXPERIENCE}
-        className="e-container"
+        className={styles.container}
         style={{
           height: this.state.eConHeight
         }}
       >
         {!this.props.show ? null : (
-          <div className="container">
+          <div
+            id="exp-container"
+            className={cx(styles.boardContainer, "container")}
+          >
             <SectionTitle
               title="Experience"
               icon="fas fa-history"
               isDarkTheme={true}
             />
             <div>{this.renderExpBoard()}</div>
-            <div className="e-yearSlider animated slideInUp slow">
+            <div
+              className={cx(
+                styles.yearSlideContainer,
+                "animated slideInUp slow"
+              )}
+            >
               <YearSlider
                 range={[2009, 2019]}
                 milestones={[
@@ -188,7 +202,7 @@ export default class ExperienceSection extends Component {
                     fromTime: "08/2012",
                     toTime: "04/2017",
                     employer: "Ho Chi Minh city Univeristy of Technology",
-                    logo: this.state.expData[3].compLogo,
+                    logo: EXP_DATA[3].compLogo,
                     designation: "Student"
                   },
                   {
@@ -196,7 +210,7 @@ export default class ExperienceSection extends Component {
                     fromTime: "06/2016",
                     toTime: "09/2016",
                     employer: "MobiFone Testing and Maintenance Center",
-                    logo: this.state.expData[2].compLogo,
+                    logo: EXP_DATA[2].compLogo,
                     designation: "Internship Research Engineer"
                   },
                   {
@@ -204,7 +218,7 @@ export default class ExperienceSection extends Component {
                     fromTime: "05/2017",
                     toTime: "10/2017",
                     employer: "Fiot Co. LTD",
-                    logo: this.state.expData[1].compLogo,
+                    logo: EXP_DATA[1].compLogo,
                     designation: "Embedded Firmware Development Engineer"
                   },
                   {
@@ -212,11 +226,13 @@ export default class ExperienceSection extends Component {
                     fromTime: "05/2018",
                     toTime: "present",
                     employer: "Nanyang Technological University",
-                    logo: this.state.expData[0].compLogo,
+                    logo: EXP_DATA[0].compLogo,
                     designation: "Research Engineer"
                   }
                 ]}
-                onSelectMS={selectedVal => this.handleSelectMS(selectedVal)}
+                onSelectMS={selectedVal =>
+                  this.handleSelectMileStone(selectedVal)
+                }
               />
             </div>
           </div>
@@ -225,3 +241,5 @@ export default class ExperienceSection extends Component {
     );
   }
 }
+
+// TODO: Move data from year slider to data json

@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { SECTIONS_ID } from "../../../../shared/constants";
 
 export default class ExpBoard extends Component {
   constructor(props) {
@@ -7,14 +8,16 @@ export default class ExpBoard extends Component {
     this.state = {
       ebHeight: undefined,
       imgToggle: false
-    }
+    };
   }
 
   componentDidMount() {
-    let qEbHeight = document.querySelector('#ebCon' + this.props.keyBoard);
+    let qEbHeight = document.querySelector(
+      "#" + SECTIONS_ID.EXP_BOARD + this.props.keyBoard
+    );
 
     if (qEbHeight) {
-      this.setState({ ebHeight: qEbHeight.getBoundingClientRect().height })
+      this.setState({ ebHeight: qEbHeight.getBoundingClientRect().height });
     }
   }
 
@@ -28,32 +31,31 @@ export default class ExpBoard extends Component {
     }
 
     return this.props.jobDescription.map((item, i) => {
-      return (
-        <li key={i}>{item}.</li>
-      );
+      return <li key={i}>{item}.</li>;
     });
   }
 
   render() {
     return (
       <div
-        id={"ebCon" + this.props.keyBoard}
+        id={SECTIONS_ID.EXP_BOARD + this.props.keyBoard}
         className="eb-container"
         style={{
           transform: `scale(${this.props.scale}) translateX(${this.props.transX}px)`,
           opacity: this.props.opacity,
-          zIndex: this.props.zIndex,
+          zIndex: this.props.zIndex
         }}
       >
         <div className="eb-title">
-          {
-            this.props.compLogo ?
-              <img
-                src={this.props.compLogo}
-                alt="company-logo"
-                onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
-              /> : <div />
-          }
+          {this.props.compLogo ? (
+            <img
+              src={this.props.compLogo}
+              alt="company-logo"
+              onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
+            />
+          ) : (
+            <div />
+          )}
           <p className="eb-company">{this.props.employer}</p>
           <p className="eb-designation">{this.props.designation}</p>
         </div>
@@ -63,18 +65,13 @@ export default class ExpBoard extends Component {
             height: this.state.ebHeight ? this.state.ebHeight - 125 : ""
           }}
         >
-          <p className="eb-head-sentence">
-            {this.props.headSentence}
-          </p>
-          {
-            this.props.jDHeader ?
-              <p className="eb-jdHeader">
-                {this.props.jDHeader} :
-                </p> : <div />
-          }
-          <ul>
-            {this.renderJobDescription()}
-          </ul>
+          <p className="eb-head-sentence">{this.props.headSentence}</p>
+          {this.props.jDHeader ? (
+            <p className="eb-jdHeader">{this.props.jDHeader} :</p>
+          ) : (
+            <div />
+          )}
+          <ul>{this.renderJobDescription()}</ul>
         </div>
         <div className="eb-footer">
           <p className="eb-location">{this.props.location}</p>

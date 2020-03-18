@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 export default class YearSlider extends Component {
   constructor(props) {
@@ -14,7 +14,9 @@ export default class YearSlider extends Component {
       } else if (i === numberOfMilestones - 1) {
         valueMilestones.push(100);
       } else {
-        valueMilestones.push(valueMilestones[valueMilestones.length - 1] + milestonesRange);
+        valueMilestones.push(
+          valueMilestones[valueMilestones.length - 1] + milestonesRange
+        );
       }
     });
 
@@ -35,8 +37,8 @@ export default class YearSlider extends Component {
       msOpacities,
       msScale,
       msTransY,
-      markerOffsetLeft: undefined,
-    }
+      markerOffsetLeft: undefined
+    };
   }
 
   componentDidMount() {
@@ -45,14 +47,17 @@ export default class YearSlider extends Component {
       let currentWidth = window.screen.width;
 
       if (currentWidth !== this.state.currentWidth) {
-        const qYS = document.querySelector('#yearSlider');
-        const qEContainer = document.querySelector('.e-container .container');
+        const qYS = document.querySelector("#yearSlider");
+        const qEContainer = document.querySelector("#exp-container");
 
         if (qYS && qEContainer) {
           this.setState({
-            markerOffsetLeft: qYS.getBoundingClientRect().left - qEContainer.getBoundingClientRect().left - 20,
+            markerOffsetLeft:
+              qYS.getBoundingClientRect().left -
+              qEContainer.getBoundingClientRect().left -
+              20,
             sliderWidth: qYS.getBoundingClientRect().width
-          })
+          });
         }
       }
     }, 300);
@@ -60,7 +65,7 @@ export default class YearSlider extends Component {
     this.setState({ reSizeEvent }, () => {
       // Update initial selection
       this.updateSelectMilestones();
-    })
+    });
   }
 
   // Input a num and sorted array
@@ -71,7 +76,7 @@ export default class YearSlider extends Component {
     }
 
     let twoNearestElems = [];
-    arr.forEach((item) => {
+    arr.forEach(item => {
       if (item <= num) {
         twoNearestElems[0] = item;
       } else if (item >= num && twoNearestElems.length === 1) {
@@ -83,10 +88,12 @@ export default class YearSlider extends Component {
   }
 
   handleChangeSlide(e) {
-    this.setState({
-      slideValue: +e.target.value
-    }, () =>
-        this.updateSelectMilestones());
+    this.setState(
+      {
+        slideValue: +e.target.value
+      },
+      () => this.updateSelectMilestones()
+    );
   }
 
   handleReleaseClick() {
@@ -99,12 +106,15 @@ export default class YearSlider extends Component {
 
     // Get two nearest points
     let value = this.state.slideValue;
-    let twoNearestElems = this.selectNearestElem(value, this.state.valueMilestones);
+    let twoNearestElems = this.selectNearestElem(
+      value,
+      this.state.valueMilestones
+    );
 
     if (value - twoNearestElems[0] < twoNearestElems[1] - value) {
-      value = twoNearestElems[0]
+      value = twoNearestElems[0];
     } else {
-      value = twoNearestElems[1]
+      value = twoNearestElems[1];
     }
 
     // Select the nearest point in milestones pos
@@ -116,12 +126,15 @@ export default class YearSlider extends Component {
         clearInterval(this.state.slideInterval);
       }
 
-      this.setState({
-        slideValue: +this.state.slideValue + delta
-      }, () => this.updateSelectMilestones());
+      this.setState(
+        {
+          slideValue: +this.state.slideValue + delta
+        },
+        () => this.updateSelectMilestones()
+      );
     }, 20);
 
-    this.setState({ slideInterval })
+    this.setState({ slideInterval });
   }
 
   updateSelectMilestones() {
@@ -142,23 +155,25 @@ export default class YearSlider extends Component {
         let deltaScale = (2 - 1) / this.state.milestonesRange;
         let deltaTransY = (-10 - 0) / this.state.milestonesRange;
 
-        newOpacities[i] = 1 - (delta * deltaOpacity);
-        newScales[i] = 2 - (delta * deltaScale);
-        newTransY[i] = -10 - (delta * deltaTransY);
+        newOpacities[i] = 1 - delta * deltaOpacity;
+        newScales[i] = 2 - delta * deltaScale;
+        newTransY[i] = -10 - delta * deltaTransY;
       }
     });
 
     // Update for Experience Component
     this.props.onSelectMS(this.state.slideValue);
 
-    this.setState({ msOpacities: newOpacities })
+    this.setState({ msOpacities: newOpacities });
   }
 
   handleClickLogo(i) {
-    this.setState({
-      slideValue: this.state.valueMilestones[i]
-    }, () =>
-        this.updateSelectMilestones());
+    this.setState(
+      {
+        slideValue: this.state.valueMilestones[i]
+      },
+      () => this.updateSelectMilestones()
+    );
   }
 
   renderMilestonesMarker() {
@@ -166,7 +181,9 @@ export default class YearSlider extends Component {
       return <div />;
     }
 
-    let offsetRange = (this.state.sliderWidth - this.state.milestonesRange) / (this.props.milestones.length - 1);
+    let offsetRange =
+      (this.state.sliderWidth - this.state.milestonesRange) /
+      (this.props.milestones.length - 1);
 
     return this.props.milestones.map((item, i) => {
       let offsetLeft;
@@ -185,7 +202,10 @@ export default class YearSlider extends Component {
               left: offsetLeft,
               opacity: this.state.msOpacities[i],
               transform: `scale(${this.state.msScale[i]}) translateY(${this.state.msTransY[i]}px)`,
-              boxShadow: this.state.msOpacities[i] > 0.6 ? "0px 0px 20px 1px rgba(207, 207, 207, 0.795)" : ""
+              boxShadow:
+                this.state.msOpacities[i] > 0.6
+                  ? "0px 0px 20px 1px rgba(207, 207, 207, 0.795)"
+                  : ""
             }}
             alt="logo"
             onClick={() => this.handleClickLogo(i)}
@@ -195,7 +215,8 @@ export default class YearSlider extends Component {
             className="ys-ms-fromYear"
             style={{
               left: offsetLeft - 18,
-              opacity: this.state.msOpacities[i], transform: `scale(${this.state.msScale[i] * 0.75})`,
+              opacity: this.state.msOpacities[i],
+              transform: `scale(${this.state.msScale[i] * 0.75})`
             }}
             onClick={() => this.handleClickLogo(i)}
           >
@@ -203,14 +224,14 @@ export default class YearSlider extends Component {
           </p>
         </div>
       );
-    })
+    });
   }
 
   render() {
     return (
       <div className="ys-container">
         <input
-          onChange={(e) => this.handleChangeSlide(e)}
+          onChange={e => this.handleChangeSlide(e)}
           onMouseUp={() => this.handleReleaseClick()}
           onTouchEnd={() => this.handleReleaseClick()}
           type="range"
@@ -225,3 +246,5 @@ export default class YearSlider extends Component {
     );
   }
 }
+
+// TODO: Fix infinite rendering year slide
