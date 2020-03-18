@@ -3,6 +3,14 @@
     max-width: 120px;
     transform: rotateX(40deg);
     position: absolute;
+    transition: opacity 0.5s;
+  }
+
+  .leafFullOpacity {
+    opacity: 1;
+  }
+
+  .leafLessOpacity {
     opacity: 0.2;
   }
 }

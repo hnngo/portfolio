@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import cx from "classnames";
 
 import styles from "./style.module.scss";
 
@@ -9,12 +10,15 @@ export default class FallingLeaf extends Component {
     const { initOffset, containerId, delay } = this.props;
 
     this.state = {
-      leafId: `${containerId}-${initOffset}-${delay}-${Math.floor(
-        Math.random() * 100
-      )}`,
       loaded: false,
       imgToggle: false,
       running: true,
+      isFullOpacity: false,
+
+      // Leaf Properties
+      leafId: `${containerId}-${initOffset}-${delay}-${Math.floor(
+        Math.random() * 100
+      )}`,
       leafFallingInterval: undefined,
       leafRotateInterval: undefined,
       leafSwingInterval: undefined,
@@ -119,27 +123,9 @@ export default class FallingLeaf extends Component {
     });
   }
 
-  handleEnterLeaf() {
-    const qLeaf = document.querySelector("#" + this.state.leafId);
-
-    if (qLeaf) {
-      qLeaf.style.opacity = 1;
-    }
-  }
-
-  handleOutLeaf() {
-    const qLeaf = document.querySelector("#" + this.state.leafId);
-
-    if (qLeaf) {
-      qLeaf.style.opacity = 0.2;
-    }
-  }
-
   handleOnClick() {
     if (this.state.running) {
-      clearInterval(this.state.leafFallingInterval);
-      clearInterval(this.state.leafRotateInterval);
-      clearInterval(this.state.leafSwingInterval);
+      this.clearAllIntervals();
       this.setState({ running: false });
     } else {
       this.setState({ running: true }, () => {
@@ -155,23 +141,26 @@ export default class FallingLeaf extends Component {
 
     // Only load after delay time
     return !this.state.loaded ? null : (
-      <div>
-        <img
-          id={this.state.leafId}
-          src={this.props.srcImg}
-          alt={"leaf-falling"}
-          className={styles.leaf}
-          style={{
-            top: this.state.leafPosition + "px",
-            left: this.state.leafOffsetLeft + "px",
-            transform: `rotate(${this.state.leafRotate}deg)`
-          }}
-          onMouseEnter={() => this.handleEnterLeaf()}
-          onMouseLeave={() => this.handleOutLeaf()}
-          onClick={() => this.handleOnClick()}
-          onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
-        />
-      </div>
+      <img
+        id={this.state.leafId}
+        src={this.props.srcImg}
+        alt={"leaf-falling"}
+        className={cx(
+          styles.leaf,
+          this.state.isFullOpacity
+            ? styles.leafFullOpacity
+            : styles.leafLessOpacity
+        )}
+        style={{
+          top: this.state.leafPosition + "px",
+          left: this.state.leafOffsetLeft + "px",
+          transform: `rotate(${this.state.leafRotate}deg)`
+        }}
+        onMouseEnter={() => this.setState({ isFullOpacity: true })}
+        onMouseLeave={() => this.setState({ isFullOpacity: false })}
+        onClick={() => this.handleOnClick()}
+        onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
+      />
     );
   }
 }
