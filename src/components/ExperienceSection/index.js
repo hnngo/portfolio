@@ -6,13 +6,11 @@ import ExpBoard from "./components/ExperienceBoard";
 import YearSlider from "./components/YearSlider";
 
 // Utils and Constants
-import data from "../../data.json";
+import { EXP_BOARD_DATA } from "../../data";
 import { SECTIONS_ID } from "../../shared/constants";
 import cx from "classnames";
 
 import styles from "./style.module.scss";
-
-const EXP_DATA = data.experience.expBoard;
 
 export default class ExperienceSection extends Component {
   constructor(props) {
@@ -39,9 +37,11 @@ export default class ExperienceSection extends Component {
       this.resizeEvent();
 
       // Initial setup style
-      let boardScale = EXP_DATA.map((_, i) => 1 - i * 0.1);
-      let boardOpacity = EXP_DATA.map((_, i) => (i === 0 ? 1 : 0.3));
-      let boardZindex = EXP_DATA.map((item, i) => EXP_DATA.length - i);
+      let boardScale = EXP_BOARD_DATA.map((_, i) => 1 - i * 0.1);
+      let boardOpacity = EXP_BOARD_DATA.map((_, i) => (i === 0 ? 1 : 0.3));
+      let boardZindex = EXP_BOARD_DATA.map(
+        (item, i) => EXP_BOARD_DATA.length - i
+      );
 
       // Update transX
       const qBoardWidth = document.querySelector(
@@ -91,7 +91,7 @@ export default class ExperienceSection extends Component {
   // Handle slide animation
   handleSelectMileStone(selectedVal) {
     // Convert the data follow the direction 0 > max
-    let numberOfData = data.experience.expBoard.length - 1;
+    let numberOfData = EXP_BOARD_DATA.length - 1;
     let convertedVal = (selectedVal / 100) * -numberOfData + numberOfData;
 
     let boardScale = this.state.boardScale;
@@ -100,7 +100,7 @@ export default class ExperienceSection extends Component {
     let boardTransX = [...this.state.boardTransX];
     let boardTransXOrigin = this.state.boardTransXOrigin;
 
-    EXP_DATA.forEach((item, i) => {
+    EXP_BOARD_DATA.forEach((item, i) => {
       let delta = Math.abs(i - convertedVal);
       let signedDelta = i - convertedVal;
 
@@ -145,7 +145,7 @@ export default class ExperienceSection extends Component {
   }
 
   renderExpBoard() {
-    return EXP_DATA.map((item, i) => {
+    return EXP_BOARD_DATA.map((item, i) => {
       return (
         <ExpBoard
           key={i}
@@ -202,7 +202,7 @@ export default class ExperienceSection extends Component {
                     fromTime: "08/2012",
                     toTime: "04/2017",
                     employer: "Ho Chi Minh city Univeristy of Technology",
-                    logo: EXP_DATA[3].compLogo,
+                    logo: EXP_BOARD_DATA[3].compLogo,
                     designation: "Student"
                   },
                   {
@@ -210,7 +210,7 @@ export default class ExperienceSection extends Component {
                     fromTime: "06/2016",
                     toTime: "09/2016",
                     employer: "MobiFone Testing and Maintenance Center",
-                    logo: EXP_DATA[2].compLogo,
+                    logo: EXP_BOARD_DATA[2].compLogo,
                     designation: "Internship Research Engineer"
                   },
                   {
@@ -218,7 +218,7 @@ export default class ExperienceSection extends Component {
                     fromTime: "05/2017",
                     toTime: "10/2017",
                     employer: "Fiot Co. LTD",
-                    logo: EXP_DATA[1].compLogo,
+                    logo: EXP_BOARD_DATA[1].compLogo,
                     designation: "Embedded Firmware Development Engineer"
                   },
                   {
@@ -226,7 +226,7 @@ export default class ExperienceSection extends Component {
                     fromTime: "05/2018",
                     toTime: "present",
                     employer: "Nanyang Technological University",
-                    logo: EXP_DATA[0].compLogo,
+                    logo: EXP_BOARD_DATA[0].compLogo,
                     designation: "Research Engineer"
                   }
                 ]}

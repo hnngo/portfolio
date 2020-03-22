@@ -1,7 +1,11 @@
 import React, { Component } from "react";
-import ReactTooltip from "react-tooltip";
+
+// Components
 import SectionTitle from "../../shared/SectionTitle";
-import data from "../../data.json";
+
+// Utils and constants
+import ReactTooltip from "react-tooltip";
+import { PROJECT_INFO, TECH_LOGO } from "../../data";
 import { SECTIONS_ID } from "../../shared/constants";
 
 export default class Projects extends Component {
@@ -9,9 +13,6 @@ export default class Projects extends Component {
     super(props);
 
     this.state = {
-      data: data.projects.projectInfo,
-      devices: data.projects.devices,
-      techLogos: data.projects.techlogo,
       imgToggle: false,
       boardView: true,
       boardSelect: undefined,
@@ -108,7 +109,7 @@ export default class Projects extends Component {
   }
 
   renderProjectThumbnails() {
-    return this.state.data.map((item, i) => {
+    return PROJECT_INFO.map((item, i) => {
       let style = {
         filter: "brightness(50%) blur(0.7px)",
         opacity: 0.5
@@ -141,7 +142,7 @@ export default class Projects extends Component {
 
   renderProjectDetail() {
     if (this.state.boardSelect !== undefined) {
-      let board = this.state.data[this.state.boardSelect];
+      let board = PROJECT_INFO[this.state.boardSelect];
 
       return (
         <div className="pd-container">
@@ -179,7 +180,7 @@ export default class Projects extends Component {
                     ref={ref => (this["imgRef" + i] = ref)}
                     key={i}
                     className="pd-techLogo"
-                    src={this.state.techLogos[item]}
+                    src={TECH_LOGO[item]}
                     alt="techLogo"
                     data-tip={item}
                     onMouseEnter={() => ReactTooltip.show(this["imgRef" + i])}
@@ -230,7 +231,7 @@ export default class Projects extends Component {
   }
 
   renderProjectCards() {
-    return this.state.data.map((item, i) => {
+    return PROJECT_INFO.map((item, i) => {
       return (
         <div
           key={i}

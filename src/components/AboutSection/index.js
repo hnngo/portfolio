@@ -6,7 +6,7 @@ import FallingLeaf from "./components/FallingLeaf";
 
 // Constants and utils
 import cx from "classnames";
-import data from "../../data.json";
+import { PROFILE_PHOTO, LEAF_BORDER_PHOTO, LEAF_SOLID_PHOTO } from "../../data";
 import { SECTIONS_ID } from "../../shared/constants";
 
 import styles from "./style.module.scss";
@@ -32,7 +32,7 @@ export default class AboutSection extends Component {
                   className={cx(styles.avatar, "col-sm-6 animated fadeInLeft")}
                 >
                   <img
-                    src={data.about.profilePhoto}
+                    src={PROFILE_PHOTO}
                     alt={"Profile"}
                     onLoad={() =>
                       this.setState({ imgToggle: !this.state.imgToggle })
@@ -84,34 +84,34 @@ export default class AboutSection extends Component {
               </div>
             </div>
             <FallingLeaf
-              srcImg={data.about.leafBorder}
+              srcImg={LEAF_BORDER_PHOTO}
               containerId={SECTIONS_ID.ABOUT}
               initOffset={340}
               delay={1000}
             />
             <FallingLeaf
-              srcImg={data.about.leafSolid}
+              srcImg={LEAF_SOLID_PHOTO}
               containerId={SECTIONS_ID.ABOUT}
               initOffset={80}
               delay={3000}
               optionSpeed={8}
             />
             <FallingLeaf
-              srcImg={data.about.leafBorder}
+              srcImg={LEAF_BORDER_PHOTO}
               containerId={SECTIONS_ID.ABOUT}
               initOffset={150}
               delay={6000}
               optionSpeed={10}
             />
             <FallingLeaf
-              srcImg={data.about.leafSolid}
+              srcImg={LEAF_SOLID_PHOTO}
               containerId={SECTIONS_ID.ABOUT}
               initOffset={250}
               delay={8000}
               optionSpeed={7}
             />
             <FallingLeaf
-              srcImg={data.about.leafBorder}
+              srcImg={LEAF_BORDER_PHOTO}
               containerId={SECTIONS_ID.ABOUT}
               initOffset={80}
               delay={10000}
