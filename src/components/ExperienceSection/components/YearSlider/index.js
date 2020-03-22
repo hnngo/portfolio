@@ -8,7 +8,7 @@ export default class YearSlider extends Component {
     let numberOfMilestones = this.props.milestones.length;
     let milestonesRange = Math.floor(100 / (numberOfMilestones - 1));
     let valueMilestones = [];
-    this.props.milestones.forEach((item, i) => {
+    this.props.milestones.forEach((_, i) => {
       if (i === 0) {
         valueMilestones.push(0);
       } else if (i === numberOfMilestones - 1) {
@@ -27,7 +27,6 @@ export default class YearSlider extends Component {
 
     this.state = {
       reSizeEvent: undefined,
-      imgToggle: false,
       currentWidth: 0,
       slideInterval: undefined,
       slideValue: 100,
@@ -51,13 +50,17 @@ export default class YearSlider extends Component {
         const qEContainer = document.querySelector("#exp-container");
 
         if (qYS && qEContainer) {
-          this.setState({
-            markerOffsetLeft:
-              qYS.getBoundingClientRect().left -
-              qEContainer.getBoundingClientRect().left -
-              20,
-            sliderWidth: qYS.getBoundingClientRect().width
-          });
+          const newMarkerOffsetLeft =
+            qYS.getBoundingClientRect().left -
+            qEContainer.getBoundingClientRect().left -
+            20;
+
+          if (newMarkerOffsetLeft !== this.state.markerOffsetLeft) {
+            this.setState({
+              markerOffsetLeft: newMarkerOffsetLeft,
+              sliderWidth: qYS.getBoundingClientRect().width
+            });
+          }
         }
       }
     }, 300);
@@ -209,7 +212,6 @@ export default class YearSlider extends Component {
             }}
             alt="logo"
             onClick={() => this.handleClickLogo(i)}
-            onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
           />
           <p
             className="ys-ms-fromYear"
@@ -228,6 +230,7 @@ export default class YearSlider extends Component {
   }
 
   render() {
+    console.log("render");
     return (
       <div className="ys-container">
         <input
