@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { SECTIONS_ID } from "../../../../shared/constants";
 
+import styles from "./style.module.scss";
+
 export default class ExpBoard extends Component {
   constructor(props) {
     super(props);
@@ -25,57 +27,49 @@ export default class ExpBoard extends Component {
     clearInterval(this.state.reSizeEvent);
   }
 
-  renderJobDescription() {
-    if (!this.props.jobDescription) {
-      return <div />;
-    }
-
-    return this.props.jobDescription.map((item, i) => {
-      return <li key={i}>{item}.</li>;
-    });
-  }
-
   render() {
     return (
       <div
         id={SECTIONS_ID.EXP_BOARD + this.props.keyBoard}
-        className="eb-container"
+        className={styles.container}
         style={{
           transform: `scale(${this.props.scale}) translateX(${this.props.transX}px)`,
           opacity: this.props.opacity,
           zIndex: this.props.zIndex
         }}
       >
-        <div className="eb-title">
+        <div className={styles.title}>
           {this.props.compLogo ? (
             <img
               src={this.props.compLogo}
+              className={styles.companyLogo}
               alt="company-logo"
               onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
             />
-          ) : (
-            <div />
-          )}
-          <p className="eb-company">{this.props.employer}</p>
-          <p className="eb-designation">{this.props.designation}</p>
+          ) : null}
+          <p className={styles.companyName}>{this.props.employer}</p>
+          <p className={styles.occupation}>{this.props.designation}</p>
         </div>
         <div
-          className="eb-content"
+          className={styles.contentContainer}
           style={{
             height: this.state.ebHeight ? this.state.ebHeight - 125 : ""
           }}
         >
-          <p className="eb-head-sentence">{this.props.headSentence}</p>
-          {this.props.jDHeader ? (
-            <p className="eb-jdHeader">{this.props.jDHeader} :</p>
-          ) : (
-            <div />
+          <p className={styles.headerSentence}>{this.props.headSentence}</p>
+          {this.props.jDHeader && (
+            <p className={styles.jdHeader}>{this.props.jDHeader} :</p>
           )}
-          <ul>{this.renderJobDescription()}</ul>
+          <ul className={styles.jdDetail}>
+            {this.props.jobDescription &&
+              this.props.jobDescription.map((item, i) => {
+                return <li key={i}>{item}</li>;
+              })}
+          </ul>
         </div>
-        <div className="eb-footer">
-          <p className="eb-location">{this.props.location}</p>
-          <p className="eb-time">
+        <div className={styles.footer}>
+          <p className={styles.location}>{this.props.location}</p>
+          <p className={styles.time}>
             {this.props.timeFrom} - {this.props.timeTo}
           </p>
         </div>

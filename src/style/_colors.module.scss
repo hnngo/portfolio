@@ -2,14 +2,9 @@ $theme-colors: (
   "slide-bg": #d3d3d3,
   "off-white-v2": #dfdfdf,
   "light-purple": #e0c9fa,
-  "dark-purple": #6d4799,
-  "light-shadow": rgba(255, 255, 255, 0.623),
-  "eb-shadow": rgba(199, 199, 199, 0.623),
   "p-card-shadow": #63035e,
   "p-card-up-shadow": #460442,
-  "eb-title-border": rgb(233, 183, 248),
   "slider-thumb": rgb(193, 85, 226),
-  "eb-bg": rgb(245, 222, 242),
   "st-bright-color": rgb(236, 236, 236)
 );
 
@@ -32,3 +27,10 @@ $facebook: #3b5998;
 
 // Section Title
 $st-bright-color: rgb(236, 236, 236);
+
+// Experience Board
+$light-shadow: rgba(255, 255, 255, 0.623);
+$eb-title-border: rgb(233, 183, 248);
+$eb-shadow: rgba(199, 199, 199, 0.623);
+$eb-bg: rgb(245, 222, 242);
+$dark-purple: #6d4799;

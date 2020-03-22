@@ -39,9 +39,7 @@ export default class ExperienceSection extends Component {
       // Initial setup style
       let boardScale = EXP_BOARD_DATA.map((_, i) => 1 - i * 0.1);
       let boardOpacity = EXP_BOARD_DATA.map((_, i) => (i === 0 ? 1 : 0.3));
-      let boardZindex = EXP_BOARD_DATA.map(
-        (item, i) => EXP_BOARD_DATA.length - i
-      );
+      let boardZindex = EXP_BOARD_DATA.map((_, i) => EXP_BOARD_DATA.length - i);
 
       // Update transX
       const qBoardWidth = document.querySelector(
@@ -51,12 +49,8 @@ export default class ExperienceSection extends Component {
         // let realSize = qBoardWidth * (+item);
         let deltaSize = (qBoardWidth * (1 - +item)) / 2;
         let currentWidth = window.innerWidth;
-        let newTransOffset;
-        if (currentWidth > 1200) {
-          newTransOffset = 60;
-        } else {
-          newTransOffset = (currentWidth * (60 - 10)) / (1200 - 375);
-        }
+        let newTransOffset =
+          currentWidth > 1200 ? 60 : (currentWidth * (60 - 10)) / (1200 - 375);
 
         return -(deltaSize + i * newTransOffset);
       });
@@ -100,7 +94,7 @@ export default class ExperienceSection extends Component {
     let boardTransX = [...this.state.boardTransX];
     let boardTransXOrigin = this.state.boardTransXOrigin;
 
-    EXP_BOARD_DATA.forEach((item, i) => {
+    EXP_BOARD_DATA.forEach((_, i) => {
       let delta = Math.abs(i - convertedVal);
       let signedDelta = i - convertedVal;
 
@@ -145,27 +139,25 @@ export default class ExperienceSection extends Component {
   }
 
   renderExpBoard() {
-    return EXP_BOARD_DATA.map((item, i) => {
-      return (
-        <ExpBoard
-          key={i}
-          keyBoard={i}
-          employer={item.employer}
-          designation={item.designation}
-          compLogo={item.compLogo}
-          headSentence={item.headSentence}
-          jDHeader={item.jDHeader}
-          jobDescription={item.jobDescription}
-          location={item.location}
-          timeFrom={item.timeFrom}
-          timeTo={item.timeTo}
-          scale={this.state.boardScale[i]}
-          opacity={this.state.boardOpacity[i]}
-          zIndex={this.state.boardZindex[i]}
-          transX={this.state.boardTransX[i]}
-        />
-      );
-    });
+    return EXP_BOARD_DATA.map((item, i) => (
+      <ExpBoard
+        key={i}
+        keyBoard={i}
+        employer={item.employer}
+        designation={item.designation}
+        compLogo={item.compLogo}
+        headSentence={item.headSentence}
+        jDHeader={item.jDHeader}
+        jobDescription={item.jobDescription}
+        location={item.location}
+        timeFrom={item.timeFrom}
+        timeTo={item.timeTo}
+        scale={this.state.boardScale[i]}
+        opacity={this.state.boardOpacity[i]}
+        zIndex={this.state.boardZindex[i]}
+        transX={this.state.boardTransX[i]}
+      />
+    ));
   }
 
   render() {
