@@ -1,0 +1,86 @@
+@import "../../../../style/colors.module";
+@import "../../../../style/mixins.module";
+
+:local {
+  .sliderContainer {
+    position: relative;
+    appearance: none;
+    width: 80%;
+    max-width: 1000px;
+    height: 15px;
+    border-radius: 10px;
+    background-color: $slide-bg;
+    outline: none;
+    opacity: 1;
+    transition: opacity 0.2s;
+    z-index: 8;
+    cursor: pointer;
+
+    @include mq(tablet, max) {
+      transform: translateX(-10px);
+    }
+
+    &::-webkit-slider-thumb {
+      appearance: none;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: none;
+      background-color: $slider-thumb;
+      cursor: pointer;
+      z-index: 8;
+    }
+
+    &::-moz-range-thumb {
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      background-color: $slider-thumb;
+      cursor: pointer;
+    }
+
+    @include mq(tablet, max) {
+      &:hover::-webkit-slider-thumb {
+        box-shadow: 0px 0px 30px 5px rgba(207, 207, 207, 0.795);
+      }
+    }
+  }
+
+  .companyLogo {
+    @include pos(absolute, -60px);
+    height: 40px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+
+    @include mq(tablet, max) {
+      @include pos(absolute, -35px);
+      width: 25px;
+      height: 25px;
+    }
+
+    @include mq(tablet, min) {
+      &:hover {
+        opacity: 1 !important;
+      }
+    }
+  }
+
+  .fromYear {
+    @include pos(absolute, 32px);
+    color: white;
+    font-size: 20px;
+    opacity: 0.3;
+    cursor: pointer;
+
+    @include mq(tablet, max) {
+      font-size: 14px;
+    }
+
+    @include mq(tablet, min) {
+      &:hover {
+        opacity: 1 !important;
+      }
+    }
+  }
+}

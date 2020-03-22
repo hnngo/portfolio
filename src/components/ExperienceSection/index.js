@@ -171,7 +171,7 @@ export default class ExperienceSection extends Component {
       >
         {!this.props.show ? null : (
           <div
-            id="exp-container"
+            id={SECTIONS_ID.EXP_CONTAINER}
             className={cx(styles.boardContainer, "container")}
           >
             <SectionTitle

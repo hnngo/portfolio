@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import { SECTIONS_ID } from "../../../../shared/constants";
+
+import styles from "./style.module.scss";
 
 export default class YearSlider extends Component {
   constructor(props) {
@@ -46,8 +49,10 @@ export default class YearSlider extends Component {
       let currentWidth = window.screen.width;
 
       if (currentWidth !== this.state.currentWidth) {
-        const qYS = document.querySelector("#yearSlider");
-        const qEContainer = document.querySelector("#exp-container");
+        const qYS = document.querySelector(`#${SECTIONS_ID.YEAR_SLIDE}`);
+        const qEContainer = document.querySelector(
+          `#${SECTIONS_ID.EXP_CONTAINER}`
+        );
 
         if (qYS && qEContainer) {
           const newMarkerOffsetLeft =
@@ -200,7 +205,7 @@ export default class YearSlider extends Component {
         <div key={i}>
           <img
             src={item.logo}
-            className="ys-ms-logo"
+            className={styles.companyLogo}
             style={{
               left: offsetLeft,
               opacity: this.state.msOpacities[i],
@@ -214,7 +219,7 @@ export default class YearSlider extends Component {
             onClick={() => this.handleClickLogo(i)}
           />
           <p
-            className="ys-ms-fromYear"
+            className={styles.fromYear}
             style={{
               left: offsetLeft - 18,
               opacity: this.state.msOpacities[i],
@@ -230,10 +235,10 @@ export default class YearSlider extends Component {
   }
 
   render() {
-    console.log("render");
     return (
-      <div className="ys-container">
+      <>
         <input
+          className={styles.sliderContainer}
           onChange={e => this.handleChangeSlide(e)}
           onMouseUp={() => this.handleReleaseClick()}
           onTouchEnd={() => this.handleReleaseClick()}
@@ -241,13 +246,10 @@ export default class YearSlider extends Component {
           min={0}
           max={100}
           value={this.state.slideValue}
-          className="ys-slider"
-          id="yearSlider"
+          id={SECTIONS_ID.YEAR_SLIDE}
         />
         {this.renderMilestonesMarker()}
-      </div>
+      </>
     );
   }
 }
-
-// TODO: Fix infinite rendering year slide
