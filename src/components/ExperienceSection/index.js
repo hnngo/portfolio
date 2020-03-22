@@ -198,5 +198,3 @@ export default class ExperienceSection extends Component {
     );
   }
 }
-
-// TODO: Move data from year slider to data json

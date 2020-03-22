@@ -8,6 +8,9 @@ import ReactTooltip from "react-tooltip";
 import { PROJECT_INFO, TECH_LOGO } from "../../data";
 import { SECTIONS_ID } from "../../shared/constants";
 
+import styles from "./style.module.scss";
+import ProjectCards from "./components/ProjectCards";
+
 export default class Projects extends Component {
   constructor(props) {
     super(props);
@@ -230,81 +233,29 @@ export default class Projects extends Component {
     }
   }
 
-  renderProjectCards() {
-    return PROJECT_INFO.map((item, i) => {
-      return (
-        <div
-          key={i}
-          className={`col-md-4 col-sm-6 animated ${this.state.boardAnimation} fast`}
-        >
-          <div
-            className="p-pc-container"
-            onClick={e => this.handleClickBoard(i, e)}
-          >
-            <img
-              src={item.bannerImg}
-              onLoad={() => this.handleloadImg()}
-              alt="projects-banner"
-            />
-            <p className="p-pc-name">{item.name}</p>
-            <p className="p-pc-des">{item.description}</p>
-            <div className="p-pc-icon">
-              {item.website.length > 0 ? (
-                <a
-                  href={item.website}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fas fa-external-link-alt" />
-                </a>
-              ) : (
-                <div />
-              )}
-              {item.githubLink.length > 0 ? (
-                <a
-                  href={item.githubLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <i className="fab fa-github" />
-                </a>
-              ) : (
-                <div />
-              )}
-            </div>
-          </div>
-        </div>
-      );
-    });
-  }
-
-  renderContent() {
-    // Render a proper view
-    let viewContent = this.state.boardView ? (
-      <div className="row">{this.renderProjectCards()}</div>
-    ) : (
-      <div>
-        <div className="p-pt-container">
-          {this.renderProjectThumbnails()}
-          {this.renderChangeViewBtn()}
-        </div>
-        {this.renderProjectDetail()}
-      </div>
-    );
-
-    return (
-      <div className="container">
-        <SectionTitle title="Projects" icon="fab fa-stumbleupon-circle" />
-        {viewContent}
-        <ReactTooltip />
-      </div>
-    );
-  }
-
   render() {
     return (
       <div id={SECTIONS_ID.PROJECTS} className="p-container">
-        {this.props.show ? this.renderContent() : <div />}
+        {this.props.show ? (
+          <div className="container">
+            <SectionTitle title="Projects" icon="fab fa-stumbleupon-circle" />
+            {this.state.boardView ? (
+              <ProjectCards
+                animation={this.state.boardAnimation}
+                onClickBoard={(i, e) => this.handleClickBoard(i, e)}
+              />
+            ) : (
+              <div>
+                <div className="p-pt-container">
+                  {this.renderProjectThumbnails()}
+                  {this.renderChangeViewBtn()}
+                </div>
+                {this.renderProjectDetail()}
+              </div>
+            )}
+            <ReactTooltip />
+          </div>
+        ) : null}
       </div>
     );
   }
