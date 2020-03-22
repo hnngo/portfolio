@@ -55,8 +55,8 @@
 
     @include mq(tablet, max) {
       @include pos(absolute, -35px);
-      width: 25px;
-      height: 25px;
+      width: 10px;
+      height: 10px;
     }
 
     @include mq(tablet, min) {

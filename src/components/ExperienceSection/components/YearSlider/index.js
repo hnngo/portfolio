@@ -1,17 +1,25 @@
 import React, { Component } from "react";
+
+// Utils and constants
+import { selectNearestElems, isSmallScreen } from "../../../../utils";
 import { SECTIONS_ID } from "../../../../shared/constants";
+import { EXP_BOARD_DATA } from "../../../../data";
 
 import styles from "./style.module.scss";
 
+const formattedData = [...EXP_BOARD_DATA].reverse();
+
+const SELECTED_SCALE = 3;
+const SELECTED_TRANSY = -5;
 export default class YearSlider extends Component {
   constructor(props) {
     super(props);
 
     // Prepare milestones
-    let numberOfMilestones = this.props.milestones.length;
+    let numberOfMilestones = formattedData.length;
     let milestonesRange = Math.floor(100 / (numberOfMilestones - 1));
     let valueMilestones = [];
-    this.props.milestones.forEach((_, i) => {
+    formattedData.forEach((_, i) => {
       if (i === 0) {
         valueMilestones.push(0);
       } else if (i === numberOfMilestones - 1) {
@@ -24,9 +32,9 @@ export default class YearSlider extends Component {
     });
 
     // Init opacity, scale and translate
-    let msOpacities = this.props.milestones.map(() => 0.3);
-    let msScale = this.props.milestones.map(() => 1);
-    let msTransY = this.props.milestones.map(() => 0);
+    let msOpacities = formattedData.map(() => 0.3);
+    let msScale = formattedData.map(() => 1);
+    let msTransY = formattedData.map(() => 0);
 
     this.state = {
       reSizeEvent: undefined,
@@ -76,25 +84,6 @@ export default class YearSlider extends Component {
     });
   }
 
-  // Input a num and sorted array
-  // Output the two elements nearest
-  selectNearestElem(num, arr) {
-    if (num < arr[0] || num > arr[arr.length - 1]) {
-      return false;
-    }
-
-    let twoNearestElems = [];
-    arr.forEach(item => {
-      if (item <= num) {
-        twoNearestElems[0] = item;
-      } else if (item >= num && twoNearestElems.length === 1) {
-        twoNearestElems[1] = item;
-      }
-    });
-
-    return twoNearestElems;
-  }
-
   handleChangeSlide(e) {
     this.setState(
       {
@@ -114,10 +103,7 @@ export default class YearSlider extends Component {
 
     // Get two nearest points
     let value = this.state.slideValue;
-    let twoNearestElems = this.selectNearestElem(
-      value,
-      this.state.valueMilestones
-    );
+    let twoNearestElems = selectNearestElems(value, this.state.valueMilestones);
 
     if (value - twoNearestElems[0] < twoNearestElems[1] - value) {
       value = twoNearestElems[0];
@@ -160,12 +146,12 @@ export default class YearSlider extends Component {
         newTransY[i] = 0;
       } else {
         let deltaOpacity = (1 - 0.3) / this.state.milestonesRange;
-        let deltaScale = (2 - 1) / this.state.milestonesRange;
-        let deltaTransY = (-10 - 0) / this.state.milestonesRange;
+        let deltaScale = (SELECTED_SCALE - 1) / this.state.milestonesRange;
+        let deltaTransY = (SELECTED_TRANSY - 0) / this.state.milestonesRange;
 
         newOpacities[i] = 1 - delta * deltaOpacity;
-        newScales[i] = 2 - delta * deltaScale;
-        newTransY[i] = -10 - delta * deltaTransY;
+        newScales[i] = SELECTED_SCALE - delta * deltaScale;
+        newTransY[i] = SELECTED_TRANSY - delta * deltaTransY;
       }
     });
 
@@ -191,25 +177,34 @@ export default class YearSlider extends Component {
 
     let offsetRange =
       (this.state.sliderWidth - this.state.milestonesRange) /
-      (this.props.milestones.length - 1);
+      (formattedData.length - 1);
 
-    return this.props.milestones.map((item, i) => {
+    return formattedData.map((item, i) => {
       let offsetLeft;
-      if (i === this.props.milestones.length - 1) {
+      if (i === formattedData.length - 1) {
         offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - 28;
       } else {
         offsetLeft = this.state.markerOffsetLeft + i * offsetRange;
       }
 
+      const transformLogo = isSmallScreen()
+        ? `scale(${this.state.msScale[i] * 1.6}) translateY(${this.state
+            .msTransY[i] + 3}px)`
+        : `scale(${this.state.msScale[i] * 0.7}) translateY(${this.state
+            .msTransY[i] - 10}px)`;
+      const transformText = isSmallScreen()
+        ? `scale(${this.state.msScale[i] * 0.4})`
+        : `scale(${this.state.msScale[i] * 0.5})`;
+
       return (
         <div key={i}>
           <img
-            src={item.logo}
+            src={item.compLogo}
             className={styles.companyLogo}
             style={{
-              left: offsetLeft,
+              left: isSmallScreen() ? offsetLeft + 10 : offsetLeft,
               opacity: this.state.msOpacities[i],
-              transform: `scale(${this.state.msScale[i]}) translateY(${this.state.msTransY[i]}px)`,
+              transform: transformLogo,
               boxShadow:
                 this.state.msOpacities[i] > 0.6
                   ? "0px 0px 20px 1px rgba(207, 207, 207, 0.795)"
@@ -223,11 +218,11 @@ export default class YearSlider extends Component {
             style={{
               left: offsetLeft - 18,
               opacity: this.state.msOpacities[i],
-              transform: `scale(${this.state.msScale[i] * 0.75})`
+              transform: transformText
             }}
             onClick={() => this.handleClickLogo(i)}
           >
-            {item.fromTime}
+            {item.timeFrom}
           </p>
         </div>
       );

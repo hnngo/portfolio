@@ -187,41 +187,6 @@ export default class ExperienceSection extends Component {
               )}
             >
               <YearSlider
-                range={[2009, 2019]}
-                milestones={[
-                  {
-                    id: 0,
-                    fromTime: "08/2012",
-                    toTime: "04/2017",
-                    employer: "Ho Chi Minh city Univeristy of Technology",
-                    logo: EXP_BOARD_DATA[3].compLogo,
-                    designation: "Student"
-                  },
-                  {
-                    id: 1,
-                    fromTime: "06/2016",
-                    toTime: "09/2016",
-                    employer: "MobiFone Testing and Maintenance Center",
-                    logo: EXP_BOARD_DATA[2].compLogo,
-                    designation: "Internship Research Engineer"
-                  },
-                  {
-                    id: 2,
-                    fromTime: "05/2017",
-                    toTime: "10/2017",
-                    employer: "Fiot Co. LTD",
-                    logo: EXP_BOARD_DATA[1].compLogo,
-                    designation: "Embedded Firmware Development Engineer"
-                  },
-                  {
-                    id: 3,
-                    fromTime: "05/2018",
-                    toTime: "present",
-                    employer: "Nanyang Technological University",
-                    logo: EXP_BOARD_DATA[0].compLogo,
-                    designation: "Research Engineer"
-                  }
-                ]}
                 onSelectMS={selectedVal =>
                   this.handleSelectMileStone(selectedVal)
                 }
