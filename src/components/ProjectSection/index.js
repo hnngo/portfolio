@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // Components
 import SectionTitle from "../../shared/SectionTitle";
+import ProjectCards from "./components/ProjectCards";
 
 // Utils and constants
 import ReactTooltip from "react-tooltip";
@@ -9,7 +10,6 @@ import { PROJECT_INFO, TECH_LOGO } from "../../data";
 import { SECTIONS_ID } from "../../shared/constants";
 
 import styles from "./style.module.scss";
-import ProjectCards from "./components/ProjectCards";
 
 export default class Projects extends Component {
   constructor(props) {
