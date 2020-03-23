@@ -903,40 +903,40 @@ $breakpoints: (
     // }
 
     .p-pt-container {
-      position: relative;
-      @include display(flex, center);
+      // position: relative;
+      // @include display(flex, center);
 
-      @include mq(tablet, max) {
-        justify-content: start;
-      }
+      // @include mq(tablet, max) {
+      //   justify-content: start;
+      // }
 
-      .p-pt-ic {
-        padding: 5px 10px;
-        position: relative;
+      // .p-pt-ic {
+      //   padding: 5px 10px;
+      //   position: relative;
 
-        @include mq(tablet, max) {
-          display: none;
-        }
+      //   @include mq(tablet, max) {
+      //     display: none;
+      //   }
 
-        img {
-          border-radius: 6px;
-          width: 120px;
-          box-shadow: 0px 0px 4px 0px
-            map-get($map: $theme-colors, $key: p-card-shadow);
-          cursor: pointer;
-          transition: 0.4s;
+      //   img {
+      //     border-radius: 6px;
+      //     width: 120px;
+      //     box-shadow: 0px 0px 4px 0px
+      //       map-get($map: $theme-colors, $key: p-card-shadow);
+      //     cursor: pointer;
+      //     transition: 0.4s;
 
-          @include mq(tablet, min) {
-            &:hover {
-              transform: translateY(-4px);
-              box-shadow: 6px 6px 10px 1px
-                map-get($map: $theme-colors, $key: p-card-up-shadow);
-              filter: brightness(100%) !important;
-              opacity: 1 !important;
-            }
-          }
-        }
-      }
+      //     @include mq(tablet, min) {
+      //       &:hover {
+      //         transform: translateY(-4px);
+      //         box-shadow: 6px 6px 10px 1px
+      //           map-get($map: $theme-colors, $key: p-card-up-shadow);
+      //         filter: brightness(100%) !important;
+      //         opacity: 1 !important;
+      //       }
+      //     }
+      //   }
+      // }
 
       .p-pt-vc {
         cursor: pointer;
