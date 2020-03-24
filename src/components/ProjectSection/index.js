@@ -24,12 +24,7 @@ export default class Projects extends Component {
     };
   }
 
-  handleClickBoard(index, event) {
-    // Check if user click i tag
-    if (event.target.tagName === "I") {
-      return;
-    }
-
+  handleClickBoard(index) {
     // Set selected project and change view mode
     this.setState(
       {
@@ -58,12 +53,12 @@ export default class Projects extends Component {
     this.setState(
       {
         slideLeftAnimation: "fadeOutLeft",
-        slideRightAnimation: "fadeOutRight"
+        slideRightAnimation: "fadeOutRight",
+        boardSelect: index
       },
       () =>
         setTimeout(() => {
           this.setState({
-            boardSelect: index,
             slideLeftAnimation: "slideInLeft",
             slideRightAnimation: "slideInRight"
           });
@@ -117,5 +112,3 @@ export default class Projects extends Component {
     );
   }
 }
-
-// TODO: Fix delay in clicking thumbnail image

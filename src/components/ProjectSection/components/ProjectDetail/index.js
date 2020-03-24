@@ -17,6 +17,8 @@ const ProjectDetail = ({
   slideRightAnimation
 }) => {
   const renderProjectDetail = () => {
+    const [imgToggle, setImgToggle] = React.useState(false);
+
     if (selectedIndex !== undefined) {
       let board = PROJECT_INFO[selectedIndex];
 
@@ -49,14 +51,15 @@ const ProjectDetail = ({
               <p className={styles.detailTech}>Technologies/Libraries</p>
               {board.technologies.map((item, i) => {
                 return (
-                  <div className={styles.detailTechLogoWrapper}>
+                  <div key={i} className={styles.detailTechLogoWrapper}>
                     <img
-                      key={i}
                       className={styles.detailTechLogo}
                       src={TECH_LOGO[item]}
                       alt="techLogo"
                       data-tip={item}
                       data-for={SECTIONS_ID.TECH_TOOLTIP + i}
+                      data-toggle={imgToggle}
+                      onLoad={() => setImgToggle(!imgToggle)}
                     />
                     <ReactTooltip id={SECTIONS_ID.TECH_TOOLTIP + i} />
                   </div>
@@ -96,7 +99,7 @@ const ProjectDetail = ({
         </div>
       );
     } else {
-      return <div />;
+      return null;
     }
   };
 
@@ -129,11 +132,10 @@ const ProjectDetail = ({
         </div>
       </div>
       {renderProjectDetail()}
-      {/* <ReactTooltip /> */}
     </div>
   );
 };
 
 export default ProjectDetail;
 
-// TODO: Fix Tootltip
+// TODO: Add placeholder for Image
