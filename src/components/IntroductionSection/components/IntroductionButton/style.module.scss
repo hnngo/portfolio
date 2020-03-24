@@ -1,0 +1,52 @@
+@import "../../../../style/colors.module";
+@import "../../../../style/mixins.module";
+
+:local {
+  .container {
+    margin-top: 45px;
+  }
+
+  .aboutButton,
+  .portfolioButton {
+    @include fontFam(amita, 16px, unset, $off-white);
+    display: inline-block;
+    padding: 8px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 8px 0px rgba(199, 199, 199, 0.308);
+    cursor: pointer;
+
+    @include mq(tablet, max) {
+      display: block;
+      margin: 15px 0;
+    }
+
+    @include mq(tablet, min) {
+      &:active {
+        box-shadow: inset 0px 0px 8px 0px $btn-active-shadow;
+      }
+    }
+  }
+
+  .aboutButton {
+    border: 2px solid $main-purple;
+    background-color: $main-purple;
+
+    @include mq(tablet, min) {
+      &:hover {
+        background-color: $hover-purple;
+      }
+    }
+  }
+
+  .portfolioButton {
+    border: 2px solid $off-white;
+
+    @include mq(tablet, min) {
+      &:hover {
+        background-color: $off-white;
+        color: $main-purple;
+      }
+    }
+  }
+}

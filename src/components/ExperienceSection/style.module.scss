@@ -1,0 +1,43 @@
+@import "../../style/mixins.module";
+
+:local {
+  .container {
+    @if comparable(100vh, 880px) {
+      min-height: 100vh;
+    } @else {
+      min-height: 880px;
+    }
+    overflow: hidden;
+    background: linear-gradient(to right, #2f0743, #41295a);
+
+    @include mq(tablet, max) {
+      @if comparable(100vh, 800px) {
+        min-height: 100vh;
+      } @else {
+        min-height: 800px;
+      }
+    }
+  }
+
+  .boardContainer {
+    padding-top: 30px;
+    height: 100%;
+    position: relative;
+    transition: 0.5s;
+
+    @include mq(tablet, max) {
+      padding-top: 0px;
+    }
+  }
+
+  .yearSlideContainer {
+    @include pos(absolute, $bottom: 60px);
+    width: 100%;
+    text-align: center;
+    color: $off-white;
+
+    @include mq(tablet, max) {
+      margin-bottom: 20px;
+    }
+  }
+}

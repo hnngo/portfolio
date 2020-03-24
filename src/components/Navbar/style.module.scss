@@ -1,0 +1,97 @@
+@import "../../style/colors.module";
+@import "../../style/mixins.module";
+@import "../../style/variables.module";
+
+:local {
+  .container {
+    height: $navbar-height;
+    padding: 20px 0;
+    background-color: $nav-bg;
+    box-shadow: 0px 0px 13px 0px rgba(38, 37, 39, 0.555);
+  }
+
+  .navFlex {
+    @include display(flex, space-between, center);
+    height: 100%;
+  }
+
+  .titleLogo {
+    @include pos(relative);
+    cursor: pointer;
+  }
+
+  .nText {
+    @include fontFam(charmon, 35px, bold, $off-white);
+    @include pos(absolute, -30px);
+    margin: 0;
+  }
+
+  .hText {
+    @include fontFam(charmon, 35px, bold, $main-purple);
+    @include pos(absolute, -10px, unset, unset, 6px);
+    margin: 0;
+  }
+
+  .bigNavUL {
+    list-style: none;
+    display: flex;
+    margin: 0;
+  }
+
+  .bigNavList {
+    margin: 8px 15px 0px 15px;
+    transition: 0.5s;
+    text-align: center;
+    cursor: pointer;
+
+    @include mq(tablet, min) {
+      &:hover .bigNavUnderline {
+        width: 100%;
+        background-color: $main-purple;
+      }
+
+      &:hover h6 {
+        color: $main-purple;
+      }
+    }
+  }
+
+  .bigNavListText {
+    @include fontFam(monte, unset, unset, $off-white);
+    margin-bottom: 4px;
+    text-transform: capitalize;
+  }
+
+  .bigNavUnderline {
+    width: 0px;
+    transition: 0.5s;
+    background-color: $main-purple;
+    height: 3px;
+    border-radius: 1px;
+  }
+
+  .smallNavIcon {
+    color: $off-white;
+    font-size: 20px;
+  }
+
+  .smallNavMenu {
+    @include pos(absolute, unset, unset, unset, 0px);
+    z-index: 2;
+    width: 100%;
+    background-color: $sn-bg;
+    overflow: hidden;
+  }
+
+  .smallNavList {
+    text-align: center;
+    padding: 25px 0;
+    border-bottom: 1px solid $sn-border;
+  }
+
+  .smallNavText {
+    @include fontFam(monte, 24px, unset, $off-white);
+    margin: 0;
+    text-transform: capitalize;
+  }
+}

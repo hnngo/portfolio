@@ -1,0 +1,64 @@
+@import "../../style/colors.module";
+@import "../../style/mixins.module";
+@import "../../style/variables.module";
+
+:local {
+  .container {
+    height: calc(100vh - #{$navbar-height});
+    position: relative;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+      url("../../style/img/wall.jpeg");
+    background-size: cover;
+    background-position: center;
+
+    @include mq(tablet, max) {
+      min-height: 100vh;
+    }
+  }
+
+  .header {
+    @include pos(absolute, 25%);
+    width: 60vw;
+
+    @include mq(tablet, max) {
+      @include pos(absolute, 10%, unset, unset, 20%);
+    }
+  }
+
+  .lightContainer {
+    @include pos(absolute, -20px, 60px);
+    transform: rotate(-135deg);
+    font-size: 180px;
+    filter: blur(2px) brightness(100%);
+    color: $off-white;
+
+    i {
+      opacity: 0.1;
+    }
+
+    @include mq(tablet, max) {
+      @include pos(absolute, -25px, 30px);
+      font-size: 120px;
+    }
+
+    @include mq(tablet, min) {
+      &:hover {
+        filter: blur(0px) brightness(200%);
+
+        i {
+          opacity: 1;
+          text-shadow: 0.1vw 0vw 0.25vw #fac0ff, 0.2vw 0vw 0.25vw #fac0ff,
+            0.4vw 0vw 0.25vw #fac0ff, 0.1vw 0vw 0vw #f588ff,
+            0.2vw 0vw 0vw #f588ff, 0.4vw 0vw 0vw #f588ff,
+            0.1vw 0vw 0.1vw #f588ff, 0.2vw 0vw 0.1vw #f588ff,
+            0.4vw 0vw 0.1vw #f588ff, 0.1vw 0vw 2vw #f588ff,
+            0.2vw 0vw 2vw #f588ff, 0.4vw 0vw 2vw #f588ff, 0.1vw 0vw 1vw #ea00ff,
+            0.2vw 0vw 1vw #ea00ff, 0.4vw 0vw 5vw #ea00ff, 0.1vw 0vw 10vw #ea00ff,
+            0.2vw 0vw 35vw #ea00ff, 0.4vw 0vw 10vw #ea00ff,
+            0.1vw 0vw 20vw #ea00ff, 0.2vw 0vw 45vw #ea00ff,
+            0.4vw 0vw 30vw #ea00ff;
+        }
+      }
+    }
+  }
+}

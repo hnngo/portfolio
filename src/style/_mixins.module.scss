@@ -1,0 +1,80 @@
+@import "./colors.module";
+
+$breakpoints: (
+  "phone": 576px,
+  "tablet": 768px,
+  "tablet-wide": 992px,
+  "desktop": 1200px,
+  "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: min) {
+  @if map-has-key($map: $breakpoints, $key: $width) {
+    $width: map-get(
+      $map: $breakpoints,
+      $key: $width
+    );
+    @if $type == max {
+      $width: $width - 1px;
+      @media only screen and (max-width: $width) {
+        @content;
+      }
+    } @else {
+      @media only screen and (min-width: $width) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin pos(
+  $type: unset,
+  $top: unset,
+  $right: unset,
+  $bottom: unset,
+  $left: unset
+) {
+  position: $type;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin display($type: unset, $justifyContent: unset, $alignItems: unset) {
+  display: $type;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+
+@mixin fontFam(
+  $fontFam: unset,
+  $fontSize: 14px,
+  $fontWeight: unset,
+  $color: black,
+  $lineHeight: unset,
+  $letterSpacing: unset
+) {
+  // Font family
+  @if $fontFam == amita {
+    font-family: "Amita", cursive;
+  } @else if $fontFam == roboto {
+    font-family: "Roboto", sans-serif;
+  } @else if $fontFam == monte {
+    font-family: "Montserrat", sans-serif;
+  } @else if $fontFam == charmon {
+    font-family: "Charmonman", cursive;
+  } @else {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  font-size: $fontSize;
+  font-weight: $fontWeight;
+  color: $color;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+
+  // @if map-has-key($map: $theme-colors, $key: $color) {
+  //   color: map-get($map: $theme-colors, $key: $color);
+  // }
+}
