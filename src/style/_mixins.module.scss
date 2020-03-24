@@ -74,7 +74,7 @@ $breakpoints: (
   line-height: $lineHeight;
   letter-spacing: $letterSpacing;
 
-  @if map-has-key($map: $theme-colors, $key: $color) {
-    color: map-get($map: $theme-colors, $key: $color);
-  }
+  // @if map-has-key($map: $theme-colors, $key: $color) {
+  //   color: map-get($map: $theme-colors, $key: $color);
+  // }
 }

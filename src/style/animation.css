@@ -17,3 +17,12 @@
     height: 0px;
   }
 }
+
+@keyframes borderRun {
+  from {
+    border: 4px solid #b99cf3;
+  }
+  to {
+    border: 4px solid #a324ec;
+  }
+}

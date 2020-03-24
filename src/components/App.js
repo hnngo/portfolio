@@ -8,7 +8,7 @@ import Projects from "./ProjectSection";
 import Experience from "./ExperienceSection";
 import Contact from "./ContactSection";
 
-import "../style/css/style.css";
+// import "../style/css/style.css";
 import "./style.module.scss";
 import "../style/animation.css";
 import { SECTIONS_ID } from "../shared/constants";
