@@ -11,5 +11,6 @@ export const SECTIONS_ID = {
   INTRODUCTION: "introduction",
   EXP_BOARD: "exp-board",
   EXP_CONTAINER: "exp-container",
-  YEAR_SLIDE: "year-slider"
+  YEAR_SLIDE: "year-slider",
+  TECH_TOOLTIP: "tech-tooltip"
 };

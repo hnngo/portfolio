@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React from "react";
 
 // Constants and utils
 import cx from "classnames";
 import { PROJECT_INFO, TECH_LOGO } from "../../../../data";
 import ReactTooltip from "react-tooltip";
+import { SECTIONS_ID } from "../../../../shared/constants";
 
 import styles from "./style.module.scss";
 
@@ -21,7 +22,6 @@ const ProjectDetail = ({
 
       return (
         <div className={styles.detailContainer}>
-          <ReactTooltip />
           <div className="row">
             <div className={`col-md-6 animated ${slideLeftAnimation} fast`}>
               <div className="d-flex justify-content-between">
@@ -48,18 +48,18 @@ const ProjectDetail = ({
               </ul>
               <p className={styles.detailTech}>Technologies/Libraries</p>
               {board.technologies.map((item, i) => {
-                // const imgRef = useRef();
                 return (
-                  <img
-                    // ref={imgRef}
-                    key={i}
-                    className={styles.detailTechLogo}
-                    src={TECH_LOGO[item]}
-                    alt="techLogo"
-                    data-tip={item}
-                    // onMouseEnter={() => ReactTooltip.show(imgRef.current)}
-                    // onMouseLeave={() => ReactTooltip.hide(imgRef.current)}
-                  />
+                  <div className={styles.detailTechLogoWrapper}>
+                    <img
+                      key={i}
+                      className={styles.detailTechLogo}
+                      src={TECH_LOGO[item]}
+                      alt="techLogo"
+                      data-tip={item}
+                      data-for={SECTIONS_ID.TECH_TOOLTIP + i}
+                    />
+                    <ReactTooltip id={SECTIONS_ID.TECH_TOOLTIP + i} />
+                  </div>
                 );
               })}
               <div className={styles.detailView}>
