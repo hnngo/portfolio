@@ -1,11 +1,26 @@
 {
   "expBoard": [
     {
+      "id": 4,
+      "employer": "Shopee",
+      "designation": "Frontend Developer",
+      "compLogo": "https://lh3.googleusercontent.com/ULn13RJ7TqMrZvs-J4VaDLoQdRNWgPHR7ABoorkiW_LfDQq1XeDyl-cEYZOxkhk6He4G2_O5XGtPL1iOZ89Z2pCujv4XCj9W60HcSq38Hg0TzD415Ro15OIBJe9V9KE-BPYW-CRvs_iHFrBSAzKsP-KpIuH52NFcCKOv4SDBLkul65N7lGKtTnLoHfbWMcwlzBH5J-TR6VMAgPF9EAdiNti3JAwvoNCOLjpn_AW2NO-h__d9PZeDQ10UrVe4O7l3aicEgaM_U4xnbCC65wpoGT9ewzBxOCpZGz61LbSVATlXq3H5tcw2KoaXgw5ThWX1v1SmvPAI4WGDV-8VcnWoBO35D1s3C6EyX3kz8ij4K9XRGmOtpUKo6rvaMkuqli28jBe6AG1Zzo2RmPsCeLLQl6edbnOmgsotodEnVAaRkKBJqEr_WrpdePFS0s30M_wHxrXy56pzBRhm2GeBrEh243OaXnil3O4oP1CXBUvB6uIojRwc_rdkBCe1Wc_pTDzl2TqykjMC-8Z4UtQ9JTQCwtxAJuAryZXIoGasylBedFv3y_ZWJnRGBh5FwQJG0IPzdYPq4PTReTZ4Hs71_RzzOzWHLVRxEXyFW3PRfbR9ExUpYFa8uLz_A66SuMNzN-xLFlGGa7RnZrEeh0MHC724_-H7bgMzE3vF0lgy60BJ8T8O6bHVYhShl2AsGTg2ojLJ1DEsOtfnS46ZNlEDZ4rPOrf3iHP1iB_PtT5cjurW9xnstVBuC19MUiY=w130-h141-no",
+      "headSentence": "Currently, I am working as a Frontend Developer in Shopee, Singapore. Shopee is a Singaporean e-commerce platform under the Sea Group. Shopee first launched in Singapore in 2015, and since expanded its reach to Malaysia, Thailand, Taiwan, Indonesia, Vietnam, the Philippines, and Brazil",
+      "jDHeader": "Projects:",
+      "jobDescription": [
+        "Invovle in implementing the new design of authentication",
+        "Tracking user behavioral data toward authentication process"
+      ],
+      "location": "Science Park, Singapore",
+      "timeFrom": "Nov 2019",
+      "timeTo": "Present"
+    },
+    {
       "id": 3,
       "employer": "Nanyang Technological University",
       "designation": "Research Engineer",
       "compLogo": "https://lh3.googleusercontent.com/YsEuAQ1uFWXnsZX3aLu9N-o-tHgNNr485Z6zJe4imCviK9Tu_8vHL9lulo1CJYWrw5vLGv6t4d8i8mjguYQ3qzImY7aFxozB_zdDqeeTQ41f3pbpSC_5TTNH1UNJWpzTftysthvlh3XMPdqhqYLkRjTa7pYqcGVhNYvXcY-3T1ej7g0eJNljKQFpqBSOBIxm4S2D_WrPDYdEjrSBHI8guEx44AgYnqP2_Ku2RBmoMXYZmaRM-J_TnYw9sOnVGithrujaI35vOpAmRERaqrlHNZwPrpkr00BrGXdFEoDp_UPY9t8gd7pDd5miKk0lLumsJtoh9mn_iOhjko5c5cDL4VNwehx03MhWBUm4ZDy59u6nQj6ED5SaQj_8rpRBYV6rsB8j6YCfEcSLqsDj2noftu1IFxH0-kkeiUas-wcppqKbQTt-9WQQYi3wl0DbKEh47ZyW4oUZ5_TbJQi-9A8UCCcK-rWF-HC2kRJQJNXbQrpv33nPst-CUR-VI5OHMHxVrLWnxz4X-5KEH2gMxCVdVbFmswMJIooTu_txRSlWm-W1tzuzUwKOzKT3QHrwfXA8a1KkupFEfwPstFgj-gbTRzEZwQCAXHtLbmMqFKyFNO8IH5shhkJOHVUJvzuiS3KxCEnvgQPJRnrawF3rS1l5yUsTWgBGl-o=w203-h261-no",
-      "headSentence": "Currently, I am working as a Research Engineer in School of Electrical and Electronics Engineering at Nangyang Technological University, Singapore. My research topic is about Control and Controllability of Dynamic Complex Networks: Theories and Strategies.",
+      "headSentence": "I have been working as a Research Engineer in School of Electrical and Electronics Engineering at Nangyang Technological University, Singapore for a year and a half. My research topic is about Control and Controllability of Dynamic Complex Networks: Theories and Strategies.",
       "jDHeader": "Ongoing Research Topics",
       "jobDescription": [
         "Counter controllability by removing the critical nodes in maximum matching paths",
@@ -14,7 +29,7 @@
       ],
       "location": "Jurong West, Singapore",
       "timeFrom": "May 2018",
-      "timeTo": "Present"
+      "timeTo": "Nov 2019"
     },
     {
       "id": 2,

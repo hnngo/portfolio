@@ -27,7 +27,7 @@ export default class ExperienceSection extends Component {
       boardOpacity: [],
       boardZindex: [],
       boardTransX: [],
-      boardTransXOrigin: []
+      boardTransXOrigin: [],
     };
   }
 
@@ -63,7 +63,7 @@ export default class ExperienceSection extends Component {
         boardOpacity,
         boardZindex,
         boardTransX,
-        boardTransXOrigin: boardTransX
+        boardTransXOrigin: boardTransX,
       });
     }
   }
@@ -74,7 +74,7 @@ export default class ExperienceSection extends Component {
 
       if (currentHeight !== this.state.eConHeight) {
         this.setState({
-          eConHeight: currentHeight
+          eConHeight: currentHeight,
         });
       }
     }, 300);
@@ -134,7 +134,7 @@ export default class ExperienceSection extends Component {
       boardOpacity,
       boardZindex,
       boardTransX,
-      prevCovertedSelect: convertedVal
+      prevCovertedSelect: convertedVal,
     });
   }
 
@@ -166,7 +166,7 @@ export default class ExperienceSection extends Component {
         id={SECTIONS_ID.EXPERIENCE}
         className={styles.container}
         style={{
-          height: this.state.eConHeight
+          height: this.state.eConHeight,
         }}
       >
         {!this.props.show ? null : (
@@ -179,7 +179,27 @@ export default class ExperienceSection extends Component {
               icon="fas fa-history"
               isDarkTheme={true}
             />
-            <div>{this.renderExpBoard()}</div>
+            <div>
+              {EXP_BOARD_DATA.map((item, i) => (
+                <ExpBoard
+                  key={i}
+                  keyBoard={i}
+                  employer={item.employer}
+                  designation={item.designation}
+                  compLogo={item.compLogo}
+                  headSentence={item.headSentence}
+                  jDHeader={item.jDHeader}
+                  jobDescription={item.jobDescription}
+                  location={item.location}
+                  timeFrom={item.timeFrom}
+                  timeTo={item.timeTo}
+                  scale={this.state.boardScale[i]}
+                  opacity={this.state.boardOpacity[i]}
+                  zIndex={this.state.boardZindex[i]}
+                  transX={this.state.boardTransX[i]}
+                />
+              ))}
+            </div>
             <div
               className={cx(
                 styles.yearSlideContainer,
@@ -187,7 +207,7 @@ export default class ExperienceSection extends Component {
               )}
             >
               <YearSlider
-                onSelectMS={selectedVal =>
+                onSelectMS={(selectedVal) =>
                   this.handleSelectMileStone(selectedVal)
                 }
               />
