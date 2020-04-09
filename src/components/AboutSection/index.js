@@ -8,6 +8,7 @@ import FallingLeaf from "./components/FallingLeaf";
 import cx from "classnames";
 import { PROFILE_PHOTO, LEAF_BORDER_PHOTO, LEAF_SOLID_PHOTO } from "../../data";
 import { SECTIONS_ID } from "../../shared/constants";
+import { ABOUT_CONTENT } from "../../content";
 
 import styles from "./style.module.scss";
 
@@ -16,7 +17,7 @@ export default class AboutSection extends Component {
     super(props);
 
     this.state = {
-      imgToggle: false
+      imgToggle: false,
     };
   }
 
@@ -26,7 +27,11 @@ export default class AboutSection extends Component {
         {!this.props.show ? null : (
           <div>
             <div className="container">
-              <SectionTitle title="About" icon="fas fa-info-circle" />
+              <SectionTitle
+                title={ABOUT_CONTENT.title}
+                icon="fas fa-info-circle"
+                capitalize
+              />
               <div className={cx(styles.row, "row")}>
                 <div
                   className={cx(styles.avatar, "col-sm-6 animated fadeInLeft")}
@@ -42,24 +47,18 @@ export default class AboutSection extends Component {
                 <div
                   className={cx(styles.text, "col-sm-6 animated fadeInRight")}
                 >
-                  <h2 className={styles.helloText}>Hello,</h2>
+                  <h2 className={styles.helloText}>{ABOUT_CONTENT.hello}</h2>
                   <p className={styles.briefIntroText}>
-                    As a developer, I am always curious about web development
-                    technologies. Building functional, modern and user-friendly
-                    web applications is definitely a passion of mine. To be more
-                    valuable in this highly competitive software development
-                    world, I actively equip myself advanced and up-to-date
-                    technologies.
+                    {ABOUT_CONTENT.firstSentence}
                     <br />
-                    <br />I am looking for an opportunity to become a
-                    Front-end/Full-stack Developer and I am very open to
-                    relocate to Canada.
+                    <br />
+                    {ABOUT_CONTENT.secondSentence}
                   </p>
                   <p className={styles.currentFocusText}>
-                    Current Focus:
+                    {ABOUT_CONTENT.focusHeader}
                     <span>
-                      &nbsp;Node.js / React / Redux and other frameworks,
-                      libraries related to them.
+                      &nbsp;
+                      {ABOUT_CONTENT.focusTech}
                     </span>
                   </p>
                   <div className={styles.socialLink}>
