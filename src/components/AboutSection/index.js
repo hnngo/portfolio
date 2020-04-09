@@ -3,6 +3,7 @@ import React, { Component } from "react";
 // Components
 import SectionTitle from "../../shared/SectionTitle";
 import FallingLeaf from "./components/FallingLeaf";
+import profilePlaceHolder from "../../style/img/profile_ph.png";
 
 // Constants and utils
 import cx from "classnames";
@@ -11,16 +12,9 @@ import { SECTIONS_ID } from "../../shared/constants";
 import { ABOUT_CONTENT } from "../../content";
 
 import styles from "./style.module.scss";
+import LazyImage from "../../shared/LazyImage";
 
 export default class AboutSection extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      imgToggle: false,
-    };
-  }
-
   render() {
     return (
       <div id={SECTIONS_ID.ABOUT} className={styles.container}>
@@ -34,14 +28,16 @@ export default class AboutSection extends Component {
               />
               <div className={cx(styles.row, "row")}>
                 <div
-                  className={cx(styles.avatar, "col-sm-6 animated fadeInLeft")}
+                  className={cx(
+                    styles.avatarWrapper,
+                    "col-sm-6 animated fadeInLeft"
+                  )}
                 >
-                  <img
+                  <LazyImage
                     src={PROFILE_PHOTO}
-                    alt={"Profile"}
-                    onLoad={() =>
-                      this.setState({ imgToggle: !this.state.imgToggle })
-                    }
+                    placeholder={profilePlaceHolder}
+                    alt={"profile"}
+                    className={styles.avatar}
                   />
                 </div>
                 <div

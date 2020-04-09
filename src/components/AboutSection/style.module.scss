@@ -25,20 +25,20 @@
     }
   }
 
-  .avatar {
+  .avatarWrapper {
     text-align: right;
 
     @include mq(tablet, max) {
       text-align: center;
     }
+  }
 
-    img {
-      width: 60%;
-      max-width: 270px;
-      border-radius: 50%;
-      text-align: right;
-      margin: 12px 0px;
-    }
+  .avatar {
+    width: 60%;
+    max-width: 270px;
+    border-radius: 50%;
+    text-align: right;
+    margin: 12px 0px;
   }
 
   .text {
