@@ -1,5 +1,6 @@
 import React from "react";
 import cx from "classnames";
+import { INTRODUCTION } from "../../../../content";
 
 import styles from "./style.module.scss";
 
@@ -10,13 +11,13 @@ const IntroductionButton = ({ show, onClickAbout, onClickPortfolio }) => {
         className={cx(styles.aboutButton, "animated tada")}
         onClick={onClickAbout}
       >
-        About me
+        {INTRODUCTION.buttonAbout}
       </div>
       <div
         className={cx(styles.portfolioButton, "animated tada")}
         onClick={onClickPortfolio}
       >
-        Portfolio
+        {INTRODUCTION.buttonPortfolio}
       </div>
     </div>
   );
