@@ -26,10 +26,10 @@
       margin: 10px 30px;
       height: auto;
 
-      p,
-      div {
-        display: none;
-      }
+      // p,
+      // div {
+      //   display: none;
+      // }
     }
 
     @include mq(tablet, min) {
@@ -71,11 +71,19 @@
   .projectTitle {
     @include fontFam(monte, 18px, bold, $off-white-v2);
     padding: 10px 10px;
+
+    @include mq(tablet, max) {
+      display: none;
+    }
   }
 
   .projectDescriptrion {
     @include fontFam(monte, 13px, unset, $off-white-v2);
     padding: 0px 10px;
+
+    @include mq(tablet, max) {
+      display: none;
+    }
   }
 
   .projectFooter {
@@ -97,6 +105,10 @@
       &:hover {
         color: white;
       }
+    }
+
+    @include mq(tablet, max) {
+      display: none;
     }
   }
 }
