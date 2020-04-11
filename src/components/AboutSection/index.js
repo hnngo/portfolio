@@ -36,7 +36,6 @@ export default class AboutSection extends Component {
                   <LazyImage
                     src={PROFILE_PHOTO}
                     placeholder={profilePlaceHolder}
-                    alt={"profile"}
                     className={styles.avatar}
                   />
                 </div>
