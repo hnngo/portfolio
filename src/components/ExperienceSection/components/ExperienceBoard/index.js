@@ -2,10 +2,10 @@ import React, { Component } from "react";
 
 // Components
 import LazyImage from "../../../../shared/LazyImage";
+import companyPlaceHolder from "../../../../style/img/company_logo_ph.png";
 
 // Constants and utils
 import { SECTIONS_ID } from "../../../../shared/constants";
-import companyPlaceHolder from "../../../../style/img/company_logo_ph.png";
 
 import styles from "./style.module.scss";
 
@@ -15,7 +15,7 @@ export default class ExpBoard extends Component {
 
     this.state = {
       ebHeight: undefined,
-      imgToggle: false,
+      imgToggle: false
     };
   }
 
@@ -43,7 +43,7 @@ export default class ExpBoard extends Component {
             this.props.transX
           }px)`,
           opacity: this.props.opacity,
-          zIndex: this.props.zIndex,
+          zIndex: this.props.zIndex
         }}
       >
         <div className={styles.title}>
@@ -58,7 +58,7 @@ export default class ExpBoard extends Component {
         <div
           className={styles.contentContainer}
           style={{
-            height: this.state.ebHeight ? this.state.ebHeight - 125 : "",
+            height: this.state.ebHeight ? this.state.ebHeight - 125 : ""
           }}
         >
           <p className={styles.headerSentence}>{this.props.headSentence}</p>

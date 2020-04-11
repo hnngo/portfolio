@@ -3,8 +3,9 @@ import cx from "classnames";
 
 import styles from "./style.module.scss";
 
-function LazyImage({ src, alt, placeholder, className }) {
+function LazyImage({ src, alt, placeholder, className, ...rest }) {
   const [isLoaded, setIsLoaded] = React.useState(false);
+
   return (
     <div>
       <img
@@ -12,8 +13,11 @@ function LazyImage({ src, alt, placeholder, className }) {
         src={src}
         alt={alt}
         onLoad={() => setIsLoaded(true)}
+        {...rest}
       />
-      {!isLoaded && <img className={className} src={placeholder} alt={alt} />}
+      {!isLoaded && (
+        <img className={className} src={placeholder} alt={alt} {...rest} />
+      )}
     </div>
   );
 }
