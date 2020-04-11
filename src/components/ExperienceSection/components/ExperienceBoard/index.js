@@ -1,5 +1,11 @@
 import React, { Component } from "react";
+
+// Components
+import LazyImage from "../../../../shared/LazyImage";
+
+// Constants and utils
 import { SECTIONS_ID } from "../../../../shared/constants";
+import companyPlaceHolder from "../../../../style/img/company_logo_ph.png";
 
 import styles from "./style.module.scss";
 
@@ -9,7 +15,7 @@ export default class ExpBoard extends Component {
 
     this.state = {
       ebHeight: undefined,
-      imgToggle: false
+      imgToggle: false,
     };
   }
 
@@ -33,27 +39,26 @@ export default class ExpBoard extends Component {
         id={SECTIONS_ID.EXP_BOARD + this.props.keyBoard}
         className={styles.container}
         style={{
-          transform: `scale(${this.props.scale}) translateX(${this.props.transX}px)`,
+          transform: `scale(${this.props.scale}) translateX(${
+            this.props.transX
+          }px)`,
           opacity: this.props.opacity,
-          zIndex: this.props.zIndex
+          zIndex: this.props.zIndex,
         }}
       >
         <div className={styles.title}>
-          {this.props.compLogo ? (
-            <img
-              src={this.props.compLogo}
-              className={styles.companyLogo}
-              alt="company-logo"
-              onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
-            />
-          ) : null}
+          <LazyImage
+            src={this.props.compLogo}
+            className={styles.companyLogo}
+            placeholder={companyPlaceHolder}
+          />
           <p className={styles.companyName}>{this.props.employer}</p>
           <p className={styles.occupation}>{this.props.designation}</p>
         </div>
         <div
           className={styles.contentContainer}
           style={{
-            height: this.state.ebHeight ? this.state.ebHeight - 125 : ""
+            height: this.state.ebHeight ? this.state.ebHeight - 125 : "",
           }}
         >
           <p className={styles.headerSentence}>{this.props.headSentence}</p>
