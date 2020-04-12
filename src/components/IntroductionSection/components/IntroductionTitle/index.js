@@ -1,5 +1,6 @@
 import React from "react";
 import cx from "classnames";
+import { INTRODUCTION } from "../../../../content";
 
 import styles from "./style.module.scss";
 
@@ -8,10 +9,13 @@ const IntroductionTitle = ({ showHeaderTitle, showDescription, showName }) => {
     return (
       <div>
         <div className="d-flex">
-          <h6 className={cx(styles.hiText, "animated bounceInDown")}>Hi</h6>
+          <h6 className={cx(styles.hiText, "animated bounceInDown")}>
+            {INTRODUCTION.hi}
+          </h6>
           {showName ? (
             <h6 className={cx(styles.name, "animated slideInRight")}>
-              , I'm Nhan Ngo
+              ,&nbsp;
+              {INTRODUCTION.name}
             </h6>
           ) : (
             <div />
@@ -20,8 +24,7 @@ const IntroductionTitle = ({ showHeaderTitle, showDescription, showName }) => {
         <div>
           {showDescription ? (
             <h6 className={cx(styles.description, "animated fadeInUp slow")}>
-              I am a front-end developer based in Singapore who is ambitious
-              about web development and UI/UX design.
+              {INTRODUCTION.brief}
             </h6>
           ) : (
             <div />

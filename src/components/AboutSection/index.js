@@ -3,63 +3,57 @@ import React, { Component } from "react";
 // Components
 import SectionTitle from "../../shared/SectionTitle";
 import FallingLeaf from "./components/FallingLeaf";
+import profilePlaceHolder from "../../style/img/profile_ph.png";
 
 // Constants and utils
 import cx from "classnames";
 import { PROFILE_PHOTO, LEAF_BORDER_PHOTO, LEAF_SOLID_PHOTO } from "../../data";
 import { SECTIONS_ID } from "../../shared/constants";
+import { ABOUT_CONTENT } from "../../content";
 
 import styles from "./style.module.scss";
+import LazyImage from "../../shared/LazyImage";
 
 export default class AboutSection extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      imgToggle: false
-    };
-  }
-
   render() {
     return (
       <div id={SECTIONS_ID.ABOUT} className={styles.container}>
         {!this.props.show ? null : (
           <div>
             <div className="container">
-              <SectionTitle title="About" icon="fas fa-info-circle" />
+              <SectionTitle
+                title={ABOUT_CONTENT.title}
+                icon="fas fa-info-circle"
+                capitalize
+              />
               <div className={cx(styles.row, "row")}>
                 <div
-                  className={cx(styles.avatar, "col-sm-6 animated fadeInLeft")}
+                  className={cx(
+                    styles.avatarWrapper,
+                    "col-sm-6 animated fadeInLeft"
+                  )}
                 >
-                  <img
+                  <LazyImage
                     src={PROFILE_PHOTO}
-                    alt={"Profile"}
-                    onLoad={() =>
-                      this.setState({ imgToggle: !this.state.imgToggle })
-                    }
+                    placeholder={profilePlaceHolder}
+                    className={styles.avatar}
                   />
                 </div>
                 <div
                   className={cx(styles.text, "col-sm-6 animated fadeInRight")}
                 >
-                  <h2 className={styles.helloText}>Hello,</h2>
+                  <h2 className={styles.helloText}>{ABOUT_CONTENT.hello}</h2>
                   <p className={styles.briefIntroText}>
-                    As a developer, I am always curious about web development
-                    technologies. Building functional, modern and user-friendly
-                    web applications is definitely a passion of mine. To be more
-                    valuable in this highly competitive software development
-                    world, I actively equip myself advanced and up-to-date
-                    technologies.
+                    {ABOUT_CONTENT.firstSentence}
                     <br />
-                    <br />I am looking for an opportunity to become a
-                    Front-end/Full-stack Developer and I am very open to
-                    relocate to Canada.
+                    <br />
+                    {ABOUT_CONTENT.secondSentence}
                   </p>
                   <p className={styles.currentFocusText}>
-                    Current Focus:
+                    {ABOUT_CONTENT.focusHeader}
                     <span>
-                      &nbsp;Node.js / React / Redux and other frameworks,
-                      libraries related to them.
+                      &nbsp;
+                      {ABOUT_CONTENT.focusTech}
                     </span>
                   </p>
                   <div className={styles.socialLink}>

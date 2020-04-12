@@ -1,5 +1,9 @@
 import React, { Component } from "react";
 
+// Components
+import LazyImage from "../../../../shared/LazyImage";
+import companyPlaceHolder from "../../../../style/img/company_logo_ph.png";
+
 // Utils and constants
 import { selectNearestElems, isSmallScreen } from "../../../../utils";
 import { SECTIONS_ID } from "../../../../shared/constants";
@@ -198,9 +202,10 @@ export default class YearSlider extends Component {
 
       return (
         <div key={i}>
-          <img
+          <LazyImage
             src={item.compLogo}
             className={styles.companyLogo}
+            placeholder={companyPlaceHolder}
             style={{
               left: isSmallScreen() ? offsetLeft + 10 : offsetLeft,
               opacity: this.state.msOpacities[i],
@@ -210,7 +215,6 @@ export default class YearSlider extends Component {
                   ? "0px 0px 20px 1px rgba(207, 207, 207, 0.795)"
                   : ""
             }}
-            alt="logo"
             onClick={() => this.handleClickLogo(i)}
           />
           <p

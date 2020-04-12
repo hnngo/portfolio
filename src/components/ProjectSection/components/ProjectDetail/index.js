@@ -1,5 +1,10 @@
 import React from "react";
 
+// Components
+import LazyImage from "../../../../shared/LazyImage";
+import devicePlaceholder from "../../../../style/img/device_ph.png";
+import porjectThumbnailPlaceholder from "../../../../style/img/project_thumbnail_ph.png";
+
 // Constants and utils
 import cx from "classnames";
 import { PROJECT_INFO, TECH_LOGO } from "../../../../data";
@@ -17,8 +22,6 @@ const ProjectDetail = ({
   slideRightAnimation
 }) => {
   const renderProjectDetail = () => {
-    const [imgToggle, setImgToggle] = React.useState(false);
-
     if (selectedIndex !== undefined) {
       let board = PROJECT_INFO[selectedIndex];
 
@@ -52,14 +55,11 @@ const ProjectDetail = ({
               {board.technologies.map((item, i) => {
                 return (
                   <div key={i} className={styles.detailTechLogoWrapper}>
-                    <img
+                    <LazyImage
                       className={styles.detailTechLogo}
                       src={TECH_LOGO[item]}
-                      alt="techLogo"
                       data-tip={item}
                       data-for={SECTIONS_ID.TECH_TOOLTIP + i}
-                      data-toggle={imgToggle}
-                      onLoad={() => setImgToggle(!imgToggle)}
                     />
                     <ReactTooltip id={SECTIONS_ID.TECH_TOOLTIP + i} />
                   </div>
@@ -92,7 +92,10 @@ const ProjectDetail = ({
             </div>
             <div className={`col-md-6 animated ${slideRightAnimation} fast`}>
               <div className={styles.detailDevices}>
-                <img src={board.devices} alt={"imac-content"} />
+                <LazyImage
+                  src={board.devices}
+                  placeholder={devicePlaceholder}
+                />
               </div>
             </div>
           </div>
@@ -112,14 +115,14 @@ const ProjectDetail = ({
             className={cx(styles.thumbnailSlider, `animated ${animation} fast`)}
             key={i}
           >
-            <img
+            <LazyImage
               className={cx(
                 styles.thumbnailImage,
                 i === selectedIndex && styles.selectedImage
               )}
               src={item.bannerImg}
-              alt="projects-banner"
               onClick={() => onClickThumbnail(i)}
+              placeholder={porjectThumbnailPlaceholder}
             />
           </div>
         ))}

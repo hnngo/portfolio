@@ -5,7 +5,7 @@ import cx from "classnames";
 
 import styles from "./style.module.scss";
 
-export default function SectionTitle({ title, icon, isDarkTheme }) {
+export default function SectionTitle({ title, icon, isDarkTheme, capitalize }) {
   return (
     <div
       className={cx(
@@ -14,7 +14,9 @@ export default function SectionTitle({ title, icon, isDarkTheme }) {
         "animated fadeIn slow"
       )}
     >
-      <h6 className={styles.title}>{title}</h6>
+      <h6 className={cx(styles.title, capitalize && styles.capitalize)}>
+        {title}
+      </h6>
       <div className={styles.square} />
       <i className={cx(icon, styles.icon, isDarkTheme && styles.lightIcon)} />
     </div>

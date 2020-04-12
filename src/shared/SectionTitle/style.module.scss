@@ -24,6 +24,10 @@
     }
   }
 
+  .capitalize {
+    text-transform: capitalize;
+  }
+
   .square {
     @include pos(absolute, unset, unset, -20px, -30px);
     width: 30px;

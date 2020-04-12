@@ -22,25 +22,17 @@ export default class FallingLeaf extends Component {
       leafFallingInterval: undefined,
       leafRotateInterval: undefined,
       leafSwingInterval: undefined,
-      leafPosition: -80,
+      leafPosition: -120,
       leafOffsetLeft: this.props.initOffset,
       leafOffsetRange: 2,
       leafRotateMax: 40,
       leafRotate: 40,
-      leafRotateChange: -1
+      leafRotateChange: -1,
     };
   }
 
   componentDidMount() {
     this.clearAllIntervals();
-
-    // Set Timeout for delaying
-    setTimeout(() => {
-      this.setState({ loaded: true }, () => {
-        // Prepare the motion
-        this.handleMotion();
-      });
-    }, this.props.delay);
   }
 
   componentWillUnmount() {
@@ -54,33 +46,30 @@ export default class FallingLeaf extends Component {
   }
 
   handleMotion() {
-    let leafFallingInterval = setInterval(
-      () => {
-        const qLeaf = document.querySelector("#" + this.state.leafId);
-        const qContainer = document.querySelector("#" + this.props.containerId);
+    let leafFallingInterval = setInterval(() => {
+      const qLeaf = document.querySelector("#" + this.state.leafId);
+      const qContainer = document.querySelector("#" + this.props.containerId);
 
-        if (qLeaf && qContainer) {
-          // Check if leaf touch the bottom
-          if (
-            qLeaf.getBoundingClientRect().top >=
-            qContainer.getBoundingClientRect().bottom - 100
-          ) {
-            // Reset new offset left
-            let newLeftOffset = Math.random() * qContainer.clientWidth;
+      if (qLeaf && qContainer) {
+        // Check if leaf touch the bottom
+        if (
+          qLeaf.getBoundingClientRect().top >=
+          qContainer.getBoundingClientRect().bottom - 100
+        ) {
+          // Reset new offset left
+          let newLeftOffset = Math.random() * qContainer.clientWidth;
 
-            this.setState({
-              leafPosition: -60,
-              leafOffsetLeft: newLeftOffset
-            });
-          }
+          this.setState({
+            leafPosition: -60,
+            leafOffsetLeft: newLeftOffset,
+          });
         }
+      }
 
-        this.setState({
-          leafPosition: this.state.leafPosition + 1
-        });
-      },
-      this.props.optionSpeed ? this.props.optionSpeed : 5
-    );
+      this.setState({
+        leafPosition: this.state.leafPosition + 1,
+      });
+    }, this.props.optionSpeed ? this.props.optionSpeed : 5);
 
     // Set interval for rotate leaf
     let leafRotateInterval = setInterval(() => {
@@ -98,7 +87,7 @@ export default class FallingLeaf extends Component {
 
       this.setState({
         leafRotate: newRotate,
-        leafRotateChange: newRotateChange
+        leafRotateChange: newRotateChange,
       });
     }, 40);
 
@@ -112,14 +101,14 @@ export default class FallingLeaf extends Component {
       }
 
       this.setState({
-        leafOffsetLeft: newLeafOffset
+        leafOffsetLeft: newLeafOffset,
       });
     }, 15);
 
     this.setState({
       leafFallingInterval,
       leafRotateInterval,
-      leafSwingInterval
+      leafSwingInterval,
     });
   }
 
@@ -135,12 +124,13 @@ export default class FallingLeaf extends Component {
   }
 
   render() {
+    // Hide leaf in small screen
     if (window.screen.width <= 576) {
       return null;
     }
 
-    // Only load after delay time
-    return !this.state.loaded ? null : (
+    // Only load after loaded
+    return (
       <img
         id={this.state.leafId}
         src={this.props.srcImg}
@@ -154,12 +144,20 @@ export default class FallingLeaf extends Component {
         style={{
           top: this.state.leafPosition + "px",
           left: this.state.leafOffsetLeft + "px",
-          transform: `rotate(${this.state.leafRotate}deg)`
+          transform: `rotate(${this.state.leafRotate}deg)`,
         }}
         onMouseEnter={() => this.setState({ isFullOpacity: true })}
         onMouseLeave={() => this.setState({ isFullOpacity: false })}
         onClick={() => this.handleOnClick()}
-        onLoad={() => this.setState({ imgToggle: !this.state.imgToggle })}
+        onLoad={() => {
+          // Set Timeout for delaying
+          setTimeout(() => {
+            this.setState({ loaded: true }, () => {
+              // Prepare the motion
+              this.handleMotion();
+            });
+          }, this.props.delay);
+        }}
       />
     );
   }
