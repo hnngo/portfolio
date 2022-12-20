@@ -11,72 +11,60 @@ const TIME_OUT_FOR_DESCRIPTION = 3000;
 const TIME_OUT_FOR_BUTTON = 4000;
 const TIME_OUT_FOR_LIGHT = 5000;
 
-export default class IntroductionSection extends Component {
-  constructor(props) {
-    super(props);
+const IntroductionSection = () => {
+  const [showHeaderTitle, setShowHeaderTitle] = React.useState(false);
+  const [showName, setShowName] = React.useState(false);
+  const [showDescription, setShowDescription] = React.useState(false);
+  const [showButton, setShowButton] = React.useState(false);
+  const [showLight, setShowLight] = React.useState(false);
 
-    this.state = {
-      showHeaderTitle: false,
-      showName: false,
-      showDescription: false,
-      showButton: false,
-      showLight: false
-    };
-  }
-
-  componentDidMount() {
+  React.useEffect(() => {
     // Interval action for each component
-    setTimeout(
-      () => this.setState({ showHeaderTitle: true }),
-      TIME_OUT_FOR_TITLE
-    );
-    setTimeout(() => this.setState({ showName: true }), TIME_OUT_FOR_NAME);
-    setTimeout(
-      () => this.setState({ showDescription: true }),
-      TIME_OUT_FOR_DESCRIPTION
-    );
-    setTimeout(() => this.setState({ showButton: true }), TIME_OUT_FOR_BUTTON);
-    setTimeout(() => this.setState({ showLight: true }), TIME_OUT_FOR_LIGHT);
-  }
+    const setOn = (setStateFunc, time) =>
+      setTimeout(() => setStateFunc(true), time);
+    setOn(setShowHeaderTitle, TIME_OUT_FOR_TITLE);
+    setOn(setShowName, TIME_OUT_FOR_NAME);
+    setOn(setShowDescription, TIME_OUT_FOR_DESCRIPTION);
+    setOn(setShowButton, TIME_OUT_FOR_BUTTON);
+    setOn(setShowLight, TIME_OUT_FOR_LIGHT);
+  }, []);
 
-  handleClickButton(type) {
+  const handleClickButton = (type) => {
     const y =
       document.querySelector(`#${type}`).getBoundingClientRect().top +
       window.scrollY;
 
     window.scroll({
       top: y,
-      behavior: "smooth"
+      behavior: "smooth",
     });
-  }
+  };
 
-  render() {
-    return (
-      <div className={styles.container}>
-        <div className="container">
-          <div className={styles.header}>
-            <IntroductionTitle
-              showDescription={this.state.showDescription}
-              showHeaderTitle={this.state.showHeaderTitle}
-              showName={this.state.showName}
-            />
-            <IntroductionButton
-              show={this.state.showButton}
-              onClickAbout={() => this.handleClickButton(SECTIONS_ID.ABOUT)}
-              onClickPortfolio={() =>
-                this.handleClickButton(SECTIONS_ID.PROJECTS)
-              }
-            />
-          </div>
+  return (
+    <div className={styles.container}>
+      <div className="container">
+        <div className={styles.header}>
+          <IntroductionTitle
+            showDescription={showDescription}
+            showHeaderTitle={showHeaderTitle}
+            showName={showName}
+          />
+          <IntroductionButton
+            show={showButton}
+            onClickAbout={() => handleClickButton(SECTIONS_ID.ABOUT)}
+            onClickPortfolio={() => handleClickButton(SECTIONS_ID.PROJECTS)}
+          />
         </div>
-        {/* <div className="d-none d-md-block">
-          {!this.state.showLight ? null : (
-            <div className={`${styles.lightContainer} animated fadeIn`}>
-              <i className="far fa-lightbulb" />
-            </div>
-          )}
-        </div> */}
       </div>
-    );
-  }
-}
+      <div className="d-none d-md-block">
+        {!showLight ? null : (
+          <div className={`${styles.lightContainer} animated fadeIn`}>
+            <i className="far fa-lightbulb" />
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default IntroductionSection;
