@@ -43,10 +43,9 @@ const AboutSection = ({ show }) => {
               >
                 <h2 className={styles.helloText}>{ABOUT_CONTENT.hello}</h2>
                 <p className={styles.briefIntroText}>
-                  {ABOUT_CONTENT.firstSentence}
-                  <br />
-                  <br />
-                  {ABOUT_CONTENT.secondSentence}
+                  {ABOUT_CONTENT.sentences.map((sentence, idx) => {
+                    return <><span key={idx}>{sentence}</span><br /><br /></>
+                  })}
                 </p>
                 <p className={styles.currentFocusText}>
                   {ABOUT_CONTENT.focusHeader}
@@ -77,7 +76,7 @@ const AboutSection = ({ show }) => {
             </div>
           </div>
           {
-            Array(10).fill(0).map((_, idx) => {
+            Array(6).fill(0).map((_, idx) => {
               return (
                 <FallingLeaf
                   key={idx}
@@ -85,45 +84,11 @@ const AboutSection = ({ show }) => {
                   containerId={SECTIONS_ID.ABOUT}
                   initOffset={Math.round((Math.random() * (1600 - 80)) + 80)}
                   delay={Math.round(Math.random() * 20000)}
-                  optionSpeed={Math.round(Math.random() * 20)}
+                  optionSpeed={Math.round(Math.random() * 5 + 3)}
                 />
               )
             })
           }
-          {/* <FallingLeaf
-            srcImg={LEAF_BORDER_PHOTO}
-            containerId={SECTIONS_ID.ABOUT}
-            initOffset={340}
-            delay={1000}
-          />
-          <FallingLeaf
-            srcImg={LEAF_SOLID_PHOTO}
-            containerId={SECTIONS_ID.ABOUT}
-            initOffset={80}
-            delay={3000}
-            optionSpeed={8}
-          />
-          <FallingLeaf
-            srcImg={LEAF_BORDER_PHOTO}
-            containerId={SECTIONS_ID.ABOUT}
-            initOffset={150}
-            delay={6000}
-            optionSpeed={10}
-          />
-          <FallingLeaf
-            srcImg={LEAF_SOLID_PHOTO}
-            containerId={SECTIONS_ID.ABOUT}
-            initOffset={250}
-            delay={8000}
-            optionSpeed={7}
-          />
-          <FallingLeaf
-            srcImg={LEAF_BORDER_PHOTO}
-            containerId={SECTIONS_ID.ABOUT}
-            initOffset={80}
-            delay={10000}
-            optionSpeed={9}
-          /> */}
         </div>
       )}
     </div>
