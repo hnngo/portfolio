@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import IntroductionTitle from "./components/IntroductionTitle";
 import IntroductionButton from "./components/IntroductionButton";
 import { SECTIONS_ID } from "../../shared/constants";

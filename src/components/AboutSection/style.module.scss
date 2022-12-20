@@ -7,6 +7,8 @@
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+
+
     position: relative;
     height: 100vh;
     overflow: hidden;
@@ -15,7 +17,22 @@
       height: auto;
       background-position-y: 30%;
     }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #D3CCE3;  /* fallback for old browsers */
+      background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+      opacity: 0.2;
+    }
   }
+  
 
   .row {
     padding-top: 90px;
