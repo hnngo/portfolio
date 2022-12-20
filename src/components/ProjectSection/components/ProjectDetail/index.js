@@ -8,7 +8,7 @@ import porjectThumbnailPlaceholder from "../../../../style/img/project_thumbnail
 // Constants and utils
 import cx from "classnames";
 import { PROJECT_INFO, TECH_LOGO } from "../../../../data";
-import ReactTooltip from "react-tooltip";
+import { Tooltip as ReactTooltip } from "react-tooltip";
 import { SECTIONS_ID } from "../../../../shared/constants";
 
 import styles from "./style.module.scss";
