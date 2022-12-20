@@ -18,7 +18,7 @@
 
   .header {
     @include pos(absolute, 25%);
-    width: 60vw;
+    width: 40vw;
 
     @include mq(tablet, max) {
       @include pos(absolute, 10%, unset, unset, 20%);

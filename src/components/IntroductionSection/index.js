@@ -5,11 +5,11 @@ import { SECTIONS_ID } from "../../shared/constants";
 
 import styles from "./style.module.scss";
 
-const TIME_OUT_FOR_TITLE = 1000;
-const TIME_OUT_FOR_NAME = 2000;
-const TIME_OUT_FOR_DESCRIPTION = 3000;
-const TIME_OUT_FOR_BUTTON = 4000;
-const TIME_OUT_FOR_LIGHT = 5000;
+const TIME_OUT_FOR_TITLE = 500;
+const TIME_OUT_FOR_NAME = 1500;
+const TIME_OUT_FOR_DESCRIPTION = 2500;
+const TIME_OUT_FOR_BUTTON = 3500;
+const TIME_OUT_FOR_LIGHT = 4500;
 
 const IntroductionSection = () => {
   const [showHeaderTitle, setShowHeaderTitle] = React.useState(false);
