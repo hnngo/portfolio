@@ -44,7 +44,7 @@ const AboutSection = ({ show }) => {
                 <h2 className={styles.helloText}>{ABOUT_CONTENT.hello}</h2>
                 <p className={styles.briefIntroText}>
                   {ABOUT_CONTENT.sentences.map((sentence, idx) => {
-                    return <><span key={idx}>{sentence}</span><br /><br /></>
+                    return <span key={idx}><span>{sentence}</span><br /><br /></span>
                   })}
                 </p>
                 <p className={styles.currentFocusText}>
