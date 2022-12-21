@@ -1,19 +1,37 @@
 {
   "expBoard": [
     {
+      "id": 5,
+      "employer": "Freightera Logistic Inc.",
+      "designation": "Software Engineer",
+      "compLogo": "https://hnngo-portfolio.s3.amazonaws.com/freightera_logo.png",
+      "headSentence": "Freightera Logistics Inc. is a Vancouver-based business to business (B2B) online freight marketplace that allows businesses to get road or rail transport quotes from North American carriers, and make direct shipment bookings.",
+      "jDHeader": "Responsibility:",
+      "jobDescription": [
+        "Maintaining and developed a seamlessly automated flow of works related to accounting team such as create/update/delete invoices or bills, automatically record transactions, refunds, and credit memos.",
+        "Helping boosting the performance of the accounting team and make the auditing job more reliable.",
+        "Developing the notification system that helps detect overdue invoices/bills, real-time notification of whenever users have difficulty in making payment, and a real-time system to detect all the suspicious payment fraud activities."
+      ],
+      "location": "Vancouver, British Columbia, Canada",
+      "timeFrom": "Apr 2021",
+      "timeTo": "now",
+      "show": "on"
+    },
+    {
       "id": 4,
       "employer": "Shopee",
       "designation": "Frontend Developer",
       "compLogo": "https://hnngo-portfolio.s3.amazonaws.com/shopee_logo.png",
-      "headSentence": "Currently, I am working as a Frontend Developer in Shopee, Singapore. Shopee is a Singaporean e-commerce platform under the Sea Group. Shopee first launched in Singapore in 2015, and since expanded its reach to Malaysia, Thailand, Taiwan, Indonesia, Vietnam, the Philippines, and Brazil",
-      "jDHeader": "Projects:",
+      "headSentence": "At the time when I still lived in Singapore, I was working as a Frontend Developer in Shopee, Singapore. Shopee is a Singaporean e-commerce platform under the Sea Group. Shopee first launched in Singapore in 2015, and since expanded its reach to Malaysia, Thailand, Taiwan, Indonesia, Vietnam, the Philippines, and Brazil",
+      "jDHeader": "Responsibility:",
       "jobDescription": [
-        "Invovle in implementing the new design of authentication",
-        "Tracking user behavioral data toward authentication process"
+        "Mainly worked on authentication-related UI such as login/signup, update user setting, KYC (know your customer), enhance users’ growth like welcome package, and user notification feature.",
+        "Tracking user behavioral data toward the authentication process.",
+        "Integrating fraud check UI into critical flows such as 3rd party social signup/login (Facebook, Google, Apple) or verify phone SMS in check out flow. Decrease the SMS cost by sending OTP code through WhatsApp."
       ],
       "location": "Science Park, Singapore",
       "timeFrom": "Nov 2019",
-      "timeTo": "Present",
+      "timeTo": "Jan 2021",
       "show": "on"
     },
     {
