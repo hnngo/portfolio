@@ -12,6 +12,8 @@ import cx from "classnames";
 
 import styles from "./style.module.scss";
 
+const EXP_DATA = EXP_BOARD_DATA.filter(e => e.show === "on");
+
 const ExperienceSection = ({ show }) => {
   const [isInited, setIsInited] = React.useState(false);
   const [eConHeight, setEConHeight] = React.useState(window.innerHeight);
@@ -38,10 +40,10 @@ const ExperienceSection = ({ show }) => {
       initResizeEvent();
 
       // Initial setup style
-      let newBoardScale = EXP_BOARD_DATA.map((_, i) => 1 - i * 0.1);
-      let newBoardOpacity = EXP_BOARD_DATA.map((_, i) => (i === 0 ? 1 : 0.3));
-      let newBoardZindex = EXP_BOARD_DATA.map(
-        (_, i) => EXP_BOARD_DATA.length - i
+      let newBoardScale = EXP_DATA.map((_, i) => 1 - i * 0.1);
+      let newBoardOpacity = EXP_DATA.map((_, i) => (i === 0 ? 1 : 0.3));
+      let newBoardZindex = EXP_DATA.map(
+        (_, i) => EXP_DATA.length - i
       );
 
       // Update transX
@@ -72,7 +74,7 @@ const ExperienceSection = ({ show }) => {
   const handleSelectMileStone = React.useCallback(
     (selectedVal) => {
       // Convert the data follow the direction 0 > max
-      let numberOfData = EXP_BOARD_DATA.length - 1;
+      let numberOfData = EXP_DATA.length - 1;
       let convertedVal = (selectedVal / 100) * -numberOfData + numberOfData;
 
       let newBoardScale = boardScale;
@@ -82,11 +84,11 @@ const ExperienceSection = ({ show }) => {
       let newBoardTransXOrigin = boardTransXOrigin;
 
       // Ignore if the boards not initialized
-      if (newBoardScale.length !== EXP_BOARD_DATA.length) {
+      if (newBoardScale.length !== EXP_DATA.length) {
         return;
       }
 
-      EXP_BOARD_DATA.forEach((_, i) => {
+      EXP_DATA.forEach((_, i) => {
         let delta = Math.abs(i - convertedVal);
         let signedDelta = i - convertedVal;
 
@@ -150,7 +152,7 @@ const ExperienceSection = ({ show }) => {
             isDarkTheme={true}
           />
           <div>
-            {EXP_BOARD_DATA.map((item, i) => (
+            {EXP_DATA.map((item, i) => (
               <ExpBoard
                 key={i}
                 keyBoard={i}
@@ -174,6 +176,7 @@ const ExperienceSection = ({ show }) => {
             className={cx(styles.yearSlideContainer, "animated slideInUp slow")}
           >
             <YearSlider
+              expData={[...EXP_DATA].reverse()}
               onSelectMS={(selectedVal) => handleSelectMileStone(selectedVal)}
             />
           </div>

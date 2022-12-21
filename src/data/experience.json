@@ -13,7 +13,8 @@
       ],
       "location": "Science Park, Singapore",
       "timeFrom": "Nov 2019",
-      "timeTo": "Present"
+      "timeTo": "Present",
+      "show": "on"
     },
     {
       "id": 3,
@@ -29,7 +30,8 @@
       ],
       "location": "Jurong West, Singapore",
       "timeFrom": "May 2018",
-      "timeTo": "Nov 2019"
+      "timeTo": "Nov 2019",
+      "show": "on"
     },
     {
       "id": 2,
@@ -43,7 +45,8 @@
       ],
       "location": "Ho Chi Minh, Vietnam",
       "timeFrom": "May 2017",
-      "timeTo": "Oct 2017"
+      "timeTo": "Oct 2017",
+      "show": "on"
     },
     {
       "id": 1,
@@ -58,7 +61,8 @@
       ],
       "location": "Ho Chi Minh, Vietnam",
       "timeFrom": "June 2016",
-      "timeTo": "Sep 2016"
+      "timeTo": "Sep 2016",
+      "show": "on"
     },
     {
       "id": 0,
@@ -73,7 +77,8 @@
       ],
       "location": "Ho Chi Minh, Vietnam",
       "timeFrom": "Aug 2012",
-      "timeTo": "Apr 2017"
+      "timeTo": "Apr 2017",
+      "show": "off"
     }
   ]
 }

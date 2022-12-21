@@ -11,8 +11,6 @@ import { EXP_BOARD_DATA } from "../../../../data";
 
 import styles from "./style.module.scss";
 
-const formattedData = [...EXP_BOARD_DATA].reverse();
-
 const SELECTED_SCALE = 3;
 const SELECTED_TRANSY = -5;
 export default class YearSlider extends Component {
@@ -20,10 +18,10 @@ export default class YearSlider extends Component {
     super(props);
 
     // Prepare milestones
-    let numberOfMilestones = formattedData.length;
+    let numberOfMilestones = this.props.expData.length;
     let milestonesRange = Math.floor(100 / (numberOfMilestones - 1));
     let valueMilestones = [];
-    formattedData.forEach((_, i) => {
+    this.props.expData.forEach((_, i) => {
       if (i === 0) {
         valueMilestones.push(0);
       } else if (i === numberOfMilestones - 1) {
@@ -36,9 +34,9 @@ export default class YearSlider extends Component {
     });
 
     // Init opacity, scale and translate
-    let msOpacities = formattedData.map(() => 0.3);
-    let msScale = formattedData.map(() => 1);
-    let msTransY = formattedData.map(() => 0);
+    let msOpacities = this.props.expData.map(() => 0.3);
+    let msScale = this.props.expData.map(() => 1);
+    let msTransY = this.props.expData.map(() => 0);
 
     this.state = {
       reSizeEvent: undefined,
@@ -181,11 +179,11 @@ export default class YearSlider extends Component {
 
     let offsetRange =
       (this.state.sliderWidth - this.state.milestonesRange) /
-      (formattedData.length - 1);
+      (this.props.expData.length - 1);
 
-    return formattedData.map((item, i) => {
+    return this.props.expData.map((item, i) => {
       let offsetLeft;
-      if (i === formattedData.length - 1) {
+      if (i === this.props.expData.length - 1) {
         offsetLeft = this.state.markerOffsetLeft + this.state.sliderWidth - 28;
       } else {
         offsetLeft = this.state.markerOffsetLeft + i * offsetRange;
