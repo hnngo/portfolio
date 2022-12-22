@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Components
 import SectionTitle from "../../shared/SectionTitle";
@@ -10,105 +10,78 @@ import { SECTIONS_ID } from "../../shared/constants";
 
 import styles from "./style.module.scss";
 
-export default class Projects extends Component {
-  constructor(props) {
-    super(props);
+const Projects = ({ show }) => {
+  const [boardView, setBoardView] = React.useState(true);
+  const [boardSelect, setBoardSelect] = React.useState(undefined);
+  const [boardAnimation, setBoardAnimation] = React.useState("fadeIn");
+  const [thumbnailsAnimation, setThumbnailsAnimation] = React.useState("slideInLeft");
+  const [slideLeftAnimation, setSlideLeftAnimation] = React.useState("slideInLeft");
+  const [slideRightAnimation, setSlideRightAnimation] = React.useState("slideInRight");
 
-    this.state = {
-      boardView: true,
-      boardSelect: undefined,
-      boardAnimation: "fadeIn",
-      thumbnailsAnimation: "slideInLeft",
-      slideLeftAnimation: "slideInLeft",
-      slideRightAnimation: "slideInRight"
-    };
-  }
-
-  handleClickBoard(index) {
+  const handleClickBoard = (index) => {
     // Set selected project and change view mode
-    this.setState(
-      {
-        boardSelect: index,
-        boardAnimation: "fadeOut"
-      },
-      () =>
-        setTimeout(() => {
-          this.setState({
-            boardView: false,
-            slideLeftAnimation: "slideInLeft",
-            thumbnailsAnimation: "slideInLeft",
-            slideRightAnimation: "slideInRight"
-          });
-        }, 800)
-    );
+    setBoardSelect(index);
+    setBoardAnimation("fadeOut");
+    setTimeout(() => {
+      setBoardView(false);
+      setSlideLeftAnimation("slideInLeft");
+      setThumbnailsAnimation("slideInLeft");
+      setSlideRightAnimation("slideInRight");
+    }, 800);
   }
 
-  handleClickThumbnail(index) {
+  const handleClickThumbnail = (index) => {
     // Check if click a already selected board
-    if (this.state.boardSelect === index) {
+    if (boardSelect === index) {
       return;
     }
 
-    // Animation fadeOut then fadeIn for new selected board
-    this.setState(
-      {
-        slideLeftAnimation: "fadeOutLeft",
-        slideRightAnimation: "fadeOutRight",
-        boardSelect: index
-      },
-      () =>
-        setTimeout(() => {
-          this.setState({
-            slideLeftAnimation: "slideInLeft",
-            slideRightAnimation: "slideInRight"
-          });
-        }, 800)
-    );
+    setBoardSelect(index);
+    setSlideLeftAnimation("fadeOutLeft");
+    setSlideRightAnimation("fadeOutRight");
+    setTimeout(() => {
+      setSlideLeftAnimation("slideInLeft");
+      setSlideRightAnimation("slideInRight");
+    }, 800)
   }
 
-  handleClickBackToBoards() {
+  const handleClickBackToBoards = () => {
     // Animation fadeOut then fadeIn back to board view
-    this.setState(
-      {
-        slideLeftAnimation: "fadeOutLeft",
-        thumbnailsAnimation: "fadeOutLeft",
-        slideRightAnimation: "fadeOutRight"
-      },
-      () =>
-        setTimeout(() => {
-          this.setState({
-            boardSelect: undefined,
-            boardAnimation: "fadeIn",
-            boardView: true
-          });
-        }, 1000)
-    );
+    setSlideLeftAnimation("fadeOutLeft");
+    setThumbnailsAnimation("fadeOutLeft");
+    setSlideRightAnimation("fadeOutRight");
+    setTimeout(() => {
+      setBoardSelect(undefined);
+      setBoardAnimation("fadeIn");
+      setBoardView(true);
+    }, 1000)
   }
 
-  render() {
-    return (
-      <div id={SECTIONS_ID.PROJECTS} className={styles.container}>
-        {this.props.show && (
-          <div className="container">
-            <SectionTitle title="Projects" icon="fab fa-stumbleupon-circle" />
-            {this.state.boardView ? (
-              <ProjectCards
-                animation={this.state.boardAnimation}
-                onClickBoard={(i, e) => this.handleClickBoard(i, e)}
-              />
-            ) : (
-              <ProjectDetail
-                animation={this.state.thumbnailsAnimation}
-                selectedIndex={this.state.boardSelect}
-                onClickThumbnail={i => this.handleClickThumbnail(i)}
-                onClickBackToBoardView={() => this.handleClickBackToBoards()}
-                slideLeftAnimation={this.state.slideLeftAnimation}
-                slideRightAnimation={this.state.slideRightAnimation}
-              />
-            )}
-          </div>
-        )}
-      </div>
-    );
-  }
+
+  return (
+    <div id={SECTIONS_ID.PROJECTS} className={styles.container}>
+      {show && (
+        <div className="container">
+          <SectionTitle title="Projects" icon="fab fa-stumbleupon-circle" />
+          {boardView ? (
+            <ProjectCards
+              animation={boardAnimation}
+              onClickBoard={(i, e) => handleClickBoard(i, e)}
+            />
+          ) : (
+            <ProjectDetail
+              animation={thumbnailsAnimation}
+              selectedIndex={boardSelect}
+              onClickThumbnail={i => handleClickThumbnail(i)}
+              onClickBackToBoardView={() => handleClickBackToBoards()}
+              slideLeftAnimation={slideLeftAnimation}
+              slideRightAnimation={slideRightAnimation}
+            />
+          )}
+        </div>
+      )}
+    </div>
+  );
 }
+
+export default Projects;
