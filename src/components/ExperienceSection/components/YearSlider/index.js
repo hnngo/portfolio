@@ -7,7 +7,6 @@ import companyPlaceHolder from "../../../../style/img/company_logo_ph.png";
 // Utils and constants
 import { selectNearestElems, isSmallScreen } from "../../../../utils";
 import { SECTIONS_ID } from "../../../../shared/constants";
-import { EXP_BOARD_DATA } from "../../../../data";
 
 import styles from "./style.module.scss";
 
