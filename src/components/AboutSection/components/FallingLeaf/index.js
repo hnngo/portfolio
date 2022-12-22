@@ -59,7 +59,7 @@ export default class FallingLeaf extends Component {
           // Reset new offset left
           let newLeftOffset = Math.random() * qContainer.clientWidth;
 
-          this.setState({
+          return this.setState({
             leafPosition: -60,
             leafOffsetLeft: newLeftOffset,
           });

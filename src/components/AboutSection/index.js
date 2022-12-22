@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Components
 import SectionTitle from "../../shared/SectionTitle";
@@ -14,106 +14,85 @@ import { ABOUT_CONTENT } from "../../content";
 import styles from "./style.module.scss";
 import LazyImage from "../../shared/LazyImage";
 
-export default class AboutSection extends Component {
-  render() {
-    return (
-      <div id={SECTIONS_ID.ABOUT} className={styles.container}>
-        {!this.props.show ? null : (
-          <div>
-            <div className="container">
-              <SectionTitle
-                title={ABOUT_CONTENT.title}
-                icon="fas fa-info-circle"
-                capitalize
-              />
-              <div className={cx(styles.row, "row")}>
-                <div
-                  className={cx(
-                    styles.avatarWrapper,
-                    "col-sm-6 animated fadeInLeft"
-                  )}
-                >
-                  <LazyImage
-                    src={PROFILE_PHOTO}
-                    placeholder={profilePlaceHolder}
-                    className={styles.avatar}
-                  />
-                </div>
-                <div
-                  className={cx(styles.text, "col-sm-6 animated fadeInRight")}
-                >
-                  <h2 className={styles.helloText}>{ABOUT_CONTENT.hello}</h2>
-                  <p className={styles.briefIntroText}>
-                    {ABOUT_CONTENT.firstSentence}
-                    <br />
-                    <br />
-                    {ABOUT_CONTENT.secondSentence}
-                  </p>
-                  <p className={styles.currentFocusText}>
-                    {ABOUT_CONTENT.focusHeader}
-                    <span>
-                      &nbsp;
-                      {ABOUT_CONTENT.focusTech}
-                    </span>
-                  </p>
-                  <div className={styles.socialLink}>
-                    <a
-                      href="https://github.com/hnngo"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i className={cx(styles.githubIcon, "fab fa-github")} />
-                    </a>
-                    <a
-                      href="https://www.linkedin.com/in/ngohuynhnhan/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <i
-                        className={cx(styles.linkedinIcon, "fab fa-linkedin")}
-                      />
-                    </a>
-                  </div>
+const AboutSection = ({ show }) => {
+  return (
+    <div id={SECTIONS_ID.ABOUT} className={styles.container}>
+      {!show ? null : (
+        <div>
+          <div className="container">
+            <SectionTitle
+              title={ABOUT_CONTENT.title}
+              icon="fas fa-info-circle"
+              capitalize
+            />
+            <div className={cx(styles.row, "row")}>
+              <div
+                className={cx(
+                  styles.avatarWrapper,
+                  "col-sm-6 animated fadeInLeft"
+                )}
+              >
+                <LazyImage
+                  src={PROFILE_PHOTO}
+                  placeholder={profilePlaceHolder}
+                  className={styles.avatar}
+                />
+              </div>
+              <div
+                className={cx(styles.text, "col-sm-6 animated fadeInRight")}
+              >
+                <h2 className={styles.helloText}>{ABOUT_CONTENT.hello}</h2>
+                <p className={styles.briefIntroText}>
+                  {ABOUT_CONTENT.sentences.map((sentence, idx) => {
+                    return <span key={idx}><span>{sentence}</span><br /><br /></span>
+                  })}
+                </p>
+                <p className={styles.currentFocusText}>
+                  {ABOUT_CONTENT.focusHeader}
+                  <span>
+                    &nbsp;
+                    {ABOUT_CONTENT.focusTech}
+                  </span>
+                </p>
+                <div className={styles.socialLink}>
+                  <a
+                    href="https://github.com/hnngo"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className={cx(styles.githubIcon, "fab fa-github")} />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/ngohuynhnhan/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i
+                      className={cx(styles.linkedinIcon, "fab fa-linkedin")}
+                    />
+                  </a>
                 </div>
               </div>
             </div>
-            <FallingLeaf
-              srcImg={LEAF_BORDER_PHOTO}
-              containerId={SECTIONS_ID.ABOUT}
-              initOffset={340}
-              delay={1000}
-            />
-            <FallingLeaf
-              srcImg={LEAF_SOLID_PHOTO}
-              containerId={SECTIONS_ID.ABOUT}
-              initOffset={80}
-              delay={3000}
-              optionSpeed={8}
-            />
-            <FallingLeaf
-              srcImg={LEAF_BORDER_PHOTO}
-              containerId={SECTIONS_ID.ABOUT}
-              initOffset={150}
-              delay={6000}
-              optionSpeed={10}
-            />
-            <FallingLeaf
-              srcImg={LEAF_SOLID_PHOTO}
-              containerId={SECTIONS_ID.ABOUT}
-              initOffset={250}
-              delay={8000}
-              optionSpeed={7}
-            />
-            <FallingLeaf
-              srcImg={LEAF_BORDER_PHOTO}
-              containerId={SECTIONS_ID.ABOUT}
-              initOffset={80}
-              delay={10000}
-              optionSpeed={9}
-            />
           </div>
-        )}
-      </div>
-    );
-  }
+          {
+            Array(6).fill(0).map((_, idx) => {
+              return (
+                <FallingLeaf
+                  key={idx}
+                  srcImg={Math.random() > 0.5 ? LEAF_BORDER_PHOTO : LEAF_SOLID_PHOTO}
+                  containerId={SECTIONS_ID.ABOUT}
+                  initOffset={Math.round((Math.random() * (1600 - 80)) + 80)}
+                  delay={Math.round(Math.random() * 20000)}
+                  optionSpeed={Math.round(Math.random() * 5 + 3)}
+                />
+              )
+            })
+          }
+        </div>
+      )}
+    </div>
+  );
 }
+
+export default AboutSection;

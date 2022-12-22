@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 
 // Components
 import NavBar from "./Navbar";
@@ -13,20 +13,14 @@ import "./style.module.scss";
 import "../style/animation.css";
 import { SECTIONS_ID } from "../shared/constants";
 
-class App extends Component {
-  constructor(props) {
-    super(props);
+const App = () => {
+  const [scrollInterval, setScrollInterval] = React.useState(undefined);
+  const [showAbout, setShowAbout] = React.useState(false);
+  const [showExperience, setShowExperience] = React.useState(false);
+  const [showProjects, setShowProjects] = React.useState(false);
+  const [showContact, setShowContact] = React.useState(false);
 
-    this.state = {
-      scrollInterval: undefined,
-      showAbout: false,
-      showExperience: false,
-      showProjects: false,
-      showContact: false
-    };
-  }
-
-  componentDidMount() {
+  React.useEffect(() => {
     // Scroll to top
     window.scroll({
       top: 0,
@@ -34,17 +28,10 @@ class App extends Component {
     });
 
     // Interval checking for showing page
-    let scrollInterval = setInterval(() => {
-      const {
-        showAbout,
-        showExperience,
-        showProjects,
-        showContact
-      } = this.state;
-
+    let scrollIntervalAssign = setInterval(() => {
       // If all true, then stop the interval
       if (showAbout && showExperience && showProjects) {
-        clearInterval(this.state.scrollInterval);
+        clearInterval(scrollInterval);
         return;
       }
 
@@ -55,7 +42,7 @@ class App extends Component {
         (window.scrollY * 1) / 2;
 
       if (window.scrollY >= yAbout && !showAbout) {
-        this.setState({ showAbout: true });
+        setShowAbout(true);
       }
 
       // Experience
@@ -66,7 +53,7 @@ class App extends Component {
         (window.scrollY * 4) / 5;
 
       if (window.scrollY >= yExperience && !showExperience) {
-        setTimeout(() => this.setState({ showExperience: true }), 400);
+        setTimeout(() => setShowExperience(true), 400);
       }
 
       // Projects
@@ -77,7 +64,7 @@ class App extends Component {
         (window.scrollY * 4) / 5;
 
       if (window.scrollY >= yProjects && !showProjects) {
-        setTimeout(() => this.setState({ showProjects: true }), 400);
+        setTimeout(() => setShowProjects(true), 400);
       }
 
       // Contact
@@ -86,29 +73,28 @@ class App extends Component {
         .getBoundingClientRect().top;
 
       if (window.scrollY >= yContact && !showContact) {
-        setTimeout(() => this.setState({ showContact: true }), 400);
+        setTimeout(() => setShowContact(true), 400);
       }
     }, 100);
 
-    this.setState({ scrollInterval });
-  }
+    setScrollInterval(scrollIntervalAssign)
 
-  componentWillUnmount() {
-    clearInterval(this.state.scrollInterval);
-  }
+    return () => {
+      clearInterval(scrollInterval);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  render() {
-    return (
-      <div>
-        <NavBar />
-        <Introduction />
-        <AboutPage show={this.state.showAbout} />
-        <Experience show={this.state.showExperience} />
-        <Projects show={this.state.showProjects} />
-        <Contact show={this.state.showContact} />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <NavBar />
+      <Introduction />
+      <AboutPage show={showAbout} />
+      <Experience show={showExperience} />
+      <Projects show={showProjects} />
+      <Contact show={showContact} />
+    </div>
+  );
 }
 
 export default App;

@@ -47,7 +47,7 @@ export default class ContactSection extends Component {
               <h6 className={styles.hText}>h</h6>
             </div>
           </div>
-          <p className={styles.updateTime}>Last update 11 April 2020</p>
+          <p className={styles.updateTime}>Last update: Dec 22nd 2022</p>
         </div>
       </div>
     );

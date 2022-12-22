@@ -1,7 +1,7 @@
-import * as EXP_DATA from "./experience.json";
-import * as PROJECTS_DATA from "./projects.json";
-import * as ABOUT_DATA from "./about.json";
-import * as CONTACT_DATA from "./contact.json";
+import EXP_DATA from "./experience.json";
+import PROJECTS_DATA from "./projects.json";
+import ABOUT_DATA from "./about.json";
+import CONTACT_DATA from "./contact.json";
 
 // ABOUT
 export const PROFILE_PHOTO = ABOUT_DATA.profilePhoto;

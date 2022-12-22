@@ -14,7 +14,7 @@ const IntroductionTitle = ({ showHeaderTitle, showDescription, showName }) => {
           </h6>
           {showName ? (
             <h6 className={cx(styles.name, "animated slideInRight")}>
-              ,&nbsp;
+              &nbsp;
               {INTRODUCTION.name}
             </h6>
           ) : (

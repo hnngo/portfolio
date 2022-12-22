@@ -3,13 +3,13 @@
 
 :local {
   .hiText {
-    @include fontFam(monte, 66px, bold, $main-purple);
-    text-shadow: 1px 2px 2px white;
+    @include fontFam(monte, 38px, unset, $off-white);
+    padding-top: 30px;
   }
 
   .name {
-    @include fontFam(monte, 38px, unset, $off-white);
-    padding-top: 30px;
+    @include fontFam(monte, 58px, bold, $main-purple);
+    text-shadow: 1px 2px 2px white;
   }
 
   .description {
