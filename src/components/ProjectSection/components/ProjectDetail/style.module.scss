@@ -45,7 +45,7 @@
   }
 
   .backToBoardButton {
-    @include pos(absolute, 35px, $left: 0px);
+    @include pos(absolute, -70px, $left: 0px);
     cursor: pointer;
     display: flex;
     width: 190px;

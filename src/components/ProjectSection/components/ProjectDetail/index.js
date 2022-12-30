@@ -54,7 +54,7 @@ const ProjectDetail = ({
               <div className={styles.detailTechLogoContainer}>
                 {board.technologies.map((item, i) => {
                   return (
-                    <Tooltip title={item} placement="top" arrow>
+                    <Tooltip key={item} title={item} placement="top" arrow>
                       <div key={i} className={styles.detailTechLogoWrapper}>
                         <LazyImage
                           className={styles.detailTechLogo}
@@ -140,5 +140,3 @@ const ProjectDetail = ({
 };
 
 export default ProjectDetail;
-
-// TODO: Add placeholder for Image

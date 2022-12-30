@@ -1,6 +1,26 @@
 {
   "projectInfo": [
     {
+      "id": 5,
+      "name": "Serverless Shoe Website",
+      "description": "A modern, scalable, and cost-effective solution for an online shoe store using React as the frontend and various AWS services as Backend layer",
+      "details": [
+        "The use of React for the frontend allows for a fast and responsive user interface, while the use of AWS Lambda as the backend enables the website to be fully serverless, meaning it can automatically scale up or down to meet the demand of users without the need for manual intervention",
+        "Additionally, the use of more than 15 different AWS services in the infrastructure allows for a robust and reliable system that can handle a large volume of traffic and transactions",
+        "Overall, this website provides a seamless and efficient shopping experience for customers while being able to handle a high volume of traffic and transactions.",
+        "Features: view shoe details, cart persistence, promotion code, view purchase history, place/cancel order, email order confirmation, admin dashboard to add/update/remove shoes/promocode, automatically generate daily sales report, automatically email low stock items to admin"
+      ],
+      "technologies": [
+        "react",
+        "aws",
+        "nodejs"
+      ],
+      "bannerImg": "https://hnngo-portfolio.s3.amazonaws.com/projects/severless_shoe_website/banner.png",
+      "website": "",
+      "githubLink": "https://github.com/hnngo/shoe-serverless",
+      "devices": "https://hnngo-portfolio.s3.amazonaws.com/projects/severless_shoe_website/devices.png"
+    },
+    {
       "id": 4,
       "name": "Poll Generator",
       "description": "A poll service that allows clients to create or vote polls with pre-defined choices. The poll can be configured as a public poll or a private poll. Clients are able to select one choice or multiple choices at a time",
