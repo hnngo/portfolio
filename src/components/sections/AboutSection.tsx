@@ -10,9 +10,15 @@ export function AboutSection({ content }: AboutSectionProps) {
     <section className="content-section about-section reveal-on-scroll" id="about">
       <div className="split-layout reveal-children">
         <div className="identity-panel">
+          <img
+            alt="Huynh Nhan Ngo portrait"
+            className="identity-photo"
+            loading="lazy"
+            src="https://hnngo-portfolio.s3.amazonaws.com/profile-photo.jpg"
+          />
+          <div className="identity-overlay" />
           <div className="identity-topline">
             <p className="section-eyebrow">PROFILE</p>
-            <p className="identity-mark">HN</p>
           </div>
           <p className="identity-copy">Full-stack engineer with a bias for clear systems, polished interfaces, and practical delivery.</p>
         </div>

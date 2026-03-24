@@ -219,16 +219,35 @@ export const siteContent: SiteContent = {
   },
   experience: [
     {
-      company: "Freightera Logistics Inc.",
-      title: "Software Engineer",
-      dates: "Apr 2021 - Present",
-      location: "Vancouver, British Columbia",
+      company: "ABC Trainerize",
+      title: "Intermediate Software Engineer",
+      dates: "Apr 2023 - Present",
+      location: "Vancouver, British Columbia, Canada · Remote",
       highlights: [
-        "Delivered automated accounting workflows for invoices, bills, refunds, and credit memos across finance operations.",
-        "Reduced manual overhead for the accounting team while improving audit reliability in operational finance flows.",
-        "Built monitoring and notification systems for overdue invoices, payment failures, and suspicious fraud-related activity."
+        "Built and iterated on custom form systems for trainer workflows, including check-ins, onboarding, and waivers, improving data collection and the onboarding experience.",
+        "Developed and maintained end-to-end product features across messaging, workout program builder, and client management, improving usability and performance across the platform.",
+        "Owned feature updates and bug fixes for scheduling, habit tracking, and forms, helping keep the experience reliable for both coaches and clients.",
+        "Collaborated with product and design to scope, prioritize, and ship features with clear requirements and measurable outcomes."
       ],
-      stack: ["React", "Node.js", "Automation", "Payments"]
+      stack: ["React", "Product Development", "Forms", "Scheduling"],
+      logoSrc: "https://hnngo-portfolio.s3.us-east-1.amazonaws.com/abc-trainerize.png",
+      logoAlt: "ABC Trainerize logo",
+      logoTone: "warm"
+    },
+    {
+      company: "Freightera Logistics Inc.",
+      title: "Software Developer",
+      dates: "May 2021 - Mar 2023",
+      location: "Vancouver, British Columbia, Canada",
+      highlights: [
+        "Maintained and developed automated accounting workflows for invoices, bills, refunds, and credit memos across finance operations.",
+        "Helped improve accounting team performance while making auditing work more reliable.",
+        "Built notification systems for overdue invoices and bills, payment issues, and suspicious fraud-related activity."
+      ],
+      stack: ["React", "Node.js", "Automation", "Payments"],
+      logoSrc: "https://hnngo-portfolio.s3.amazonaws.com/freightera_logo.png",
+      logoAlt: "Freightera logo",
+      logoTone: "cool"
     },
     {
       company: "Shopee",
@@ -240,7 +259,10 @@ export const siteContent: SiteContent = {
         "Supported growth and onboarding experiences tied to high-traffic identity journeys.",
         "Integrated fraud-check UI into signup, login, and checkout verification flows, including SMS and WhatsApp-based verification patterns."
       ],
-      stack: ["Frontend", "Authentication", "Growth", "Fraud Detection"]
+      stack: ["Frontend", "Authentication", "Growth", "Fraud Detection"],
+      logoSrc: "https://hnngo-portfolio.s3.amazonaws.com/shopee_logo.png",
+      logoAlt: "Shopee logo",
+      logoTone: "warm"
     },
     {
       company: "Nanyang Technological University",
@@ -252,7 +274,10 @@ export const siteContent: SiteContent = {
         "Worked across network flow, matching-path analysis, and failure-prevention strategies.",
         "Developed analytical rigor that still shapes how I think about systems, dependencies, and failure modes today."
       ],
-      stack: ["Research", "Networks", "Systems Thinking"]
+      stack: ["Research", "Networks", "Systems Thinking"],
+      logoSrc: "https://hnngo-portfolio.s3.amazonaws.com/ntu_logo.png",
+      logoAlt: "Nanyang Technological University logo",
+      logoTone: "neutral"
     },
     {
       company: "Fiot Co. LTD.",
@@ -263,7 +288,10 @@ export const siteContent: SiteContent = {
         "Contributed to embedded and IoT product development in an outsourcing environment.",
         "Worked with wireless solutions including Bluetooth, WiFi, Zigbee, and custom RF integrations."
       ],
-      stack: ["Embedded Systems", "IoT", "Wireless"]
+      stack: ["Embedded Systems", "IoT", "Wireless"],
+      logoSrc: "https://hnngo-portfolio.s3.amazonaws.com/fiot_logo.jpg",
+      logoAlt: "Fiot logo",
+      logoTone: "cool"
     },
     {
       company: "MobiFone Testing and Maintenance Center",
@@ -274,7 +302,10 @@ export const siteContent: SiteContent = {
         "Studied LTE accessibility optimization and measured network accessibility performance.",
         "Participated in real-world 4G signal measurement work across a defined field area."
       ],
-      stack: ["Telecom", "LTE", "Field Testing"]
+      stack: ["Telecom", "LTE", "Field Testing"],
+      logoSrc: "https://hnngo-portfolio.s3.amazonaws.com/mobifone_logo.png",
+      logoAlt: "MobiFone logo",
+      logoTone: "neutral"
     }
   ],
   snapshot: [

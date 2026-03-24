@@ -61,6 +61,10 @@ export interface ExperienceItem {
   location: string;
   highlights: string[];
   stack: string[];
+  logoLabel?: string;
+  logoSrc?: string;
+  logoAlt?: string;
+  logoTone?: "warm" | "cool" | "neutral";
 }
 
 export interface SnapshotItem {

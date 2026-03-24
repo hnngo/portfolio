@@ -18,6 +18,18 @@ export function ExperienceSection({ items }: ExperienceSectionProps) {
         {items.map((item) => (
           <article key={`${item.company}-${item.dates}`} className="timeline-card">
             <div className="timeline-meta">
+              <div className={`company-mark company-mark-${item.logoTone ?? "neutral"}`} aria-hidden="true">
+                {item.logoSrc ? (
+                  <img
+                    alt={item.logoAlt ?? `${item.company} logo`}
+                    className="company-mark-image"
+                    loading="lazy"
+                    src={item.logoSrc}
+                  />
+                ) : (
+                  <span>{item.logoLabel ?? getCompanyInitials(item.company)}</span>
+                )}
+              </div>
               <p>{item.dates}</p>
               <span>{item.location}</span>
             </div>
@@ -42,4 +54,13 @@ export function ExperienceSection({ items }: ExperienceSectionProps) {
       </div>
     </section>
   );
+}
+
+function getCompanyInitials(company: string) {
+  return company
+    .split(/\s+/)
+    .filter((segment) => segment.length > 0)
+    .slice(0, 2)
+    .map((segment) => segment[0]?.toUpperCase() ?? "")
+    .join("");
 }

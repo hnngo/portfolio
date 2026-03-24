@@ -334,6 +334,52 @@
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
 }
 
+.company-mark {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 18px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.company-mark span {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.company-mark-warm {
+  background:
+    radial-gradient(circle at 30% 28%, rgba(201, 111, 74, 0.34), transparent 42%),
+    rgba(22, 32, 51, 0.92);
+  color: #f7e8e0;
+}
+
+.company-mark-cool {
+  background:
+    radial-gradient(circle at 34% 26%, rgba(125, 211, 199, 0.3), transparent 40%),
+    rgba(20, 31, 48, 0.94);
+  color: #e2fbf7;
+}
+
+.company-mark-neutral {
+  background:
+    radial-gradient(circle at 34% 26%, rgba(244, 239, 231, 0.14), transparent 40%),
+    rgba(20, 31, 48, 0.94);
+  color: #f4efe7;
+}
+
+.company-mark-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .snapshot-card {
   position: relative;
   overflow: hidden;
