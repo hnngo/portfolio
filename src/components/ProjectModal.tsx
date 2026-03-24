@@ -105,12 +105,20 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
           </div>
 
           <div className={`modal-visual visual-${project.accent}`}>
-            <img
-              alt={project.imageAlt}
-              className="modal-project-image"
-              loading="lazy"
-              src={project.detailImage}
-            />
+            {project.detailImage ? (
+              <img
+                alt={project.imageAlt}
+                className="modal-project-image"
+                loading="lazy"
+                src={project.detailImage}
+              />
+            ) : (
+              <div className="modal-project-fallback" aria-hidden="true">
+                <span>{project.role}</span>
+                <strong>{project.name}</strong>
+                <p>{project.stack.slice(0, 4).join(" • ")}</p>
+              </div>
+            )}
             <div className="visual-panel">
               <p>Case Study</p>
               <strong>{project.name}</strong>

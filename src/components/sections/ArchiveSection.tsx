@@ -19,12 +19,18 @@ export function ArchiveSection({ projects, onOpenProject }: ArchiveSectionProps)
         {projects.map((project) => (
           <article key={project.id} className="archive-card">
             <div className={`archive-visual visual-${project.accent}`}>
-              <img
-                alt={project.imageAlt}
-                className="archive-image"
-                loading="lazy"
-                src={project.previewImage}
-              />
+              {project.previewImage ? (
+                <img
+                  alt={project.imageAlt}
+                  className="archive-image"
+                  loading="lazy"
+                  src={project.previewImage}
+                />
+              ) : (
+                <div className="project-visual-fallback archive-visual-fallback" aria-hidden="true">
+                  <span>{project.stack.slice(0, 3).join(" • ")}</span>
+                </div>
+              )}
             </div>
             <p className="section-eyebrow">{project.role}</p>
             <h3>{project.name}</h3>

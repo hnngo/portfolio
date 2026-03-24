@@ -117,7 +117,7 @@
   }
 
   .modal-overlay {
-    padding: 10px;
+    padding: 10px 10px max(22px, env(safe-area-inset-bottom) + 10px);
   }
 
   .contact-card {

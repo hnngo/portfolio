@@ -26,15 +26,20 @@ export function SelectedWorkSection({
             className={index === 0 ? "project-card featured-primary" : "project-card featured-secondary"}
           >
             <div className={`project-visual visual-${project.accent}`}>
-              <img
-                alt={project.imageAlt}
-                className="project-visual-image"
-                loading="lazy"
-                src={project.previewImage}
-              />
+              {project.previewImage ? (
+                <img
+                  alt={project.imageAlt}
+                  className="project-visual-image"
+                  loading="lazy"
+                  src={project.previewImage}
+                />
+              ) : (
+                <div className="project-visual-fallback" aria-hidden="true">
+                  <span>{project.stack.slice(0, 3).join(" • ")}</span>
+                </div>
+              )}
               <div className="project-visual-overlay">
                 <p>{project.role}</p>
-                <strong>{project.name}</strong>
               </div>
             </div>
             <div className="project-card-body">

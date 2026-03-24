@@ -47,36 +47,44 @@ export const siteContent: SiteContent = {
       imageAlt: "Serverless Shoe Website preview"
     },
     {
-      id: "poll-generator",
-      name: "Poll Generator",
-      role: "Full-stack Systems Case Study",
-      timeframe: "Real-time voting with Redis + PostgreSQL",
+      id: "flashee",
+      name: "Flashee",
+      role: "Full-stack Marketplace + Shopify Integration",
+      timeframe: "Two-sided platform (buyer storefront + merchant app)",
       summary:
-        "A real-time poll platform built to handle fast voting traffic while keeping the application architecture explicit and operationally realistic.",
+        "A marketplace platform designed to help slow-fashion designers reach more customers by combining a discovery-focused storefront with a Shopify-integrated merchant system.",
       problem:
-        "The core problem was handling high-speed vote writes without pushing all traffic directly into the primary relational datastore.",
+        "Independent designers had to manage everything themselves, from product creation to marketing and sales, without a centralized platform for discovery or structured onboarding. On the technical side, enabling a marketplace meant bridging a public shopping experience with merchant-controlled Shopify stores that are typically admin-focused rather than discovery-driven.",
       solution:
-        "I split responsibilities across PostgreSQL for durable poll data, Redis for fast vote processing, Node.js for backend logic, and a React plus Redux client for the user experience. Nginx and Vagrant were used to model a more realistic deployment setup.",
+        "I built a two-sided system: a Next.js buyer-facing marketplace for discovery, browsing, and purchasing, and a Shopify-embedded merchant app for onboarding, catalog management, and marketplace participation. The system connects both surfaces through a shared API layer, enabling consistent product data, cart flows, and operational logic across the platform.",
       impact:
-        "The project shows how I think about architecture under load: choosing the right persistence model for each responsibility, reducing bottlenecks, and still keeping the user flow simple.",
+        "Flashee creates a unified experience where designers can focus on their craft while the platform handles discovery and marketplace operations. It demonstrates how I design full-stack systems that connect user-facing products with internal workflows and third-party platforms.",
       highlights: [
-        "Separated high-throughput voting operations from durable poll storage.",
-        "Built a React voting experience with real-time-feeling interaction patterns.",
-        "Modeled the stack with Nginx and Vagrant to reflect a more production-like environment."
+        "Designed and built a two-sided architecture connecting a public marketplace with a Shopify-integrated merchant system.",
+        "Implemented a Next.js storefront with SSR for product discovery, brand browsing, and shopping flows.",
+        "Built merchant onboarding and management flows inside Shopify using App Bridge and Polaris.",
+        "Created a shared API layer used by both buyer and merchant applications.",
+        "Integrated authentication across Supabase, email flows, and social OAuth including Google, Instagram, and TikTok.",
+        "Added an AI-assisted shopping experience to support product discovery and user engagement."
       ],
-      stack: ["React", "Redux", "Node.js", "Redis", "PostgreSQL"],
-      links: [
-        {
-          label: "Code",
-          href: "https://github.com/hnngo/poll-generator-with-redis"
-        }
+      stack: [
+        "Next.js",
+        "React",
+        "Node.js",
+        "Express",
+        "Shopify App",
+        "Supabase",
+        "Redux",
+        "PostgreSQL",
+        "Tailwind"
       ],
+      links: [],
       accent: "cool",
       previewImage:
-        "https://hnngo-portfolio.s3.amazonaws.com/projects/poll_generator/banner.png",
+        "https://hnngo-portfolio.s3.amazonaws.com/projects/flashee/banner.png",
       detailImage:
-        "https://hnngo-portfolio.s3.amazonaws.com/projects/poll_generator/devices.png",
-      imageAlt: "Poll Generator preview"
+        "https://hnngo-portfolio.s3.amazonaws.com/projects/flashee/devices.png",
+      imageAlt: "Flashee marketplace platform preview"
     },
     {
       id: "social-x",
@@ -110,6 +118,38 @@ export const siteContent: SiteContent = {
     }
   ],
   archiveProjects: [
+    {
+      id: "poll-generator",
+      name: "Poll Generator",
+      role: "Full-stack Systems Case Study",
+      timeframe: "Real-time voting with Redis + PostgreSQL",
+      summary:
+        "A real-time poll platform built to handle fast voting traffic while keeping the application architecture explicit and operationally realistic.",
+      problem:
+        "The core problem was handling high-speed vote writes without pushing all traffic directly into the primary relational datastore.",
+      solution:
+        "I split responsibilities across PostgreSQL for durable poll data, Redis for fast vote processing, Node.js for backend logic, and a React plus Redux client for the user experience. Nginx and Vagrant were used to model a more realistic deployment setup.",
+      impact:
+        "The project shows how I think about architecture under load: choosing the right persistence model for each responsibility, reducing bottlenecks, and still keeping the user flow simple.",
+      highlights: [
+        "Separated high-throughput voting operations from durable poll storage.",
+        "Built a React voting experience with real-time-feeling interaction patterns.",
+        "Modeled the stack with Nginx and Vagrant to reflect a more production-like environment."
+      ],
+      stack: ["React", "Redux", "Node.js", "Redis", "PostgreSQL"],
+      links: [
+        {
+          label: "Code",
+          href: "https://github.com/hnngo/poll-generator-with-redis"
+        }
+      ],
+      accent: "cool",
+      previewImage:
+        "https://hnngo-portfolio.s3.amazonaws.com/projects/poll_generator/banner.png",
+      detailImage:
+        "https://hnngo-portfolio.s3.amazonaws.com/projects/poll_generator/devices.png",
+      imageAlt: "Poll Generator preview"
+    },
     {
       id: "shoeniverse",
       name: "Shoeniverse",
