@@ -1,4 +1,5 @@
 import { SectionHeading } from "../SectionHeading";
+import { SkillTag } from "../SkillTag";
 import type { Project } from "../../types/content";
 
 interface ArchiveSectionProps {
@@ -17,12 +18,14 @@ export function ArchiveSection({ projects, onOpenProject }: ArchiveSectionProps)
       <div className="archive-grid reveal-children">
         {projects.map((project) => (
           <article key={project.id} className="archive-card">
-            <img
-              alt={project.imageAlt}
-              className="archive-image"
-              loading="lazy"
-              src={project.previewImage}
-            />
+            <div className={`archive-visual visual-${project.accent}`}>
+              <img
+                alt={project.imageAlt}
+                className="archive-image"
+                loading="lazy"
+                src={project.previewImage}
+              />
+            </div>
             <p className="section-eyebrow">{project.role}</p>
             <h3>{project.name}</h3>
             <p className="project-timeframe">{project.timeframe}</p>
@@ -34,17 +37,25 @@ export function ArchiveSection({ projects, onOpenProject }: ArchiveSectionProps)
             </ul>
             <div className="tag-row">
               {project.stack.map((tag) => (
-                <span key={tag} className="tag">
-                  {tag}
-                </span>
+                <SkillTag key={tag} label={tag} />
               ))}
             </div>
             <div className="link-row">
-              <button className="secondary-link button-link" onClick={() => onOpenProject(project)} type="button">
+              <button
+                className="secondary-link action-chip action-chip-primary button-link"
+                onClick={() => onOpenProject(project)}
+                type="button"
+              >
                 Open Case Study
               </button>
               {project.links.map((link) => (
-                <a key={link.label} className="secondary-link" href={link.href} target="_blank" rel="noreferrer">
+                <a
+                  key={link.label}
+                  className="secondary-link action-chip"
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {link.label}
                 </a>
               ))}

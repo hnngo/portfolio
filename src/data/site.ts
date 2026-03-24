@@ -10,11 +10,11 @@ export const siteContent: SiteContent = {
   ],
   hero: {
     eyebrow: "FULL-STACK ENGINEER IN VANCOUVER",
-    title: ["Building thoughtful", "web products, cloud", "systems, and strong UX."],
+    title: ["Shipping scalable,", "user-first", "products."],
     description:
-      "Full-stack engineer based in Vancouver, Canada, with experience spanning modern frontend development, backend systems, cloud architecture, and product-focused UI work. I care about software that feels polished for users and dependable for the teams operating it.",
-    primaryActionLabel: "View Projects",
-    secondaryActionLabel: "Get In Touch",
+      "Full-stack engineer in Vancouver building modern web apps, cloud systems, and polished product experiences.",
+    primaryActionLabel: "See My Work",
+    secondaryActionLabel: "Let's Build",
     metadata: ["3+ years in software engineering", "React", "Node.js", "AWS"],
     highlights: ["Full-stack", "System-minded", "Cloud-driven"]
   },

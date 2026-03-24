@@ -1,4 +1,5 @@
 import { SectionHeading } from "../SectionHeading";
+import { SkillTag } from "../SkillTag";
 import type { Project } from "../../types/content";
 
 interface SelectedWorkSectionProps {
@@ -47,17 +48,25 @@ export function SelectedWorkSection({
               </ul>
               <div className="tag-row">
                 {project.stack.map((item) => (
-                  <span key={item} className="tag">
-                    {item}
-                  </span>
+                  <SkillTag key={item} label={item} />
                 ))}
               </div>
               <div className="link-row">
-                <button className="secondary-link button-link" onClick={() => onOpenProject(project)} type="button">
+                <button
+                  className="secondary-link action-chip action-chip-primary button-link"
+                  onClick={() => onOpenProject(project)}
+                  type="button"
+                >
                   Open Case Study
                 </button>
                 {project.links.map((link) => (
-                  <a key={link.label} className="secondary-link" href={link.href} target="_blank" rel="noreferrer">
+                  <a
+                    key={link.label}
+                    className="secondary-link action-chip"
+                    href={link.href}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {link.label}
                   </a>
                 ))}

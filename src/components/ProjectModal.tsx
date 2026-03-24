@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { SkillTag } from "./SkillTag";
 import type { Project } from "../types/content";
 
 interface ProjectModalProps {
@@ -84,15 +85,19 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             <div className="tag-row">
               {project.stack.map((item) => (
-                <span key={item} className="tag">
-                  {item}
-                </span>
+                <SkillTag key={item} label={item} />
               ))}
             </div>
 
             <div className="link-row">
               {project.links.map((link) => (
-                <a key={link.label} className="secondary-link" href={link.href} target="_blank" rel="noreferrer">
+                <a
+                  key={link.label}
+                  className="secondary-link action-chip"
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {link.label}
                 </a>
               ))}
