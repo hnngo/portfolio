@@ -15,7 +15,7 @@ export const siteContent: SiteContent = {
       "Full-stack engineer in Vancouver building modern web apps, cloud systems, and polished product experiences.",
     primaryActionLabel: "See My Work",
     secondaryActionLabel: "Let's Build",
-    metadata: ["3+ years in software engineering", "React", "Node.js", "AWS"],
+    metadata: ["5+ years in software engineering", "React", "Node.js", "AWS"],
     highlights: ["Full-stack", "System-minded", "Cloud-driven"]
   },
   featuredProjects: [

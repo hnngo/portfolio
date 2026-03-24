@@ -147,26 +147,79 @@ export function HeroScene() {
       resizeObserver.observe(parent);
     }
 
+    const pointerTarget = new THREE.Vector3(0, 0, 0);
+    const pointerVelocity = new THREE.Vector3(0, 0, 0);
+    const pointerCurrent = new THREE.Vector3(0, 0, 0);
+    let isPointerActive = false;
+
+    const updatePointerTarget = (clientX: number, clientY: number) => {
+      if (!parent) {
+        return;
+      }
+
+      const bounds = parent.getBoundingClientRect();
+      const normalizedX = ((clientX - bounds.left) / bounds.width) * 2 - 1;
+      const normalizedY = ((clientY - bounds.top) / bounds.height) * 2 - 1;
+
+      pointerTarget.set(normalizedX * 1.55, -normalizedY * 0.82, normalizedX * 0.34);
+      isPointerActive = true;
+    };
+
+    const handlePointerMove = (event: PointerEvent) => {
+      updatePointerTarget(event.clientX, event.clientY);
+    };
+
+    const handlePointerLeave = () => {
+      pointerTarget.set(0, 0, 0);
+      isPointerActive = false;
+    };
+
+    if (parent && !prefersReducedMotion) {
+      parent.addEventListener("pointermove", handlePointerMove);
+      parent.addEventListener("pointerleave", handlePointerLeave);
+    }
+
     let frameId = 0;
     const clock = new THREE.Clock();
+    let elapsedTime = 0;
 
     const renderFrame = () => {
-      const elapsed = clock.getElapsedTime();
-      const animationTime = prefersReducedMotion ? 0 : elapsed;
+      const delta = Math.min(clock.getDelta(), 0.033);
+      elapsedTime += delta;
+      const animationTime = prefersReducedMotion ? 0 : elapsedTime;
 
       updateGrid(animationTime);
 
-      const orbitX = Math.sin(animationTime * 0.64) * 1.45;
-      const orbitY = Math.cos(animationTime * 0.52) * 0.48 + 0.55;
-      const orbitZ = Math.cos(animationTime * 0.64) * 0.42;
+      const orbitBaseX = Math.sin(animationTime * 0.64) * 1.45;
+      const orbitBaseY = Math.cos(animationTime * 0.52) * 0.48 + 0.55;
+      const orbitBaseZ = Math.cos(animationTime * 0.64) * 0.42;
+
+      if (!prefersReducedMotion) {
+        const spring = isPointerActive ? 13.5 : 7.8;
+        const damping = isPointerActive ? 0.86 : 0.88;
+        const acceleration = pointerTarget.clone().sub(pointerCurrent).multiplyScalar(spring * delta);
+
+        pointerVelocity.add(acceleration).multiplyScalar(damping);
+        pointerCurrent.addScaledVector(pointerVelocity, delta * 60);
+      } else {
+        pointerCurrent.set(0, 0, 0);
+        pointerVelocity.set(0, 0, 0);
+      }
+
+      const orbitX = orbitBaseX + pointerCurrent.x;
+      const orbitY = orbitBaseY + pointerCurrent.y;
+      const orbitZ = orbitBaseZ + pointerCurrent.z;
 
       node.position.set(orbitX, orbitY, orbitZ);
       marker.position.copy(node.position);
 
       if (!prefersReducedMotion) {
-        gridGroup.rotation.z = -0.14 + Math.sin(elapsed * 0.16) * 0.04;
-        particles.rotation.y = elapsed * 0.04;
-        marker.rotation.z = elapsed * 0.45;
+        gridGroup.rotation.z = -0.14 + Math.sin(elapsedTime * 0.16) * 0.04 + pointerCurrent.x * 0.05;
+        gridGroup.rotation.y = pointerCurrent.x * 0.095;
+        gridGroup.position.x = pointerCurrent.x * 0.22;
+        particles.rotation.y = elapsedTime * 0.04;
+        particles.rotation.x = pointerCurrent.y * 0.07;
+        marker.rotation.z = elapsedTime * 0.45;
       }
 
       renderer.render(scene, camera);
@@ -178,6 +231,10 @@ export function HeroScene() {
     return () => {
       window.cancelAnimationFrame(frameId);
       resizeObserver.disconnect();
+      if (parent) {
+        parent.removeEventListener("pointermove", handlePointerMove);
+        parent.removeEventListener("pointerleave", handlePointerLeave);
+      }
       particleGeometry.dispose();
       (particles.material as THREE.PointsMaterial).dispose();
       nodeGeometry.dispose();
