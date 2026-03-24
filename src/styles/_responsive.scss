@@ -51,6 +51,11 @@
     padding-bottom: 4px;
   }
 
+  .nav-link.active::after {
+    left: 16px;
+    right: 16px;
+  }
+
   .page-content {
     width: min(calc(100% - 28px), var(--max-width));
   }
@@ -68,6 +73,10 @@
 
   .hero-visual {
     min-height: 320px;
+  }
+
+  .hero-section h1 {
+    max-width: none;
   }
 
   .featured-grid,

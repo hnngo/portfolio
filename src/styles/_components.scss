@@ -10,6 +10,7 @@
   backdrop-filter: blur(18px);
   background: rgba(11, 19, 34, 0.72);
   border-bottom: 1px solid var(--border-subtle);
+  box-shadow: 0 10px 30px rgba(7, 11, 21, 0.18);
 }
 
 .brand-mark {
@@ -26,9 +27,14 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  padding: 8px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .nav-link {
+  position: relative;
   padding: 10px 14px;
   border-radius: 999px;
   color: var(--text-secondary);
@@ -38,6 +44,17 @@
 .nav-link:hover {
   background: rgba(255, 255, 255, 0.08);
   color: var(--text-primary);
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 6px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent-cool), rgba(125, 211, 199, 0.2));
 }
 
 .section-eyebrow {
@@ -71,6 +88,7 @@
 
 .section-description {
   margin: 18px 0 0;
+  max-width: 58ch;
 }
 
 .hero-actions,
@@ -100,6 +118,7 @@
 .primary-button {
   background: var(--surface-light);
   color: var(--bg-base);
+  box-shadow: 0 14px 35px rgba(244, 239, 231, 0.14);
 }
 
 .primary-button:hover,
@@ -115,6 +134,11 @@
   border-color: var(--border-subtle);
   background: rgba(255, 255, 255, 0.04);
   color: var(--text-primary);
+}
+
+.secondary-link:hover,
+.ghost-button:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-metadata span,
@@ -174,6 +198,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
+  gap: 4px;
 }
 
 .project-card-body h3,
@@ -199,6 +224,12 @@
   display: grid;
   gap: 10px;
   line-height: 1.6;
+}
+
+.project-highlight-list li::marker,
+.highlight-list li::marker,
+.focus-list li::marker {
+  color: var(--accent-cool);
 }
 
 .project-card-body .tag-row,
@@ -266,6 +297,11 @@
     radial-gradient(circle at top center, rgba(125, 211, 199, 0.12), transparent 32%),
     rgba(18, 30, 48, 0.76);
   box-shadow: var(--shadow-strong);
+}
+
+.contact-button {
+  min-width: 160px;
+  margin-top: 6px;
 }
 
 .centered-links {

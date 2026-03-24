@@ -12,6 +12,7 @@
   font-size: clamp(3.5rem, 8vw, 7rem);
   line-height: 0.92;
   letter-spacing: -0.05em;
+  max-width: 8.5ch;
 }
 
 .hero-section h1 span {
@@ -39,6 +40,7 @@
 
 .hero-actions {
   margin-top: 32px;
+  align-items: center;
 }
 
 .hero-metadata,
@@ -183,6 +185,7 @@
 .visual-panel strong {
   font-family: "Space Grotesk", sans-serif;
   font-size: 1.45rem;
+  max-width: 11ch;
 }
 
 .visual-warm {
@@ -291,6 +294,11 @@
   border-radius: 999px;
   border: 1px solid var(--border-subtle);
   background: rgba(12, 20, 34, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.modal-close:hover {
+  background: rgba(18, 28, 45, 0.95);
 }
 
 .modal-grid {
@@ -304,6 +312,8 @@
   flex-direction: column;
   gap: 18px;
   overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(125, 211, 199, 0.45) rgba(255, 255, 255, 0.06);
 }
 
 .modal-summary {
@@ -361,4 +371,8 @@
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 28%),
     linear-gradient(180deg, rgba(9, 14, 24, 0.06), rgba(9, 14, 24, 0.32));
+}
+
+.snapshot-card .section-eyebrow {
+  margin-bottom: 10px;
 }
