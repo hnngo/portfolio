@@ -7,13 +7,13 @@ interface SnapshotSectionProps {
 
 export function SnapshotSection({ items }: SnapshotSectionProps) {
   return (
-    <section className="content-section snapshot-section" id="snapshot">
+    <section className="content-section snapshot-section reveal-on-scroll" id="snapshot">
       <SectionHeading
         eyebrow="ENGINEERING SNAPSHOT"
         title="How I tend to contribute across a product."
       />
 
-      <div className="snapshot-grid">
+      <div className="snapshot-grid reveal-children">
         {items.map((item) => (
           <article key={item.title} className="snapshot-card">
             <p className="section-eyebrow">{item.title}</p>

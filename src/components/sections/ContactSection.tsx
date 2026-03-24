@@ -7,7 +7,7 @@ interface ContactSectionProps {
 
 export function ContactSection({ content }: ContactSectionProps) {
   return (
-    <section className="content-section contact-panel section-band" id="contact">
+    <section className="content-section contact-panel section-band reveal-on-scroll" id="contact">
       <div className="contact-card">
         <SectionHeading
           eyebrow={content.eyebrow}

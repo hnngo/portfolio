@@ -12,10 +12,10 @@ export function HeroSection({
   onSecondaryAction
 }: HeroSectionProps) {
   return (
-    <section className="hero-section" id="hero">
+    <section className="hero-section reveal-on-scroll in-view" id="hero">
       <div className="hero-copy">
-        <p className="section-eyebrow">{content.eyebrow}</p>
-        <h1>
+        <p className="section-eyebrow hero-eyebrow">{content.eyebrow}</p>
+        <h1 className="hero-title">
           {content.title.map((line) => (
             <span key={line}>{line}</span>
           ))}
@@ -36,7 +36,7 @@ export function HeroSection({
         </div>
       </div>
 
-      <div className="hero-visual" aria-hidden="true">
+      <div className="hero-visual hero-visual-shell" aria-hidden="true">
         <div className="orb orb-large" />
         <div className="orb orb-small" />
         {content.highlights.map((item) => (

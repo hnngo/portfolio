@@ -7,14 +7,14 @@ interface ExperienceSectionProps {
 
 export function ExperienceSection({ items }: ExperienceSectionProps) {
   return (
-    <section className="content-section section-band" id="experience">
+    <section className="content-section section-band reveal-on-scroll" id="experience">
       <SectionHeading
         eyebrow="EXPERIENCE"
         title="Recent roles shaped by product depth and systems work."
         description="A timeline focused on ownership, outcomes, and the kinds of problems each role asked me to solve."
       />
 
-      <div className="timeline">
+      <div className="timeline reveal-children">
         {items.map((item) => (
           <article key={`${item.company}-${item.dates}`} className="timeline-card">
             <div className="timeline-meta">

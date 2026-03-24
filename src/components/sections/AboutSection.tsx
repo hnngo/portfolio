@@ -7,8 +7,8 @@ interface AboutSectionProps {
 
 export function AboutSection({ content }: AboutSectionProps) {
   return (
-    <section className="content-section about-section" id="about">
-      <div className="split-layout">
+    <section className="content-section about-section reveal-on-scroll" id="about">
+      <div className="split-layout reveal-children">
         <div className="identity-panel">
           <div className="identity-topline">
             <p className="section-eyebrow">PROFILE</p>

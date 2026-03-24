@@ -8,13 +8,13 @@ interface ArchiveSectionProps {
 
 export function ArchiveSection({ projects, onOpenProject }: ArchiveSectionProps) {
   return (
-    <section className="content-section archive-section" id="archive">
+    <section className="content-section archive-section reveal-on-scroll" id="archive">
       <SectionHeading
         eyebrow="MORE PROJECTS"
         title="Additional work, experiments, and earlier builds."
       />
 
-      <div className="archive-grid">
+      <div className="archive-grid reveal-children">
         {projects.map((project) => (
           <article key={project.id} className="archive-card">
             <img

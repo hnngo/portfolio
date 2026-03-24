@@ -13,6 +13,7 @@
   --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.25);
   --max-width: 1200px;
   --nav-height: 88px;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 * {
@@ -41,11 +42,12 @@ a {
 button,
 a {
   transition:
-    transform 180ms ease,
-    background-color 180ms ease,
-    border-color 180ms ease,
-    color 180ms ease,
-    opacity 180ms ease;
+    transform 220ms var(--motion-ease),
+    background-color 220ms ease,
+    border-color 220ms ease,
+    color 220ms ease,
+    opacity 220ms ease,
+    box-shadow 220ms ease;
 }
 
 button {
@@ -75,6 +77,7 @@ a {
     linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: radial-gradient(circle at center, black, transparent 85%);
+  animation: noiseDrift 18s linear infinite;
 }
 
 .top-nav {
@@ -130,6 +133,73 @@ a {
   padding: 96px 0;
   position: relative;
   scroll-margin-top: calc(var(--nav-height) + 18px);
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(26px);
+  transition:
+    opacity 700ms var(--motion-ease),
+    transform 700ms var(--motion-ease);
+}
+
+.reveal-on-scroll.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-section.in-view .hero-eyebrow,
+.hero-section.in-view .hero-title span,
+.hero-section.in-view .hero-description,
+.hero-section.in-view .hero-actions,
+.hero-section.in-view .hero-metadata,
+.hero-section.in-view .hero-visual-shell,
+.hero-section.in-view .floating-chip {
+  animation: riseFade 800ms var(--motion-ease) both;
+}
+
+.hero-eyebrow {
+  animation-delay: 80ms;
+}
+
+.hero-title span:nth-child(1) {
+  animation-delay: 140ms;
+}
+
+.hero-title span:nth-child(2) {
+  animation-delay: 230ms;
+}
+
+.hero-title span:nth-child(3) {
+  animation-delay: 320ms;
+}
+
+.hero-description {
+  animation-delay: 420ms;
+}
+
+.hero-actions {
+  animation-delay: 520ms;
+}
+
+.hero-metadata {
+  animation-delay: 620ms;
+}
+
+.hero-visual-shell {
+  animation-delay: 240ms;
+}
+
+.floating-chip:nth-of-type(1) {
+  animation-delay: 520ms;
+}
+
+.floating-chip:nth-of-type(2) {
+  animation-delay: 640ms;
+}
+
+.floating-chip:nth-of-type(3) {
+  animation-delay: 760ms;
 }
 
 .content-section::before {
@@ -298,6 +368,7 @@ a {
   top: 12%;
   left: 10%;
   background: rgba(201, 111, 74, 0.32);
+  animation: pulseFloat 9s ease-in-out infinite;
 }
 
 .orb-small {
@@ -306,6 +377,7 @@ a {
   bottom: 8%;
   right: 12%;
   background: rgba(125, 211, 199, 0.26);
+  animation: pulseFloat 11s ease-in-out infinite reverse;
 }
 
 .floating-chip {
@@ -322,16 +394,19 @@ a {
 .floating-chip:nth-of-type(1) {
   top: 18%;
   right: 10%;
+  animation: chipFloat 8s ease-in-out infinite;
 }
 
 .floating-chip:nth-of-type(2) {
   left: 14%;
   bottom: 18%;
+  animation: chipFloat 9s ease-in-out infinite reverse;
 }
 
 .floating-chip:nth-of-type(3) {
   right: 16%;
   bottom: 24%;
+  animation: chipFloat 10s ease-in-out infinite;
 }
 
 .section-heading {
@@ -355,6 +430,39 @@ a {
   grid-template-columns: 1.25fr 1fr 1fr;
   gap: 28px;
   align-items: stretch;
+}
+
+.reveal-children > * {
+  opacity: 0;
+  transform: translateY(28px) scale(0.985);
+  transition:
+    opacity 650ms var(--motion-ease),
+    transform 650ms var(--motion-ease);
+}
+
+.reveal-on-scroll.in-view .reveal-children > * {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.reveal-on-scroll.in-view .reveal-children > *:nth-child(1) {
+  transition-delay: 70ms;
+}
+
+.reveal-on-scroll.in-view .reveal-children > *:nth-child(2) {
+  transition-delay: 150ms;
+}
+
+.reveal-on-scroll.in-view .reveal-children > *:nth-child(3) {
+  transition-delay: 230ms;
+}
+
+.reveal-on-scroll.in-view .reveal-children > *:nth-child(4) {
+  transition-delay: 310ms;
+}
+
+.reveal-on-scroll.in-view .reveal-children > *:nth-child(5) {
+  transition-delay: 390ms;
 }
 
 .section-band {
@@ -528,6 +636,12 @@ a {
 .timeline-card:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+}
+
+.project-card:hover .project-visual-image,
+.archive-card:hover .archive-image {
+  transform: scale(1.035);
 }
 
 .split-layout {
@@ -664,6 +778,7 @@ a {
   border-radius: 18px;
   margin-bottom: 18px;
   border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: transform 420ms var(--motion-ease), filter 420ms ease;
 }
 
 .contact-panel {
@@ -699,6 +814,7 @@ a {
   padding: 24px;
   background: rgba(6, 10, 18, 0.72);
   backdrop-filter: blur(12px);
+  animation: fadeInSoft 220ms ease-out both;
 }
 
 .project-modal {
@@ -707,6 +823,7 @@ a {
   position: relative;
   overflow: hidden;
   max-height: min(90vh, 900px);
+  animation: modalRise 300ms var(--motion-ease) both;
 }
 
 .modal-close {
@@ -765,6 +882,7 @@ a {
   position: relative;
   z-index: 1;
   filter: drop-shadow(0 18px 45px rgba(0, 0, 0, 0.28));
+  animation: mediaFloatIn 420ms var(--motion-ease) both;
 }
 
 .visual-panel {
@@ -787,6 +905,88 @@ a {
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 28%),
     linear-gradient(180deg, rgba(9, 14, 24, 0.06), rgba(9, 14, 24, 0.32));
+}
+
+@keyframes riseFade {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalRise {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInSoft {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes mediaFloatIn {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulseFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-14px) scale(1.04);
+  }
+}
+
+@keyframes chipFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes noiseDrift {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(10px, -8px, 0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @media (max-width: 1080px) {

@@ -11,14 +11,14 @@ export function SelectedWorkSection({
   onOpenProject
 }: SelectedWorkSectionProps) {
   return (
-    <section className="content-section work-section" id="work">
+    <section className="content-section work-section reveal-on-scroll" id="work">
       <SectionHeading
         eyebrow="SELECTED WORK"
         title="A few projects that show how I build."
         description="A mix of product implementation, systems thinking, and frontend craft."
       />
 
-      <div className="featured-grid">
+      <div className="featured-grid reveal-children">
         {projects.map((project, index) => (
           <article
             key={project.id}

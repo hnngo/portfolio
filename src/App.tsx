@@ -53,6 +53,39 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const elements = Array.from(
+      document.querySelectorAll<HTMLElement>(".reveal-on-scroll")
+    );
+
+    if (elements.length === 0) {
+      return undefined;
+    }
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) {
+            return;
+          }
+
+          entry.target.classList.add("in-view");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        rootMargin: "0px 0px -12% 0px",
+        threshold: 0.16
+      }
+    );
+
+    elements.forEach((element) => revealObserver.observe(element));
+
+    return () => {
+      revealObserver.disconnect();
+    };
+  }, []);
+
   const navigateTo = (sectionId: SectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
