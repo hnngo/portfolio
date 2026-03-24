@@ -1,0 +1,17 @@
+:root {
+  color-scheme: dark;
+  font-family: "Manrope", sans-serif;
+  --bg-base: #0f172a;
+  --bg-elevated: #162033;
+  --bg-card: rgba(18, 30, 48, 0.78);
+  --text-primary: #f4efe7;
+  --text-secondary: #c9c1b6;
+  --surface-light: #f4efe7;
+  --accent-warm: #c96f4a;
+  --accent-cool: #7dd3c7;
+  --border-subtle: rgba(255, 255, 255, 0.12);
+  --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.25);
+  --max-width: 1200px;
+  --nav-height: 88px;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}

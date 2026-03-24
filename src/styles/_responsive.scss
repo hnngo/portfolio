@@ -1,0 +1,91 @@
+@media (max-width: 1080px) {
+  .hero-section,
+  .split-layout,
+  .featured-grid,
+  .snapshot-grid,
+  .archive-grid,
+  .modal-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-band {
+    padding-inline: 24px;
+  }
+
+  .featured-primary {
+    grid-row: auto;
+  }
+
+  .timeline-card {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-meta {
+    border-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+
+  .project-modal {
+    max-height: 92vh;
+  }
+
+  .modal-visual {
+    min-height: 360px;
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 720px) {
+  .top-nav {
+    height: auto;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    align-items: flex-start;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .nav-links {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .page-content {
+    width: min(calc(100% - 28px), var(--max-width));
+  }
+
+  .hero-section,
+  .content-section {
+    padding: 72px 0;
+  }
+
+  .section-band {
+    margin: 20px 0;
+    padding-inline: 18px;
+    border-radius: 28px;
+  }
+
+  .hero-visual {
+    min-height: 320px;
+  }
+
+  .featured-grid,
+  .archive-grid,
+  .snapshot-grid,
+  .timeline {
+    gap: 18px;
+  }
+
+  .project-modal {
+    width: calc(100vw - 20px);
+  }
+
+  .modal-overlay {
+    padding: 10px;
+  }
+
+  .contact-card {
+    padding: 32px 20px;
+  }
+}
