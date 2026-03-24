@@ -51,6 +51,15 @@ function App() {
   }, []);
 
   useEffect(() => {
+    const handleScroll = () => {
+      const scrollBottom = window.scrollY + window.innerHeight;
+      const pageHeight = document.documentElement.scrollHeight;
+
+      if (pageHeight - scrollBottom <= 8) {
+        setActiveSection("contact");
+      }
+    };
+
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntry = entries
@@ -74,8 +83,12 @@ function App() {
       }
     });
 
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
     return () => {
       observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
@@ -113,6 +126,7 @@ function App() {
   }, []);
 
   const navigateTo = (sectionId: SectionId) => {
+    setActiveSection(sectionId);
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
       block: "start"
