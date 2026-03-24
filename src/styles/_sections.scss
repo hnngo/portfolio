@@ -55,8 +55,9 @@
   border: 1px solid var(--border-subtle);
   overflow: hidden;
   background:
-    linear-gradient(135deg, rgba(201, 111, 74, 0.32), transparent 40%),
-    linear-gradient(215deg, rgba(125, 211, 199, 0.24), transparent 30%),
+    radial-gradient(circle at 26% 24%, rgba(201, 111, 74, 0.14), transparent 28%),
+    radial-gradient(circle at 76% 72%, rgba(125, 211, 199, 0.14), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.02)),
     rgba(255, 255, 255, 0.03);
   box-shadow: var(--shadow-strong);
 }
@@ -72,28 +73,38 @@
   mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.85), transparent 88%);
 }
 
-.orb {
+.hero-scene-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero-visual-glow {
   position: absolute;
   border-radius: 999px;
-  filter: blur(20px);
+  filter: blur(42px);
+  opacity: 0.55;
+  pointer-events: none;
 }
 
-.orb-large {
-  width: 240px;
-  height: 240px;
-  top: 12%;
-  left: 10%;
-  background: rgba(201, 111, 74, 0.32);
-  animation: pulseFloat 9s ease-in-out infinite;
+.hero-visual-glow-warm {
+  width: 220px;
+  height: 220px;
+  top: 16%;
+  left: 12%;
+  background: rgba(201, 111, 74, 0.2);
+  animation: pulseFloat 10s ease-in-out infinite;
 }
 
-.orb-small {
-  width: 180px;
-  height: 180px;
-  bottom: 8%;
-  right: 12%;
-  background: rgba(125, 211, 199, 0.26);
-  animation: pulseFloat 11s ease-in-out infinite reverse;
+.hero-visual-glow-cool {
+  width: 170px;
+  height: 170px;
+  right: 14%;
+  bottom: 12%;
+  background: rgba(125, 211, 199, 0.2);
+  animation: pulseFloat 12s ease-in-out infinite reverse;
 }
 
 .floating-chip {
@@ -107,22 +118,20 @@
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.24);
 }
 
-.floating-chip:nth-of-type(1) {
-  top: 18%;
-  right: 10%;
+.hero-chip {
+  z-index: 1;
+}
+
+.hero-chip-top {
+  top: 24px;
+  left: 24px;
   animation: chipFloat 8s ease-in-out infinite;
 }
 
-.floating-chip:nth-of-type(2) {
-  left: 14%;
-  bottom: 18%;
+.hero-chip-bottom {
+  right: 28px;
+  bottom: 24px;
   animation: chipFloat 9s ease-in-out infinite reverse;
-}
-
-.floating-chip:nth-of-type(3) {
-  right: 16%;
-  bottom: 24%;
-  animation: chipFloat 10s ease-in-out infinite;
 }
 
 .project-visual,

@@ -1,3 +1,4 @@
+import { HeroScene } from "../HeroScene";
 import type { HeroContent } from "../../types/content";
 
 interface HeroSectionProps {
@@ -37,13 +38,9 @@ export function HeroSection({
       </div>
 
       <div className="hero-visual hero-visual-shell" aria-hidden="true">
-        <div className="orb orb-large" />
-        <div className="orb orb-small" />
-        {content.highlights.map((item) => (
-          <div key={item} className="floating-chip">
-            {item}
-          </div>
-        ))}
+        <HeroScene />
+        <div className="hero-visual-glow hero-visual-glow-warm" />
+        <div className="hero-visual-glow hero-visual-glow-cool" />
       </div>
     </section>
   );

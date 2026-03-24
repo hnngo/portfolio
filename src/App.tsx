@@ -25,6 +25,32 @@ function App() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   useEffect(() => {
+    const nav = document.querySelector<HTMLElement>(".top-nav");
+
+    if (!nav) {
+      return undefined;
+    }
+
+    const updateNavHeight = () => {
+      document.documentElement.style.setProperty("--nav-height", `${nav.offsetHeight}px`);
+    };
+
+    updateNavHeight();
+
+    const resizeObserver = new ResizeObserver(() => {
+      updateNavHeight();
+    });
+
+    resizeObserver.observe(nav);
+    window.addEventListener("resize", updateNavHeight);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener("resize", updateNavHeight);
+    };
+  }, []);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         const visibleEntry = entries
