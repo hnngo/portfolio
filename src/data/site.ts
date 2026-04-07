@@ -9,7 +9,7 @@ export const siteContent: SiteContent = {
     { id: "contact", label: "Contact" }
   ],
   hero: {
-    eyebrow: "FULL-STACK ENGINEER IN VANCOUVER",
+    eyebrow: "HUYNH NHAN NGO • FULL-STACK ENGINEER IN VANCOUVER",
     title: ["Shipping scalable,", "user-first", "products."],
     description:
       "Full-stack engineer in Vancouver building modern web apps, cloud systems, and polished product experiences.",
